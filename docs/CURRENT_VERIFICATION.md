@@ -180,3 +180,7 @@ All **56 execution-affecting paths** in the final candidate match the actually t
 [Captured clean-local-restore output](../verification/current/local-restore.json) records the 14 successful commands, original captured-output digests and sanitized outputs. [Tested source binding](../verification/current/tested-source-binding.json) records the exact program/fixture/lock set. Regression-red files in the same folder preserve failures. Public copies normalize Windows line endings and redact private diagnostic path prefixes; they are not represented as untouched private transcript bytes. Original private records remain separate.
 
 The new Linux original-suite rerun produced a byte-identical summary to [the preserved canonical 60-test summary](../verification/original-60.json). Its duplicate copy is omitted; the current execution account above records the rerun without counting the same tests twice.
+
+### Transferable starter extension (11 October 2026, next candidate)
+
+A new dependency-free CLI exports allowlisted public examples to fresh directories, requiring a pinned source manifest and preserving qualification flags. Its own regression tests cover metadata drift, byte-for-byte output, non-overwrite and actual re-execution of selected public examples. Any new test pass count must be bound to its exact post-edit manifest and clean published checkout; earlier results for the 117-file checkpoint remain prior evidence rather than automatic certification. No private source was exported or used as input.

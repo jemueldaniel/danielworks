@@ -134,6 +134,18 @@
       "boundary": "MCP SDK integration only; not browser-native WebMCP."
     },
     {
+      "id": "portable-source-starter",
+      "discipline": "Offline source-pinned reusable engineering starter generation",
+      "qualification": "executed",
+      "implementation": [
+        "tools/export_public_starter.py"
+      ],
+      "tests": [
+        "tools/test_export_public_starter.py"
+      ],
+      "boundary": "Byte-consistent public-only sample export, not production readiness, source ownership, cloud deployment or completed testing in an employer environment."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

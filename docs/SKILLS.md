@@ -21,3 +21,7 @@ Start with behavior and its tests. A library import, directory name, private sou
 **Not established by this public candidate:** browser-native WebMCP; Next.js SSR/server actions; PostgreSQL/RLS or PostgreSQL concurrency; a production identity provider; an LLM agent; large-model training; compiled Solidity/EVM tests; a distributed cluster; original SVG/media authoring; production deployment or scale. See the [coverage matrix](COVERAGE_MATRIX.md). The coverage matrix is the single backlog and includes source-inspected but unqualified areas. Those gaps must not be filled with claims based on filenames or private material.
 
 Claims are graded by the [public-only capability index](PUBLIC_CAPABILITIES.json); an unverified private project never counts as public executable evidence.
+
+## Portable public-only project starters
+
+[Source-pinned starter exporter](../tools/export_public_starter.py) selects original public samples by a finite allowlist; [unit and runtime tests](../tools/test_export_public_starter.py) verify copied bytes, reproducibility, source drift rejection, historical opt-in and non-overwrite. [Adaptation guide](TRANSFERABLE_WORKFLOW.md) describes translating generic patterns to a new workplace without importing private code. Export is not test execution, build qualification, a legal redistribution grant or a production deployment.

@@ -13,3 +13,7 @@ Synthetic tests are not customer evidence. Reopening a database or killing a wor
 ## Additional public proof (11 October 2026)
 
 The CPU-only binary classifier and public-evidence checker are **fresh, standalone, AI-assisted educational implementations** with generated fixtures and negative tests. They do not translate or port private repositories, datasets, business identifiers or proprietary protocols. Read-only inspection of other accessible sources informed what general disciplines to demonstrate, **not** which confidential files to reproduce. Their measured toy results are not employment, authorship, large-model-training, or production-capacity verification. The registry tests validate file-reference integrity only; independent whole-package review remains incomplete.
+
+### Read-only private context remains private
+
+Broad private-account and local-computer metadata was inspected read-only to prioritize the kinds of public examples to build. Repository size, script names and tracked-language counts are not proof of sole authorship, passing tests, source redistributability or production operation. No private product source, organization branding, credentials, local machine identifiers or client data are used by the public portable starter. Any detailed audit belongs in a separate **private** report, not this repository.

@@ -1,6 +1,6 @@
 # DanielWorks — engineering through runnable evidence
 
-**Public source is live.** Prior published milestones include the [110-file test-runner compatibility checkpoint](https://github.com/jemueldaniel/danielworks/commit/da94ab6378c6465b17bdaaf5f8bccf82eef645e1), the [first 107-file checkpoint](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) and [109-file reliability/verification upgrade](https://github.com/jemueldaniel/danielworks/commit/f811ecf09481ebe4d225620e1131753f1dd85b79) were published on 11 October 2026. Both have been read back from GitHub and restored in clean isolated checkouts. Consult [main](https://github.com/jemueldaniel/danielworks/tree/main) for later commits, which must have their own external receipt. Publication is **not** deployment or production certification.
+**Public source is live.** The latest reviewed-for-public-source (not independently certified) 117-file skill-evidence checkpoint is [available on GitHub](https://github.com/jemueldaniel/danielworks/commit/f801abf83ebb9b16cbe2e1b4e40d110b419edb95). Earlier milestones include the [110-file test-runner compatibility checkpoint](https://github.com/jemueldaniel/danielworks/commit/da94ab6378c6465b17bdaaf5f8bccf82eef645e1), the [first 107-file checkpoint](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) and [109-file reliability/verification upgrade](https://github.com/jemueldaniel/danielworks/commit/f811ecf09481ebe4d225620e1131753f1dd85b79) were published on 11 October 2026. Both have been read back from GitHub and restored in clean isolated checkouts. Consult [main](https://github.com/jemueldaniel/danielworks/tree/main) for later commits, which must have their own external receipt. Publication is **not** deployment or production certification.
 
 **Current integration status: PARTIAL, not fully green.** The historical Windows rerun stopped after 73 passing tests and one 415/WinError 10053 error; that failure remains recorded. The new bounded early-rejection handling passed **28/28 Python backend tests on Linux and 28/28 on Windows** in isolated candidate workspaces, including the previously failing case, but this does not establish the root cause of the earlier intermittent abort or a complete locked workbench/browser rerun. [Current qualification](docs/CURRENT_VERIFICATION.md).
 
@@ -24,7 +24,7 @@ The [in-process agent example](examples/mcp_agent/README.md) retains its startin
 
 ## New: independently reproducible, public-only skills proof
 
-The [public capability index](docs/PUBLIC_CAPABILITIES.json) maps **13 engineering disciplines** to specific public source files, test entrypoints and explicit qualification limits. [The read-only index checker](tools/verify_public_capabilities.py) validates these references against the one source manifest and reports which claims are executed, historical or *not verified*. It **does not execute tests or inspect private accounts**. Its [regressions](tools/test_verify_public_capabilities.py) deliberately reject invented filenames, private paths, embedded addresses and overclaimed statuses.
+The [public capability index](docs/PUBLIC_CAPABILITIES.json) maps **14 engineering disciplines** to specific public source files, test entrypoints and explicit qualification limits. [The read-only index checker](tools/verify_public_capabilities.py) validates these references against the one source manifest and reports which claims are executed, historical or *not verified*. It **does not execute tests or inspect private accounts**. Its [regressions](tools/test_verify_public_capabilities.py) deliberately reject invented filenames, private paths, embedded addresses and overclaimed statuses.
 
 The new [synthetic model-training example](examples/synthetic_training/README.md) performs real CPU mini-batch optimization, uses train-only feature normalization and a held-out validation/test split, and demonstrates resumable hash-bound in-memory checkpoints. Its [17 negative/positive tests](examples/synthetic_training/test_training.py) cover drift, corruption, deterministic resumption, convergence and no test-preprocessing leakage. These are synthetic educational results—not proof of LLM training, private training workloads or GPU-scale execution.
 
@@ -38,6 +38,29 @@ python -B -m unittest discover -s examples/synthetic_training -v
 python -B -m unittest discover -s tools -p test_verify_public_capabilities.py -v
 # Against an externally pinned manifest hash after a clean source checkout:
 python -B tools/verify_public_capabilities.py --expected-manifest-sha256 YOUR_64_HEX_RECEIPT_HASH
+```
+
+## One-command reusable engineering starter (public-only)
+
+The new [offline starter exporter](tools/export_public_starter.py) can copy a
+small, **SHA-256-pinned public** demonstration bundle to a new empty folder. It
+supports agent/checkpoint execution, durable jobs, CPU training, retrieval and
+ranking evaluation; the typed-API and Rust references require an explicit
+historical-qualification opt-in. It does not read private repos, run cloud
+builds, fetch dependencies, or copy proprietary product assets. Its
+[regression tests](tools/test_export_public_starter.py) check non-overwrite,
+symlink/manifest rejection, reproducibility and actual tests executed against
+exported agent and training code. This is a practical starting point for a
+new project, **not** a one-command production system or a guarantee of rights to
+reuse employer source. See [how to adapt it at a new job](docs/TRANSFERABLE_WORKFLOW.md)
+and [starter usage](examples/public_starter/README.md).
+
+```sh
+# Replace the placeholder with the external manifest pin for the EXACT commit.
+python -B tools/export_public_starter.py \
+  --expected-manifest-sha256 YOUR_EXTERNAL_64_CHARACTER_SHA256 \
+  --profile agent --profile training \
+  --destination ../new-public-engineering-starter
 ```
 
 ## Rust language implementation

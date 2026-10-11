@@ -1,35 +1,35 @@
 {
   "schema": 1,
-  "title": "DanielWorks public engineering proof — original synthetic ML and verifiable public capability map",
+  "title": "DanielWorks public engineering proof — portable source-pinned starter and validated examples",
   "date": "2026-10-11",
-  "status": "PUBLIC_ONLY_CANDIDATE_PENDING_GITHUB_COMMIT_AND_INDEPENDENT_WHOLE_PACKAGE_REVIEW",
+  "status": "PUBLIC_SOURCE_CHECKPOINT__GITHUB_DELIVERY_PROVEN_BY_EXTERNAL_RECEIPT_ONLY",
   "authoritative_repository": "https://github.com/jemueldaniel/danielworks",
   "intended_branch": "main",
-  "last_read_remote_commit": "da94ab6378c6465b17bdaaf5f8bccf82eef645e1",
+  "last_read_remote_commit": "f801abf83ebb9b16cbe2e1b4e40d110b419edb95",
   "new_remote_commits_in_this_cycle": [],
   "publication_gates": [
-    "New public-only candidate is not a GitHub delivery until published, remotely read back and cleanly restored",
-    "Owner authorized incremental sanitized source publication while independent whole-package and hook/deployment trigger qualification remain incomplete",
-    "Actual private source was inspected read-only for broad competency selection; no proprietary source, startup identity, assets, prompt or credentials are published",
-    "Linux standalone synthetic CPU training 17 tests and proof-index validator 13 tests pass; Windows tests and full applicable suites must be recorded separately",
-    "Prior Node22/24, HTTP and Git-verifier results are historical on their own exact source; new candidate requires fresh run",
-    "Cloud, native WebMCP, PostgreSQL, large-model/GPU training, on-chain EVM and locked browser integration still require independent execution and acceptance evidence"
+    "This source archive alone does not establish GitHub delivery; independently verify the exact new commit/ref, tree, remote bytes and clean restoration in an external receipt",
+    "Incremental owner-approved public-source publication allowed with incomplete whole-package independent review, deployment hook inventory and native-runtime acceptance disclosed",
+    "Private-codebase checks were read-only capability triage and not copied, republished, or represented as executed public tests",
+    "Generated starter deliberately refuses unverified status claims and requires an externally pinned source manifest",
+    "Reproducible staged export plus regression checks do not mean employer-ready proprietary integration or a legal reuse grant",
+    "Locked browser build, independent review and full native cloud/PostgreSQL/EVM/WebMCP/LLM-training qualification remain out of scope"
   ],
   "inventory_scope": "Every source candidate file except this manifest; this is not independent approval. Final manifest hash is in an external receipt.",
-  "inventory_file_count": 116,
-  "complete_checkpoint_file_count_including_this_manifest": 117,
-  "payload_bytes_excluding_this_manifest": 746343,
-  "payload_path_sha256_binding": "ee292f00ee767c9f4c4c114c97357b3872215b133328651eb52d88fe78f6d383",
-  "parent_checkpoint_archive_sha256": "bb73fb0fd57288049dd7f1d6f8a4f8310547551cd76f540064b12b3979d42106",
+  "inventory_file_count": 120,
+  "complete_checkpoint_file_count_including_this_manifest": 121,
+  "payload_bytes_excluding_this_manifest": 779258,
+  "payload_path_sha256_binding": "22179689b3cbc572223074e9b58b4118fa9cfd3912dbd10ac925478eed5db98c",
+  "parent_checkpoint_archive_sha256": "858fae7287668390fd19e33eec965054fcab355fa7165f7cd0d81d4412c46a85",
   "original_100_paths_preserved": 100,
   "original_56_execution_inputs_unchanged": false,
-  "execution_files_including_new_checker": 66,
-  "execution_path_hash_binding": "e474e64412dd544bae4596f82daea0a6ffb551d3f7fe7cdc2777650acd0d81c2",
+  "execution_files_including_new_checker": 68,
+  "execution_path_hash_binding": "a266b2f7a1a52c803ef868c191085d417f8c9efd59b7216759d83669da6d5dc5",
   "historical_and_first_fresh_baseline_distinct_tests": 145,
   "new_checker_distinct_test_definitions": 28,
   "latest_windows_integration_status": "STANDALONE_BACKEND_28_PASS__OFFLINE_GIT_VERIFIER_9_PASS__ORIGINAL_QUEUE_EVAL_SDK_60_PASS__HISTORICAL_HTTP_ABORT_RETAINED__FULL_LOCKED_WORKBENCH_UNRUN",
-  "clean_github_restore": true,
-  "independent_review": "Prior eight-file Rust static review retained only for unchanged hashes. New ML/claim code and whole package are coordinator-tested but independently unreviewed.",
+  "clean_github_restore": false,
+  "independent_review": "Earlier eight-file Rust static review remains source-bound and historical; new portable export implementation and whole package have no admitted independent reviewer approval.",
   "files": [
     {
       "path": ".gitignore",
@@ -51,8 +51,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 14739,
-      "sha256": "b982f46d7f176d8d7b9fc45114329f500f7d04c799e0dd4e473da49ee6408297",
+      "bytes": 16210,
+      "sha256": "bc6c62510ce7d189b10838993925c37256f17a653adc01056be260dfbb6afe5d",
       "mode": "100644"
     },
     {
@@ -63,14 +63,14 @@
     },
     {
       "path": "docs/COVERAGE_MATRIX.md",
-      "bytes": 34725,
-      "sha256": "e8b31900407a05e04308c8a438f30bfe3f6bb124850c75bff660b0cf24c25cf7",
+      "bytes": 35542,
+      "sha256": "4451430a621af5f31e63b60c752075ae1604bf385762cebd6cd7616ee278d8a7",
       "mode": "100644"
     },
     {
       "path": "docs/CURRENT_VERIFICATION.md",
-      "bytes": 26916,
-      "sha256": "e38b26c8f4cf2a92dc7f3dfb2498c585e2d0de720e12220e3c448065abfd45e4",
+      "bytes": 27530,
+      "sha256": "dce9d79bdc748d6cd12e9c298bb0d9ce9551ef1656194adcd7fae8809f49b06a",
       "mode": "100644"
     },
     {
@@ -81,14 +81,14 @@
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3281,
-      "sha256": "b7582262548b6c13d7c4016542e55937326ebfde5cbcc60ebddd5b6e76d241ee",
+      "bytes": 3841,
+      "sha256": "bc56bfacbcd26d66db08ad25c6d29000752152349fb205f0ee93ebbb4cec2a41",
       "mode": "100644"
     },
     {
       "path": "docs/PUBLIC_CAPABILITIES.json",
-      "bytes": 5893,
-      "sha256": "8bee505b759ef0b859c183d47b7f021fc457c7e5087345264bcd44ab18ebf777",
+      "bytes": 6386,
+      "sha256": "adbbbc8a6172d0f8a0b53158fe0f4112929c3402a62ceb420ae50f4966bed2bb",
       "mode": "100644"
     },
     {
@@ -105,8 +105,8 @@
     },
     {
       "path": "docs/SKILLS.md",
-      "bytes": 5817,
-      "sha256": "b417632d77ef1cfaaa266d78b1bb71e244295f4e7a982318eec8df3c482f340e",
+      "bytes": 6390,
+      "sha256": "d7794b41c7790259788006a09bff8785d1b3d148a4e20712006d8c5810122993",
       "mode": "100644"
     },
     {
@@ -125,6 +125,12 @@
       "path": "docs/TEST_EVIDENCE_EXPANDED.md",
       "bytes": 932,
       "sha256": "960200c0f36d4b93df6c2125f837f889c769440c44f3efb98472299f2b4c4119",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/TRANSFERABLE_WORKFLOW.md",
+      "bytes": 3440,
+      "sha256": "f657ec58d1d3878352fa95de25f1fd1efc3a54b95a3a0f82a811569c6631e258",
       "mode": "100644"
     },
     {
@@ -167,6 +173,12 @@
       "path": "examples/mcp_agent/test_runtime.mjs",
       "bytes": 14232,
       "sha256": "9934784640f83fa8a920b63a082a888c0a562b9260ce80cbd7771a3b1734d62d",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/public_starter/README.md",
+      "bytes": 2693,
+      "sha256": "e4b5c2394766575da57967ae8b1af3884e709ed9110577876168e98e4f3a8b8f",
       "mode": "100644"
     },
     {
@@ -530,6 +542,18 @@
       "mode": "100644"
     },
     {
+      "path": "tools/export_public_starter.py",
+      "bytes": 12878,
+      "sha256": "2da48cb5e26c097716ed88947ea12429d5f6942528f2e197594303cbe40615bb",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/test_export_public_starter.py",
+      "bytes": 9376,
+      "sha256": "876f420b52966a62fd5e15acdb930e32f11248d5c11e36719597cae61d6a214d",
+      "mode": "100644"
+    },
+    {
       "path": "tools/test_verify_git_commit.py",
       "bytes": 5984,
       "sha256": "5664b528e49190295eba9a9fe33cf0be751295aea6a27ce481188aed8940d181",
@@ -538,7 +562,7 @@
     {
       "path": "tools/test_verify_public_capabilities.py",
       "bytes": 5034,
-      "sha256": "9c01afd8c18d8141a6244a92e494b04acb23d96af58201fff3191f0ed9f187c5",
+      "sha256": "d09fb71f03e33906d134b4da6d85a648aa370d98c4d1377acb026974a7445336",
       "mode": "100644"
     },
     {
@@ -753,13 +777,13 @@
     "projects/evidence-workbench/docs/INTERFACES.md"
   ],
   "source_manifest_regenerated": true,
-  "receipt_boundaries": "Private repo and laptop observations are read-only contextual selection and are excluded from this public source and external publication receipt. Test outputs cannot prove authorship or product operation. Manifest excludes itself; final manifest SHA and commit belong in an external delivery receipt.",
+  "receipt_boundaries": "Private repository and local-workspace metadata are analyzed only in a separate private receipt. Source manifest excludes itself. Final source-manifest SHA and Git revision are pinned externally. This package alone does not prove runtime, authorship, independent review, employer legal reuse or cloud production.",
   "execution_inputs_changed_this_continuation": [
     "projects/evidence-workbench/backend/server.py",
     "projects/evidence-workbench/backend/test_http.py",
     "tools/verify.py"
   ],
-  "execution_inputs_unchanged_from_parent": 61,
+  "execution_inputs_unchanged_from_parent": 66,
   "fresh_linux_in_process_agent_tests": {
     "distinct": 27,
     "passed": 27,
@@ -780,16 +804,13 @@
     "is_complete_locked_workbench_suite": false,
     "independent_review": false
   },
-  "previous_public_checkpoint_commit": "da94ab6378c6465b17bdaaf5f8bccf82eef645e1",
+  "previous_public_checkpoint_commit": "f801abf83ebb9b16cbe2e1b4e40d110b419edb95",
   "previous_public_checkpoint_tree": "e443a749e3810b9145bc65fdefb3b1a436554e3c",
   "clean_github_restore_commit": "da94ab6378c6465b17bdaaf5f8bccf82eef645e1",
   "historical_october8_parent_archive_sha256": "d33aae2088ed540d19a62adb5a763d8c585c8f1976bb3de02bfd6e61551ddff3",
   "execution_inputs_added_this_continuation": [
-    "examples/synthetic_training/training.py",
-    "examples/synthetic_training/demo.py",
-    "examples/synthetic_training/test_training.py",
-    "tools/verify_public_capabilities.py",
-    "tools/test_verify_public_capabilities.py"
+    "tools/export_public_starter.py",
+    "tools/test_export_public_starter.py"
   ],
   "git_checker_distinct_test_definitions": 9,
   "fresh_october11_backend": {
@@ -840,7 +861,10 @@
     "docs/COVERAGE_MATRIX.md",
     "docs/CURRENT_VERIFICATION.md",
     "docs/PROVENANCE.md",
-    "docs/SKILLS.md"
+    "docs/SKILLS.md",
+    "docs/PUBLIC_CAPABILITIES.json",
+    "docs/TRANSFERABLE_WORKFLOW.md",
+    "examples/public_starter/README.md"
   ],
   "fresh_october11_node_runner": {
     "regression_definitions": 6,
@@ -877,5 +901,14 @@
       "linux_distinct_cases": 13,
       "qualifier": "Checks public manifest-backed references, not the execution or ownership of cited capabilities"
     }
+  },
+  "public_only_transfer": {
+    "implementation": "tools/export_public_starter.py",
+    "tests": "tools/test_export_public_starter.py",
+    "docs": [
+      "examples/public_starter/README.md",
+      "docs/TRANSFERABLE_WORKFLOW.md"
+    ],
+    "contract": "Public-only source-pinned, offline, non-overwriting reference export with no private inputs or hidden test execution"
   }
 }

@@ -154,3 +154,11 @@ The admitted Windows environment has no PostgreSQL server/client or EVM compiler
 ### Newly observed integration defect — existing backend owner
 
 `projects/evidence-workbench/backend/server.py` and its existing `test_http.py` own this issue. The latest Windows full-suite attempt encountered `ConnectionAbortedError` / WinError 10053 while an invalid-media-type POST should have returned 415. The earlier unchanged Windows and Linux checks passed. The current integrated acceptance gate is **failed**, not “passed with a skipped test.” The assertion remains intact. Early response/connection closure with an unread request body is only a source-inspection hypothesis. A repeated socket probe was denied by the tool safety gate; no alternate route was attempted. Reviewed diagnosis and an admitted regression/complete integration run are required. Native capabilities remain separately unqualified.
+
+### Public-only transferable starter (new, independent reference)
+
+| Capability | Source and tests | Qualified scope | Remaining qualification |
+|---|---|---|---|
+| Reproducible pattern export | `tools/export_public_starter.py`, `tools/test_export_public_starter.py`, `examples/public_starter/README.md` | Offline, external-SHA-pinned public reference copying; finite allowlist; missing-source, symlink, overwrite, status and reproducibility tests | New employer system integration, legal ownership, security review, accessibility, cloud runtime and real data acceptance must be performed separately |
+
+The exporter does not turn private source into public source and does not certify historical profiles. This row is a capability-specific addition to the **existing single matrix**, not a second acceptance matrix.
