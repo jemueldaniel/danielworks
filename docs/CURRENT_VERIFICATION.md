@@ -208,6 +208,10 @@ This does not qualify an untested NTFS symlink rejection path on that host.
 
 ## New portable full-stack reference — independently testable local increment
 
-New source `projects/portable-proof-studio/` adds an original Python standard-library loopback HTTP application backed by real SQLite files, plus a responsive browser UI. The suite contains **35 distinct tests** covering workspace partitioning, authenticated-demo token expiry, replay-safe transaction and concurrency, workflow revision errors, saved run/artifact identities, explicit cross-app import, document revision/deletion and lexical evaluation, process restart, HTTP origin/media guards and static UI contracts. The public one-shot exporter adds a sixth executed reference profile (`proof-platform`).
+New source `projects/portable-proof-studio/` adds an original Python standard-library loopback HTTP application backed by real SQLite files, plus a responsive browser UI. The suite contains **36 distinct tests** covering workspace partitioning, authenticated-demo token expiry, replay-safe transaction and concurrency, workflow revision errors, saved run/artifact identities, explicit cross-app import, document revision/deletion and lexical evaluation, process restart, HTTP origin/media guards and static UI contracts. The public one-shot exporter adds a sixth executed reference profile (`proof-platform`).
 
 The first native Chromium navigation was **blocked with `ERR_BLOCKED_BY_ADMINISTRATOR`**. Do not interpret HTTP/markup tests as native-browser or accessibility acceptance. No private product source, cloud API, provider credential, EVM or payments were used. This addition is a local-only educational reference, not a deployed ten-application suite or a fully qualified locked workbench.
+
+### Windows fixture follow-up — requires remote confirmation
+
+The first published 134-file GitHub checkout passed source and Git-object byte verification on Windows but **failed four temporary-database cleanup tests** with `WinError 32`. The fixture had used `sqlite3.Connection` as a context manager, which commits but does not close the OS handle. The revised `managed_test_connection()` explicitly closes connections, with a new regression for immediate file deletion. The original failure remains recorded; this follow-up requires a fresh Windows test before a cross-platform claim.

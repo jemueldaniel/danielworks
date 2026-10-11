@@ -78,7 +78,7 @@ The complete workflow is covered by `tools/test_one_shot_public_project.py`, inc
 
 ## New public-only full-stack profile
 
-`--profile proof-platform` exports the independent [Portable Proof Studio](../projects/portable-proof-studio/README.md). A clean Python standard-library runtime exercises 35 distinct HTTP/SQLite/workflow/evaluation/static-web tests with an actual local database and restart validation. It does not copy product repositories, deploy a worker, call a provider or make this test fixture production-authenticated.
+`--profile proof-platform` exports the independent [Portable Proof Studio](../projects/portable-proof-studio/README.md). A clean Python standard-library runtime exercises 36 distinct HTTP/SQLite/workflow/evaluation/static-web tests with an actual local database and restart validation. It does not copy product repositories, deploy a worker, call a provider or make this test fixture production-authenticated.
 
 ```sh
 python -B tools/one_shot_public_project.py \

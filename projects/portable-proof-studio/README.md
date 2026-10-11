@@ -18,7 +18,7 @@ Open `http://127.0.0.1:8078/` on the **same computer**. It binds only to loopbac
 python -B -m unittest discover -s projects/portable-proof-studio -p 'test_*.py' -v
 ```
 
-The suite covers genuine local HTTP and SQLite operations, process-restart readback, workflow revisions, idempotency-key replay/conflict, concurrent duplicate submissions, document identity changes, active-index deletion, cross-workspace denial, excerpt/source hashes, search and evaluation failures, host/origin restrictions, duplicate JSON keys, static interface constraints and bounded inputs. Each test uses its own temporary database.
+The suite covers genuine local HTTP and SQLite operations, process-restart readback, workflow revisions, idempotency-key replay/conflict, concurrent duplicate submissions, document identity changes, active-index deletion, cross-workspace denial, excerpt/source hashes, search and evaluation failures, host/origin restrictions, duplicate JSON keys, static interface constraints and bounded inputs. Each test uses its own temporary database. An explicitly closing fixture avoids Windows file-handle leakage; a cross-platform regression checks immediate unlink.
 
 ## API contract
 

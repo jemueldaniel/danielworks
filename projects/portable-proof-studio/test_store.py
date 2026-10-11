@@ -6,8 +6,20 @@ import tempfile
 import threading
 import unittest
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import contextmanager
 from pathlib import Path
 from store import DemoError, ProofStore
+
+
+@contextmanager
+def managed_test_connection(path: Path):
+    """sqlite3.Connection.__exit__ commits, but does NOT close Windows handles."""
+    connection = sqlite3.connect(path)
+    try:
+        yield connection
+        connection.commit()
+    finally:
+        connection.close()
 
 
 class StoreTests(unittest.TestCase):
@@ -32,9 +44,17 @@ class StoreTests(unittest.TestCase):
         self.assertEqual(ctx.exception.code,code)
 
     def test_workspace_token_is_not_stored_in_plaintext(self):
-        with sqlite3.connect(self.path) as db:
+        with managed_test_connection(self.path) as db:
             cells=db.execute('SELECT token_hash FROM workspaces').fetchall()
         self.assertNotIn(self.a,str(cells));self.assertEqual(len(cells),2)
+
+    def test_explicit_sqlite_fixture_close_allows_immediate_cleanup(self):
+        path = Path(self.temp.name) / 'temporary-test-handle.sqlite'
+        with managed_test_connection(path) as db:
+            db.execute('CREATE TABLE evidence(id INTEGER)')
+            db.execute('INSERT INTO evidence VALUES (1)')
+        path.unlink()
+        self.assertFalse(path.exists())
 
     def test_workspace_reloads_from_real_database(self):
         w=self.create()
@@ -49,7 +69,7 @@ class StoreTests(unittest.TestCase):
 
     def test_expired_token_denies_before_replay(self):
         self.create()
-        with sqlite3.connect(self.path) as db:db.execute('UPDATE workspaces SET expires=0')
+        with managed_test_connection(self.path) as db:db.execute('UPDATE workspaces SET expires=0')
         self.assert_code('SESSION_REQUIRED',lambda:self.create())
         self.assert_code('SESSION_REQUIRED',lambda:self.s.list_workflows(self.a))
 
@@ -64,7 +84,7 @@ class StoreTests(unittest.TestCase):
         w=self.create();r=self.sample_run(w)
         again=self.sample_run(w)
         self.assertEqual(r,again)
-        with sqlite3.connect(self.path) as db:
+        with managed_test_connection(self.path) as db:
             self.assertEqual(db.execute('SELECT COUNT(*) FROM artifacts').fetchone()[0],1)
             self.assertEqual(db.execute('SELECT COUNT(*) FROM runs').fetchone()[0],1)
 
@@ -88,7 +108,7 @@ class StoreTests(unittest.TestCase):
             tasks=[pool.submit(self.sample_run,workflow,self.a,'same-race-123') for _ in range(8)]
             results=[t.result() for t in tasks]
         self.assertEqual(len({r['runId'] for r in results}),1)
-        with sqlite3.connect(self.path) as db:
+        with managed_test_connection(self.path) as db:
             self.assertEqual(db.execute('SELECT COUNT(*) FROM runs').fetchone()[0],1)
 
     def test_replaying_old_workflow_update_after_new_revision(self):

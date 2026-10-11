@@ -13,8 +13,8 @@
   "independent_whole_package_review": "NOT_COMPLETED",
   "inventory_file_count": 133,
   "complete_checkpoint_file_count_including_this_manifest": 134,
-  "payload_bytes_excluding_this_manifest": 906678,
-  "payload_path_sha256_binding": "8f1f5fe99c20d9b43a9a44428b4bc23b8ff3181a7b2455ee92ebd0d0e0e271b3",
+  "payload_bytes_excluding_this_manifest": 908115,
+  "payload_path_sha256_binding": "223ef00780e50c1597bfa6db2219b4272f461c9a0f9c8750e7c5f0c23bd85efc",
   "files": [
     {
       "path": ".gitignore",
@@ -55,8 +55,8 @@
     {
       "path": "docs/CURRENT_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 31207,
-      "sha256": "0a42a1fb9f46004ebdd396b9237d222ba791f42a18450c3da5f74cb71f87c310"
+      "bytes": 31797,
+      "sha256": "cbd869df636c2371d9b1dab075b58481fda8bc1d561dee3c182b9d5eed461b5c"
     },
     {
       "path": "docs/DEPENDENCIES.md",
@@ -116,7 +116,7 @@
       "path": "docs/TRANSFERABLE_WORKFLOW.md",
       "mode": "100644",
       "bytes": 7454,
-      "sha256": "22506b9036cae0063ba9fd823cc179059c1f0a5adfd75b33799159949e774c2b"
+      "sha256": "98ea59ba34d05cef89d75ac445ae380afaee520336d883624b4a6d334c2387cd"
     },
     {
       "path": "examples/durable_jobs/README.md",
@@ -529,8 +529,8 @@
     {
       "path": "projects/portable-proof-studio/README.md",
       "mode": "100644",
-      "bytes": 5604,
-      "sha256": "f7407c159e0b6dddc20bc9518c184b9398df57c1dfd8b2d2dbaf9d841d37e3d9"
+      "bytes": 5723,
+      "sha256": "4a05890afb58f8d6f98bd1a226068fd1a5a2617d5f9062a5041b9c9472db36ae"
     },
     {
       "path": "projects/portable-proof-studio/server.py",
@@ -553,8 +553,8 @@
     {
       "path": "projects/portable-proof-studio/test_store.py",
       "mode": "100644",
-      "bytes": 10727,
-      "sha256": "2bb81dad409ee51da8ba7c2f9cdbf9e1488ee358dafbaf77fb1eca9655f3d79e"
+      "bytes": 11455,
+      "sha256": "d533870c08d44384e53e01a3f8e0d26baeea41307bb764bf33d4db0ee4007692"
     },
     {
       "path": "projects/portable-proof-studio/test_web.py",
