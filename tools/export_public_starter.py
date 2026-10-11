@@ -77,6 +77,13 @@ STARTERS: dict[str, Starter] = {
         "projects/portable-proof-studio/test_http.py",
         "projects/portable-proof-studio/test_web.py",
     ), "python -B -m unittest discover -s projects/portable-proof-studio -v", "executed"),
+    "event-outbox": Starter("signed-event-delivery", (
+        "examples/event_outbox/README.md",
+        "examples/event_outbox/event_outbox.py",
+        "examples/event_outbox/http_gateway.py",
+        "examples/event_outbox/demo.py",
+        "examples/event_outbox/test_event_outbox.py",
+    ), "python -B -m unittest discover -s examples/event_outbox -v", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

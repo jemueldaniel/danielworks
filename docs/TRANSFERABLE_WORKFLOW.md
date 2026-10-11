@@ -28,6 +28,7 @@ qualification category in `docs/PUBLIC_CAPABILITIES.json`.
 - **Agent:** checkpoint identity, permission changes, cancellation, recovery;
   in-process only, not distributed effects.
 - **Jobs:** SQLite persistence and lease/recovery; not a cloud queue.
+- **Event inbox:** signed bounded HTTP ingestion, idempotency, fenced SQLite leases and restart tests; not an external SaaS or exactly-once delivery.
 - **Training:** generated-data CPU optimizer and resume tests; not GPU/LLM training.
 - **Retrieval/evaluation:** synthetic ranking and inspectable misses; not
   proprietary search quality.
@@ -61,7 +62,7 @@ This new tool checks source-file hashes, included README integrity, file invento
 
 ## One-shot project assembly with independent acceptance
 
-Use `tools/one_shot_public_project.py` to compose only the existing permitted public examples. Pass the externally confirmed `SOURCE_MANIFEST.json` SHA-256 and choose profiles with `--profile` (repeatable) or `--all-executed` (currently six executed sample profiles). The pipeline invokes the original source-pinned exporter, validates the generated kit against its **externally returned output-manifest SHA-256**, runs only fixed per-profile tests, then validates the kit *again*. It refuses missing tests, test failure, changed files, duplicate selections, unsafe destinations and overwrites.
+Use `tools/one_shot_public_project.py` to compose only the existing permitted public examples. Pass the externally confirmed `SOURCE_MANIFEST.json` SHA-256 and choose profiles with `--profile` (repeatable) or `--all-executed` (currently seven executed sample profiles). The pipeline invokes the original source-pinned exporter, validates the generated kit against its **externally returned output-manifest SHA-256**, runs only fixed per-profile tests, then validates the kit *again*. It refuses missing tests, test failure, changed files, duplicate selections, unsafe destinations and overwrites.
 
 ```sh
 python -B tools/one_shot_public_project.py \
@@ -88,3 +89,23 @@ python -B tools/one_shot_public_project.py \
 ```
 
 Reproducibility, isolation and hash checks are local acceptance; native browser navigation is separately blocked by environment policy and must not be called passed.
+
+
+## Signed event ingestion and durable delivery profile
+
+The original `--profile event-outbox` module contains a local,
+authenticated event ingestion adapter and a SQLite inbox/outbox with worker
+lease fencing. It is directly reusable as a **design exercise** for webhook
+verification, durable processing and recovery, while still needing employer
+architecture review and rights clearance before adaptation. Its generated
+source includes all signing, lease, HTTP and recovery tests, not a static
+mockup.
+
+```sh
+python -B tools/one_shot_public_project.py   --root . --expected-source-sha256 YOUR_EXACT_EXTERNAL_SHA256   --destination ../event-reference --profile event-outbox   --receipt ../event-reference-proof.json
+```
+
+Its local HMAC key is a synthetic fixture, not a real integration credential.
+A consumer performing remote effects must independently deduplicate those
+effects. No company service, live deployment or provider authorization
+is assumed.

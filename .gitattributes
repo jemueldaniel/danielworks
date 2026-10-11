@@ -1,0 +1,3 @@
+# Preserve byte-for-byte source manifest integrity on every operating system.
+# Do not apply Git automatic line-ending transforms to snapshot contents.
+* -text

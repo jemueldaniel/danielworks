@@ -215,3 +215,26 @@ The first native Chromium navigation was **blocked with `ERR_BLOCKED_BY_ADMINIST
 ### Windows fixture follow-up — requires remote confirmation
 
 The first published 134-file GitHub checkout passed source and Git-object byte verification on Windows but **failed four temporary-database cleanup tests** with `WinError 32`. The fixture had used `sqlite3.Connection` as a context manager, which commits but does not close the OS handle. The revised `managed_test_connection()` explicitly closes connections, with a new regression for immediate file deletion. The original failure remains recorded; this follow-up requires a fresh Windows test before a cross-platform claim.
+
+
+## 11 October 2026 — new portable signed-event reference
+
+A separate original Python reference was implemented in
+`examples/event_outbox/`, isolated from the user's private product
+workspaces. On the connected Windows machine, **33 distinct tests passed**
+against its actual SQLite database, HTTP loopback server and threaded writer
+races with Python 3.13.6. These 33 definitions do not count earlier recorded
+tests and do not establish Linux coverage until executed there.
+
+The new reference includes timestamp-bound HMAC signatures over exact
+request bytes, byte-level idempotency and conflict handling, monotonic
+worker lease generations, expiration, retry/dead-letter handling and durable
+post-restart receipt readback. The source and demonstration signing key are
+synthetic. It does not contact upstream providers.
+
+This is local educational evidence only: no hosted listener, external
+message broker, provider identities, key rotation, secret vault, full
+network-facing threat model, external-effect exactly-once guarantee or
+production security certification has been established. The prior workbench,
+Rust, real EVM, cloud, browser and independent review qualifications remain
+separate and unchanged.

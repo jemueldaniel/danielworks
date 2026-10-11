@@ -78,7 +78,7 @@ class PublicStarterTests(unittest.TestCase):
         self.assertFalse(self.target.exists())
 
     def test_cannot_select_unknown_or_unverified_capability(self):
-        for name in ['production-evm','../../secrets','root', 'cstr', '']:
+        for name in ['production-evm','../../secrets','root', 'private-profile', '']:
             with self.subTest(name=name):
                 with self.assertRaisesRegex(StarterError, 'unknown_profile'):
                     self.build([name])

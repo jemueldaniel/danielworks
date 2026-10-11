@@ -178,6 +178,19 @@
       "boundary": "Assembles only approved public educational samples; tests run locally with fixed commands, not in a hostile-code sandbox or deployed production system."
     },
     {
+      "id": "signed-event-delivery",
+      "discipline": "HMAC-authenticated event ingestion, idempotency, SQLite leases and recovery",
+      "qualification": "executed",
+      "implementation": [
+        "examples/event_outbox/event_outbox.py",
+        "examples/event_outbox/http_gateway.py"
+      ],
+      "tests": [
+        "examples/event_outbox/test_event_outbox.py"
+      ],
+      "boundary": "33 Windows acceptance tests run against real SQLite, threads, and loopback HTTP. Single-node at-least-once local reference only, not hosted webhooks, external effect deduplication, key rotation, TLS or production authorization."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

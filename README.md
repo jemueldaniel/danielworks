@@ -161,3 +161,25 @@ Use `--expected-manifest-sha256` with the exact manifest hash from a separately 
 **Historical checkpoint:** the recovered baseline's 145 behavioural cases were rerun on Windows; the 102 applicable Linux cases overlap that baseline and are not additional unique coverage. The new verifier has 28 distinct test definitions: 25 passed and three were skipped on Windows; 27 passed and one Windows-only case was skipped on Linux. The NTFS junction regression failed before the reparse-point fix and then passed. Neither repeated runs nor skips inflate the count. [Retained qualification receipt](verification/checkpoint-2.json).
 
 The baseline checkpoint **was** published and remotely verified in October 2026, but the original Windows failure and incomplete independent whole-package review remain visible. New commits must disclose any tests, independent review and deployment/trigger limitations instead of treating an accepted source checkpoint as final production qualification. The checkpoint is not completion of the requested delivery.
+
+
+## Additional executable reference: signed events and at-least-once delivery
+
+The [original event inbox](examples/event_outbox/README.md) adds an
+independently runnable HMAC → bounded loopback HTTP → SQLite idempotency →
+fenced worker lease → acknowledgment/recovery path. Its **33 Windows tests**
+exercise actual network requests, concurrent database access, restart
+readback, raw-byte tampering, HTTP rejection, race-safe duplicate handling and
+stale-worker fencing; they are not synthetic claims about external deployment.
+
+```sh
+python -B examples/event_outbox/demo.py
+python -B -m unittest discover -s examples/event_outbox -v
+```
+
+The fixed public `event-outbox` profile can also be selected with
+`tools/one_shot_public_project.py --profile event-outbox` after pinning the
+exact source-manifest hash externally. This is an **at-least-once local
+educational design**. It deliberately does not include private source,
+a webhook signing secret, external delivery effects, cloud credentials,
+public hosting or a guarantee of exactly-once processing.

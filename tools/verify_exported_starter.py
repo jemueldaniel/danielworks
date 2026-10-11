@@ -34,6 +34,7 @@ TESTS = {
     'retrieval': ('python', '-B', '-m', 'unittest', '-v', 'test_retrieval.py'),
     'evaluation': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/ranking_eval', '-v'),
     'proof-platform': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'projects/portable-proof-studio', '-v'),
+    'event-outbox': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/event_outbox', '-v'),
     'typed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/typed_api_sdk', '-v'),
     'rust-compiler': ('cargo', 'test', '--manifest-path', 'projects/bounded-lang/Cargo.toml', '--locked', '--offline'),
 }
