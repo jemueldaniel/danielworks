@@ -59,6 +59,14 @@ class ExportVerificationTests(unittest.TestCase):
         self.assertEqual(result['tests_run'], 1)
         self.assertEqual(result['groups'][0]['profile'], 'ledger')
 
+    def test_hybrid_search_bundle_runs_real_fts_tests(self):
+        pin = self.build(['hybrid-search'])
+        verified = validate(self.project, pin)
+        report = run_profiles(self.project, verified)
+        self.assertEqual(report['status'], 'PASS')
+        self.assertEqual(report['tests_run'], 1)
+        self.assertEqual(report['groups'][0]['profile'], 'hybrid-search')
+
     def test_file_bytes_mutation_fails(self):
         pin = self.build()
         path = self.project / 'examples/mcp_agent/runtime.mjs'

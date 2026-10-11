@@ -6,6 +6,22 @@
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
+## New: real local FTS5 hybrid lexical retrieval and measured quality
+
+An [original hybrid retrieval reference](examples/hybrid_search/README.md)
+uses SQLite FTS5 with BM25 plus a deterministic, lexical hashed-vector
+cosine signal and reciprocal-rank fusion. Real concurrency, tenant-labelled
+separation, versioned FTS updates, bounded query syntax, corruption checks
+and recall/MRR/nDCG are covered by 35 new Windows tests. The first
+candidate exposed three Windows SQLite test-fixture cleanup errors; after
+explicitly closing those connections, all 35 passed. This is not semantic
+embeddings, production RAG, a neural search model or real identity.
+
+Use the source-pinned hybrid-search profile independently, or compose
+an extended five-profile ai-search recipe. The full-reference includes
+ten executed public profiles rather than nine. No private knowledge corpus
+or company implementation was transferred.
+
 ## New: local ledger, concurrency and work recipes
 
 An [original transaction ledger](examples/atomic_ledger/README.md) demonstrates

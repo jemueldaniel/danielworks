@@ -16,11 +16,11 @@ from one_shot_public_project import assemble
 
 
 RECIPES: Final[dict[str, tuple[str, ...]]] = {
-    "ai-search": ("agent", "retrieval", "evaluation", "training"),
+    "ai-search": ("agent", "hybrid-search", "retrieval", "evaluation", "training"),
     "service-foundation": ("jobs", "ledger", "policy"),
     "event-platform": ("jobs", "event-outbox", "policy", "proof-platform"),
     "full-reference": (
-        "agent", "evaluation", "event-outbox", "jobs", "ledger", "policy",
+        "agent", "evaluation", "event-outbox", "hybrid-search", "jobs", "ledger", "policy",
         "proof-platform", "retrieval", "training",
     ),
 }

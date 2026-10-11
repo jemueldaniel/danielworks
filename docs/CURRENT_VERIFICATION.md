@@ -1,3 +1,21 @@
+## Hybrid lexical retrieval release candidate — 11 October 2026
+
+The independently authored, synthetic SQLite FTS5/BM25 + hashed-token
+cosine retrieval module passed 35/35 dedicated Windows tests after
+three initial test-fixture cleanup failures were corrected by explicit
+sqlite3 connection closing. This module includes actual FTS indexing,
+tenant-scoped transactional writes, revision fencing, bounded query
+parsing, index consistency checks and recall@k/MRR@k/nDCG@k.
+A failed synthetic search is measured as zero, not silently counted as
+retrieval success. Hash buckets are lexical, not semantic embeddings.
+No production LLM, vector DB, private dataset, cloud deployment,
+identity or GPU training is demonstrated by this module.
+
+The tenth profile and expanded ai-search recipe require complete
+source pinning, fresh exported-assembly acceptance, and remote GitHub
+verification before this release qualifies as published. Historical
+Windows socket instability remains a disclosed limitation.
+
 ## New original SQLite ledger and public work recipes — 11 October 2026
 
 The new fictional-unit double-entry SQLite journal passed 31 tests on the

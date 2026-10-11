@@ -135,3 +135,14 @@ environment, and verifies every output byte again after testing.
 These are sample building blocks, not a production system or a license to
 transfer proprietary employer/customer code. Adapt ideas independently and
 qualify identities, keys, cloud configurations and real service behavior.
+
+## Independent indexed retrieval building block
+
+The hybrid-search public profile can be included in the one-shot
+source-pinned exporter and ai-search recipe. Its SQLite FTS5 BM25
+and deterministic hashed token vector are local lexical ranking tools;
+do not describe them as pretrained semantic embeddings. The test
+suite includes a deliberately negative retrieval case, tenant boundaries
+and corrupted-index detection. At a new employer, substitute separately
+authorized datasets and services, add trustworthy identity, and run fresh
+relevance benchmarks before making production claims.

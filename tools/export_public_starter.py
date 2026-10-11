@@ -96,6 +96,12 @@ STARTERS: dict[str, Starter] = {
         "examples/atomic_ledger/demo.py",
         "examples/atomic_ledger/test_ledger.py",
     ), "python -B -m unittest discover -s examples/atomic_ledger -v", "executed"),
+    "hybrid-search": Starter("hybrid-retrieval-evaluation", (
+        "examples/hybrid_search/README.md",
+        "examples/hybrid_search/hybrid.py",
+        "examples/hybrid_search/demo.py",
+        "examples/hybrid_search/test_hybrid.py",
+    ), "python -B -m unittest discover -s examples/hybrid_search -v", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

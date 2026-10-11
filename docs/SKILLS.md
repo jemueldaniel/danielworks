@@ -45,3 +45,12 @@ idempotency, concurrent writers, and balance/journal reconciliation.
 and its [tests](../tools/test_compose_public_solution.py) select only
 allowlisted public profile groups without employer source or automatic
 deployment. Production financial/authentication systems remain unverified.
+
+## Indexed search and measured retrieval relevance
+
+The original [SQLite FTS5 hybrid reference](../examples/hybrid_search/hybrid.py)
+and [35 dedicated tests](../examples/hybrid_search/test_hybrid.py)
+exercise actual BM25 ranking, deterministic token-hash cosine scoring,
+reciprocal-rank fusion, tenant-bound indexing, revision fencing and
+measurable recall/MRR/nDCG. This is lexical retrieval, not a neural
+embedding model or evaluated LLM RAG product.

@@ -217,6 +217,19 @@
       "boundary": "31 Windows tests using fictional units, atomic local writes and tenant labels; not real money, authenticated users, PostgreSQL RLS, custody or settlement."
     },
     {
+      "id": "hybrid-retrieval-evaluation",
+      "discipline": "SQLite FTS5 hybrid lexical retrieval and ranking quality metrics",
+      "qualification": "executed",
+      "implementation": [
+        "examples/hybrid_search/hybrid.py",
+        "examples/hybrid_search/demo.py"
+      ],
+      "tests": [
+        "examples/hybrid_search/test_hybrid.py"
+      ],
+      "boundary": "35 Windows synthetic tests on FTS5/BM25, lexical hashes, tenant labels, revision fencing and recall/MRR/nDCG. No semantic embeddings, private corpus, model quality certification or deployed search."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

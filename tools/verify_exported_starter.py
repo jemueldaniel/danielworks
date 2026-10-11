@@ -37,6 +37,7 @@ TESTS = {
     'event-outbox': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/event_outbox', '-v'),
     'policy': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/tenant_policy', '-v'),
     'ledger': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/atomic_ledger', '-v'),
+    'hybrid-search': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/hybrid_search', '-v'),
     'typed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/typed_api_sdk', '-v'),
     'rust-compiler': ('cargo', 'test', '--manifest-path', 'projects/bounded-lang/Cargo.toml', '--locked', '--offline'),
 }

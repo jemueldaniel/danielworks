@@ -89,6 +89,14 @@ class PublicStarterTests(unittest.TestCase):
                   if p.is_file()}
         self.assertEqual(actual, wanted | {'README.md', 'REUSE_MANIFEST.json'})
 
+    def test_hybrid_search_profile_exports_only_original_public_source(self):
+        result = self.build(['hybrid-search'])
+        self.assertEqual(result['selected_files'], 4)
+        expected = set(STARTERS['hybrid-search'].paths)
+        found = {p.relative_to(self.target).as_posix()
+                 for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(found, expected | {'README.md','REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

@@ -58,6 +58,14 @@ class RecipeTests(unittest.TestCase):
         self.assertEqual(result["tested_groups"], 0)
         self.assertTrue(result["posttest_bytes_verified"])
 
+    def test_ai_search_recipe_tests_actual_hybrid_fts5(self):
+        result = compose(ROOT, PIN, "ai-search", self.dest, receipt=self.receipt)
+        self.assertEqual(result['status'], 'PASS_TESTED', result)
+        self.assertEqual(result['tested_groups'], 5)
+        self.assertTrue((self.dest / 'examples/hybrid_search/hybrid.py').is_file())
+        self.assertTrue(result['posttest_bytes_verified'])
+        self.assertEqual(json.loads(self.receipt.read_text())['tested_groups'], 5)
+
     def test_real_service_recipe_exports_and_executes_all_three_groups(self):
         result = compose(ROOT, PIN, "service-foundation", self.dest, receipt=self.receipt)
         self.assertEqual(result["status"], "PASS_TESTED", result)
