@@ -26,7 +26,7 @@ class RecipeTests(unittest.TestCase):
         self.receipt = self.root / "receipt.json"
 
     def test_recipes_contain_only_prequalified_public_profiles(self):
-        self.assertEqual(set(RECIPES), {"ai-search","service-foundation","event-platform","workflow-engine","api-security","frontend-studio","ui-experiences","full-reference"})
+        self.assertEqual(set(RECIPES), {"ai-search","service-foundation","event-platform","workflow-engine","api-security","frontend-studio","ui-experiences","interaction-systems","full-reference"})
         for name in RECIPES:
             selected = select_recipe(name)
             self.assertEqual(len(selected), len(set(selected)))
@@ -75,6 +75,16 @@ class RecipeTests(unittest.TestCase):
         self.assertTrue((self.dest / 'examples/ui_atlas/index.html').is_file())
         self.assertTrue(result['posttest_bytes_verified'])
         self.assertEqual(json.loads(self.receipt.read_text())['tested_groups'], 2)
+
+    def test_interaction_systems_exports_and_runs_three_local_frontend_models(self):
+        result = compose(ROOT, PIN, "interaction-systems", self.dest, receipt=self.receipt)
+        self.assertEqual(result['status'], 'PASS_TESTED', result)
+        self.assertEqual(result['tested_groups'], 3)
+        self.assertEqual(result['profiles'], ['flow-lab', 'interface-lab', 'ui-atlas'])
+        self.assertTrue((self.dest / 'examples/flow_lab/index.html').is_file())
+        self.assertTrue((self.dest / 'examples/flow_lab/model.mjs').is_file())
+        self.assertTrue(result['posttest_bytes_verified'])
+        self.assertEqual(json.loads(self.receipt.read_text())['tested_groups'], 3)
 
     def test_frontend_studio_runs_ui_and_related_public_reference_tests(self):
         result = compose(ROOT, PIN, "frontend-studio", self.dest, receipt=self.receipt)

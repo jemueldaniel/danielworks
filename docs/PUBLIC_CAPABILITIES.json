@@ -303,6 +303,22 @@
       "boundary": "Original synthetic offline web examples with 65 pure Node model tests and 20 real installed Edge browser tests. Viewport checks at 320, 390, 768, 1024 and 1440 px. Checkout/chat are local simulations, not production apps or private products."
     },
     {
+      "id": "interactive-flow-graph-ui",
+      "discipline": "Accessible graph editing, deterministic interactive state, inspectable directed node workflows and local data portability",
+      "qualification": "executed",
+      "implementation": [
+        "examples/flow_lab/index.html",
+        "examples/flow_lab/styles.css",
+        "examples/flow_lab/app.mjs",
+        "examples/flow_lab/model.mjs"
+      ],
+      "tests": [
+        "examples/flow_lab/test_model.mjs",
+        "projects/flow-lab-tests/browser.test.mjs"
+      ],
+      "boundary": "Original synthetic graph UI with 66 local Node model passes and 14 injected-page Chromium smoke checks. Full HTTP browser test suite unrun due administrator block. Not a production workflow engine, copied private interface or independent accessibility certification."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

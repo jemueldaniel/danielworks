@@ -23,8 +23,9 @@ RECIPES: Final[dict[str, tuple[str, ...]]] = {
     "api-security": ("signed-api", "policy", "jobs"),
     "frontend-studio": ("interface-lab", "jobs", "policy"),
     "ui-experiences": ("ui-atlas", "interface-lab"),
+    "interaction-systems": ("flow-lab", "interface-lab", "ui-atlas"),
     "full-reference": (
-        "agent", "build-graph", "evaluation", "event-outbox", "hybrid-search", "interface-lab", "ui-atlas", "jobs", "ledger", "migration", "policy", "signed-api",
+        "agent", "build-graph", "evaluation", "event-outbox", "flow-lab", "hybrid-search", "interface-lab", "ui-atlas", "jobs", "ledger", "migration", "policy", "signed-api",
         "proof-platform", "retrieval", "training",
     ),
 }

@@ -1,5 +1,25 @@
 # DanielWorks — engineering through runnable evidence
 
+## New: interactive graph and workflow interface reference
+
+[Flow Laboratory](examples/flow_lab/README.md) is an original, standalone
+graph-editing UI with real pointer and keyboard node placement, edge editing,
+cycle prevention, validated inspector forms, undo/redo, safe JSON import/export,
+keyboard command palette, light/dark themes and a responsive canvas. It
+is a distinct interface architecture beyond a dashboard or Kanban board.
+The model passed **66/66 Node tests** and a separate Chromium
+DOM-injected smoke exercise passed **14/14 checks**. Its full local-HTTP
+Playwright suite is checked in but was **not executed** because the
+runtime blocked local browser navigation. No production backend,
+private UI transfer, screen-reader certification or deployed service
+is claimed.
+
+The public, source-pinned one-command kit includes `flow-lab` as
+an additional executed model profile and the `interaction-systems`
+recipe combining graph editing with the existing two original UIs.
+Exact source integrity, browser qualification and remote publication
+must be verified separately. See the [verification record](docs/CURRENT_VERIFICATION.md).
+
 ## New: five real interactive frontend experiences, not just dashboards
 
 The original [UI Atlas](examples/ui_atlas/README.md) demonstrates functional

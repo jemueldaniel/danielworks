@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="An original, offline interactive graph editor for reusable frontend engineering evidence.">
+  <title>Flow Laboratory — Interactive systems canvas</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body data-theme="light">
+  <a class="skip" href="#main">Skip to canvas</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-glyph" aria-hidden="true"><i></i><i></i><i></i></div><div><span class="eyebrow">OPEN INTERFACE REFERENCE / 01</span><strong>flow<span class="brand-dot">.</span> laboratory</strong></div></div>
+      <div class="topbar-right"><span class="status-dot"><span aria-hidden="true">●</span> Local workspace</span><button id="themeToggle" class="icon-btn" aria-label="Switch to dark theme" title="Toggle theme">◐</button><button id="helpBtn" class="icon-btn" aria-label="Keyboard shortcuts" title="Keyboard shortcuts">?</button></div>
+    </header>
+    <div class="workspace">
+      <aside class="rail" aria-label="Workspace navigation">
+        <div class="rail-section-label">WORKSPACE</div>
+        <button class="rail-link active" aria-current="page"><span aria-hidden="true">▦</span><span>Flow editor</span><small>01</small></button>
+        <a class="rail-link" href="#inspector"><span aria-hidden="true">◫</span><span>Properties</span><small>02</small></a>
+        <a class="rail-link" href="#about"><span aria-hidden="true">⌘</span><span>About this build</span><small>03</small></a>
+        <div class="rail-divider"></div>
+        <div class="rail-section-label">QUICK ACTIONS</div>
+        <button id="railAdd" class="rail-link"><span aria-hidden="true">＋</span><span>New component</span></button>
+        <button id="railImport" class="rail-link"><span aria-hidden="true">⇧</span><span>Import JSON</span></button>
+        <button id="railExport" class="rail-link"><span aria-hidden="true">⇩</span><span>Export JSON</span></button>
+        <div class="rail-foot"><span class="live-dot"></span>Offline by design<div class="rail-sub">No accounts · No API calls</div></div>
+      </aside>
+      <main id="main" class="main">
+        <div class="main-head">
+          <div><div class="crumb">INTERACTION SYSTEMS <span> / </span> CANVAS 01</div><h1>Build the connections.</h1><p>Model a system, move its parts, inspect the logic. An editable graph — not a screenshot.</p></div>
+          <div class="main-actions"><button class="button quiet" id="commandBtn"><span aria-hidden="true">⌕</span> Commands <kbd>⌘ K</kbd></button><button id="addBtn" class="button primary"><span aria-hidden="true">＋</span> Add node</button></div>
+        </div>
+        <section class="metrics" aria-label="Graph metrics">
+          <div class="metric"><div class="metric-label">COMPONENTS <span aria-hidden="true">↗</span></div><div class="metric-value" id="metricNodes">—</div><div class="metric-note">In this workspace</div></div>
+          <div class="metric"><div class="metric-label">CONNECTIONS <span aria-hidden="true">⌁</span></div><div class="metric-value" id="metricEdges">—</div><div class="metric-note">Directed dependencies</div></div>
+          <div class="metric"><div class="metric-label">GRAPH DEPTH <span aria-hidden="true">⌇</span></div><div class="metric-value" id="metricStages">—</div><div class="metric-note">Topological stages</div></div>
+          <div class="metric metric-accent"><div class="metric-label">INTEGRITY <span aria-hidden="true">✓</span></div><div class="metric-value">Acyclic</div><div class="metric-note">Edits validated locally</div></div>
+        </section>
+        <section class="board-panel" aria-label="Editable canvas">
+          <div class="board-head"><div><span class="section-tag">01 / INTERACTIVE CANVAS</span><h2>Signal processing map <span class="small-pill">Synthetic</span></h2></div>
+            <div class="toolbar" role="toolbar" aria-label="Canvas tools">
+              <button id="undoBtn" class="tool" aria-label="Undo" title="Undo (Ctrl+Z)">↶</button><button id="redoBtn" class="tool" aria-label="Redo" title="Redo (Ctrl+Shift+Z)">↷</button>
+              <span class="toolbar-separator"></span><button id="zoomOut" class="tool" aria-label="Zoom out">−</button><output id="zoomLabel" class="zoom-label" aria-label="Zoom level">100%</output><button id="zoomIn" class="tool" aria-label="Zoom in">＋</button>
+              <span class="toolbar-separator"></span><button id="gridBtn" class="tool" aria-label="Toggle grid" aria-pressed="true" title="Toggle grid">▦</button>
+            </div>
+          </div>
+          <div class="canvas-viewport" id="canvasViewport" tabindex="0" aria-label="Scrollable interactive graph canvas">
+            <div class="canvas-stage grid-on" id="canvasStage"><div id="canvasTransform" class="canvas-transform"><svg id="edges" viewBox="0 0 1300 760" aria-hidden="true"></svg><div id="nodes" class="nodes"></div></div></div>
+          </div>
+          <div class="board-bottom"><div><span class="live-dot"></span> Changes stay on this device <span class="separator">·</span> Select a node to inspect and connect</div><div class="board-bottom-right">Arrow keys move focused nodes <span class="separator">·</span> <span id="liveCount">0 components</span></div></div>
+        </section>
+        <section class="lower-grid" id="about">
+          <article class="info-card"><div class="card-index">02 / BEHAVIORAL EVIDENCE</div><h3>Engineered interactions, not still images.</h3><p>Real pointer dragging, keyboard positioning, cycle-safe connections, undo/redo, versioned JSON import and export, and focus-managed dialogs — built with dependency-free browser APIs.</p><div class="feature-chips"><span>Responsive UI</span><span>Pure state model</span><span>Local persistence</span><span>Undo / redo</span><span>Safe text</span></div></article>
+          <article class="info-card contrasting"><div class="card-index">03 / REUSE BOUNDARY</div><h3>Clean enough to explain. Small enough to reuse.</h3><p>All records are deliberately fictional. No private company assets, payments, accounts, external scripts, analytics, servers or network requests. Import only explicitly validated diagrams.</p><button id="resetBtn" class="text-link">Restore sample diagram <span aria-hidden="true">↗</span></button></article>
+        </section>
+      </main>
+      <aside class="inspector" id="inspector" aria-label="Node inspector">
+        <div class="inspector-heading"><div class="section-tag">02 / INSPECTOR</div><h2>Properties</h2><p>Select any card on the canvas.</p></div>
+        <div id="inspectorContent"></div>
+        <div class="inspector-footer"><span class="section-tag">QUICK REFERENCE</span><div class="shortcut-row"><span>Command menu</span><kbd>Ctrl K</kbd></div><div class="shortcut-row"><span>Undo / redo</span><kbd>Ctrl Z</kbd></div><div class="shortcut-row"><span>Move component</span><kbd>↑ ↓ ← →</kbd></div><div class="shortcut-row"><span>Remove selected</span><kbd>Del</kbd></div></div>
+      </aside>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="addDialog" class="modal" aria-labelledby="addTitle"><form method="dialog" id="addForm"><div class="modal-top"><div><div class="section-tag">NEW COMPONENT</div><h2 id="addTitle">Create a node</h2></div><button type="button" class="icon-btn dialog-close" aria-label="Close dialog">×</button></div><label for="nodeTitle">Component name</label><input id="nodeTitle" name="title" required minlength="2" maxlength="48" autocomplete="off" placeholder="e.g. Review checkpoint"><label for="nodeType">Component role</label><select id="nodeType" name="type"><option value="source">Input / source</option><option value="process" selected>Processing step</option><option value="output">Output / result</option></select><label for="nodeDetail">Description (optional)</label><textarea id="nodeDetail" maxlength="110" rows="3" placeholder="What does this step do?"></textarea><div class="modal-actions"><button type="button" class="button quiet dialog-close">Cancel</button><button type="submit" class="button primary">Create component</button></div></form></dialog>
+  <dialog id="commandDialog" class="modal command-modal" aria-labelledby="commandTitle"><div class="modal-top"><div><div class="section-tag">KEYBOARD FIRST</div><h2 id="commandTitle">Commands</h2></div><button type="button" class="icon-btn dialog-close" aria-label="Close command menu">×</button></div><label for="commandQuery">Filter actions</label><input id="commandQuery" autocomplete="off" placeholder="Type an action name…"><div id="commandItems" class="command-items" role="list"></div><p class="command-hint">Enter to activate · Escape to close</p></dialog>
+  <dialog id="helpDialog" class="modal" aria-labelledby="helpTitle"><div class="modal-top"><div><div class="section-tag">DOCUMENTED INTERACTION</div><h2 id="helpTitle">Keyboard shortcuts</h2></div><button type="button" class="icon-btn dialog-close" aria-label="Close keyboard shortcuts">×</button></div><p>Use Tab to focus cards. Arrow keys nudge a focused card by 20 units. The inspector provides the same actions without dragging.</p><div class="shortcut-row"><span>Open commands</span><kbd>Ctrl/⌘ + K</kbd></div><div class="shortcut-row"><span>Undo</span><kbd>Ctrl/⌘ + Z</kbd></div><div class="shortcut-row"><span>Redo</span><kbd>Ctrl/⌘ + Shift + Z</kbd></div><div class="shortcut-row"><span>Delete selected card</span><kbd>Delete</kbd></div><div class="shortcut-row"><span>Close modal</span><kbd>Escape</kbd></div></dialog>
+  <input id="importFile" type="file" accept="application/json,.json" hidden aria-label="Import graph JSON file">
+</body>
+</html>

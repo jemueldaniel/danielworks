@@ -107,6 +107,14 @@ class ExportVerificationTests(unittest.TestCase):
         self.assertEqual(outcome['tests_run'], 1)
         self.assertEqual(outcome['groups'][0]['profile'], 'ui-atlas')
 
+    def test_flow_lab_exported_source_runs_real_allowlisted_node_tests(self):
+        pin = self.build(['flow-lab'])
+        checked = validate(self.project, pin)
+        result = run_profiles(self.project, checked)
+        self.assertEqual(result['status'], 'PASS')
+        self.assertEqual(result['tests_run'], 1)
+        self.assertEqual(result['groups'][0]['profile'], 'flow-lab')
+
     def test_file_bytes_mutation_fails(self):
         pin = self.build()
         path = self.project / 'examples/mcp_agent/runtime.mjs'

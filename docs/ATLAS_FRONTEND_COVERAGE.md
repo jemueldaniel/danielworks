@@ -14,6 +14,7 @@ a screenshot or a broad, unsupported "production-ready" claim.
 | Reusable component foundations | examples/ui_atlas/styles.css and app.mjs | Focus, themes, sample form, token download | Browser tests on design token export, accessible names and keyboard |
 | Accessible responsive application | examples/interface_lab | Data table, modal focus, mobile nav, CSV, density | Existing 40 Node and 14 installed Edge browser tests |
 | Full-stack React and MCP | projects/evidence-workbench | Real local API and MCP flows in a React UI | Strict TypeScript, real HTTP/MCP tests and browser recovery tests |
+| Editable graph and flow UI | examples/flow_lab | Node graph creation, pointer/keyboard movement, directed links, undo/redo, inspector, import/export | 66 local Node state-model passes and 14 injected-page Chromium smoke checks; full localhost browser suite remains **unrun** |
 
 ## Repeatably demonstrate skills at an interview
 

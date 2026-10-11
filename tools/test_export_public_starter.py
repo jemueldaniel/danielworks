@@ -137,6 +137,16 @@ class PublicStarterTests(unittest.TestCase):
                     for p in self.target.rglob('*') if p.is_file()}
         self.assertEqual(observed, desired | {'README.md','REUSE_MANIFEST.json'})
 
+    def test_flow_lab_exports_exact_six_original_public_files(self):
+        result = self.build(['flow-lab'])
+        self.assertEqual(result['selected_files'], 6)
+        expected = set(STARTERS['flow-lab'].paths)
+        self.assertEqual(
+            {p.relative_to(self.target).as_posix() for p in self.target.rglob('*') if p.is_file()},
+            expected | {'README.md', 'REUSE_MANIFEST.json'},
+        )
+        self.assertEqual(result['tests_executed'], 0)
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

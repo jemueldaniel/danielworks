@@ -1,3 +1,23 @@
+## Flow Laboratory public candidate — 12 October 2026
+
+The original directed-graph frontend was authored separately from private
+projects and uses synthetic graph fixtures and local-only state. Its pure
+Node ESM model suite passed **66/66** deterministic checks on the local
+Node runtime. Fourteen injected-page Chromium interaction smoke checks
+also passed across viewport and model/DOM behaviors. The browser network
+navigation route was blocked with ERR_BLOCKED_BY_ADMINISTRATOR, so the
+new Playwright real-HTTP browser test suite was written but **not run**.
+The Windows machine was disconnected, and no fresh Windows, repository-wide,
+source-pinned all-profile run, product deployment, independent screen-reader
+audit, real graph-backend execution, private-code authorship review or whole-
+package independent security review was completed in this execution.
+
+The new source is bundled into a public-only, fixed-allowlist flow-lab
+profile and interaction-systems recipe. Integration regressions have
+been added to the source, but their passing status must not be inferred
+from standalone model tests. Source hashes and publication readback
+are separate checks; failures remain explicit.
+
 ## Original multi-domain frontend candidate — 11 October 2026
 
 UI Atlas is independently authored public HTML, CSS and JavaScript,

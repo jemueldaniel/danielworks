@@ -124,3 +124,17 @@ The ui-experiences public recipe bundles UI Atlas plus Interface Laboratory.
 No product brands, private account data, tracking or proprietary source are
 involved. Headless browser tests do not constitute a complete WCAG or
 production deployment qualification.
+
+## Editable graph-based interfaces and keyboard interaction
+
+[Original Flow Laboratory](../examples/flow_lab/README.md) implements an independently designed
+interactive directed-graph editor with drag and keyboard movement, guarded
+edge creation, cycle detection, undo/redo, state inspection and safe JSON
+import/export. [Its 66-case model suite](../examples/flow_lab/test_model.mjs)
+passed in the isolated local runtime. Fourteen Chromium DOM-injected smoke
+checks covered rendering and interaction; they are **not** HTTP-hosted end-to-end
+browser verification. The [complete browser acceptance suite](../projects/flow-lab-tests/browser.test.mjs)
+is available but was not run because navigation was blocked by the administrator.
+The source-pinned flow-lab profile and interaction-systems recipe use only
+approved original public files. No confidential product implementation,
+remote graph execution or workflow service is implied.
