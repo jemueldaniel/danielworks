@@ -269,14 +269,22 @@ class HTTPTests(unittest.TestCase):
         self.assertEqual(self.box.summary(), {})
 
     def test_http_length_bound_is_enforced_before_read(self):
-        raw, headers = self.signed()
+        # The declared size is intentionally oversized; do not transmit an
+        # inconsistent body. On Windows, closing a socket with unread bytes
+        # can reset the connection before the 413 is observable.
+        _, headers = self.signed()
         headers["Content-Length"] = str(MAX_BODY + 1)
-        self.assertEqual(self.request("POST", "/events", raw, headers)[0], 413)
+        self.assertEqual(self.request("POST", "/events", b"", headers)[0], 413)
+        self.assertEqual(self.box.summary(), {})
 
     def test_http_rejects_chunked_requests(self):
-        raw, headers = self.signed()
+        # Check the unsupported framing header before any body is sent.
+        # Deliberately malformed raw bytes after Transfer-Encoding may
+        # legitimately cause a TCP reset instead of a delivered 400.
+        _, headers = self.signed()
         headers["Transfer-Encoding"] = "chunked"
-        self.assertEqual(self.request("POST", "/events", raw, headers)[0], 400)
+        self.assertEqual(self.request("POST", "/events", b"", headers)[0], 400)
+        self.assertEqual(self.box.summary(), {})
 
     def test_http_health_is_not_event_enumeration(self):
         status, data, _ = self.request("GET", "/health")

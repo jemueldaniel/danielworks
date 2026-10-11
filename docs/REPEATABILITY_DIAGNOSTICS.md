@@ -21,3 +21,20 @@ The helper's own deterministic tests can be run with:
 Its unit tests simulate both success and intentionally forged or failing group results, post-test modification, existing receipts and sensitive exception messages. Mocked tests do not verify live Windows socket stability or certify whole-package security.
 
 A PASS_REPEATED receipt is evidence only that the specified public local tests passed in the requested environment and rounds. FAIL_RECORDED stays failed, regardless of later passing runs. Publication, authorship, legal rights, real cloud infrastructure, distributed execution and production behavior require independent qualification.
+
+## Windows early-response transport fixture correction
+
+An independent 12-round run of the previously published public
+event-outbox module yielded 8 successful rounds and 4 failures. The
+failures were isolated to two HTTP test fixtures that intentionally
+declared invalid framing while sending a payload the server did not read.
+Windows could abort the response with WinError 10053. These malformed
+requests remain rejected; however, requiring an HTTP status while also
+sending contradictory unread bytes is not a deterministic transport test.
+
+The revised tests send header-only requests for the oversized Content-Length
+and forbidden Transfer-Encoding cases, expect 413 and 400, and confirm no
+event was stored. A 12-round rerun passed all 12 rounds (35 tests each).
+The repeated-run evidence is retained; a corrected test must not erase
+the historical pre-correction failures. The server still rejects those
+framing modes early and never interprets the rejected body.

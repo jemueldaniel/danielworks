@@ -3,18 +3,18 @@
   "title": "DanielWorks independently reproducible public engineering showcase",
   "date": "2026-10-11",
   "authoritative_repository": "jemueldaniel/danielworks",
-  "base_commit": "19d1b44eb47506fcf263003cd1fad473e4402963",
+  "base_commit": "868b91470c01cb9c5311104d1b65ea3a2828bf0c",
   "branch": "main",
-  "status": "PUBLIC_SOURCE_CANDIDATE_PENDING_REMOTE_ACCEPTANCE",
+  "status": "PUBLIC_TEST_FIX_LOCAL_VERIFIED_PENDING_REMOTE",
   "scope": "Original public source and synthesized fixtures; no private repository code or confidential assets",
-  "new_capability": "Original responsive interface laboratory, 40 Node and 14 installed-Edge browser tests, 14th executable public profile and frontend-studio recipe",
+  "new_capability": "Reproduced and stabilized Windows early HTTP rejection test inputs without relaxing fail-closed event handling",
   "native_chromium_navigation": "BLOCKED_BY_ADMINISTRATOR",
   "production_deployment": "NOT_ATTEMPTED",
   "independent_whole_package_review": "NOT_COMPLETED",
   "inventory_file_count": 179,
   "complete_checkpoint_file_count_including_this_manifest": 180,
-  "payload_bytes_excluding_this_manifest": 1258589,
-  "payload_path_sha256_binding": "9d561030f9a77f1b41a11814dc5772709476111563cf8387645182ae3c7adfb7",
+  "payload_bytes_excluding_this_manifest": 1261176,
+  "payload_path_sha256_binding": "33bce911f334844030999bdcd17e0582a07a32e8e720301f3f56fd350a6b7ceb",
   "files": [
     {
       "path": ".gitattributes",
@@ -61,8 +61,8 @@
     {
       "path": "docs/CURRENT_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 44673,
-      "sha256": "a0e79a636868af10e2e063b530abd02280309331c16bdaf5dbd4ef16573699bd"
+      "bytes": 45766,
+      "sha256": "a9f2f96853c5b0aa278ca47811e00e2e30797d405879570d51eea9e48bb95553"
     },
     {
       "path": "docs/DEPENDENCIES.md",
@@ -97,8 +97,8 @@
     {
       "path": "docs/REPEATABILITY_DIAGNOSTICS.md",
       "mode": "100644",
-      "bytes": 2459,
-      "sha256": "a71431d442f83b70348ab20cebcfcbbb86031c10b8e12e778f46a149721e788b"
+      "bytes": 3431,
+      "sha256": "6b526759a28a9af9fe0fb6f44249e52e3918768db7e1c3b25ce1c1a82185b882"
     },
     {
       "path": "docs/REVIEW_STATUS.md",
@@ -247,8 +247,8 @@
     {
       "path": "examples/event_outbox/test_event_outbox.py",
       "mode": "100644",
-      "bytes": 13756,
-      "sha256": "89cdd364f69d40533ef6ff410657a95af5850f374a60f732318c41d8a2651e0a"
+      "bytes": 14278,
+      "sha256": "a8ca964397ed76a81dfb55850f43d2f6c1dee98620c223d9ac201930a2513a4e"
     },
     {
       "path": "examples/hybrid_search/README.md",

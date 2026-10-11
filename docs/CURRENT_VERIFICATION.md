@@ -384,3 +384,23 @@ and those fixtures; production UX, complete accessibility audit, client
 design authorship and hosted availability are not independently certified.
 The source-pinned bundle and full integrated regression suite require
 their own release acceptance; do not conflate them with standalone results.
+
+## Header-only early HTTP rejection test qualification — 11 October 2026
+
+On the published 180-file release the Windows signed-event outbox test
+suite was repeated 12 times: 4 rounds failed with WinError 10053. The
+two cases had declared unsupported or oversized body framing but also sent
+unread payload bytes while expecting an observable 400/413 response.
+That ambiguity can cause a TCP reset on Windows when the server closes.
+
+These fixtures now send only HTTP headers for early-rejection tests. Both
+still assert HTTP 400/413 respectively AND an empty event inbox. The
+handler still refuses unsupported/chunked and oversized requests before
+body processing; no private input or secret is involved. Following this
+focused change, the original 35-test suite passed 12 consecutive Windows
+rounds, totaling 420 assertions at the test-case level. This establishes
+repeatability for these test inputs, not all possible malformed transport
+interactions or production security.
+
+The full integrated Windows suite and fresh GitHub checkout remain
+separate publication gates for this revision.
