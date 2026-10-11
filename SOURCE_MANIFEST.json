@@ -3,7 +3,7 @@
   "title": "DanielWorks independently reproducible public engineering showcase",
   "date": "2026-10-12",
   "authoritative_repository": "jemueldaniel/danielworks",
-  "base_commit": "594cb8c1a5f5b7359f18e405d4c09288ce3f2227",
+  "base_commit": "1633888cd8cb53251f95912f5104b279f1aa4490",
   "branch": "main",
   "status": "PUBLIC_CANDIDATE_NOT_PRODUCTION_ATTESTED",
   "scope": "Original public source and synthesized fixtures; no private repository code or confidential assets",
@@ -13,8 +13,8 @@
   "independent_whole_package_review": "NOT_COMPLETED",
   "inventory_file_count": 194,
   "complete_checkpoint_file_count_including_this_manifest": 195,
-  "payload_bytes_excluding_this_manifest": 1458158,
-  "payload_path_sha256_binding": "0f315e14f0286aa4b01f0795faa05457b16f7db9e31d6566d02978e3b02d0761",
+  "payload_bytes_excluding_this_manifest": 1458113,
+  "payload_path_sha256_binding": "1db8913005a4034c77661d7952236ae641e81bdd122d443a29213a34f4137303",
   "files": [
     {
       "path": ".gitattributes",
@@ -85,8 +85,8 @@
     {
       "path": "docs/PUBLIC_CAPABILITIES.json",
       "mode": "100644",
-      "bytes": 14629,
-      "sha256": "11ffd24d79fb0a1a1aeb188991700c1674008b82fbe3c89b1182cc5cc774dbf3"
+      "bytes": 14584,
+      "sha256": "2198aa4211bdbfa99489ffc3c86c4becefbb25c4a7086ddb3e40a9a5fef2810e"
     },
     {
       "path": "docs/PUBLIC_RECIPES.md",

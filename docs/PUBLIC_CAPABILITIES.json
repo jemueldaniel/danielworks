@@ -316,7 +316,7 @@
         "examples/flow_lab/test_model.mjs",
         "projects/flow-lab-tests/browser.test.mjs"
       ],
-      "boundary": "Original synthetic graph UI with 66 local Node model passes and 14 injected-page Chromium smoke checks. Full HTTP browser test suite unrun due administrator block. Not a production workflow engine, copied private interface or independent accessibility certification."
+      "boundary": "Original synthetic graph UI with 66 Node model passes and 14 DOM-only Chromium checks. Full HTTP browser tests unrun due navigation block. Not a production workflow engine, private UI reuse or accessibility certification."
     },
     {
       "id": "evm-production",
