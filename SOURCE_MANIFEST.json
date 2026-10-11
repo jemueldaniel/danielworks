@@ -5,7 +5,7 @@
   "status": "PUBLIC_SOURCE_CHECKPOINT__GITHUB_DELIVERY_PROVEN_BY_EXTERNAL_RECEIPT_ONLY",
   "authoritative_repository": "https://github.com/jemueldaniel/danielworks",
   "intended_branch": "main",
-  "last_read_remote_commit": "f801abf83ebb9b16cbe2e1b4e40d110b419edb95",
+  "last_read_remote_commit": "1b1f63d8b00ef8439b9ba7b0f0e6d20e6209e62d",
   "new_remote_commits_in_this_cycle": [],
   "publication_gates": [
     "This source archive alone does not establish GitHub delivery; independently verify the exact new commit/ref, tree, remote bytes and clean restoration in an external receipt",
@@ -13,18 +13,19 @@
     "Private-codebase checks were read-only capability triage and not copied, republished, or represented as executed public tests",
     "Generated starter deliberately refuses unverified status claims and requires an externally pinned source manifest",
     "Reproducible staged export plus regression checks do not mean employer-ready proprietary integration or a legal reuse grant",
+    "Prior Windows test run had one locale-dependent assertion failure and two WinError 1314 symlink privilege errors; new source requires a cross-platform rerun with explicit skips",
     "Locked browser build, independent review and full native cloud/PostgreSQL/EVM/WebMCP/LLM-training qualification remain out of scope"
   ],
   "inventory_scope": "Every source candidate file except this manifest; this is not independent approval. Final manifest hash is in an external receipt.",
   "inventory_file_count": 120,
   "complete_checkpoint_file_count_including_this_manifest": 121,
-  "payload_bytes_excluding_this_manifest": 779258,
-  "payload_path_sha256_binding": "22179689b3cbc572223074e9b58b4118fa9cfd3912dbd10ac925478eed5db98c",
-  "parent_checkpoint_archive_sha256": "858fae7287668390fd19e33eec965054fcab355fa7165f7cd0d81d4412c46a85",
+  "payload_bytes_excluding_this_manifest": 781123,
+  "payload_path_sha256_binding": "29a7b5379eb3f1ef89de0c22fb5c7e4911e135a742b041e7f73bcf00be199cec",
+  "parent_checkpoint_archive_sha256": "c2a7cf660c46ab74b3c6e177301222a24368dc93d375961eac7cc2ad95d6d229",
   "original_100_paths_preserved": 100,
   "original_56_execution_inputs_unchanged": false,
   "execution_files_including_new_checker": 68,
-  "execution_path_hash_binding": "a266b2f7a1a52c803ef868c191085d417f8c9efd59b7216759d83669da6d5dc5",
+  "execution_path_hash_binding": "bc5ac94c8c6b70e0c2635b0ebc1511687503b0220a365f09baba7d2448ecba3c",
   "historical_and_first_fresh_baseline_distinct_tests": 145,
   "new_checker_distinct_test_definitions": 28,
   "latest_windows_integration_status": "STANDALONE_BACKEND_28_PASS__OFFLINE_GIT_VERIFIER_9_PASS__ORIGINAL_QUEUE_EVAL_SDK_60_PASS__HISTORICAL_HTTP_ABORT_RETAINED__FULL_LOCKED_WORKBENCH_UNRUN",
@@ -51,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 16210,
-      "sha256": "bc6c62510ce7d189b10838993925c37256f17a653adc01056be260dfbb6afe5d",
+      "bytes": 16225,
+      "sha256": "d7eea6e653b824e163f2372284aa36a5b65c1b92e6fece8ec9032cfb1ca5be6f",
       "mode": "100644"
     },
     {
@@ -69,8 +70,8 @@
     },
     {
       "path": "docs/CURRENT_VERIFICATION.md",
-      "bytes": 27530,
-      "sha256": "dce9d79bdc748d6cd12e9c298bb0d9ce9551ef1656194adcd7fae8809f49b06a",
+      "bytes": 28381,
+      "sha256": "de1b97c783bfd647cb21688153d2fee2e021479d794fd72515ef1919cdbf01e3",
       "mode": "100644"
     },
     {
@@ -177,8 +178,8 @@
     },
     {
       "path": "examples/public_starter/README.md",
-      "bytes": 2693,
-      "sha256": "e4b5c2394766575da57967ae8b1af3884e709ed9110577876168e98e4f3a8b8f",
+      "bytes": 3053,
+      "sha256": "00521748d1ab64c167c1c03f5ff5fd2f50ec765b015a96a12457a45200b593e7",
       "mode": "100644"
     },
     {
@@ -543,14 +544,14 @@
     },
     {
       "path": "tools/export_public_starter.py",
-      "bytes": 12878,
-      "sha256": "2da48cb5e26c097716ed88947ea12429d5f6942528f2e197594303cbe40615bb",
+      "bytes": 12898,
+      "sha256": "ee5bb6f760b6b194e4ce4b9c806a713a83eb0cd09f066e5e87b690fc2f2891fe",
       "mode": "100644"
     },
     {
       "path": "tools/test_export_public_starter.py",
-      "bytes": 9376,
-      "sha256": "876f420b52966a62fd5e15acdb930e32f11248d5c11e36719597cae61d6a214d",
+      "bytes": 9995,
+      "sha256": "e941945eff60468aac4873d8e5df5f08eae0502b8f29398e8cf29bd81defcfb0",
       "mode": "100644"
     },
     {
@@ -804,9 +805,9 @@
     "is_complete_locked_workbench_suite": false,
     "independent_review": false
   },
-  "previous_public_checkpoint_commit": "f801abf83ebb9b16cbe2e1b4e40d110b419edb95",
+  "previous_public_checkpoint_commit": "1b1f63d8b00ef8439b9ba7b0f0e6d20e6209e62d",
   "previous_public_checkpoint_tree": "e443a749e3810b9145bc65fdefb3b1a436554e3c",
-  "clean_github_restore_commit": "da94ab6378c6465b17bdaaf5f8bccf82eef645e1",
+  "clean_github_restore_commit": "1b1f63d8b00ef8439b9ba7b0f0e6d20e6209e62d",
   "historical_october8_parent_archive_sha256": "d33aae2088ed540d19a62adb5a763d8c585c8f1976bb3de02bfd6e61551ddff3",
   "execution_inputs_added_this_continuation": [
     "tools/export_public_starter.py",
@@ -858,12 +859,7 @@
   ],
   "document_changes_this_stage_only": [
     "README.md",
-    "docs/COVERAGE_MATRIX.md",
     "docs/CURRENT_VERIFICATION.md",
-    "docs/PROVENANCE.md",
-    "docs/SKILLS.md",
-    "docs/PUBLIC_CAPABILITIES.json",
-    "docs/TRANSFERABLE_WORKFLOW.md",
     "examples/public_starter/README.md"
   ],
   "fresh_october11_node_runner": {

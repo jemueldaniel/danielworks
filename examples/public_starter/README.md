@@ -48,3 +48,9 @@ The starter is **not** production security clearance, licensed redistribution
 permission, current-browser certification, real EVM settlement, native WebMCP,
 full-scale training, enterprise PostgreSQL, or proof of sole human authorship.
 No attempt is made to run private repositories or reconstruct closed-source work.
+
+**Windows note:** Creating symbolic links for negative tests may require Developer Mode
+or elevated privilege. Such tests report a skip when that privilege is denied;
+they are never counted as a pass. The actual source verifier has separate NTFS
+reparse-point checks. The Node agent test uses the TAP reporter to avoid
+platform-dependent pretty-print output.

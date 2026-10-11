@@ -49,7 +49,7 @@ ranking evaluation; the typed-API and Rust references require an explicit
 historical-qualification opt-in. It does not read private repos, run cloud
 builds, fetch dependencies, or copy proprietary product assets. Its
 [regression tests](tools/test_export_public_starter.py) check non-overwrite,
-symlink/manifest rejection, reproducibility and actual tests executed against
+platform-aware symlink/manifest rejection, reproducibility and actual tests executed against
 exported agent and training code. This is a practical starting point for a
 new project, **not** a one-command production system or a guarantee of rights to
 reuse employer source. See [how to adapt it at a new job](docs/TRANSFERABLE_WORKFLOW.md)

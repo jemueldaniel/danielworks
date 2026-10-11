@@ -4,6 +4,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -59,7 +60,7 @@ class PublicStarterTests(unittest.TestCase):
     def test_generated_readme_has_reproducible_command_and_boundary(self):
         self.build()
         doc = (self.target/'README.md').read_text('utf-8')
-        self.assertIn('node --test examples/mcp_agent/test_runtime.mjs',doc)
+        self.assertIn('node --test --test-reporter=tap examples/mcp_agent/test_runtime.mjs',doc)
         self.assertIn('not a production-ready service', (self.target/'REUSE_MANIFEST.json').read_text('utf-8'))
         self.assertNotIn('deploy automatically',doc)
 
@@ -108,7 +109,12 @@ class PublicStarterTests(unittest.TestCase):
         self.assertEqual(self.target.read_text(),'client data')
 
     def test_destination_symlink_is_rejected(self):
-        self.target.symlink_to(self.folder, target_is_directory=True)
+        try:
+            self.target.symlink_to(self.folder, target_is_directory=True)
+        except OSError as e:
+            if os.name == 'nt' and getattr(e, 'winerror', None) == 1314:
+                self.skipTest('Windows symlink creation privilege is unavailable')
+            raise
         with self.assertRaisesRegex(StarterError,'destination_already_exists'):
             self.build()
 
@@ -139,7 +145,12 @@ class PublicStarterTests(unittest.TestCase):
         shutil.copytree(SOURCE, clone)
         f=clone/'examples/mcp_agent/runtime.mjs'
         f.unlink()
-        f.symlink_to(self.folder/'other-source')
+        try:
+            f.symlink_to(self.folder/'other-source')
+        except OSError as e:
+            if os.name == 'nt' and getattr(e, 'winerror', None) == 1314:
+                self.skipTest('Windows symlink creation privilege is unavailable')
+            raise
         with self.assertRaisesRegex(StarterError,'unverified_public_source'):
             export_public_starter(clone,PIN,['agent'],self.target)
         self.assertFalse(self.target.exists())
@@ -161,10 +172,12 @@ class PublicStarterTests(unittest.TestCase):
 
     def test_generated_agent_runtime_still_passes_actual_tests(self):
         self.build()
-        result=subprocess.run(['node','--test','examples/mcp_agent/test_runtime.mjs'],
+        result=subprocess.run(['node','--test','--test-reporter=tap','examples/mcp_agent/test_runtime.mjs'],
             cwd=self.target,capture_output=True,text=True,timeout=25)
         self.assertEqual(result.returncode,0,(result.stdout+result.stderr)[-1000:])
-        self.assertRegex(result.stdout, r'(?:ℹ|#) pass 27')
+        self.assertIn('# tests 27', result.stdout.splitlines())
+        self.assertIn('# pass 27', result.stdout.splitlines())
+        self.assertIn('# fail 0', result.stdout.splitlines())
 
     def test_generated_training_code_still_trains_against_synthetic_data(self):
         self.build(['training'])

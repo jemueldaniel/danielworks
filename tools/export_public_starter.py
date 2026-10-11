@@ -41,7 +41,7 @@ STARTERS: dict[str, Starter] = {
         "examples/mcp_agent/README.md",
         "examples/mcp_agent/runtime.mjs",
         "examples/mcp_agent/test_runtime.mjs",
-    ), "node --test examples/mcp_agent/test_runtime.mjs", "executed"),
+    ), "node --test --test-reporter=tap examples/mcp_agent/test_runtime.mjs", "executed"),
     "jobs": Starter("durable-jobs", (
         "examples/durable_jobs/README.md",
         "examples/durable_jobs/jobs.py",

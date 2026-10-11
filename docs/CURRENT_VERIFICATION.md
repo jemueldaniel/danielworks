@@ -184,3 +184,16 @@ The new Linux original-suite rerun produced a byte-identical summary to [the pre
 ### Transferable starter extension (11 October 2026, next candidate)
 
 A new dependency-free CLI exports allowlisted public examples to fresh directories, requiring a pinned source manifest and preserving qualification flags. Its own regression tests cover metadata drift, byte-for-byte output, non-overwrite and actual re-execution of selected public examples. Any new test pass count must be bound to its exact post-edit manifest and clean published checkout; earlier results for the 117-file checkpoint remain prior evidence rather than automatic certification. No private source was exported or used as input.
+
+### 11 October 2026 Windows portable-starter acceptance correction
+
+The clean public 121-file checkout passed source and raw Git object verification.
+Its first portable-starter test run recorded 18 passes, one reporter-assertion
+failure and two symlink-creation privilege errors (Windows WinError 1314). The
+agent subprocess itself exited zero and reported 27 passing tests; the test
+wrapper was matching a locale-dependent pretty-print prefix. The next candidate
+requests deterministic Node TAP output and requires `# tests 27`, `# pass 27`,
+`# fail 0`. The two link-creation tests explicitly **skip**, rather than pass,
+when Windows does not authorize link creation; they still execute on systems
+where links can be created. Current candidate tests must be freshly rerun.
+This does not qualify an untested NTFS symlink rejection path on that host.
