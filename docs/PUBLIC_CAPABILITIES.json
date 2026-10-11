@@ -148,6 +148,20 @@
       "boundary": "Source-pinned, public-only sample export plus independent manifest and local runtime checking; results do not establish employer ownership rights, production readiness or external deployment."
     },
     {
+      "id": "one-shot-public-project",
+      "discipline": "One-command public-only engineering project assembly and acceptance",
+      "qualification": "executed",
+      "implementation": [
+        "tools/one_shot_public_project.py",
+        "tools/export_public_starter.py",
+        "tools/verify_exported_starter.py"
+      ],
+      "tests": [
+        "tools/test_one_shot_public_project.py"
+      ],
+      "boundary": "Assembles only approved public educational samples; tests run locally with fixed commands, not in a hostile-code sandbox or deployed production system."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

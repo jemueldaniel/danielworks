@@ -1,12 +1,10 @@
+## Composable public reference assembly — bounded qualification
+
+The new `tools/one_shot_public_project.py` orchestrates existing public exporter and independently pinned output acceptance as one user-facing command. It does not forward unrelated ambient credentials or dynamic language/runtime injection variables to child tests. Its tests cover genuine five-profile execution, failed/raced paths, post-test content drift, exclusive out-of-band receipts and historical-claim boundaries. It is **not** private-code transfer, an employer project generator, untrusted-code sandbox or production deployment. Related current paths: `tools/test_one_shot_public_project.py`, `docs/TRANSFERABLE_WORKFLOW.md`, and `docs/PUBLIC_CAPABILITIES.json`. Applicable acceptance requires fresh tests, private-data screening, remote-byte readback and clean restoration from the resulting commit.
+
 ## Public-only post-export verification — new source qualification
 
 The existing source-pinned `export_public_starter.py` remains the sole exporter. The new independent `verify_exported_starter.py` verifies the complete generated kit against an out-of-band SHA-256 pin, rejects tampering and unexpected files, and can execute selected local public tests by fixed argv. It refuses zero-test success and missing runtimes; it never executes manifest-supplied shell commands. Negative tests and an actual exported-kit roundtrip are in `test_verify_exported_starter.py`. This documents **portable reference demonstrations**, not proprietary code reuse, secure untrusted-code execution, cloud operations, or large-scale production qualification.
-
-# Capability coverage and remaining work
-
-**Retained historical integration failure:** An earlier complete Windows run passed 145 behavioural tests, but a subsequent integrated rerun stopped after 73 passes and one HTTP-test error (`test_content_type_size_origin_and_host`, WinError 10053 while expecting 415). No remaining command group is marked passed for that later run. The new verifier's standalone platform results remain separate. [Fresh receipt](../verification/checkpoint-2.json).
-
-This is the **single coverage/backlog document** for DanielWorks. It separates actual source inspection, runnable public evidence, observed execution, and unqualified work. Missing qualification does **not** mean a capability does not exist. Private source identities, paths and ownership records are intentionally excluded; private access is not publication permission.
 
 # Capability coverage and remaining work
 

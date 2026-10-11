@@ -1,3 +1,7 @@
+## One-command public composition review boundary — 11 October 2026
+
+New source `tools/one_shot_public_project.py` and its regression tests have implementing-assistant review and bounded source screening only. No independent whole-package reviewer has signed these hashes. Real local tests do not establish rights to transfer private company source, secure handling of untrusted executables, or deployment readiness. Preserve this incomplete review gate in external receipts.
+
 # Review record and scope
 
 ## October 2026 public checkpoint and follow-up review status

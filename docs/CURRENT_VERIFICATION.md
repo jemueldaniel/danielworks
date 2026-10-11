@@ -1,8 +1,10 @@
+## Public-only one-command assembly candidate — 11 October 2026
+
+This revision adds `tools/one_shot_public_project.py` and `tools/test_one_shot_public_project.py` as a **complement** to the existing public starter exporter and independent output verifier. An externally pinned source manifest is mandatory; output bytes are checked before and after fixed local test execution. Child tests run with a restricted allowlist of portability variables rather than the entire ambient process environment. A separate receipt is never overwritten or stored inside the kit. Failure leaves the exported data inspectable and is not a success claim. Test results attach to the exact revision, and historically qualified profiles remain historical even if a local example passes today. Whole-package independent security/licensing review, locked browser/npm build, real cloud, PostgreSQL, EVM and distributed training qualifications are still outstanding.
+
 ## Independent exported-kit integrity and runtime acceptance — 11 October 2026
 
 Fresh public-only code adds `tools/verify_exported_starter.py` with `tools/test_verify_exported_starter.py` and improves the existing public exporter **without duplicating it**. It requires a separately stored output-manifest SHA-256, detects changed, unlisted, missing, linked or case-colliding material, and runs only hardcoded per-profile test commands. The manifest's manually documented commands are never executed. Synthetic educational examples and historical qualification limitations remain unchanged. Test counts and source pin for the new commit are recorded externally after execution. Whole-package independent review, browser/locked dependencies and live cloud/contract qualifications remain unverified.
-
-# Current verification — 11 October 2026
 
 # Current verification — 11 October 2026
 

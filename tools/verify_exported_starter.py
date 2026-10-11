@@ -165,8 +165,8 @@ def validate(destination: Path, manifest_pin: str) -> dict:
             'scope': 'exact local public-kit byte verification; not ownership, license or runtime proof'}
 
 
-def run_profiles(destination: Path, verified: dict, timeout: int = 60) -> dict:
-    """Run only known public tests using fixed argv; never execute manifest commands."""
+def run_profiles(destination: Path, verified: dict, timeout: int = 60, *, runtime_env: dict[str, str] | None = None) -> dict:
+    """Run fixed public tests; optionally receive an explicitly restricted environment."""
     if type(timeout) is not int or not 1 <= timeout <= 120:
         _fail('invalid_timeout')
     root = Path(destination).absolute()
@@ -183,7 +183,7 @@ def run_profiles(destination: Path, verified: dict, timeout: int = 60) -> dict:
         cwd = root / ('examples/retrieval_lab' if profile == 'retrieval' else '.')
         try:
             proc = subprocess.run(args, cwd=cwd, capture_output=True, text=True,
-                                  timeout=timeout, check=False, env={**os.environ, 'PYTHONDONTWRITEBYTECODE':'1'})
+                                  timeout=timeout, check=False, env={**(os.environ if runtime_env is None else runtime_env), 'PYTHONDONTWRITEBYTECODE':'1'})
         except subprocess.TimeoutExpired as e:
             raise ProofError('timeout') from e
         if proc.returncode != 0:

@@ -58,3 +58,20 @@ python -B tools/verify_exported_starter.py --destination /tmp/public-example --e
 ```
 
 This new tool checks source-file hashes, included README integrity, file inventory, path and size safety, and the mandatory externally supplied output digest *before* launching any test. Runtime commands are fixed to known, public example profiles, rather than read from editable manifest text. It reports a test failure if a selected runtime is missing, a command exits unsuccessfully, or zero tests actually ran. Tests for a historically qualified profile remain **historical evidence** even after the public example's own tests pass locally. No customer, employer, private repository or connected service is accessed by the verifier. This is not a full production application or a generic secure code-execution sandbox.
+
+## One-shot project assembly with independent acceptance
+
+Use `tools/one_shot_public_project.py` to compose only the existing permitted public examples. Pass the externally confirmed `SOURCE_MANIFEST.json` SHA-256 and choose profiles with `--profile` (repeatable) or `--all-executed` (currently five executed sample profiles). The pipeline invokes the original source-pinned exporter, validates the generated kit against its **externally returned output-manifest SHA-256**, runs only fixed per-profile tests, then validates the kit *again*. It refuses missing tests, test failure, changed files, duplicate selections, unsafe destinations and overwrites.
+
+```sh
+python -B tools/one_shot_public_project.py \
+  --root . \
+  --expected-source-sha256 YOUR_OUT_OF_BAND_SOURCE_MANIFEST_HASH \
+  --destination ../fresh-reference-system \
+  --all-executed \
+  --receipt ../fresh-reference-proof.json
+```
+
+Child test processes receive a minimal set of OS and runtime variables; unrelated ambient secrets and injection options are not forwarded. The pipeline does not isolate hostile code. The receipt is placed outside both the source tree and exported kit and is written **exclusively** (never overwritten). It contains source and output hashes, selected profiles, actual tested groups and retained historical qualification labels—not private paths or logs. `--no-tests` reports only `PASS_VERIFIED_ONLY`. If testing fails, the generated directory remains for inspection with a `FAIL` result and **no successful acceptance receipt**. A receipt cannot certify employer rights, code authorship, SaaS operation, security review, deployed transactions, production-scale training or trusted execution of unknown code. Every actual employer integration requires separate requirements, licensing approval, security controls and target-runtime acceptance.
+
+The complete workflow is covered by `tools/test_one_shot_public_project.py`, including an end-to-end five-profile export and test run, tamper checks before/after execution, no-overwrite and historical opt-in cases. These are not credentials, connectors or external deployment steps.

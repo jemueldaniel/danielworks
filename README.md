@@ -1,10 +1,25 @@
 # DanielWorks — engineering through runnable evidence
 
-**Public source is live.** The latest reviewed-for-public-source (not independently certified) 117-file skill-evidence checkpoint is [available on GitHub](https://github.com/jemueldaniel/danielworks/commit/f801abf83ebb9b16cbe2e1b4e40d110b419edb95). Earlier milestones include the [110-file test-runner compatibility checkpoint](https://github.com/jemueldaniel/danielworks/commit/da94ab6378c6465b17bdaaf5f8bccf82eef645e1), the [first 107-file checkpoint](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) and [109-file reliability/verification upgrade](https://github.com/jemueldaniel/danielworks/commit/f811ecf09481ebe4d225620e1131753f1dd85b79) were published on 11 October 2026. Both have been read back from GitHub and restored in clean isolated checkouts. Consult [main](https://github.com/jemueldaniel/danielworks/tree/main) for later commits, which must have their own external receipt. Publication is **not** deployment or production certification.
+**Public source is live.** A source-pinned, byte-verified [123-file public checkpoint](https://github.com/jemueldaniel/danielworks/commit/5e4896f3c02fb08a1bae1b002ee7a3cd50a81d31) introduced independent exported-starter acceptance. This repository's [main branch](https://github.com/jemueldaniel/danielworks/tree/main) is the current public source; new commits require their own complete remote verification and clean restoration. Earlier [110-file](https://github.com/jemueldaniel/danielworks/commit/da94ab6378c6465b17bdaaf5f8bccf82eef645e1) and [107-file](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) checkpoints retain their historical evidence. **Publication is not deployment or production certification.**
 
 **Current integration status: PARTIAL, not fully green.** The historical Windows rerun stopped after 73 passing tests and one 415/WinError 10053 error; that failure remains recorded. The new bounded early-rejection handling passed **28/28 Python backend tests on Linux and 28/28 on Windows** in isolated candidate workspaces, including the previously failing case, but this does not establish the root cause of the earlier intermittent abort or a complete locked workbench/browser rerun. [Current qualification](docs/CURRENT_VERIFICATION.md).
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
+
+## One-command reuse, without copying private projects
+
+`tools/one_shot_public_project.py` composes **original public reference modules only**. With a source-manifest SHA-256 pinned outside the repository, one command exports a new, non-overwritten project; checks all exported files and its README; optionally runs **fixed, allowlisted local tests**; checks the generated files again; and writes an exclusive, externally stored acceptance receipt. Credentials, company repositories, private designs, cloud accounts and employer data are not inputs.
+
+```sh
+python -B tools/one_shot_public_project.py \
+  --root . \
+  --expected-source-sha256 YOUR_EXTERNALLY_VERIFIED_MANIFEST_SHA256 \
+  --destination ../independent-public-reference \
+  --all-executed \
+  --receipt ../independent-public-reference-proof.json
+```
+
+The one-command path forwards only a minimal local runtime environment to child test processes, excluding ambient cloud tokens and arbitrary injection options. The generator and verifier do **not** execute editable manifest commands. `--dry-run` creates nothing; `--no-tests` reports `PASS_VERIFIED_ONLY` rather than test completion. Non-public or historically qualified profiles are excluded unless individually selected with `--allow-historical`; local passing tests never upgrade their historical qualification. This is a reusable engineering teaching baseline, not a permission to reuse proprietary employer code, a deployment template, or a secure untrusted-code sandbox. [Complete workflow](docs/TRANSFERABLE_WORKFLOW.md) · [Regression tests](tools/test_one_shot_public_project.py) · [Public evidence map](docs/PUBLIC_CAPABILITIES.json).
 
 Start with the **[evaluation workbench](projects/evidence-workbench/README.md)**: one persistent workflow with two complete interfaces, not a collection of disconnected technology snippets.
 

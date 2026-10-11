@@ -19,9 +19,16 @@ class EvidenceTests(unittest.TestCase):
     def test_all_public_entries_structurally_bind_to_actual_paths(self):
         result = validate_index(self.data, self.paths)
         self.assertEqual(result['status'], 'PASS')
-        self.assertEqual(result['claims'], 14)
+        self.assertEqual(result['claims'], 15)
         self.assertEqual(result['runtime_tests_executed_by_this_command'], 0)
         self.assertEqual(result['qualifications']['not_verified'], 3)
+
+    def test_one_shot_claim_links_only_published_public_source_and_tests(self):
+        claim = next(c for c in self.data['claims'] if c['id'] == 'one-shot-public-project')
+        self.assertEqual(claim['qualification'], 'executed')
+        self.assertIn('tools/one_shot_public_project.py', claim['implementation'])
+        self.assertIn('tools/test_one_shot_public_project.py', claim['tests'])
+        self.assertEqual(validate_index(self.data, self.paths)['status'], 'PASS')
 
     def test_duplicate_claim_id_rejected(self):
         self.data['claims'][1]['id'] = self.data['claims'][0]['id']
