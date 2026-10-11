@@ -7,14 +7,14 @@
   "branch": "main",
   "status": "PUBLIC_CANDIDATE_SOURCE_ONLY_NOT_PRODUCTION_QUALIFIED",
   "scope": "Original public source and synthesized fixtures; no private repository code or confidential assets",
-  "new_capability": "Original SQLite atomic migration gate with 22 tests and an eleventh source-pinned executed profile",
+  "new_capability": "Original SQLite migration gate with corrected four-profile service recipe regression assertions",
   "native_chromium_navigation": "BLOCKED_BY_ADMINISTRATOR",
   "production_deployment": "NOT_ATTEMPTED",
   "independent_whole_package_review": "NOT_COMPLETED",
   "inventory_file_count": 162,
   "complete_checkpoint_file_count_including_this_manifest": 163,
-  "payload_bytes_excluding_this_manifest": 1097884,
-  "payload_path_sha256_binding": "fac50991ade5e957c1c5f4bf8187a691091e88b5d6fd9caa16efcc5fb3371269",
+  "payload_bytes_excluding_this_manifest": 1097896,
+  "payload_path_sha256_binding": "4de89a50e43d554661e889eb07ba3f6d267b6b704c116b8a1a8138a0b08d3fb8",
   "files": [
     {
       "path": ".gitattributes",
@@ -751,8 +751,8 @@
     {
       "path": "tools/test_compose_public_solution.py",
       "mode": "100644",
-      "bytes": 5652,
-      "sha256": "ce31426aa54ce7965eea3b36dcd7576d4f0eb1028bb9d32caae63cd57f274b09"
+      "bytes": 5664,
+      "sha256": "cfc5edcac5286bbe0a46e58732a12d3fff34afa1a7e9ff6a3a04da0fc400a1dd"
     },
     {
       "path": "tools/test_diagnose_public_profiles.py",

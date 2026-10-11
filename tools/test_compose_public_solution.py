@@ -66,11 +66,11 @@ class RecipeTests(unittest.TestCase):
         self.assertTrue(result['posttest_bytes_verified'])
         self.assertEqual(json.loads(self.receipt.read_text())['tested_groups'], 5)
 
-    def test_real_service_recipe_exports_and_executes_all_three_groups(self):
+    def test_real_service_recipe_exports_and_executes_all_four_groups(self):
         result = compose(ROOT, PIN, "service-foundation", self.dest, receipt=self.receipt)
         self.assertEqual(result["status"], "PASS_TESTED", result)
-        self.assertEqual(result["tested_groups"], 3)
-        self.assertEqual(result["profiles"], ["jobs", "ledger", "policy"])
+        self.assertEqual(result["tested_groups"], 4)
+        self.assertEqual(result["profiles"], ["jobs", "ledger", "migration", "policy"])
         self.assertTrue(result["posttest_bytes_verified"])
         self.assertTrue((self.dest / "examples/atomic_ledger/ledger.py").exists())
         receipt = json.loads(self.receipt.read_text("utf-8"))
@@ -112,7 +112,7 @@ class RecipeTests(unittest.TestCase):
         )
         self.assertEqual(p.returncode, 0, p.stderr + p.stdout)
         result=json.loads(p.stdout)
-        self.assertEqual(result["tested_groups"], 3)
+        self.assertEqual(result["tested_groups"], 4)
         self.assertTrue(result["posttest_bytes_verified"])
 
 
