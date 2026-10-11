@@ -1,5 +1,17 @@
 # Current verification — 11 October 2026
 
+## New public-only training and capability-evidence candidate — 11 October 2026
+
+The public repository was checked at the **110-file `da94ab6378c6465b17bdaaf5f8bccf82eef645e1`** checkpoint before this work. The following candidate is separately authored and must be assigned its own Git commit and external manifest receipt before it counts as publication.
+
+New, public-only original files:
+
+- `examples/synthetic_training/training.py`, `demo.py`, `test_training.py` and `README.md`: actual bounded CPU logistic-regression learning on generated toy data. **17 tests passed on Linux Python 3.13.5**, including a red-then-green forged-completion regression. No user data, private code, model service, live GPU/LLM or cloud deployment.
+- `docs/PUBLIC_CAPABILITIES.json`, `tools/verify_public_capabilities.py`, `tools/test_verify_public_capabilities.py`: public-only evidence links, explicit not-verified rows, and **13 claim-validation tests passed**. Structural checks do not re-execute the linked tests or certify private engineering.
+
+The private-source comparison was read-only and its exact paths, histories and content are excluded from public source, logs and preserved published receipts. Historical 8 October and earlier records below remain attached to their own source revisions, not rewritten as present-day test runs. Full-package independent review, Windows qualification of the new training example, Rust toolchain and locked web/browser integration must be reported separately.
+
+
 ## Node 22 and 24 compatibility — 11 October 2026
 
 **Actual defect and repair:** the 109-file public commit `f811ecf09481ebe4d225620e1131753f1dd85b79` contains the existing `tools/verify.py` example-suite wrapper. An isolated Windows clone of that commit ran the 28 SDK tests successfully under **Node 24.15.0**, yet its wrapper reported `SDK FAIL / tests null` and exited 1 because it depended on older Node TAP text while Node 24 selected the newer spec output. That failed execution is retained as a fresh observation, not silently converted into a pass. The correction explicitly invokes `node --test --test-reporter=tap`; `test_result` also validates reported count, passed count, failed count and process exit before giving `PASS`. It does not turn failed tests into success by ignoring process status.

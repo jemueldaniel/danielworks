@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "purpose": "Public-only engineering evidence references. Structural verification does not execute tests, certify authorship, or verify private work.",
+  "claims": [
+    {
+      "id": "api-contracts",
+      "discipline": "Typed API and SDK design",
+      "qualification": "historical",
+      "implementation": [
+        "projects/evidence-workbench/src/api-client.ts",
+        "examples/typed_api_sdk/service.py"
+      ],
+      "tests": [
+        "projects/evidence-workbench/tests/api.test.mjs",
+        "examples/typed_api_sdk/test_service.py"
+      ],
+      "boundary": "Current original SDK and Python contract tests passed; locked workbench HTTP SDK integration tests remain historical, not a current build."
+    },
+    {
+      "id": "agent-recovery",
+      "discipline": "Bounded agent orchestration and checkpoint recovery",
+      "qualification": "executed",
+      "implementation": [
+        "examples/mcp_agent/runtime.mjs"
+      ],
+      "tests": [
+        "examples/mcp_agent/test_runtime.mjs"
+      ],
+      "boundary": "In-process tools only; not distributed, LLM-backed, or exactly-once external effects."
+    },
+    {
+      "id": "durable-jobs",
+      "discipline": "SQLite job queue, leases and recovery",
+      "qualification": "executed",
+      "implementation": [
+        "examples/durable_jobs/jobs.py",
+        "projects/evidence-workbench/backend/workbench.py"
+      ],
+      "tests": [
+        "examples/durable_jobs/test_jobs.py",
+        "projects/evidence-workbench/backend/test_process_recovery.py"
+      ],
+      "boundary": "Local persistence and real subprocess recovery; not a distributed cloud queue."
+    },
+    {
+      "id": "http-backend",
+      "discipline": "Bounded HTTP and tenant-separated application logic",
+      "qualification": "executed",
+      "implementation": [
+        "projects/evidence-workbench/backend/server.py"
+      ],
+      "tests": [
+        "projects/evidence-workbench/backend/test_http.py",
+        "projects/evidence-workbench/backend/test_workbench.py"
+      ],
+      "boundary": "Local HTTP and SQLite tests; no identity provider, public deployment or abuse testing."
+    },
+    {
+      "id": "retrieval-and-grading",
+      "discipline": "Search evaluation and interpretable failures",
+      "qualification": "executed",
+      "implementation": [
+        "examples/retrieval_lab/retrieval.py",
+        "examples/ranking_eval/evaluation.py"
+      ],
+      "tests": [
+        "examples/retrieval_lab/test_retrieval.py",
+        "examples/ranking_eval/test_evaluation.py"
+      ],
+      "boundary": "Versioned synthetic retrieval exercise; not a model-quality benchmark."
+    },
+    {
+      "id": "cpu-model-training",
+      "discipline": "Deterministic machine learning training and recovery",
+      "qualification": "executed",
+      "implementation": [
+        "examples/synthetic_training/training.py"
+      ],
+      "tests": [
+        "examples/synthetic_training/test_training.py"
+      ],
+      "boundary": "Real CPU optimization on generated toy labels; not LLM training, GPU scaling or MLOps deployment."
+    },
+    {
+      "id": "compiler-and-vm",
+      "discipline": "Rust language lexer, parser, stack IR and VM",
+      "qualification": "historical",
+      "implementation": [
+        "projects/bounded-lang/src/lib.rs"
+      ],
+      "tests": [
+        "projects/bounded-lang/tests/bindings.rs",
+        "projects/bounded-lang/tests/compile_budget.rs"
+      ],
+      "boundary": "Historic 18-test Rust qualification; no full language type system or production sandbox."
+    },
+    {
+      "id": "public-source-verification",
+      "discipline": "Deterministic Git and filesystem verification",
+      "qualification": "executed",
+      "implementation": [
+        "tools/verify_git_commit.py",
+        "tools/verify_source.py"
+      ],
+      "tests": [
+        "tools/test_verify_git_commit.py",
+        "tools/test_verify_source.py"
+      ],
+      "boundary": "Source integrity is not authorship, confidentiality clearance or secure deployment."
+    },
+    {
+      "id": "react-interface",
+      "discipline": "React component state and browser interaction",
+      "qualification": "historical",
+      "implementation": [
+        "projects/evidence-workbench/web/App.tsx"
+      ],
+      "tests": [
+        "projects/evidence-workbench/tests/browser.test.mjs"
+      ],
+      "boundary": "Browser acceptance retained historically; locked current workbench browser build not rerun."
+    },
+    {
+      "id": "mcp-wire-transport",
+      "discipline": "MCP Streamable HTTP and tool permission boundaries",
+      "qualification": "historical",
+      "implementation": [
+        "projects/evidence-workbench/src/mcp.ts",
+        "projects/evidence-workbench/src/server.ts"
+      ],
+      "tests": [
+        "projects/evidence-workbench/tests/protocol.test.mjs"
+      ],
+      "boundary": "MCP SDK integration only; not browser-native WebMCP."
+    },
+    {
+      "id": "evm-production",
+      "discipline": "Deployed Solidity and independently verified EVM transactions",
+      "qualification": "not_verified",
+      "implementation": [],
+      "tests": [],
+      "boundary": "Only a separate Python simulation exists in public source; no signed on-chain proof is claimed."
+    },
+    {
+      "id": "distributed-ml-training",
+      "discipline": "Multi-node or GPU model training and deployment",
+      "qualification": "not_verified",
+      "implementation": [],
+      "tests": [],
+      "boundary": "The CPU synthetic example is not a substitute for distributed learning."
+    },
+    {
+      "id": "postgresql-cloud-runtime",
+      "discipline": "PostgreSQL tenancy and production cloud runtime",
+      "qualification": "not_verified",
+      "implementation": [],
+      "tests": [],
+      "boundary": "SQLite fixtures and local processes do not demonstrate PostgreSQL RLS or cloud operation."
+    }
+  ]
+}

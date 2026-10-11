@@ -1,6 +1,6 @@
 # DanielWorks — engineering through runnable evidence
 
-**Public source is live.** The [first 107-file checkpoint](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) and [109-file reliability/verification upgrade](https://github.com/jemueldaniel/danielworks/commit/f811ecf09481ebe4d225620e1131753f1dd85b79) were published on 11 October 2026. Both have been read back from GitHub and restored in clean isolated checkouts. Consult [main](https://github.com/jemueldaniel/danielworks/tree/main) for later commits, which must have their own external receipt. Publication is **not** deployment or production certification.
+**Public source is live.** Prior published milestones include the [110-file test-runner compatibility checkpoint](https://github.com/jemueldaniel/danielworks/commit/da94ab6378c6465b17bdaaf5f8bccf82eef645e1), the [first 107-file checkpoint](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) and [109-file reliability/verification upgrade](https://github.com/jemueldaniel/danielworks/commit/f811ecf09481ebe4d225620e1131753f1dd85b79) were published on 11 October 2026. Both have been read back from GitHub and restored in clean isolated checkouts. Consult [main](https://github.com/jemueldaniel/danielworks/tree/main) for later commits, which must have their own external receipt. Publication is **not** deployment or production certification.
 
 **Current integration status: PARTIAL, not fully green.** The historical Windows rerun stopped after 73 passing tests and one 415/WinError 10053 error; that failure remains recorded. The new bounded early-rejection handling passed **28/28 Python backend tests on Linux and 28/28 on Windows** in isolated candidate workspaces, including the previously failing case, but this does not establish the root cause of the earlier intermittent abort or a complete locked workbench/browser rerun. [Current qualification](docs/CURRENT_VERIFICATION.md).
 
@@ -20,7 +20,25 @@ The retained Windows record tested the joined flow: **queue in the browser, exec
 
 **Node 22/24 verifier compatibility:** the original example runner now requests the deterministic Node TAP test reporter, so its 28 SDK test results can be counted on Node 24 as well as Node 22. Six [summary and CLI regressions](tools/test_verify_runner.py) require nonzero actual test counts, correct pass/fail totals, and a zero process exit. The original standalone group passed **60/60 on Windows using Node 24.15.0 and Python 3.13.6**, following a recorded initial false-negative from the Node 24 default spec reporter. This is *not* the full locked workbench browser build. [Current verification](docs/CURRENT_VERIFICATION.md#node-22-and-24-compatibility-11-october-2026).
 
-The [in-process agent example](examples/mcp_agent/README.md) retains its starting server and checkpoint store across suspension (27 tests). Its earlier **151 Linux passes and one Windows-only skip** remain recorded separately and are not added to the new checks. No production authentication, distributed exactly-once effect, native WebMCP, model training, PostgreSQL isolation, live EVM, or cross-platform full-build qualification is claimed.
+The [in-process agent example](examples/mcp_agent/README.md) retains its starting server and checkpoint store across suspension (27 tests). Its earlier **151 Linux passes and one Windows-only skip** remain recorded separately and are not added to the new checks. No production authentication, distributed exactly-once effect, native WebMCP, **large-scale or LLM training**, PostgreSQL isolation, live EVM, or cross-platform full-build qualification is claimed.
+
+## New: independently reproducible, public-only skills proof
+
+The [public capability index](docs/PUBLIC_CAPABILITIES.json) maps **13 engineering disciplines** to specific public source files, test entrypoints and explicit qualification limits. [The read-only index checker](tools/verify_public_capabilities.py) validates these references against the one source manifest and reports which claims are executed, historical or *not verified*. It **does not execute tests or inspect private accounts**. Its [regressions](tools/test_verify_public_capabilities.py) deliberately reject invented filenames, private paths, embedded addresses and overclaimed statuses.
+
+The new [synthetic model-training example](examples/synthetic_training/README.md) performs real CPU mini-batch optimization, uses train-only feature normalization and a held-out validation/test split, and demonstrates resumable hash-bound in-memory checkpoints. Its [17 negative/positive tests](examples/synthetic_training/test_training.py) cover drift, corruption, deterministic resumption, convergence and no test-preprocessing leakage. These are synthetic educational results—not proof of LLM training, private training workloads or GPU-scale execution.
+
+**Confidentiality rule:** work from private accounts and local company workspaces is inspected **read-only**, used only to choose skill categories, and is never copied, paraphrased at proprietary-interface level, embedded in public receipts, or treated as a publicly reproducible result. This repository deliberately contains only original generic demos, synthetic fixtures and vetted public evidence. See [authorship and boundaries](docs/PROVENANCE.md).
+
+Reproduce the new work without installing packages:
+
+```sh
+python -B examples/synthetic_training/demo.py
+python -B -m unittest discover -s examples/synthetic_training -v
+python -B -m unittest discover -s tools -p test_verify_public_capabilities.py -v
+# Against an externally pinned manifest hash after a clean source checkout:
+python -B tools/verify_public_capabilities.py --expected-manifest-sha256 YOUR_64_HEX_RECEIPT_HASH
+```
 
 ## Rust language implementation
 
@@ -38,7 +56,7 @@ The original **[durable queue](examples/durable_jobs/README.md)**, **[ranking gr
 
 See the **[skills-to-evidence index](docs/SKILLS.md)**, **[verification record](docs/TEST_EVIDENCE.md)** and **[architecture and tradeoffs](projects/evidence-workbench/docs/DESIGN.md)**.
 
-**Limits matter:** permission profiles are synthetic, not login/authentication; SQLite is not PostgreSQL; this is MCP, not WebMCP; there is no model training, live EVM, distributed cluster or deployment claim. These are AI-assisted demonstrations, not proof of sole human authorship. [Authorship and redistribution boundaries](docs/PROVENANCE.md).
+**Limits matter:** permission profiles are synthetic, not login/authentication; SQLite is not PostgreSQL; this is MCP, not WebMCP; a new self-contained CPU synthetic classifier is demonstrated but **no LLM/distributed model training**, live EVM, distributed cluster or deployment is claimed. These are AI-assisted demonstrations, not proof of sole human authorship. [Authorship and redistribution boundaries](docs/PROVENANCE.md).
 
 ## Reproduce every preserved suite
 

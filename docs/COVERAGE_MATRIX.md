@@ -1,8 +1,18 @@
 # Capability coverage and remaining work
 
-**Latest integration status: NOT GREEN.** An earlier complete Windows run passed 145 behavioural tests, but the subsequent integrated rerun stopped after 73 passes and one HTTP-test error (`test_content_type_size_origin_and_host`, WinError 10053 while expecting 415). No remaining command group is marked passed for that later run. The new verifier's standalone platform results remain separate. [Fresh receipt](../verification/checkpoint-2.json).
+**Retained historical integration failure:** An earlier complete Windows run passed 145 behavioural tests, but a subsequent integrated rerun stopped after 73 passes and one HTTP-test error (`test_content_type_size_origin_and_host`, WinError 10053 while expecting 415). No remaining command group is marked passed for that later run. The new verifier's standalone platform results remain separate. [Fresh receipt](../verification/checkpoint-2.json).
 
 This is the **single coverage/backlog document** for DanielWorks. It separates actual source inspection, runnable public evidence, observed execution, and unqualified work. Missing qualification does **not** mean a capability does not exist. Private source identities, paths and ownership records are intentionally excluded; private access is not publication permission.
+
+## Public-only proof expansion — 11 October 2026
+
+**State at preparation:** the live public head was [`da94ab6`](https://github.com/jemueldaniel/danielworks/commit/da94ab6378c6465b17bdaaf5f8bccf82eef645e1) (110 files). The current source candidate includes *new* public code, subject to a separate GitHub commit and full remote-readback receipt. No private source, naming, machine-path inventory, confidential architecture, deployment configuration, real dataset, or private tests are included. External provenance and commit identity live in the delivery receipt, not a self-referential source manifest.
+
+| Capability and actual public owner | New runnable evidence | Honest limit |
+|---|---|---|
+| CPU-based binary model training on generated records: `examples/synthetic_training/training.py` | `examples/synthetic_training/test_training.py`: **17 tests**; deterministic splits, training-only normalization, SGD, validation selection, held-out test, JSON checkpoint resume, drift, bounds, corruption and forged completion negatives. | It optimizes a real tiny model on synthetic labels and no private inputs. **Not** LLM pretraining, fine-tuning, real proprietary data, GPU/distributed scale or deployed MLOps. Results must be separately rerun for platform acceptance. |
+| Auditable public evidence index: `docs/PUBLIC_CAPABILITIES.json` and `tools/verify_public_capabilities.py` | `tools/test_verify_public_capabilities.py`: **13 validation tests** checking public path legitimacy, overclaims, duplicate identities and confidential references. | The checker validates evidence references and source hashes after a manifest-pinned checkout. It does **not** execute cited tests, establish authorship or certify private projects. |
+| Confidential source boundaries | Read-only private repository and local source observations used only to select *general* skills; nothing copied into the public deliverable. | Existence of private test/source files does not prove test execution or production use. Whole-package independent privacy/licensing review remains incomplete. |
 
 ## Node-version-neutral example verification — 11 October 2026
 
@@ -113,13 +123,13 @@ The three original examples are preserved with all 60 behavioural tests, not rep
 
 ## Delivery gates
 
-**Authoritative destination:** `jemueldaniel/danielworks`, intended branch `main`. Repository content is still at the last verified initial commit `3e69552cb5f9ae52639d30c2c865347fa3575ceb`; no new commit or ref update is claimed by this candidate. The repository must be re-read again immediately before any future publication.
+**Published baseline:** `jemueldaniel/danielworks` `main` was verified at `da94ab6378c6465b17bdaaf5f8bccf82eef645e1` before preparing the subsequent public-evidence update. The former one-README initial state below is retained as an earlier historical observation only. Every new candidate needs its own non-forced commit and exact GitHub readback receipt; new commits must not be invented in advance.
 
-**Publication blocker:** read-only Actions policy, webhook, installed-app and deployment-effect evidence is incomplete. The connected repository-content tools cannot expose the required administrative inventory; the available desktop GitHub identity was denied the webhook read. No workflow directory and zero previous runs are not prevention evidence. No setting or credential was changed, and no denied read was bypassed. The missing prerequisite is a redacted owner-settings view or a supported already-authorized read of those exact settings—not another grant of general publication permission.
+**Publication effects:** the exact Actions policy, webhook, installed-app events and external deployment-trigger inventory remains incomplete. A no-workflow/no-run observation is not proof of no external effects. Incremental sanitized public-source publication was explicitly authorized despite this disclosed gate; no security setting, action, workflow or deployment is altered as part of showcasing. Production release qualification remains separate.
 
-**Review:** the exact eight Rust files passed separate independent static review, with documented low-severity observations. Two broader exact-file review attempts stopped at the reviewer service usage limit before inspection. Full-candidate independent review remains blocked and must be completed against the final manifest before publication. No reviewer is active. [Review status](REVIEW_STATUS.md).
+**Review:** the exact eight Rust files retain a separate independent static review, with documented low-severity observations. Whole-candidate independent review, privacy and licensing clearance remain incomplete; unit tests, coordinator review and user-authorized source publication are not substitute approvals. No reviewer is claimed active. [Review status](REVIEW_STATUS.md).
 
-**Clean restore:** the exact npm lock was installed cleanly in an isolated local workspace; this is **not** a restore from a newly published GitHub commit. GitHub restore, complete remote-file readback and remote commit verification remain pending because no candidate commit has been published.
+**Clean restore:** the published 110-file `da94ab6` commit had already been cloned fresh from GitHub and passed the externally pinned source and Git-object verifiers with a clean checkout. The newly built public-evidence candidate requires its **own** remote-file readback and clean restoration after any subsequent push. The full locked workbench npm/browser build remains unqualified.
 
 
 ## Restoration-verification addition — separately qualified
