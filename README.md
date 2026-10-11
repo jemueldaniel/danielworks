@@ -1,3 +1,21 @@
+## New: original synthetic visual analytics and downloadable SVG
+
+[Signal Study](examples/data_studio/README.md) is a fully original, responsive
+visual analytics studio with four live SVG graph modes (trends, channel mix,
+fictional cohort heatmap and funnel), keyboard-accessible filters, dynamic
+summary metrics, selectable data, a safe local annotation notebook, theme and
+density settings, and real CSV/SVG downloads. Data and annotation text are
+synthetic and stay local. The new 76-case Node model suite and 17-case installed
+Microsoft Edge browser suite passed on Windows across 320–1440 px. An initial
+320-px horizontal overflow failure was reproduced, corrected and retested.
+No startup product assets, private repositories, credentials or external
+services enter the public implementation. This is not live SaaS analytics or
+independent accessibility certification.
+
+Use the new source-pinned `data-studio` executed profile, `visual-analytics`
+recipe, or the 17-profile `--all-executed` public kit. The source integrity
+verification, runtime checks and post-test byte receipt remain separate gates.
+
 # DanielWorks — engineering through runnable evidence
 
 ## New: interactive graph and workflow interface reference

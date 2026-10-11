@@ -136,6 +136,14 @@ STARTERS: dict[str, Starter] = {
         "examples/flow_lab/app.mjs",
         "examples/flow_lab/test_model.mjs",
     ), "node --test --test-reporter=tap examples/flow_lab/test_model.mjs", "executed"),
+    "data-studio": Starter("interactive-visual-analytics", (
+        "examples/data_studio/README.md",
+        "examples/data_studio/index.html",
+        "examples/data_studio/styles.css",
+        "examples/data_studio/model.mjs",
+        "examples/data_studio/app.mjs",
+        "examples/data_studio/test_model.mjs",
+    ), "node --test --test-reporter=tap examples/data_studio/test_model.mjs", "executed"),
     "ui-atlas": Starter("interactive-ui-pattern-atlas", (
         "examples/ui_atlas/README.md",
         "examples/ui_atlas/index.html",

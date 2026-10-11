@@ -147,6 +147,14 @@ class PublicStarterTests(unittest.TestCase):
         )
         self.assertEqual(result['tests_executed'], 0)
 
+    def test_new_visual_analytics_profile_exports_six_public_files(self):
+        result = self.build(['data-studio'])
+        self.assertEqual(result['selected_files'], 6)
+        expected=set(STARTERS['data-studio'].paths)
+        actual={p.relative_to(self.target).as_posix() for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(actual, expected | {'README.md', 'REUSE_MANIFEST.json'})
+        self.assertEqual(result['tests_executed'], 0)
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

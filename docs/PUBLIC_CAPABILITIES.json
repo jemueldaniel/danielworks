@@ -316,7 +316,23 @@
         "examples/flow_lab/test_model.mjs",
         "projects/flow-lab-tests/browser.test.mjs"
       ],
-      "boundary": "Original synthetic graph UI with 66 Node model passes and 14 DOM-only Chromium checks. Full HTTP browser tests unrun due navigation block. Not a production workflow engine, private UI reuse or accessibility certification."
+      "boundary": "Original synthetic graph UI with 66 Node model passes and 13 installed Edge real HTTP browser cases at five widths; 14 earlier DOM-only Chromium checks retained. Not a production workflow engine, private UI reproduction or WCAG certification."
+    },
+    {
+      "id": "interactive-visual-analytics",
+      "discipline": "Original synthetic multi-chart SVG visual analytics, responsive data inspection and accessible local annotations",
+      "qualification": "executed",
+      "implementation": [
+        "examples/data_studio/index.html",
+        "examples/data_studio/styles.css",
+        "examples/data_studio/app.mjs",
+        "examples/data_studio/model.mjs"
+      ],
+      "tests": [
+        "examples/data_studio/test_model.mjs",
+        "projects/data-studio-tests/browser.test.mjs"
+      ],
+      "boundary": "Offline synthetic visuals with 76 model tests and 17 real installed Edge HTTP browser tests at five viewport widths. Not live analytics, actual retention data, private product UI, certified WCAG, hosting or independent security review."
     },
     {
       "id": "evm-production",

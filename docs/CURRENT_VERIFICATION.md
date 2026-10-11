@@ -1,3 +1,17 @@
+## Visual analytics original release qualification — 12 October 2026
+
+Seven original public source and browser-test files add a synthetic responsive
+analytics dashboard with real SVG trend, stacked mix, heatmap and funnel charts;
+filters, keyed annotations, safe DOM text, CSV/SVG downloads and keyboard use.
+Standalone Linux Node model tests **76/76 pass**. A clean Windows GitHub clone
+executed the same **76/76** and the installed Microsoft Edge HTTP browser suite
+**17/17 pass** at 320, 390, 768, 1024 and 1440 pixels. The first browser run
+had **2 failures** from 320-pixel horizontal document overflow; the source
+was corrected and the entire browser suite was rerun successfully. Preserve
+that negative evidence. No user data, external HTTP calls, backend, live
+analytics, real payment, WCAG claim or production deployment is represented.
+The existing Flow Laboratory also passed 13/13 real installed Edge HTTP browser tests in this Windows integration, including drag/undo, dialogs, node import/export, keyboard and mobile behavior; its previous 14 DOM-only checks remain historical evidence. The integrated exporter, complete whole-repository regression and exact GitHub release pin require their own separately observed acceptance.
+
 ## Flow Laboratory public candidate — 12 October 2026
 
 The original directed-graph frontend was authored separately from private

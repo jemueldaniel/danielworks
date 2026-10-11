@@ -1,3 +1,12 @@
+## Accessible interactive SVG analytics — public demonstration
+
+[Signal Study](../examples/data_studio/README.md) demonstrates SVG chart
+construction, responsive dashboard layout, keyboard interactions, safe DOM
+rendering, annotation bounds, synthetic data transforms and CSV/SVG downloads.
+[Deterministic tests](../examples/data_studio/test_model.mjs) and
+[real-browser tests](../projects/data-studio-tests/browser.test.mjs) make it
+reproducible without reusing private UI source or company datasets.
+
 # Skills → inspectable evidence
 
 Start with behavior and its tests. A library import, directory name, private source reference or historical plan is not public runnable proof.

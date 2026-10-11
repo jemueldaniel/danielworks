@@ -1,6 +1,6 @@
 # Reusable original public engineering recipes
 
-Nine fixed source-only recipes compose tested, self-contained examples.
+Ten fixed source-only recipes compose tested, self-contained examples.
 They import no private repositories or accounts and deploy nothing.
 
 | Recipe | Fixed public profiles | Demonstrates |
@@ -13,7 +13,8 @@ They import no private repositories or accounts and deploy nothing.
 | frontend-studio | interface-lab, jobs, policy | Responsive local UI, durable jobs and policy examples; separately tested |
 | ui-experiences | interface-lab, ui-atlas | Two separate fully interactive frontend implementations; pure Node model suites |
 | interaction-systems | flow-lab, interface-lab, ui-atlas | Editable graph canvas, responsive table and multi-domain interfaces with separate executable state suites |
-| full-reference | all sixteen executed public profiles | Broad engineering reference without private data |
+| visual-analytics | data-studio, flow-lab, interface-lab | Real interactive SVG chart modes, graph editing and responsive UI, each with executed state tests |
+| full-reference | all seventeen executed public profiles | Broad engineering reference without private data |
 
 From the exact published checkout, obtain its SOURCE_MANIFEST.json SHA-256
 outside the repository and provide that verified 64-character value:

@@ -1,3 +1,15 @@
+## Visual analytics addition — 12 October 2026
+
+Original public source: `examples/data_studio` and
+`projects/data-studio-tests/browser.test.mjs`. This adds real chart editing,
+filtering, annotation and export interactions with 76 passing independent
+Node state tests and 17 passing real installed-Edge HTTP browser cases on the
+isolated Windows clone. Two first-run mobile viewport failures were fixed.
+It does not prove private project authorship, actual customer analytics,
+production deployment or complete assistive-technology accessibility.
+The public-only manifest and one-command exporter remain authoritative; fresh
+source and integration release evidence must be recorded separately.
+
 ## Current scoped public reference acceptance — 11 October 2026
 
 The exact public revision `5a46a84` passed fresh Windows source readback and clean-restoration validation (140/140 files, 16/16 changed blobs). The complete locked npm/TypeScript/React application chain also passed: 18 real MCP/HTTP/SDK tests and 7 installed Edge browser tests on desktop and mobile. The independent Rust language reference passed 18 offline tests; the signed-event module passed 33 actual SQLite/HTTP tests; 36 proof-studio tests passed; and the seven-profile source-pinned exporter passed on a fresh clone with post-test file verification. The earlier intermittent seven-profile attempt and historical Windows HTTP socket abort remain disclosed and unresolved, rather than converted into success.

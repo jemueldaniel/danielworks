@@ -79,13 +79,22 @@ class OneShotPublicProjectTests(unittest.TestCase):
         self.assertEqual(result['groups'][0]['profile'], 'training')
         self.assertTrue(result['posttest_bytes_verified'])
 
-    def test_all_sixteen_executed_profiles_run_and_retained(self):
+    def test_all_seventeen_executed_profiles_run_and_retained(self):
         result = assemble(ROOT, SOURCE_PIN, self.output, [], all_executed=True, timeout=60)
         self.assertEqual(result['status'], 'PASS_TESTED',result)
         self.assertEqual(set(result['profiles']), {p for p,x in STARTERS.items() if x.qualification == 'executed'})
-        self.assertEqual(result['tested_groups'], 16)
+        self.assertEqual(result['tested_groups'], 17)
         self.assertEqual({g['status'] for g in result['groups']},{'PASS'})
         self.assertTrue(result['posttest_bytes_verified'])
+
+    def test_data_studio_exports_and_executes_76_deterministic_state_cases(self):
+        result = self.create(['data-studio'], receipt=self.receipt)
+        self.assertEqual(result['status'], 'PASS_TESTED',result)
+        self.assertEqual(result['tested_groups'], 1)
+        self.assertEqual(result['profiles'], ['data-studio'])
+        self.assertTrue((self.output/'examples/data_studio/model.mjs').is_file())
+        self.assertTrue(result['posttest_bytes_verified'])
+        self.assertEqual(json.loads(self.receipt.read_text())['tested_groups'],1)
 
     def test_hybrid_search_exports_real_sqlite_fts_and_quality_metrics(self):
         result = self.create(['hybrid-search'], receipt=self.receipt)
