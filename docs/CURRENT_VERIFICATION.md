@@ -205,3 +205,9 @@ requests deterministic Node TAP output and requires `# tests 27`, `# pass 27`,
 when Windows does not authorize link creation; they still execute on systems
 where links can be created. Current candidate tests must be freshly rerun.
 This does not qualify an untested NTFS symlink rejection path on that host.
+
+## New portable full-stack reference — independently testable local increment
+
+New source `projects/portable-proof-studio/` adds an original Python standard-library loopback HTTP application backed by real SQLite files, plus a responsive browser UI. The suite contains **35 distinct tests** covering workspace partitioning, authenticated-demo token expiry, replay-safe transaction and concurrency, workflow revision errors, saved run/artifact identities, explicit cross-app import, document revision/deletion and lexical evaluation, process restart, HTTP origin/media guards and static UI contracts. The public one-shot exporter adds a sixth executed reference profile (`proof-platform`).
+
+The first native Chromium navigation was **blocked with `ERR_BLOCKED_BY_ADMINISTRATOR`**. Do not interpret HTTP/markup tests as native-browser or accessibility acceptance. No private product source, cloud API, provider credential, EVM or payments were used. This addition is a local-only educational reference, not a deployed ten-application suite or a fully qualified locked workbench.

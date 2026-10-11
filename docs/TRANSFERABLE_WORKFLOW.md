@@ -61,7 +61,7 @@ This new tool checks source-file hashes, included README integrity, file invento
 
 ## One-shot project assembly with independent acceptance
 
-Use `tools/one_shot_public_project.py` to compose only the existing permitted public examples. Pass the externally confirmed `SOURCE_MANIFEST.json` SHA-256 and choose profiles with `--profile` (repeatable) or `--all-executed` (currently five executed sample profiles). The pipeline invokes the original source-pinned exporter, validates the generated kit against its **externally returned output-manifest SHA-256**, runs only fixed per-profile tests, then validates the kit *again*. It refuses missing tests, test failure, changed files, duplicate selections, unsafe destinations and overwrites.
+Use `tools/one_shot_public_project.py` to compose only the existing permitted public examples. Pass the externally confirmed `SOURCE_MANIFEST.json` SHA-256 and choose profiles with `--profile` (repeatable) or `--all-executed` (currently six executed sample profiles). The pipeline invokes the original source-pinned exporter, validates the generated kit against its **externally returned output-manifest SHA-256**, runs only fixed per-profile tests, then validates the kit *again*. It refuses missing tests, test failure, changed files, duplicate selections, unsafe destinations and overwrites.
 
 ```sh
 python -B tools/one_shot_public_project.py \
@@ -74,4 +74,17 @@ python -B tools/one_shot_public_project.py \
 
 Child test processes receive a minimal set of OS and runtime variables; unrelated ambient secrets and injection options are not forwarded. The pipeline does not isolate hostile code. The receipt is placed outside both the source tree and exported kit and is written **exclusively** (never overwritten). It contains source and output hashes, selected profiles, actual tested groups and retained historical qualification labels—not private paths or logs. `--no-tests` reports only `PASS_VERIFIED_ONLY`. If testing fails, the generated directory remains for inspection with a `FAIL` result and **no successful acceptance receipt**. A receipt cannot certify employer rights, code authorship, SaaS operation, security review, deployed transactions, production-scale training or trusted execution of unknown code. Every actual employer integration requires separate requirements, licensing approval, security controls and target-runtime acceptance.
 
-The complete workflow is covered by `tools/test_one_shot_public_project.py`, including an end-to-end five-profile export and test run, tamper checks before/after execution, no-overwrite and historical opt-in cases. These are not credentials, connectors or external deployment steps.
+The complete workflow is covered by `tools/test_one_shot_public_project.py`, including an end-to-end six-profile export and test run, tamper checks before/after execution, no-overwrite and historical opt-in cases. These are not credentials, connectors or external deployment steps.
+
+## New public-only full-stack profile
+
+`--profile proof-platform` exports the independent [Portable Proof Studio](../projects/portable-proof-studio/README.md). A clean Python standard-library runtime exercises 35 distinct HTTP/SQLite/workflow/evaluation/static-web tests with an actual local database and restart validation. It does not copy product repositories, deploy a worker, call a provider or make this test fixture production-authenticated.
+
+```sh
+python -B tools/one_shot_public_project.py \
+  --root . --expected-source-sha256 YOUR_EXTERNALLY_VERIFIED_MANIFEST_SHA256 \
+  --destination ../fresh-proof-platform --profile proof-platform \
+  --receipt ../fresh-proof-platform-receipt.json
+```
+
+Reproducibility, isolation and hash checks are local acceptance; native browser navigation is separately blocked by environment policy and must not be called passed.

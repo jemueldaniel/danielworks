@@ -33,6 +33,7 @@ TESTS = {
     'training': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/synthetic_training', '-v'),
     'retrieval': ('python', '-B', '-m', 'unittest', '-v', 'test_retrieval.py'),
     'evaluation': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/ranking_eval', '-v'),
+    'proof-platform': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'projects/portable-proof-studio', '-v'),
     'typed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/typed_api_sdk', '-v'),
     'rust-compiler': ('cargo', 'test', '--manifest-path', 'projects/bounded-lang/Cargo.toml', '--locked', '--offline'),
 }

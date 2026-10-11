@@ -6,6 +6,18 @@
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
+## New: live local Workflow → Knowledge reference
+
+The [Portable Proof Studio](projects/portable-proof-studio/README.md) is an original, dependency-free **local** HTTP + SQLite + browser UI integration. Recruiters can issue an expiring anonymous demonstration workspace, save a fixed four-step workflow, execute it, inspect persisted trace/artifact receipts, explicitly import its output into a document collection, run lexical search and save an actual expected-document evaluation. Transactionally replay-safe writes, concurrency, revision fencing, cross-workspace boundaries and process-restart readback have [their own test suite](projects/portable-proof-studio/test_store.py). The [HTTP acceptance tests](projects/portable-proof-studio/test_http.py) and [static UI contracts](projects/portable-proof-studio/test_web.py) exercise the real implementation, not an image or description. This adds a verified `proof-platform` profile to the public one-shot exporter.
+
+```sh
+python -B projects/portable-proof-studio/server.py --db ./portable-proof-demo.sqlite --port 8078
+# Visit http://127.0.0.1:8078 on the same machine.
+python -B -m unittest discover -s projects/portable-proof-studio -v
+```
+
+**Boundaries:** This is a loopback-only educational example with guest tokens and bounded synchronous text operations, not a production social/financial platform, human authentication, cloud database, native-browser-verified app or dynamically editable workflow DAG. The new source is authored independently of private product repositories; no confidential company code or infrastructure is included.
+
 ## One-command reuse, without copying private projects
 
 `tools/one_shot_public_project.py` composes **original public reference modules only**. With a source-manifest SHA-256 pinned outside the repository, one command exports a new, non-overwritten project; checks all exported files and its README; optionally runs **fixed, allowlisted local tests**; checks the generated files again; and writes an exclusive, externally stored acceptance receipt. Credentials, company repositories, private designs, cloud accounts and employer data are not inputs.

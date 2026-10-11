@@ -66,6 +66,17 @@ STARTERS: dict[str, Starter] = {
         "examples/ranking_eval/synthetic.json",
         "examples/ranking_eval/test_evaluation.py",
     ), "python -B -m unittest discover -s examples/ranking_eval -v", "executed"),
+    "proof-platform": Starter("portable-proof-platform", (
+        "projects/portable-proof-studio/README.md",
+        "projects/portable-proof-studio/store.py",
+        "projects/portable-proof-studio/server.py",
+        "projects/portable-proof-studio/web/index.html",
+        "projects/portable-proof-studio/web/style.css",
+        "projects/portable-proof-studio/web/app.js",
+        "projects/portable-proof-studio/test_store.py",
+        "projects/portable-proof-studio/test_http.py",
+        "projects/portable-proof-studio/test_web.py",
+    ), "python -B -m unittest discover -s projects/portable-proof-studio -v", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

@@ -1,6 +1,6 @@
 ## Composable public reference assembly — bounded qualification
 
-The new `tools/one_shot_public_project.py` orchestrates existing public exporter and independently pinned output acceptance as one user-facing command. It does not forward unrelated ambient credentials or dynamic language/runtime injection variables to child tests. Its tests cover genuine five-profile execution, failed/raced paths, post-test content drift, exclusive out-of-band receipts and historical-claim boundaries. It is **not** private-code transfer, an employer project generator, untrusted-code sandbox or production deployment. Related current paths: `tools/test_one_shot_public_project.py`, `docs/TRANSFERABLE_WORKFLOW.md`, and `docs/PUBLIC_CAPABILITIES.json`. Applicable acceptance requires fresh tests, private-data screening, remote-byte readback and clean restoration from the resulting commit.
+The new `tools/one_shot_public_project.py` orchestrates existing public exporter and independently pinned output acceptance as one user-facing command. It does not forward unrelated ambient credentials or dynamic language/runtime injection variables to child tests. Its tests cover genuine six-profile execution, failed/raced paths, post-test content drift, exclusive out-of-band receipts and historical-claim boundaries. It is **not** private-code transfer, an employer project generator, untrusted-code sandbox or production deployment. Related current paths: `tools/test_one_shot_public_project.py`, `docs/TRANSFERABLE_WORKFLOW.md`, and `docs/PUBLIC_CAPABILITIES.json`. Applicable acceptance requires fresh tests, private-data screening, remote-byte readback and clean restoration from the resulting commit.
 
 ## Public-only post-export verification — new source qualification
 
@@ -170,3 +170,14 @@ The admitted Windows environment has no PostgreSQL server/client or EVM compiler
 | Reproducible pattern export | `tools/export_public_starter.py`, `tools/test_export_public_starter.py`, `examples/public_starter/README.md` | Offline, external-SHA-pinned public reference copying; finite allowlist; missing-source, symlink, overwrite, status and reproducibility tests | New employer system integration, legal ownership, security review, accessibility, cloud runtime and real data acceptance must be performed separately |
 
 The exporter does not turn private source into public source and does not certify historical profiles. This row is a capability-specific addition to the **existing single matrix**, not a second acceptance matrix.
+
+## Portable full-stack proof — new public candidate
+
+| Capability | Exact implementation | Current evidence | Qualification boundary |
+| --- | --- | --- | --- |
+| HTTP and relational persistence | `projects/portable-proof-studio/server.py`, `store.py` | New Python/SQLite unit and live-loopback HTTP tests | Loopback-only, no real human authentication/hosted deployment |
+| Workflow → Knowledge journey | `projects/portable-proof-studio/web/`, `test_store.py`, `test_http.py` | Saved four-step text workflow; committed artifact import, lexical search, one-case evaluation; replay, concurrency, restart and isolation tested | Fixed graph, synchronous execution, no cloud storage or distributed coordination |
+| Accessibility/source disclosure | `projects/portable-proof-studio/test_web.py` | Static markup and responsive CSS contract tests | Native browser navigation **blocked by administrator**, not passed; assistive-tech and mobile-device tests unrun |
+| One-command portability | `tools/export_public_starter.py`, `tools/verify_exported_starter.py`, `tools/one_shot_public_project.py` | New `proof-platform` starter with externally pinned source and fixed included tests | Original public source only, no private-company code or runtime isolation warranty |
+
+The status is a **local engineering demonstration**, not production deployment. Independent whole-package review, locked workbench build, PostgreSQL, EVM, native WebMCP and hosted browser acceptance remain open.

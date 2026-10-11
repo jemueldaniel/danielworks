@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Run a real local SQLite workflow, import its artifact, search documents and inspect deterministic evaluation receipts.">
+<title>Portable Proof Studio — Workflow and Knowledge</title><link rel="stylesheet" href="/style.css"></head>
+<body><a class="skip" href="#main">Skip to applications</a>
+<header class="header"><div class="wrap header-inner"><div><strong>Portable Proof Studio</strong><span class="mark">Original public engineering reference</span></div><button id="mode" type="button" aria-pressed="false">Dark appearance</button></div></header>
+<main id="main" class="wrap">
+<section class="hero"><p class="eyebrow">Python · SQLite · HTTP · deterministic evaluation</p><h1>Build a workflow. Save the evidence. Test the result.</h1>
+<p class="lead">Two working applications with one local database. Start a disposable guest workspace, run a four-step text workflow, import its saved artifact into the Knowledge Lab, and measure an actual retrieval result.</p>
+<div class="actions"><button type="button" id="new-space" class="primary">Start a test workspace</button><span id="session" role="status" aria-live="polite">No workspace started.</span></div>
+<p class="limits"><strong>Scope:</strong> Runs only on 127.0.0.1. No cloud deployment, login, external model, wallet, human authentication (not human identity verification) or production security promise. Do not enter private or sensitive data.</p></section>
+<section class="grid" aria-label="Testable applications">
+<article class="panel"><div class="mini-label">01 · Workflow Studio</div><h2>Create and execute</h2>
+<p>One server-validated fixed graph: text input → normalize → keywords → save artifact. Saved workflow revisions are separate from their runs.</p>
+<form id="workflow-form"><label for="workflow-title">Workflow name</label><input id="workflow-title" name="title" required maxlength="80" value="Evidence brief" autocomplete="off">
+<div class="twocol"><div><label for="max-keywords">Maximum keywords</label><input id="max-keywords" name="maxKeywords" type="number" min="1" max="16" value="8" required></div>
+<div><label for="min-length">Minimum token length</label><input id="min-length" name="minLength" type="number" min="1" max="16" value="2" required></div></div>
+<button id="save-workflow" class="primary" type="submit">Save workflow</button></form>
+<form id="run-form"><label for="workflows">Saved workflow</label><select id="workflows" required><option value="">Start a workspace first</option></select>
+<label for="run-input">Sample text to process</label><textarea id="run-input" rows="4" maxlength="4096" required>Verified systems produce evidence. Evidence makes reliable systems understandable.</textarea>
+<button class="primary" type="submit" id="run-button">Run and save artifact</button></form>
+<div class="result" role="region" aria-label="Workflow result"><div class="result-head"><strong>Step receipts and output</strong><button type="button" id="import-artifact" disabled>Import artifact into Knowledge Lab</button></div><pre id="workflow-output" tabindex="0">Run a saved workflow to inspect its actual server result.</pre></div></article>
+<article class="panel"><div class="mini-label">02 · Knowledge &amp; Evaluation Lab</div><h2>Index, search, evaluate</h2><p>Persist bounded text documents, retrieve exact lexical matches and score a pinned, one-case top-1 evaluation. Not an AI model benchmark.</p>
+<form id="document-form"><label for="doc-title">Document title</label><input id="doc-title" required maxlength="80" value="Engineering evidence" autocomplete="off"><label for="doc-text">Document text</label><textarea id="doc-text" maxlength="4096" rows="4" required>Execution receipts must be stored and reloaded. Evaluation compares returned evidence with a known expected document.</textarea><button id="save-document" type="submit" class="primary">Save document</button></form>
+<form id="search-form"><label for="search-query">Search query</label><input id="search-query" maxlength="160" required value="evidence" autocomplete="off"><button class="primary" id="search-button" type="submit">Search saved documents</button></form>
+<form id="evaluation-form"><label for="expected-doc">Expected top document</label><select id="expected-doc" required><option value="">Save or import a document first</option></select><button class="primary" id="evaluate-button" type="submit">Run and save top-1 evaluation</button></form>
+<div class="result" role="region" aria-label="Retrieval and evaluation result"><strong>Search and evaluation receipts</strong><pre id="knowledge-output" tabindex="0">Create or import a document to begin.</pre></div></article>
+</section>
+<section class="proof" aria-labelledby="proof-title"><h2 id="proof-title">What this demonstrates—and what it does not</h2>
+<div class="facts"><div><strong>Actual persistence</strong><p>Stored in an on-disk SQLite database. Restart the local server and reuse your test workspace to inspect saved data.</p></div><div><strong>Replay safety</strong><p>Repeated mutation keys return the same committed result; changed intent conflicts and workspace isolation is checked before replay.</p></div><div><strong>Explicit limits</strong><p>Local-only guest bearer token, bounded documents/workflows and synchronous four-step execution. No durable background job queue, true user accounts or external tools.</p></div></div>
+<p class="limits">This is an educational, original public reference. Read <code>projects/portable-proof-studio/README.md</code> for tests, failure cases and limitations.</p></section>
+</main><footer class="wrap">Built for reproducible local engineering review. No hidden service dependencies.</footer>
+<script type="module" src="/app.js"></script></body></html>

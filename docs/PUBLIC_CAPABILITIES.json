@@ -70,6 +70,22 @@
       "boundary": "Versioned synthetic retrieval exercise; not a model-quality benchmark."
     },
     {
+      "id": "portable-proof-platform",
+      "discipline": "Portable full-stack workflow, HTTP, SQLite persistence and evaluation",
+      "qualification": "executed",
+      "implementation": [
+        "projects/portable-proof-studio/store.py",
+        "projects/portable-proof-studio/server.py",
+        "projects/portable-proof-studio/web/app.js"
+      ],
+      "tests": [
+        "projects/portable-proof-studio/test_store.py",
+        "projects/portable-proof-studio/test_http.py",
+        "projects/portable-proof-studio/test_web.py"
+      ],
+      "boundary": "Loopback-only original demonstration with guest bearer tokens and SQLite, not human authentication, cloud deployment, full workflow graph design, or native mobile-browser acceptance."
+    },
+    {
       "id": "cpu-model-training",
       "discipline": "Deterministic machine learning training and recovery",
       "qualification": "executed",
