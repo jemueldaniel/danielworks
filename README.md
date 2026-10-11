@@ -10,6 +10,18 @@ The original [repeated-profile diagnostic helper](docs/REPEATABILITY_DIAGNOSTICS
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
+## Original transactional SQLite migration gate
+
+[Schema migrations](examples/migration_guard/README.md) now have an original,
+executed teaching reference with 22 Windows tests for drift detection, atomic
+rollback, concurrent writers, monotonic history and idempotent replay.
+It is a trusted-SQL local example, not a production database migration engine.
+
+The public source-pinned one-shot assembler includes eleven executed profiles,
+and service-foundation now includes a migration guard. Private source remains
+read-only and is never an assembler input. Historical/untested evidence stays
+separate from executable proof.
+
 ## New: real local FTS5 hybrid lexical retrieval and measured quality
 
 An [original hybrid retrieval reference](examples/hybrid_search/README.md)

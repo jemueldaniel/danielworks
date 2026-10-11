@@ -58,3 +58,12 @@ embedding model or evaluated LLM RAG product.
 ## Test repeatability and failure transparency
 
 The independently authored public [diagnostic runner](../tools/diagnose_public_profiles.py) and [15 synthetic negative/positive checks](../tools/test_diagnose_public_profiles.py) exercise source-bound public profile selection, repeated tests, exclusive redacted receipts and fail-closed artifact rechecks. These prove local diagnostic **control logic**, not cloud observability, production SRE certification or reliable cross-platform socket behavior.
+
+## Reliable database migration and schema evolution
+
+The [original SQLite migration gate](../examples/migration_guard/migration.py)
+and [22 real tests](../examples/migration_guard/test_migration.py)
+demonstrate atomic DDL changes, deterministic source-digest binding,
+append-only history, rollback, restart recovery and concurrent replays.
+Production PostgreSQL migrations, managed IAM, backups and operations
+remain not verified by this educational module.

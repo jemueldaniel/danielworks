@@ -328,3 +328,14 @@ network-facing threat model, external-effect exactly-once guarantee or
 production security certification has been established. The prior workbench,
 Rust, real EVM, cloud, browser and independent review qualifications remain
 separate and unchanged.
+
+## SQLite migration reliability gate
+
+The original source-pinned SQLite migration profile has 22 dedicated Windows
+tests that cover genuine atomic transactions, historical drift, validation
+and concurrency. The initial Windows test exposed a sqlite3 fixture
+cleanup handle; it was corrected and the 22-case suite passed. A separate
+pre-existing public tooling suite ran 156 tests with seven platform skips
+and zero failures on this checkout, before this module was integrated.
+New suite and full eleven-profile acceptance must be independently rerun.
+This does not establish production identity, PostgreSQL, EVM or cloud use.

@@ -79,11 +79,11 @@ class OneShotPublicProjectTests(unittest.TestCase):
         self.assertEqual(result['groups'][0]['profile'], 'training')
         self.assertTrue(result['posttest_bytes_verified'])
 
-    def test_all_ten_executed_profiles_run_and_retained(self):
+    def test_all_eleven_executed_profiles_run_and_retained(self):
         result = assemble(ROOT, SOURCE_PIN, self.output, [], all_executed=True, timeout=60)
         self.assertEqual(result['status'], 'PASS_TESTED',result)
         self.assertEqual(set(result['profiles']), {p for p,x in STARTERS.items() if x.qualification == 'executed'})
-        self.assertEqual(result['tested_groups'], 10)
+        self.assertEqual(result['tested_groups'], 11)
         self.assertEqual({g['status'] for g in result['groups']},{'PASS'})
         self.assertTrue(result['posttest_bytes_verified'])
 
@@ -95,6 +95,14 @@ class OneShotPublicProjectTests(unittest.TestCase):
         self.assertTrue((self.output/'examples/hybrid_search/hybrid.py').is_file())
         self.assertTrue(result['posttest_bytes_verified'])
         self.assertEqual(json.loads(self.receipt.read_text()), result)
+
+    def test_migration_profile_exports_and_executes_actual_sqlite_rollbacks(self):
+        result = self.create(['migration'], receipt=self.receipt)
+        self.assertEqual(result['status'], 'PASS_TESTED', result)
+        self.assertEqual(result['tested_groups'], 1)
+        self.assertEqual(result['profiles'], ['migration'])
+        self.assertTrue((self.output / 'examples/migration_guard/migration.py').is_file())
+        self.assertTrue(result['posttest_bytes_verified'])
 
     def test_ledger_export_reconciles_real_sqlite_writes(self):
         result = self.create(['ledger'], receipt=self.receipt)

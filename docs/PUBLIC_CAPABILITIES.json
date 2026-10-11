@@ -232,6 +232,19 @@
       "boundary": "35 Windows synthetic tests on FTS5/BM25, lexical hashes, tenant labels, revision fencing and recall/MRR/nDCG. No semantic embeddings, private corpus, model quality certification or deployed search."
     },
     {
+      "id": "sqlite-migration-gate",
+      "discipline": "Transactional SQLite schema migrations, revision history and drift validation",
+      "qualification": "executed",
+      "implementation": [
+        "examples/migration_guard/migration.py",
+        "examples/migration_guard/demo.py"
+      ],
+      "tests": [
+        "examples/migration_guard/test_migration.py"
+      ],
+      "boundary": "22 actual Windows SQLite tests; only trusted local SQL, no PostgreSQL cloud migration, backup, identity or production certification."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

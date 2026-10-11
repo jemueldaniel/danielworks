@@ -150,3 +150,11 @@ relevance benchmarks before making production claims.
 ## Preserve reliable evidence about intermittent test failures
 
 Use the new repeatability diagnostic for externally pinned public starter exports. It accepts the **export manifest** hash and the existing profile allowlist, not arbitrary commands or private repositories. Run two or three explicit rounds when investigating nondeterministic tests and preserve every negative result. A later pass never erases an earlier failure. See REPEATABILITY_DIAGNOSTICS.md for the command and qualification boundaries. This does not fix the underlying operating-system or socket behavior.
+
+## Adapt schema migration skills safely
+
+The approved public migration profile is part of service-foundation and
+full-reference. Review migration SQL before execution, pin the source
+manifest externally, and test a fresh SQLite instance. Production use
+must add backups, real database access controls, monitoring, compatibility
+and rollback/restore drills. Do not transfer employer or startup schema.

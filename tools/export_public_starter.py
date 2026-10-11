@@ -102,6 +102,12 @@ STARTERS: dict[str, Starter] = {
         "examples/hybrid_search/demo.py",
         "examples/hybrid_search/test_hybrid.py",
     ), "python -B -m unittest discover -s examples/hybrid_search -v", "executed"),
+    "migration": Starter("sqlite-migration-gate", (
+        "examples/migration_guard/README.md",
+        "examples/migration_guard/migration.py",
+        "examples/migration_guard/demo.py",
+        "examples/migration_guard/test_migration.py",
+    ), "python -B -m unittest discover -s examples/migration_guard -v", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

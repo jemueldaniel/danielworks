@@ -67,6 +67,14 @@ class ExportVerificationTests(unittest.TestCase):
         self.assertEqual(report['tests_run'], 1)
         self.assertEqual(report['groups'][0]['profile'], 'hybrid-search')
 
+    def test_migration_profile_runs_real_sqlite_checks(self):
+        pin=self.build(['migration'])
+        verified=validate(self.project,pin)
+        outcome=run_profiles(self.project,verified)
+        self.assertEqual(outcome['status'],'PASS')
+        self.assertEqual(outcome['tests_run'],1)
+        self.assertEqual(outcome['groups'][0]['profile'],'migration')
+
     def test_file_bytes_mutation_fails(self):
         pin = self.build()
         path = self.project / 'examples/mcp_agent/runtime.mjs'
