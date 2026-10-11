@@ -1,3 +1,7 @@
+## Source-pinned repeated-runtime diagnostic candidate — 11 October 2026
+
+An original offline source-only diagnostic helper now reruns each fixed public profile separately across bounded explicit rounds, verifies the exported starter before/after each execution, and records profile-specific failures without forwarding private environment variables or exposing local paths and process stderr. Fifteen isolated Linux mock-based regressions passed for failure preservation, fake success rejection, receipt exclusivity and integrity drift. Those mock tests establish control logic only; a real Windows repeated-profile acceptance and independent audit have NOT yet been completed. The earlier intermittent Windows socket failure remains a genuine historical negative result and is not marked resolved. No private company code or real credentials were included.
+
 ## Hybrid lexical retrieval release candidate — 11 October 2026
 
 The independently authored, synthetic SQLite FTS5/BM25 + hashed-token

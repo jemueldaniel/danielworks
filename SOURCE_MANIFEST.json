@@ -3,18 +3,18 @@
   "title": "DanielWorks independently reproducible public engineering showcase",
   "date": "2026-10-11",
   "authoritative_repository": "jemueldaniel/danielworks",
-  "base_commit": "c0a6ff06a4f8eaeb00836f1e8be3d22ea19abbf8",
+  "base_commit": "c2f49b5be31033954162556df424b8e704a7d5da",
   "branch": "main",
-  "status": "PUBLIC_CANDIDATE_SOURCE_ONLY_NOT_PRODUCTION_QUALIFIED",
+  "status": "PUBLIC_CHECKPOINT_SOURCE_ONLY_NOT_PRODUCTION_QUALIFIED",
   "scope": "Original public source and synthesized fixtures; no private repository code or confidential assets",
-  "new_capability": "Original lexical SQLite FTS5/BM25 hybrid retrieval and synthetic relevance evaluation, tenth executed profile and expanded ai-search recipe",
+  "new_capability": "Read-only repeatability diagnostics for pinned public exports with redacted nonoverwriting failure receipts",
   "native_chromium_navigation": "BLOCKED_BY_ADMINISTRATOR",
   "production_deployment": "NOT_ATTEMPTED",
   "independent_whole_package_review": "NOT_COMPLETED",
-  "inventory_file_count": 155,
-  "complete_checkpoint_file_count_including_this_manifest": 156,
-  "payload_bytes_excluding_this_manifest": 1063201,
-  "payload_path_sha256_binding": "b253f430b44b4183d684e8b8ff3033853395be843f90f3a876b2ef3fe4f1433f",
+  "inventory_file_count": 158,
+  "complete_checkpoint_file_count_including_this_manifest": 159,
+  "payload_bytes_excluding_this_manifest": 1083972,
+  "payload_path_sha256_binding": "2adfd22f142b2cd9af3cacac9a1f6adabf06857afda2d66b967e46322ab5f713",
   "files": [
     {
       "path": ".gitattributes",
@@ -43,8 +43,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 24312,
-      "sha256": "ff22230fd4991f84896d109fecbd8157b6b465ebe7a9ad530865c3dd65283cbf"
+      "bytes": 25051,
+      "sha256": "35319d194d08a626ce42da25fbaafce5b41300b8fc836066d2955412c4657d0f"
     },
     {
       "path": "docs/AI_ASSISTANCE.md",
@@ -61,8 +61,8 @@
     {
       "path": "docs/CURRENT_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 40650,
-      "sha256": "29c2d273279b370efa664319f8da4737156b4165db05cb20eefcd448a54f67e2"
+      "bytes": 41512,
+      "sha256": "31f026db18a966aab0f0015eb76a4883e25cb6b59c0a36381e1623341720a3e7"
     },
     {
       "path": "docs/DEPENDENCIES.md",
@@ -79,8 +79,8 @@
     {
       "path": "docs/PUBLIC_CAPABILITIES.json",
       "mode": "100644",
-      "bytes": 10191,
-      "sha256": "339964beb425ad10bf588bf55f7d2e38fa9b7ccc102cfa7b8fabd400ee1f7f4a"
+      "bytes": 10375,
+      "sha256": "5a7ae3073c83f7dd8315b1b69eb4a3a160cd3afbe6e0426143c945d8a2faa701"
     },
     {
       "path": "docs/PUBLIC_RECIPES.md",
@@ -95,6 +95,12 @@
       "sha256": "269b136a74d609fef8b7a56fd0364a10f81f03b382d9643880a7294a7c17a429"
     },
     {
+      "path": "docs/REPEATABILITY_DIAGNOSTICS.md",
+      "mode": "100644",
+      "bytes": 2459,
+      "sha256": "a71431d442f83b70348ab20cebcfcbbb86031c10b8e12e778f46a149721e788b"
+    },
+    {
       "path": "docs/REVIEW_STATUS.md",
       "mode": "100644",
       "bytes": 6924,
@@ -103,8 +109,8 @@
     {
       "path": "docs/SKILLS.md",
       "mode": "100644",
-      "bytes": 7878,
-      "sha256": "71489856b69d72cc1a0e2cf7d33dd4b9e57b693917389af45532f21574e38310"
+      "bytes": 8379,
+      "sha256": "a7fcac475c91512d957083bb062adc852ce942348a81b07fbc69e4126ca2ce7b"
     },
     {
       "path": "docs/SOURCE_VERIFICATION.md",
@@ -127,8 +133,8 @@
     {
       "path": "docs/TRANSFERABLE_WORKFLOW.md",
       "mode": "100644",
-      "bytes": 10626,
-      "sha256": "49dabc8606368281884ff4cfa2b85d02e00871de4c732a60e60b9281b9a906a8"
+      "bytes": 11204,
+      "sha256": "dce6693b2c08623879d53d1a8ade2d2d074fedc956c306b49360552034f0c028"
     },
     {
       "path": "examples/atomic_ledger/README.md",
@@ -701,6 +707,12 @@
       "sha256": "a4bb9e9107d3cb34a98b418e43bdf56b971def5d8b9aec7e4fe356dc70fcd343"
     },
     {
+      "path": "tools/diagnose_public_profiles.py",
+      "mode": "100644",
+      "bytes": 8431,
+      "sha256": "79b29f56398d28e6684b9fbe20cd59851ce1d5c5b74ce867abf2e0ed85cb2e39"
+    },
+    {
       "path": "tools/export_public_starter.py",
       "mode": "100644",
       "bytes": 14856,
@@ -717,6 +729,12 @@
       "mode": "100644",
       "bytes": 5652,
       "sha256": "ce31426aa54ce7965eea3b36dcd7576d4f0eb1028bb9d32caae63cd57f274b09"
+    },
+    {
+      "path": "tools/test_diagnose_public_profiles.py",
+      "mode": "100644",
+      "bytes": 7017,
+      "sha256": "4f8efd808d64edb60a83aa23d3bdf8578448259f1ac09df08c43ee605c51b848"
     },
     {
       "path": "tools/test_export_public_starter.py",

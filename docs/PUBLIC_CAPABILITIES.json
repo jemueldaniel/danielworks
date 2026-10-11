@@ -116,13 +116,15 @@
       "qualification": "executed",
       "implementation": [
         "tools/verify_git_commit.py",
-        "tools/verify_source.py"
+        "tools/verify_source.py",
+        "tools/diagnose_public_profiles.py"
       ],
       "tests": [
         "tools/test_verify_git_commit.py",
-        "tools/test_verify_source.py"
+        "tools/test_verify_source.py",
+        "tools/test_diagnose_public_profiles.py"
       ],
-      "boundary": "Source integrity is not authorship, confidentiality clearance or secure deployment."
+      "boundary": "Source integrity checks and synthetic repeated-profile diagnostics; not authorship, whole-package security review, live Windows failure resolution or production deployment."
     },
     {
       "id": "react-interface",

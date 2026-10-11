@@ -146,3 +146,7 @@ suite includes a deliberately negative retrieval case, tenant boundaries
 and corrupted-index detection. At a new employer, substitute separately
 authorized datasets and services, add trustworthy identity, and run fresh
 relevance benchmarks before making production claims.
+
+## Preserve reliable evidence about intermittent test failures
+
+Use the new repeatability diagnostic for externally pinned public starter exports. It accepts the **export manifest** hash and the existing profile allowlist, not arbitrary commands or private repositories. Run two or three explicit rounds when investigating nondeterministic tests and preserve every negative result. A later pass never erases an earlier failure. See REPEATABILITY_DIAGNOSTICS.md for the command and qualification boundaries. This does not fix the underlying operating-system or socket behavior.

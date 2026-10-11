@@ -54,3 +54,7 @@ exercise actual BM25 ranking, deterministic token-hash cosine scoring,
 reciprocal-rank fusion, tenant-bound indexing, revision fencing and
 measurable recall/MRR/nDCG. This is lexical retrieval, not a neural
 embedding model or evaluated LLM RAG product.
+
+## Test repeatability and failure transparency
+
+The independently authored public [diagnostic runner](../tools/diagnose_public_profiles.py) and [15 synthetic negative/positive checks](../tools/test_diagnose_public_profiles.py) exercise source-bound public profile selection, repeated tests, exclusive redacted receipts and fail-closed artifact rechecks. These prove local diagnostic **control logic**, not cloud observability, production SRE certification or reliable cross-platform socket behavior.
