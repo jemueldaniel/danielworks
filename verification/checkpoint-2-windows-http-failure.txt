@@ -1,0 +1,17 @@
+Sanitized failure excerpt; full original output retained privately.
+Original output SHA-256: c9237851eab7c8ab7aef000745c63427ea1a4feaba69dae42eeebfb7876c9bae
+Command: python -B -m unittest discover -s projects/evidence-workbench/backend -v
+Result: 26 tests; 25 passed; 1 error; exit 1.
+
+ERROR: test_content_type_size_origin_and_host (test_http.HttpTests.test_content_type_size_origin_and_host)
+  File "projects/evidence-workbench/backend/test_http.py", line 55
+    self.assertEqual(self.request('POST','/v1/jobs',b'{}',{'Content-Type':'text/plain'})[0],415)
+  File "projects/evidence-workbench/backend/test_http.py", line 25
+    response=connection.getresponse(); data=response.read()
+  Standard-library call chain: http.client.getresponse -> response.begin -> _read_status -> socket.readinto
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+
+The same unchanged test passed in the earlier complete Windows run and Linux run.
+The later integration failure is not suppressed, converted to a skip, or overwritten.
+A repeated local socket probe was blocked by the tool safety gate. It was not executed elsewhere.
+No speculative backend patch or assertion weakening was made. Root cause remains unresolved.

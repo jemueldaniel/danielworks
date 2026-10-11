@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "compared_sources": 24,
+  "all_exact_match": true,
+  "note": "tsconfig preserves the tested Windows CRLF bytes; all source bytes match the verified final manifest.",
+  "sha256": {
+    "projects/evidence-workbench/tsconfig.json": "0e89a2e650e3b085d66e525442eded393ec866eff6fd175ed1fe4c2d2046bb47",
+    "projects/evidence-workbench/backend/server.py": "0ac2869773e11d24422a1e4b78ea05571f2db22966e8caeab97ae0aabebe8111",
+    "projects/evidence-workbench/backend/test_http.py": "9dfbb9198d2b66e2114067781b1b8d135f420f104be6679169aa8a6673d52cac",
+    "projects/evidence-workbench/backend/test_process_recovery.py": "f066756ecf441f7576f8dce73111bfc439abad752ac659918162924bfee85062",
+    "projects/evidence-workbench/backend/test_workbench.py": "8832eac265cac99ad42b2001e1eeceee8dde7513f2d600bdc9d931a9fa4e605f",
+    "projects/evidence-workbench/backend/workbench.py": "b8e286b9bd45246e6d9a39fbdfc0d5912047793b83942650924ead1c58dc3d56",
+    "projects/evidence-workbench/fixtures/corpus.v1.json": "7888404a7c1f05b82e3e42d4989fd24a379ea5aff9973c8421dc98223bba4e41",
+    "projects/evidence-workbench/scripts/build.mjs": "b8c5713fdc167e1ccba1a3208536aa02a9b7da76602b1d92924508c1937a4afe",
+    "projects/evidence-workbench/src/api-client.ts": "b765d1ae7f8d6882d500773bf2a49383bba4d6d82d4b656f7556d37549d949a2",
+    "projects/evidence-workbench/src/mcp-client.ts": "c1027d67860e493fa88adbd25f3169d3169678ebeb0b506d69fbf1a16b5718d7",
+    "projects/evidence-workbench/src/mcp.ts": "20818c6ec305d73678c1aa519f4c80b4f59039d104506993aca2b8d241211162",
+    "projects/evidence-workbench/src/schema.ts": "52129bb2e5d839bf0278e39944f29885c69d4fd2527fba1c40a7f5eafb647c80",
+    "projects/evidence-workbench/src/server.ts": "52eb2f218279c8c4c677bcca779f1529ba19d5856419783b706ce01d2d294774",
+    "projects/evidence-workbench/tests/api.test.mjs": "dfd4fe0f2e12fd2afdb011ab2bcf734f982a2ce2787aedcee02f3c83152014ac",
+    "projects/evidence-workbench/tests/browser.test.mjs": "b4edc4b9cc1fffde0a4b9c27ac6c95b1bfdcd8d2565cac204aa95ebcafada058",
+    "projects/evidence-workbench/tests/helpers.mjs": "8f2dac4fcafdac490914359dde4dfee35aa06a112a02014e4f5bc4fd70f6d526",
+    "projects/evidence-workbench/tests/protocol.test.mjs": "3012d0e10b12cf721aa5596911d1e6c695947099eb73f97c4998349375947c7e",
+    "projects/evidence-workbench/tests/review.test.mjs": "9e17d7ef1eddbb3b7b043b27b75a29d187ed4cb6616e5dee53ec51a5a6dd7639",
+    "projects/evidence-workbench/tests/types.test.ts": "20fcff4d84d3d3da3f83a7d67e4dd24559751b744bc82a7b1a93853c9f975d0a",
+    "projects/evidence-workbench/web/App.tsx": "094c80c04dea03c683724b6193189e825db1438f7fab0793b12257c72b3c3b51",
+    "projects/evidence-workbench/web/index.html": "4740f379ca9ce7059b524920fdb32e2571946da8c840dae26d769c460211d7a9",
+    "projects/evidence-workbench/web/main.tsx": "2d31ba8145ea0cfb2812d3a03e59674efaa4b6211f6487de8a3cf6e3143807f6",
+    "projects/evidence-workbench/web/style.css": "2efe819899111e42862520f3d9163f9020bc72e8b8e4cf229db0354a014cfd97",
+    "package.json": "0017ed9dc85a839710c485896a8a001bdc6546d9563efcd9138e3e60c3b62c6b"
+  }
+}

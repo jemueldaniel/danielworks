@@ -1,0 +1,31 @@
+{
+  "environment": {
+    "node": "v22.16.0",
+    "python": "3.13.5",
+    "sqlite": "3.46.1",
+    "typescript": "Version 5.8.3"
+  },
+  "results": [
+    {
+      "component": "queue",
+      "status": "PASS",
+      "tests": 17
+    },
+    {
+      "component": "eval",
+      "status": "PASS",
+      "tests": 15
+    },
+    {
+      "component": "typescript",
+      "scope": "strict compilation and compile-only type assertions",
+      "status": "PASS"
+    },
+    {
+      "component": "sdk",
+      "status": "PASS",
+      "tests": 28
+    }
+  ],
+  "scope": "isolated example tests; one loopback HTTP test; no external service calls"
+}

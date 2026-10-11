@@ -1,0 +1,42 @@
+--- a/tools/verify_source.py
++++ b/tools/verify_source.py
+@@ -46,13 +46,19 @@
+     return name
+ 
+ 
++def _is_reparse(info: os.stat_result) -> bool:
++    # Windows junctions are directory reparse points, not POSIX symlinks.
++    return bool(getattr(info, 'st_file_attributes', 0) & getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 0x400))
++
++
+ def _read_regular(path: Path, limit: int) -> bytes:
+-    if not stat.S_ISREG(path.lstat().st_mode):
++    info = path.lstat()
++    if _is_reparse(info) or not stat.S_ISREG(info.st_mode):
+         _fail('nonregular_file')
+     flags = os.O_RDONLY | getattr(os, 'O_BINARY', 0) | getattr(os, 'O_NOFOLLOW', 0)
+     with os.fdopen(os.open(path, flags), 'rb') as stream:
+         before = os.fstat(stream.fileno())
+-        if not stat.S_ISREG(before.st_mode):
++        if _is_reparse(before) or not stat.S_ISREG(before.st_mode):
+             _fail('nonregular_file')
+         if before.st_size > limit:
+             _fail('resource_limit')
+@@ -91,7 +97,7 @@
+                     _fail('resource_limit')
+                 relative = (directory / entry.name).relative_to(root).as_posix()
+                 info = entry.stat(follow_symlinks=False)
+-                if not (stat.S_ISREG(info.st_mode) or stat.S_ISDIR(info.st_mode)):
++                if _is_reparse(info) or not (stat.S_ISREG(info.st_mode) or stat.S_ISDIR(info.st_mode)):
+                     _fail('nonregular_file')
+                 if relative == '.git':
+                     excluded.append(relative)
+@@ -115,7 +121,7 @@
+     POSIX-only; declared modes are explicitly unverified on Windows.
+     """
+     root = Path(root).absolute()
+-    if root.is_symlink() or not root.is_dir():
++    if _is_reparse(root.lstat()) or root.is_symlink() or not root.is_dir():
+         _fail('invalid_root')
+     raw = _read_regular(root / MANIFEST, MAX_MANIFEST_BYTES)
+     manifest_hash = hashlib.sha256(raw).hexdigest()

@@ -1,0 +1,33 @@
+
+running 2 tests
+test repeated_binding_shadows_without_invalid_local_slot ... FAILED
+test shadow_initializer_uses_previous_binding_and_later_names_do_not_alias ... FAILED
+
+failures:
+
+---- repeated_binding_shadows_without_invalid_local_slot stdout ----
+
+thread 'repeated_binding_shadows_without_invalid_local_slot' (23828) panicked at tests\bindings.rs:6:5:
+assertion `left == right` failed
+  left: Err(UnknownName)
+ right: Ok(2)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- shadow_initializer_uses_previous_binding_and_later_names_do_not_alias stdout ----
+
+thread 'shadow_initializer_uses_previous_binding_and_later_names_do_not_alias' (23864) panicked at tests\bindings.rs:13:5:
+assertion `left == right` failed
+  left: Ok(14)
+ right: Ok(9)
+
+
+failures:
+    repeated_binding_shadows_without_invalid_local_slot
+    shadow_initializer_uses_previous_binding_and_later_names_do_not_alias
+
+test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling bounded-lang v0.1.0 (CHECKPOINT\source\projects\bounded-lang)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.62s
+     Running tests\bindings.rs (CHECKPOINT\evidence-private\cargo-target\debug\deps\bindings-254cefa522a9705c.exe)
+error: test failed, to rerun pass `--test bindings`

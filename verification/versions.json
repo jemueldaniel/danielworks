@@ -1,0 +1,71 @@
+{
+  "versions": {
+    "python": "3.13.6",
+    "sqlite": "3.50.4",
+    "node": "v24.15.0",
+    "npm": "11.13.0",
+    "browser": "Microsoft Edge 154.0.4258.53"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": {
+      "version": "1.32.1",
+      "license": "MIT",
+      "engines": {
+        "node": ">=18"
+      }
+    },
+    "react": {
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "react-dom": {
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": null
+    },
+    "zod": {
+      "version": "4.6.5",
+      "license": "MIT",
+      "engines": null
+    },
+    "@types/node": {
+      "version": "26.6.4",
+      "license": "MIT",
+      "engines": null
+    },
+    "@types/react": {
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": null
+    },
+    "@types/react-dom": {
+      "version": "19.3.0",
+      "license": "MIT",
+      "engines": null
+    },
+    "esbuild": {
+      "version": "0.28.2",
+      "license": "MIT",
+      "engines": {
+        "node": ">=18"
+      }
+    },
+    "playwright": {
+      "version": "1.63.0",
+      "license": "Apache-2.0",
+      "engines": {
+        "node": ">=20"
+      }
+    },
+    "typescript": {
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "engines": {
+        "node": ">=16.20.0"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+test_cancel_fences_running_worker_and_never_resurrects (test_jobs.QueueTests.test_cancel_fences_running_worker_and_never_resurrects) ... ok
+test_completed_job_cannot_be_cancelled (test_jobs.QueueTests.test_completed_job_cannot_be_cancelled) ... ok
+test_completion_replay_is_observable_without_reexecuting (test_jobs.QueueTests.test_completion_replay_is_observable_without_reexecuting) ... ok
+test_concurrent_connections_cannot_claim_same_job (test_jobs.QueueTests.test_concurrent_connections_cannot_claim_same_job) ... ok
+test_database_lock_is_reported_without_losing_pending_job (test_jobs.QueueTests.test_database_lock_is_reported_without_losing_pending_job) ... ok
+test_expired_final_attempt_becomes_failed (test_jobs.QueueTests.test_expired_final_attempt_becomes_failed) ... ok
+test_expiry_boundary_rejects_completion_before_any_replacement (test_jobs.QueueTests.test_expiry_boundary_rejects_completion_before_any_replacement) ... ok
+test_invalid_identifiers_times_and_attempts_are_rejected (test_jobs.QueueTests.test_invalid_identifiers_times_and_attempts_are_rejected) ... ok
+test_invalid_json_and_large_payload_are_rejected_before_insertion (test_jobs.QueueTests.test_invalid_json_and_large_payload_are_rejected_before_insertion) ... ok
+test_lease_duration_validation_does_not_claim_job (test_jobs.QueueTests.test_lease_duration_validation_does_not_claim_job) ... ok
+test_payload_snapshots_do_not_alias_callers (test_jobs.QueueTests.test_payload_snapshots_do_not_alias_callers) ... ok
+test_reopen_recovers_expired_lease_and_fences_old_worker (test_jobs.QueueTests.test_reopen_recovers_expired_lease_and_fences_old_worker) ... ok
+test_retry_policy_is_part_of_submission_identity (test_jobs.QueueTests.test_retry_policy_is_part_of_submission_identity) ... ok
+test_retry_waits_until_ready_time_then_exhausts_budget (test_jobs.QueueTests.test_retry_waits_until_ready_time_then_exhausts_budget) ... ok
+test_sql_failure_rolls_back_and_connection_remains_usable (test_jobs.QueueTests.test_sql_failure_rolls_back_and_connection_remains_usable) ... ok
+test_submission_replays_but_payload_conflict_does_not_overwrite (test_jobs.QueueTests.test_submission_replays_but_payload_conflict_does_not_overwrite) ... ok
+test_tenant_queues_and_same_keys_are_isolated (test_jobs.QueueTests.test_tenant_queues_and_same_keys_are_isolated) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.335s
+
+OK

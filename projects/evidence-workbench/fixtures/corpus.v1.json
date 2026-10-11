@@ -1,0 +1,19 @@
+{
+  "schema": "workbench-input.v1",
+  "version": "synthetic-v1",
+  "documents": [
+    {"id": "alpha", "text": "reset password login account security"},
+    {"id": "beta", "text": "change email address account"},
+    {"id": "gamma", "text": "download invoice receipt billing"},
+    {"id": "delta", "text": "refund order payment"},
+    {"id": "epsilon", "text": "export data archive backup"},
+    {"id": "zeta", "text": "keyboard navigation focus accessibility"}
+  ],
+  "queries": [
+    {"id": "q-password", "query": "password", "relevant": ["alpha"]},
+    {"id": "q-billing", "query": "invoice receipt", "relevant": ["gamma"]},
+    {"id": "q-export", "query": "backup archive", "relevant": ["epsilon"]},
+    {"id": "q-keyboard", "query": "keyboard focus", "relevant": ["zeta"]},
+    {"id": "q-synonym", "query": "purchase reversal", "relevant": ["delta"]}
+  ]
+}

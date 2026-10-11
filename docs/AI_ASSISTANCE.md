@@ -1,0 +1,7 @@
+# AI assistance and studying this work
+
+These generic demonstrations, new integration code, synthetic fixture, tests and documentation were authored with AI assistance in response to the repository owner's brief. The owner has not been represented as the sole unaided author. Source inspection does not establish authorship, employment, ownership, customers or production usage.
+
+The implementing assistant self-reviewed the candidate and wrote separate black-box tests, including one that exposed an identity-confirmation bug. A separate agent's independent static review of the eight Rust-scope files was completed; its [report](../verification/current/rust-final-independent-review.md), exact input hashes and two low-severity observations are retained in [the review record](../verification/checkpoint-2.json). That review applies only while those eight hashes match. It is not a runtime qualification or approval of the complete public candidate. **Whole-package independent review remains incomplete, including this documentation correction.** No completed independent human review is recorded. No employer endorsement or hiring result is claimed.
+
+For independent understanding, follow the [study sequence](../projects/evidence-workbench/docs/INTERFACES.md), explain why an unknown write outcome cannot be retried blindly, trace a generation-fenced checkpoint, reproduce the synonym failure and distinguish an MCP permission profile from authentication. Review the retained tests rather than memorizing test totals.

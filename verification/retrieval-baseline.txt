@@ -1,0 +1,8 @@
+test_baseline_is_reproducible (test_retrieval.T.test_baseline_is_reproducible) ... ok
+test_failure_analysis_is_inspectable (test_retrieval.T.test_failure_analysis_is_inspectable) ... ok
+test_input_and_k_bounds (test_retrieval.T.test_input_and_k_bounds) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

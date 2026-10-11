@@ -1,0 +1,30 @@
+{
+  "name": "evidence-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "build": "node projects/evidence-workbench/scripts/build.mjs",
+    "typecheck": "tsc -p projects/evidence-workbench/tsconfig.json",
+    "test:protocol": "node --test --test-concurrency=1 projects/evidence-workbench/tests/protocol.test.mjs projects/evidence-workbench/tests/api.test.mjs projects/evidence-workbench/tests/review.test.mjs",
+    "test:browser": "node --test --test-concurrency=1 projects/evidence-workbench/tests/browser.test.mjs",
+    "test": "npm run typecheck && npm run build && npm run test:protocol && npm run test:browser"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0",
+    "typescript": "7.0.2"
+  }
+}

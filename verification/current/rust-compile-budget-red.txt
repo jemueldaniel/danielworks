@@ -1,0 +1,45 @@
+
+running 4 tests
+test empty_public_ir_blocks_are_rejected_not_traversed_for_free ... FAILED
+test nested_expression_has_a_compile_budget ... FAILED
+test flat_expression_has_a_compile_budget ... FAILED
+test source_size_is_bounded_before_lexing ... FAILED
+
+failures:
+
+---- empty_public_ir_blocks_are_rejected_not_traversed_for_free stdout ----
+
+thread 'empty_public_ir_blocks_are_rejected_not_traversed_for_free' (19136) panicked at tests\compile_budget.rs:31:5:
+assertion `left == right` failed
+  left: Ok(1)
+ right: Err(Parse)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- nested_expression_has_a_compile_budget stdout ----
+
+thread 'nested_expression_has_a_compile_budget' (22084) panicked at tests\compile_budget.rs:17:5:
+nested expressions must be bounded
+
+---- flat_expression_has_a_compile_budget stdout ----
+
+thread 'flat_expression_has_a_compile_budget' (14752) panicked at tests\compile_budget.rs:25:5:
+flat AST emission must also be bounded
+
+---- source_size_is_bounded_before_lexing stdout ----
+
+thread 'source_size_is_bounded_before_lexing' (18212) panicked at tests\compile_budget.rs:9:5:
+oversized source must be rejected
+
+
+failures:
+    empty_public_ir_blocks_are_rejected_not_traversed_for_free
+    flat_expression_has_a_compile_budget
+    nested_expression_has_a_compile_budget
+    source_size_is_bounded_before_lexing
+
+test result: FAILED. 0 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+   Compiling bounded-lang v0.1.0 (CHECKPOINT\source\projects\bounded-lang)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.78s
+     Running tests\compile_budget.rs (CHECKPOINT\evidence-private\cargo-target\debug\deps\compile_budget-2933b9dfe05cc088.exe)
+error: test failed, to rerun pass `--test compile_budget`

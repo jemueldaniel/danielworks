@@ -1,0 +1,63 @@
+
+> evidence-workbench@0.1.0 test
+> npm run typecheck && npm run build && npm run test:protocol && npm run test:browser
+
+
+> evidence-workbench@0.1.0 typecheck
+> tsc -p projects/evidence-workbench/tsconfig.json
+
+
+> evidence-workbench@0.1.0 build
+> node projects/evidence-workbench/scripts/build.mjs
+
+Built gateway, typed clients and React interface; no services started.
+
+> evidence-workbench@0.1.0 test:protocol
+> node --test --test-concurrency=1 projects/evidence-workbench/tests/protocol.test.mjs projects/evidence-workbench/tests/api.test.mjs projects/evidence-workbench/tests/review.test.mjs
+
+✔ HTTP SDK rejects caller-selected tenant and invalid input before mutation (368.1064ms)
+✔ HTTP SDK pre-aborted mutation is not sent (14.3174ms)
+✔ permission profile is pinned by gateway route, not supplied request header (20.5542ms)
+✔ real concurrent SDK idempotency, changed-payload conflict and tenant partition (149.5023ms)
+✔ one real POST can commit then lose its response; SDK never automatically replays it (39.0267ms)
+✔ an oversized real server response is bounded and never interpreted as confirmation (4.8393ms)
+✔ safe diagnostic failures do not contain payload text or exception details (7.2355ms)
+✔ real initialize negotiates the pinned protocol over TCP (355.2591ms)
+✔ read profile schemas and tool execution use the actual backend (70.6064ms)
+✔ sessions are profile-bound and initialization is required (20.4329ms)
+✔ invalid arguments and unknown tools do not create work (23.2729ms)
+✔ SDK creates, executes, inspects, paginates and cancels real durable jobs (280.3136ms)
+✔ pre-aborted mutation does not dispatch and session close is explicit (21.5182ms)
+✔ wire boundary rejects foreign origins, oversized bodies, batches and bad media (10.1892ms)
+✔ SDK read-only profile cannot bypass the actual tool permission boundary (27.1712ms)
+✔ backend loss is a recoverable error, not invented success (218.9287ms)
+✔ a schema-valid response for another operation cannot confirm this write (585.6106ms)
+✔ MCP session capacity is bounded and DELETE reclaims an actual session (478.2144ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6402.9012
+
+> evidence-workbench@0.1.0 test:browser
+> node --test --test-concurrency=1 projects/evidence-workbench/tests/browser.test.mjs
+
+{"browser":"154.0.4258.53","viewports":[{"width":1280,"height":800},{"width":390,"height":844}]}
+✔ real browser renders the workbench, keyboard flow and mobile layout (3426.5685ms)
+✔ browser submission is completed through MCP and restored after backend restart (1653.4822ms)
+✔ lost response after a real commit reconciles without duplicate writes (938.355ms)
+✔ offline submission survives reload and requires an explicit same-key retry (1129.6981ms)
+✔ loading is visible while a real list request is delayed (576.5878ms)
+✔ an invalid persisted browser request cannot become a mutation (547.7475ms)
+✔ mobile cancellation persists and the modal makes background controls inert (1105.7861ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10187.9831

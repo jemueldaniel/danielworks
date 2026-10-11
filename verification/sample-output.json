@@ -1,0 +1,129 @@
+{
+  "dataset": {
+    "version": "synthetic-v1",
+    "sha256": "50651379d0f6b6a2adc3c75ee15cdf29c94d69299cb33a0e68a78d810b437bd3",
+    "document_count": 6,
+    "query_count": 5,
+    "engines": [
+      "fts5",
+      "lexical"
+    ],
+    "known_failure": "q-synonym",
+    "synthetic": true
+  },
+  "work": {
+    "job": {
+      "key": "study-run",
+      "state": "done",
+      "engine": "fts5",
+      "k": 2,
+      "input_digest": "50651379d0f6b6a2adc3c75ee15cdf29c94d69299cb33a0e68a78d810b437bd3",
+      "generation": 1,
+      "attempts": 1,
+      "checkpoint_count": 5,
+      "result": {
+        "dataset_sha256": "746b7e0c13dbc43048e42e016ef939c4e545b55fec6ea9afef47643e0bac4ca1",
+        "failures": [
+          {
+            "id": "q-synonym",
+            "relevant": [
+              "delta"
+            ],
+            "retrieved": []
+          }
+        ],
+        "input_digest": "50651379d0f6b6a2adc3c75ee15cdf29c94d69299cb33a0e68a78d810b437bd3",
+        "k": 2,
+        "macro_recall_at_k": 0.8,
+        "mrr_at_k": 0.8,
+        "queries": [
+          {
+            "id": "q-billing",
+            "recall_at_k": 1.0,
+            "reciprocal_rank_at_k": 1.0
+          },
+          {
+            "id": "q-export",
+            "recall_at_k": 1.0,
+            "reciprocal_rank_at_k": 1.0
+          },
+          {
+            "id": "q-keyboard",
+            "recall_at_k": 1.0,
+            "reciprocal_rank_at_k": 1.0
+          },
+          {
+            "id": "q-password",
+            "recall_at_k": 1.0,
+            "reciprocal_rank_at_k": 1.0
+          },
+          {
+            "id": "q-synonym",
+            "recall_at_k": 0.0,
+            "reciprocal_rank_at_k": 0.0
+          }
+        ],
+        "query_count": 5,
+        "resumed_cases": 0,
+        "schema": "ranking-report.v1"
+      }
+    },
+    "processed_cases": 5
+  },
+  "run": {
+    "key": "study-run",
+    "state": "done",
+    "engine": "fts5",
+    "k": 2,
+    "input_digest": "50651379d0f6b6a2adc3c75ee15cdf29c94d69299cb33a0e68a78d810b437bd3",
+    "generation": 1,
+    "attempts": 1,
+    "checkpoint_count": 5,
+    "result": {
+      "dataset_sha256": "746b7e0c13dbc43048e42e016ef939c4e545b55fec6ea9afef47643e0bac4ca1",
+      "failures": [
+        {
+          "id": "q-synonym",
+          "relevant": [
+            "delta"
+          ],
+          "retrieved": []
+        }
+      ],
+      "input_digest": "50651379d0f6b6a2adc3c75ee15cdf29c94d69299cb33a0e68a78d810b437bd3",
+      "k": 2,
+      "macro_recall_at_k": 0.8,
+      "mrr_at_k": 0.8,
+      "queries": [
+        {
+          "id": "q-billing",
+          "recall_at_k": 1.0,
+          "reciprocal_rank_at_k": 1.0
+        },
+        {
+          "id": "q-export",
+          "recall_at_k": 1.0,
+          "reciprocal_rank_at_k": 1.0
+        },
+        {
+          "id": "q-keyboard",
+          "recall_at_k": 1.0,
+          "reciprocal_rank_at_k": 1.0
+        },
+        {
+          "id": "q-password",
+          "recall_at_k": 1.0,
+          "reciprocal_rank_at_k": 1.0
+        },
+        {
+          "id": "q-synonym",
+          "recall_at_k": 0.0,
+          "reciprocal_rank_at_k": 0.0
+        }
+      ],
+      "query_count": 5,
+      "resumed_cases": 0,
+      "schema": "ranking-report.v1"
+    }
+  }
+}

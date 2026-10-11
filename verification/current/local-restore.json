@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-07",
+  "source": "hash-verified local restore; NOT GitHub checkout",
+  "passed_command_groups": 14,
+  "unique_behavioural_tests": 145,
+  "dependency_lock_sha256": "f389c35e449bc42227cd3113c0d14c948d82a9bd1fa97a455c8a4c273c2a9731",
+  "checks": [
+    {
+      "name": "queue",
+      "exit": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "examples/durable_jobs",
+        "-v"
+      ],
+      "original_output_sha256": "d158d49a73d213f46c04141b5f92a6e15f301d6bf43654b166a18344440f6a8b",
+      "output": "test_cancel_fences_running_worker_and_never_resurrects (test_jobs.QueueTests.test_cancel_fences_running_worker_and_never_resurrects) ... ok\ntest_completed_job_cannot_be_cancelled (test_jobs.QueueTests.test_completed_job_cannot_be_cancelled) ... ok\ntest_completion_replay_is_observable_without_reexecuting (test_jobs.QueueTests.test_completion_replay_is_observable_without_reexecuting) ... ok\ntest_concurrent_connections_cannot_claim_same_job (test_jobs.QueueTests.test_concurrent_connections_cannot_claim_same_job) ... ok\ntest_database_lock_is_reported_without_losing_pending_job (test_jobs.QueueTests.test_database_lock_is_reported_without_losing_pending_job) ... ok\ntest_expired_final_attempt_becomes_failed (test_jobs.QueueTests.test_expired_final_attempt_becomes_failed) ... ok\ntest_expiry_boundary_rejects_completion_before_any_replacement (test_jobs.QueueTests.test_expiry_boundary_rejects_completion_before_any_replacement) ... ok\ntest_invalid_identifiers_times_and_attempts_are_rejected (test_jobs.QueueTests.test_invalid_identifiers_times_and_attempts_are_rejected) ... ok\ntest_invalid_json_and_large_payload_are_rejected_before_insertion (test_jobs.QueueTests.test_invalid_json_and_large_payload_are_rejected_before_insertion) ... ok\ntest_lease_duration_validation_does_not_claim_job (test_jobs.QueueTests.test_lease_duration_validation_does_not_claim_job) ... ok\ntest_payload_snapshots_do_not_alias_callers (test_jobs.QueueTests.test_payload_snapshots_do_not_alias_callers) ... ok\ntest_reopen_recovers_expired_lease_and_fences_old_worker (test_jobs.QueueTests.test_reopen_recovers_expired_lease_and_fences_old_worker) ... ok\ntest_retry_policy_is_part_of_submission_identity (test_jobs.QueueTests.test_retry_policy_is_part_of_submission_identity) ... ok\ntest_retry_waits_until_ready_time_then_exhausts_budget (test_jobs.QueueTests.test_retry_waits_until_ready_time_then_exhausts_budget) ... ok\ntest_sql_failure_rolls_back_and_connection_remains_usable (test_jobs.QueueTests.test_sql_failure_rolls_back_and_connection_remains_usable) ... ok\ntest_submission_replays_but_payload_conflict_does_not_overwrite (test_jobs.QueueTests.test_submission_replays_but_payload_conflict_does_not_overwrite) ... ok\ntest_tenant_queues_and_same_keys_are_isolated (test_jobs.QueueTests.test_tenant_queues_and_same_keys_are_isolated) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.326s\n\nOK\n"
+    },
+    {
+      "name": "ranking",
+      "exit": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "examples/ranking_eval",
+        "-v"
+      ],
+      "original_output_sha256": "82589b52f742f46cd66957f448d23227f4fc390c48660c15773deb3a12baa9c3",
+      "output": "test_cli_prints_real_computed_result_and_returns_nonzero_on_invalid_data (test_evaluation.EvaluationTests.test_cli_prints_real_computed_result_and_returns_nonzero_on_invalid_data) ... ok\ntest_cutoff_changes_recall_not_first_hit (test_evaluation.EvaluationTests.test_cutoff_changes_recall_not_first_hit) ... ok\ntest_direct_api_rejects_excessive_total_identifier_references (test_evaluation.EvaluationTests.test_direct_api_rejects_excessive_total_identifier_references) ... ok\ntest_duplicate_corpus_labels_and_relevance_labels_are_rejected (test_evaluation.EvaluationTests.test_duplicate_corpus_labels_and_relevance_labels_are_rejected) ... ok\ntest_duplicate_query_ids_are_rejected (test_evaluation.EvaluationTests.test_duplicate_query_ids_are_rejected) ... ok\ntest_duplicate_ranked_documents_after_cutoff_are_also_rejected (test_evaluation.EvaluationTests.test_duplicate_ranked_documents_after_cutoff_are_also_rejected) ... ok\ntest_empty_evaluation_and_unknown_fields_are_rejected (test_evaluation.EvaluationTests.test_empty_evaluation_and_unknown_fields_are_rejected) ... ok\ntest_empty_results_contribute_zero_instead_of_disappearing (test_evaluation.EvaluationTests.test_empty_results_contribute_zero_instead_of_disappearing) ... ok\ntest_hand_calculated_macro_metrics (test_evaluation.EvaluationTests.test_hand_calculated_macro_metrics) ... ok\ntest_identifier_overlap_between_training_and_evaluation_is_rejected (test_evaluation.EvaluationTests.test_identifier_overlap_between_training_and_evaluation_is_rejected) ... ok\ntest_loader_rejects_duplicate_keys_nonfinite_values_and_oversize (test_evaluation.EvaluationTests.test_loader_rejects_duplicate_keys_nonfinite_values_and_oversize) ... ok\ntest_no_relevance_labels_is_error_not_perfect_score (test_evaluation.EvaluationTests.test_no_relevance_labels_is_error_not_perfect_score) ... ok\ntest_repeatability_fingerprint_and_input_preservation (test_evaluation.EvaluationTests.test_repeatability_fingerprint_and_input_preservation) ... ok\ntest_unknown_document_ids_are_rejected (test_evaluation.EvaluationTests.test_unknown_document_ids_are_rejected) ... ok\ntest_wrong_types_and_invalid_cutoffs_are_rejected (test_evaluation.EvaluationTests.test_wrong_types_and_invalid_cutoffs_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.253s\n\nOK\n"
+    },
+    {
+      "name": "python-contract",
+      "exit": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "examples/typed_api_sdk",
+        "-v"
+      ],
+      "original_output_sha256": "1eae8b315cf7abccf4f6ac92f78555a2b7314dbc2d90bda4de21bdf12198c302",
+      "output": "test_idempotency_conflict_is_scoped_and_rejected (test_service.ApiSdkTests.test_idempotency_conflict_is_scoped_and_rejected) ... ok\ntest_idempotent_create_replays_same_result (test_service.ApiSdkTests.test_idempotent_create_replays_same_result) ... ok\ntest_limit_and_cursor_are_bounded (test_service.ApiSdkTests.test_limit_and_cursor_are_bounded) ... ok\ntest_pagination_and_tenant_isolation (test_service.ApiSdkTests.test_pagination_and_tenant_isolation) ... ok\ntest_validation_rejects_unknown_fields (test_service.ApiSdkTests.test_validation_rejects_unknown_fields) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "name": "transaction-simulation",
+      "exit": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "examples/tx_sim",
+        "-v"
+      ],
+      "original_output_sha256": "a5fa807bedc062c130bdc896cfd9141260d2481ab8fc9b38aebf86a119e4ced1",
+      "output": "test_failed_transfer_does_not_consume_intent (test_simulator.T.test_failed_transfer_does_not_consume_intent) ... ok\ntest_rejects_self_and_nonpositive (test_simulator.T.test_rejects_self_and_nonpositive) ... ok\ntest_transfer_and_payer_scoped_replay_protection (test_simulator.T.test_transfer_and_payer_scoped_replay_protection) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "name": "lexical",
+      "exit": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_retrieval.py"
+      ],
+      "original_output_sha256": "c0a1f9f6259337122dbdad557c9ef0a18d308c6b9bda4ab2da315578dc6b4518",
+      "output": "test_baseline_is_reproducible (test_retrieval.T.test_baseline_is_reproducible) ... ok\ntest_failure_analysis_is_inspectable (test_retrieval.T.test_failure_analysis_is_inspectable) ... ok\ntest_input_and_k_bounds (test_retrieval.T.test_input_and_k_bounds) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "name": "tool-simulation",
+      "exit": 0,
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "examples/mcp_agent/test_runtime.mjs"
+      ],
+      "original_output_sha256": "ea271d9b388482bc1544219da1d3f829c6cf6b78bd9e263f4d2c4b78632e53de",
+      "output": "TAP version 13\n# Subtest: MCP lists schemas and permission metadata\nok 1 - MCP lists schemas and permission metadata\n  ---\n  duration_ms: 0.8897\n  type: 'test'\n  ...\n# Subtest: tool execution enforces permission boundary\nok 2 - tool execution enforces permission boundary\n  ---\n  duration_ms: 0.2207\n  type: 'test'\n  ...\n# Subtest: schema rejects oversized arguments\nok 3 - schema rejects oversized arguments\n  ---\n  duration_ms: 0.1736\n  type: 'test'\n  ...\n# Subtest: agent checkpoints and resumes without replaying completed steps\nok 4 - agent checkpoints and resumes without replaying completed steps\n  ---\n  duration_ms: 1.0198\n  type: 'test'\n  ...\n# Subtest: pre-cancelled run performs no tool call\nok 5 - pre-cancelled run performs no tool call\n  ---\n  duration_ms: 0.2054\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 95.4127\n"
+    },
+    {
+      "name": "backend",
+      "exit": 0,
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "projects/evidence-workbench/backend",
+        "-v"
+      ],
+      "original_output_sha256": "3d4b3fec94dd971b5682513386efbf5ec50ae2aa6078e8e802ca64d9104448c0",
+      "output": "test_bad_json_and_duplicate_keys_are_rejected (test_http.HttpTests.test_bad_json_and_duplicate_keys_are_rejected) ... ok\ntest_content_type_size_origin_and_host (test_http.HttpTests.test_content_type_size_origin_and_host) ... ok\ntest_duplicate_write_conflict_and_race (test_http.HttpTests.test_duplicate_write_conflict_and_race) ... ok\ntest_end_to_end_http_persistence_and_grading (test_http.HttpTests.test_end_to_end_http_persistence_and_grading) ... ok\ntest_health_crosses_a_real_socket (test_http.HttpTests.test_health_crosses_a_real_socket) ... ok\ntest_partition_unknown_profile_and_pagination_bounds (test_http.HttpTests.test_partition_unknown_profile_and_pagination_bounds) ... ok\ntest_read_profile_cannot_mutate (test_http.HttpTests.test_read_profile_cannot_mutate) ... ok\ntest_real_search_and_cancel_are_exposed (test_http.HttpTests.test_real_search_and_cancel_are_exposed) ... ok\ntest_abrupt_worker_exit_preserves_checkpoint_then_reclaims_expired_lease (test_process_recovery.ProcessRecoveryTests.test_abrupt_worker_exit_preserves_checkpoint_then_reclaims_expired_lease) ... ok\ntest_persisted_input_identity_drift_is_refused (test_process_recovery.ProcessRecoveryTests.test_persisted_input_identity_drift_is_refused) ... ok\ntest_unknown_schema_is_refused_without_rewriting_version (test_process_recovery.ProcessRecoveryTests.test_unknown_schema_is_refused_without_rewriting_version) ... ok\ntest_cancel_mid_run_fences_completion (test_workbench.WorkbenchTests.test_cancel_mid_run_fences_completion) ... ok\ntest_checkpoint_resume_fences_old_generation (test_workbench.WorkbenchTests.test_checkpoint_resume_fences_old_generation) ... ok\ntest_concurrent_idempotent_submission (test_workbench.WorkbenchTests.test_concurrent_idempotent_submission) ... ok\ntest_connection_is_closed_after_scope (test_workbench.WorkbenchTests.test_connection_is_closed_after_scope) ... ok\ntest_corrupt_checkpoint_fails_closed (test_workbench.WorkbenchTests.test_corrupt_checkpoint_fails_closed) ... ok\ntest_idempotency_conflict_keeps_original (test_workbench.WorkbenchTests.test_idempotency_conflict_keeps_original) ... ok\ntest_keyset_pagination_is_stable_and_bounded (test_workbench.WorkbenchTests.test_keyset_pagination_is_stable_and_bounded) ... ok\ntest_no_implicit_replay_of_terminal_job (test_workbench.WorkbenchTests.test_no_implicit_replay_of_terminal_job) ... ok\ntest_parallel_workers_execute_one_lease (test_workbench.WorkbenchTests.test_parallel_workers_execute_one_lease) ... ok\ntest_preserved_lexical_baseline_is_executed (test_workbench.WorkbenchTests.test_preserved_lexical_baseline_is_executed) ... ok\ntest_real_fts5_and_preserved_grader (test_workbench.WorkbenchTests.test_real_fts5_and_preserved_grader) ... ok\ntest_search_quotes_user_terms_not_fts_operators (test_workbench.WorkbenchTests.test_search_quotes_user_terms_not_fts_operators) ... ok\ntest_strict_input_and_bounds (test_workbench.WorkbenchTests.test_strict_input_and_bounds) ... ok\ntest_submit_is_a_persistent_record (test_workbench.WorkbenchTests.test_submit_is_a_persistent_record) ... ok\ntest_tenant_partition_uses_real_database (test_workbench.WorkbenchTests.test_tenant_partition_uses_real_database) ... ok\n\n----------------------------------------------------------------------\nRan 26 tests in 5.943s\n\nOK\n"
+    },
+    {
+      "name": "locked-install",
+      "exit": 0,
+      "command": [
+        "npm.cmd",
+        "ci",
+        "--offline",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "original_output_sha256": "82d194c037cbad282c9b234c71589ddf02825c69e1f05c9af72731e32043f3e5",
+      "output": "\nadded 108 packages in 5s\n"
+    },
+    {
+      "name": "original-types",
+      "exit": 0,
+      "command": [
+        "CHECKPOINT\\restore-check\\node_modules\\.bin\\tsc.cmd",
+        "--project",
+        "examples/read_client/tsconfig.json",
+        "--outDir",
+        "CHECKPOINT\\evidence-private\\restore-sdk"
+      ],
+      "original_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    },
+    {
+      "name": "original-sdk",
+      "exit": 0,
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "--test-concurrency=1",
+        "examples/read_client/client.test.mjs"
+      ],
+      "original_output_sha256": "25747483c644b53eb3eedca5d91a70c2beff06aeea3daf95667dd7ce328e6634",
+      "output": "TAP version 13\n# Subtest: decodes JSON and sends GET without cookies or automatic redirects\nok 1 - decodes JSON and sends GET without cookies or automatic redirects\n  ---\n  duration_ms: 6.5874\n  type: 'test'\n  ...\n# Subtest: retries transient GET and discards the failed response body\nok 2 - retries transient GET and discards the failed response body\n  ---\n  duration_ms: 7.3041\n  type: 'test'\n  ...\n# Subtest: stops at the attempt budget\nok 3 - stops at the attempt budget\n  ---\n  duration_ms: 3.4316\n  type: 'test'\n  ...\n# Subtest: retries a simulated network failure for GET only\nok 4 - retries a simulated network failure for GET only\n  ---\n  duration_ms: 3.0648\n  type: 'test'\n  ...\n# Subtest: authorization and client errors never retry or echo server text\nok 5 - authorization and client errors never retry or echo server text\n  ---\n  duration_ms: 1.6146\n  type: 'test'\n  ...\n# Subtest: invalid JSON does not retry\nok 6 - invalid JSON does not retry\n  ---\n  duration_ms: 0.5932\n  type: 'test'\n  ...\n# Subtest: runtime schema errors do not retry\nok 7 - runtime schema errors do not retry\n  ---\n  duration_ms: 0.583\n  type: 'test'\n  ...\n# Subtest: rejects incorrect media type\nok 8 - rejects incorrect media type\n  ---\n  duration_ms: 0.4471\n  type: 'test'\n  ...\n# Subtest: accepts structured JSON media types\nok 9 - accepts structured JSON media types\n  ---\n  duration_ms: 0.5278\n  type: 'test'\n  ...\n# Subtest: caps streamed response bytes without relying on content-length\nok 10 - caps streamed response bytes without relying on content-length\n  ---\n  duration_ms: 0.9739\n  type: 'test'\n  ...\n# Subtest: rejects excessive declared content-length and cancels body\nok 11 - rejects excessive declared content-length and cancels body\n  ---\n  duration_ms: 0.5814\n  type: 'test'\n  ...\n# Subtest: invalid UTF-8 is not silently repaired\nok 12 - invalid UTF-8 is not silently repaired\n  ---\n  duration_ms: 0.7106\n  type: 'test'\n  ...\n# Subtest: unsafe URL forms are rejected before invoking transport\nok 13 - unsafe URL forms are rejected before invoking transport\n  ---\n  duration_ms: 0.347\n  type: 'test'\n  ...\n# Subtest: loopback exception does not allow non-loopback HTTP\nok 14 - loopback exception does not allow non-loopback HTTP\n  ---\n  duration_ms: 0.168\n  type: 'test'\n  ...\n# Subtest: pre-aborted request does not invoke transport\nok 15 - pre-aborted request does not invoke transport\n  ---\n  duration_ms: 0.2832\n  type: 'test'\n  ...\n# Subtest: caller cancellation settles even when injected transport ignores signal\nok 16 - caller cancellation settles even when injected transport ignores signal\n  ---\n  duration_ms: 4.8346\n  type: 'test'\n  ...\n# Subtest: one overall deadline bounds a non-cooperative transport\nok 17 - one overall deadline bounds a non-cooperative transport\n  ---\n  duration_ms: 18.2883\n  type: 'test'\n  ...\n# Subtest: cancellation during backoff prevents the next request\nok 18 - cancellation during backoff prevents the next request\n  ---\n  duration_ms: 16.1646\n  type: 'test'\n  ...\n# Subtest: deadline also bounds a stalled response body and cancels its reader\nok 19 - deadline also bounds a stalled response body and cancels its reader\n  ---\n  duration_ms: 15.7242\n  type: 'test'\n  ...\n# Subtest: long or unsupported Retry-After stops instead of retrying early\nok 20 - long or unsupported Retry-After stops instead of retrying early\n  ---\n  duration_ms: 0.6142\n  type: 'test'\n  ...\n# Subtest: zero-second Retry-After allows a bounded retry\nok 21 - zero-second Retry-After allows a bounded retry\n  ---\n  duration_ms: 0.9258\n  type: 'test'\n  ...\n# Subtest: option bounds fail before invoking transport\nok 22 - option bounds fail before invoking transport\n  ---\n  duration_ms: 0.4904\n  type: 'test'\n  ...\n# Subtest: redirect response is terminal and its body is discarded\nok 23 - redirect response is terminal and its body is discarded\n  ---\n  duration_ms: 0.3754\n  type: 'test'\n  ...\n# Subtest: unexpected transport exceptions are terminal\nok 24 - unexpected transport exceptions are terminal\n  ---\n  duration_ms: 0.2255\n  type: 'test'\n  ...\n# Subtest: real loopback HTTP retries 503, decodes JSON, and never follows redirect\nok 25 - real loopback HTTP retries 503, decodes JSON, and never follows redirect\n  ---\n  duration_ms: 69.7405\n  type: 'test'\n  ...\n# Subtest: empty chunks cannot starve the overall body-read deadline\nok 26 - empty chunks cannot starve the overall body-read deadline\n  ---\n  duration_ms: 11.2001\n  type: 'test'\n  ...\n# Subtest: asynchronous validation is included in the same deadline\nok 27 - asynchronous validation is included in the same deadline\n  ---\n  duration_ms: 10.0222\n  type: 'test'\n  ...\n# Subtest: null numeric options are invalid rather than silent defaults\nok 28 - null numeric options are invalid rather than silent defaults\n  ---\n  duration_ms: 1.1372\n  type: 'test'\n  ...\n1..28\n# tests 28\n# suites 0\n# pass 28\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 343.9806\n"
+    },
+    {
+      "name": "workbench",
+      "exit": 0,
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "original_output_sha256": "e70713f20188a2157de70ddaf73af2359d62d5db8b3f64e76d5a8e515026ab4f",
+      "output": "\n> evidence-workbench@0.1.0 test\n> npm run typecheck && npm run build && npm run test:protocol && npm run test:browser\n\n\n> evidence-workbench@0.1.0 typecheck\n> tsc -p projects/evidence-workbench/tsconfig.json\n\n\n> evidence-workbench@0.1.0 build\n> node projects/evidence-workbench/scripts/build.mjs\n\nBuilt gateway, typed clients and React interface; no services started.\n\n> evidence-workbench@0.1.0 test:protocol\n> node --test --test-concurrency=1 projects/evidence-workbench/tests/protocol.test.mjs projects/evidence-workbench/tests/api.test.mjs projects/evidence-workbench/tests/review.test.mjs\n\n✔ HTTP SDK rejects caller-selected tenant and invalid input before mutation (298.972ms)\n✔ HTTP SDK pre-aborted mutation is not sent (14.621ms)\n✔ permission profile is pinned by gateway route, not supplied request header (17.9174ms)\n✔ real concurrent SDK idempotency, changed-payload conflict and tenant partition (168.2997ms)\n✔ one real POST can commit then lose its response; SDK never automatically replays it (49.2108ms)\n✔ an oversized real server response is bounded and never interpreted as confirmation (7.0837ms)\n✔ safe diagnostic failures do not contain payload text or exception details (11.2713ms)\n✔ real initialize negotiates the pinned protocol over TCP (295.2292ms)\n✔ read profile schemas and tool execution use the actual backend (53.8592ms)\n✔ sessions are profile-bound and initialization is required (16.6489ms)\n✔ invalid arguments and unknown tools do not create work (21.9209ms)\n✔ SDK creates, executes, inspects, paginates and cancels real durable jobs (240.6128ms)\n✔ pre-aborted mutation does not dispatch and session close is explicit (16.163ms)\n✔ wire boundary rejects foreign origins, oversized bodies, batches and bad media (10.4643ms)\n✔ SDK read-only profile cannot bypass the actual tool permission boundary (17.851ms)\n✔ backend loss is a recoverable error, not invented success (288.7559ms)\n✔ a schema-valid response for another operation cannot confirm this write (410.8031ms)\n✔ MCP session capacity is bounded and DELETE reclaims an actual session (470.8435ms)\nℹ tests 18\nℹ suites 0\nℹ pass 18\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 6253.4291\n\n> evidence-workbench@0.1.0 test:browser\n> node --test --test-concurrency=1 projects/evidence-workbench/tests/browser.test.mjs\n\n{\"browser\":\"154.0.4258.53\",\"viewports\":[{\"width\":1280,\"height\":800},{\"width\":390,\"height\":844}]}\n✔ real browser renders the workbench, keyboard flow and mobile layout (3527.7675ms)\n✔ browser submission is completed through MCP and restored after backend restart (1787.8424ms)\n✔ lost response after a real commit reconciles without duplicate writes (789.5133ms)\n✔ offline submission survives reload and requires an explicit same-key retry (895.0214ms)\n✔ loading is visible while a real list request is delayed (907.017ms)\n✔ an invalid persisted browser request cannot become a mutation (575.4381ms)\n✔ mobile cancellation persists and the modal makes background controls inert (825.2179ms)\nℹ tests 7\nℹ suites 0\nℹ pass 7\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10032.927\n"
+    },
+    {
+      "name": "rust",
+      "exit": 0,
+      "command": [
+        "cargo",
+        "test",
+        "--manifest-path",
+        "projects/bounded-lang/Cargo.toml",
+        "--locked",
+        "--offline"
+      ],
+      "original_output_sha256": "4b2c5c2fb186e996684d228dc8b2382f48e90cb19a5fd8f7e8a2f813e5195dba",
+      "output": "\nrunning 2 tests\ntest unit::unknown_name ... ok\ntest unit::precedence ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 2 tests\ntest repeated_binding_shadows_without_invalid_local_slot ... ok\ntest shadow_initializer_uses_previous_binding_and_later_names_do_not_alias ... ok\n\ntest result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 4 tests\ntest empty_public_ir_blocks_are_rejected_not_traversed_for_free ... ok\ntest nested_expression_has_a_compile_budget ... ok\ntest flat_expression_has_a_compile_budget ... ok\ntest source_size_is_bounded_before_lexing ... ok\n\ntest result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s\n\n\nrunning 6 tests\ntest malformed_ir_reports_errors ... ok\ntest malformed_and_incomplete_sources_fail_without_panicking ... ok\ntest step_and_stack_limits_have_exact_boundaries ... ok\ntest arithmetic_errors_are_explicit ... ok\ntest unknown_names_are_compile_errors ... ok\ntest local_count_cannot_wrap_after_65535_bindings ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s\n\n\nrunning 4 tests\ntest arithmetic_overflow_fails_closed ... ok\ntest execution_budget_is_enforced ... ok\ntest end_to_end_lexer_parser_ir_vm ... ok\ntest malformed_input_is_rejected ... ok\n\ntest result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n   Compiling bounded-lang v0.1.0 (CHECKPOINT\\restore-check\\projects\\bounded-lang)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.06s\n     Running unittests src\\lib.rs (CHECKPOINT\\evidence-private\\restore-cargo-target\\debug\\deps\\bounded_lang-273298a881f2deef.exe)\n     Running tests\\bindings.rs (CHECKPOINT\\evidence-private\\restore-cargo-target\\debug\\deps\\bindings-254cefa522a9705c.exe)\n     Running tests\\compile_budget.rs (CHECKPOINT\\evidence-private\\restore-cargo-target\\debug\\deps\\compile_budget-2933b9dfe05cc088.exe)\n     Running tests\\limits.rs (CHECKPOINT\\evidence-private\\restore-cargo-target\\debug\\deps\\limits-2bc0240646b65cd8.exe)\n     Running tests\\pipeline.rs (CHECKPOINT\\evidence-private\\restore-cargo-target\\debug\\deps\\pipeline-36357a2469c907ed.exe)\n   Doc-tests bounded_lang\n"
+    },
+    {
+      "name": "rust-format",
+      "exit": 0,
+      "command": [
+        "cargo",
+        "fmt",
+        "--manifest-path",
+        "projects/bounded-lang/Cargo.toml",
+        "--",
+        "--check"
+      ],
+      "original_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    },
+    {
+      "name": "rust-clippy",
+      "exit": 0,
+      "command": [
+        "cargo",
+        "clippy",
+        "--manifest-path",
+        "projects/bounded-lang/Cargo.toml",
+        "--locked",
+        "--offline",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "original_output_sha256": "d9efc420884d1d7306f5451fb34c09fff8c4442b0ac485b5fd3ea40e66a0ac96",
+      "output": "    Checking bounded-lang v0.1.0 (CHECKPOINT\\restore-check\\projects\\bounded-lang)\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.00s\n"
+    }
+  ]
+}

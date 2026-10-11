@@ -1,0 +1,763 @@
+{
+  "schema": 1,
+  "checkpoint": "recovered-source-r2",
+  "date": "2026-10-07",
+  "status": "NOT_READY_FOR_PUBLICATION",
+  "source_commit": null,
+  "remote": {
+    "repository": "https://github.com/jemueldaniel/danielworks",
+    "branch": "main",
+    "verified_tip": "3e69552cb5f9ae52639d30c2c865347fa3575ceb",
+    "tree": "e2fc8297de2120851ffd92f503dfd28639479dce",
+    "parent_commits": [],
+    "initial_readme": {
+      "path": "README.md",
+      "mode": "100644",
+      "bytes": 13,
+      "sha256": "7fdf7161a159589a70bd4f4d52b6a3ec7364b1a54bb0c06ba52d2ba1dcfce8af",
+      "git_blob": "ee6647ddbc311553e08a3092ddf01b55f1daf2af"
+    },
+    "new_commits": [],
+    "candidate_files_uploaded": 0,
+    "candidate_remote_file_comparison": "not performed; candidate not published",
+    "candidate_clean_github_restore": "not performed; candidate not published"
+  },
+  "recovery": {
+    "checkpoint_archive": {
+      "filename": "danielworks_recovered_tested_checkpoint_20261007.zip",
+      "bytes": 178223,
+      "sha256": "8dda1e0e4363f6870356abc53c4dbfbc9786d450ffa3d208643d912df177fdc0",
+      "members_verified": 100
+    },
+    "workbench_archive": {
+      "filename": "danielcodes_vertical_candidate_20261007.zip",
+      "bytes": 125275,
+      "sha256": "f5ba4d774813df98554c3c6bfe3f0d42fbe762bdfb4a7dbb6e01fe0aa50e86ac",
+      "members_verified": 78
+    },
+    "batch2_archive": {
+      "filename": "danielcodes_batch2_candidate_20261007.zip",
+      "bytes": 71224,
+      "sha256": "59f20bc1875b45e209971ec67ab1845029552eb1e27b47968d25e6d003ebbdb6",
+      "members_verified_on_authorized_windows_workspace": 35,
+      "container_transfer": false,
+      "version": null
+    },
+    "original_manifest_sha256": "46e53be4589842ddb6d3d610e728f27e654b59dd72b02df4316dae3edadd2d51",
+    "workbench_paths_preserved": 78,
+    "omitted_workbench_paths_preserved": 48,
+    "original_rust_paths_preserved": 5,
+    "core_with_three_rust_regression_files": 86,
+    "all_original_100_paths_preserved": true,
+    "original_execution_56_byte_identical": true
+  },
+  "execution_files": {
+    ".gitignore": "88b0149627f194d5b838e2b4de5cf3e59f4fcb9c625789ecb11a363f798d408e",
+    ".node-version": "b911698dc3cf3227d34d0ad6727f1c4408791203c9665de99ab959331a1fb07d",
+    ".python-version": "304e3f5def5d40b3b7127b3ae23c7eb8007bbcb93f2d1d9c1099082c29485178",
+    "examples/durable_jobs/demo.py": "3d6a940611ed74c727c1e65187f89cb03a19729138e831706dde018c2cb1e59e",
+    "examples/durable_jobs/jobs.py": "e0ec075696ab84fb36f5a4d2caa16a56b24803094e16b5598bf685ae0e44f191",
+    "examples/durable_jobs/test_jobs.py": "251d949e9d110b4af1fa1e6695bdb30f312c9acab5f2b73c4642fb1b24d7a3be",
+    "examples/mcp_agent/runtime.mjs": "16bdb2e77cb928ecf61d3cfa59ba12de804d642d23b612ab322fea3bc5bf115a",
+    "examples/mcp_agent/test_runtime.mjs": "e6897acebdf26bc7d0800ab289debfc9fd42e235155a01ba645b0807b917d9cc",
+    "examples/ranking_eval/evaluation.py": "f41b35f4c4746966dc0b08d87959be84d8410a4057eab59cc949d816e9c0c0ec",
+    "examples/ranking_eval/synthetic.json": "63e34820c067a6dc3e84d33e8366ddca21dff2ec4ccc4af4a9c412c36fd09cdd",
+    "examples/ranking_eval/test_evaluation.py": "bc438b7c83833d94bb6a4b253ca564649bc933d529c8aadee80256e11ad02166",
+    "examples/read_client/client.mts": "5c1e1621e7a229a174e468ced9e76a0ba8497bb7f7bcbfbd7ba805f8e08edfde",
+    "examples/read_client/client.test.mjs": "2f7e68032de971d79272572fdc05459a1365e5b8e890613544ede2c0709964f8",
+    "examples/read_client/demo.mts": "630c2149c1d433b0f6505e55517ef90291403e46ac2b021f1d30fc94fa8884c7",
+    "examples/read_client/tsconfig.json": "e4f285ce0f526a07d111deb33f2b8757a47d01ce7edc3b5a9e21b85d8cc13010",
+    "examples/read_client/types.test.mts": "5a04082ae1a4c1481dc2e5a85e657c20af26685a9455fdc9ed97375dfaba75a4",
+    "examples/retrieval_lab/dataset.v1.json": "2baa24832602fe1ccd58ddea5ab9b1b2d856611104cc74f0d69d766e3e522001",
+    "examples/retrieval_lab/retrieval.py": "5d74078dbb558770b29841b87df0acfe9c573ea50ae08391629d7d7265ac9d84",
+    "examples/retrieval_lab/test_retrieval.py": "0ef2e269b932136597e43a21ab502113d686367a1020121335b9c43988259553",
+    "examples/tx_sim/simulator.py": "f3b8108b18901bc74f0be8c5c20a7ecd0f0b13aae46ca1fc4c0cffa3bfdf3256",
+    "examples/tx_sim/test_simulator.py": "a639c24e8f6356d044e91dca4dd20996978574be08fcbc42f9f13fbf9ddec52c",
+    "examples/typed_api_sdk/service.py": "720f8fe8884615e367feff54e4460007f9f49ad15ea079dde29de6713da448ed",
+    "examples/typed_api_sdk/test_service.py": "22eb23f5743123130da6186bd8c998e188d63641904f05a608b377cf589f15eb",
+    "package-lock.json": "f389c35e449bc42227cd3113c0d14c948d82a9bd1fa97a455c8a4c273c2a9731",
+    "package.json": "0017ed9dc85a839710c485896a8a001bdc6546d9563efcd9138e3e60c3b62c6b",
+    "projects/evidence-workbench/backend/server.py": "0ac2869773e11d24422a1e4b78ea05571f2db22966e8caeab97ae0aabebe8111",
+    "projects/evidence-workbench/backend/test_http.py": "9dfbb9198d2b66e2114067781b1b8d135f420f104be6679169aa8a6673d52cac",
+    "projects/evidence-workbench/backend/test_process_recovery.py": "f066756ecf441f7576f8dce73111bfc439abad752ac659918162924bfee85062",
+    "projects/evidence-workbench/backend/test_workbench.py": "8832eac265cac99ad42b2001e1eeceee8dde7513f2d600bdc9d931a9fa4e605f",
+    "projects/evidence-workbench/backend/workbench.py": "b8e286b9bd45246e6d9a39fbdfc0d5912047793b83942650924ead1c58dc3d56",
+    "projects/evidence-workbench/fixtures/corpus.v1.json": "7888404a7c1f05b82e3e42d4989fd24a379ea5aff9973c8421dc98223bba4e41",
+    "projects/evidence-workbench/scripts/build.mjs": "b8c5713fdc167e1ccba1a3208536aa02a9b7da76602b1d92924508c1937a4afe",
+    "projects/evidence-workbench/src/api-client.ts": "b765d1ae7f8d6882d500773bf2a49383bba4d6d82d4b656f7556d37549d949a2",
+    "projects/evidence-workbench/src/mcp-client.ts": "c1027d67860e493fa88adbd25f3169d3169678ebeb0b506d69fbf1a16b5718d7",
+    "projects/evidence-workbench/src/mcp.ts": "20818c6ec305d73678c1aa519f4c80b4f59039d104506993aca2b8d241211162",
+    "projects/evidence-workbench/src/schema.ts": "52129bb2e5d839bf0278e39944f29885c69d4fd2527fba1c40a7f5eafb647c80",
+    "projects/evidence-workbench/src/server.ts": "52eb2f218279c8c4c677bcca779f1529ba19d5856419783b706ce01d2d294774",
+    "projects/evidence-workbench/tests/api.test.mjs": "dfd4fe0f2e12fd2afdb011ab2bcf734f982a2ce2787aedcee02f3c83152014ac",
+    "projects/evidence-workbench/tests/browser.test.mjs": "b4edc4b9cc1fffde0a4b9c27ac6c95b1bfdcd8d2565cac204aa95ebcafada058",
+    "projects/evidence-workbench/tests/helpers.mjs": "8f2dac4fcafdac490914359dde4dfee35aa06a112a02014e4f5bc4fd70f6d526",
+    "projects/evidence-workbench/tests/protocol.test.mjs": "3012d0e10b12cf721aa5596911d1e6c695947099eb73f97c4998349375947c7e",
+    "projects/evidence-workbench/tests/review.test.mjs": "9e17d7ef1eddbb3b7b043b27b75a29d187ed4cb6616e5dee53ec51a5a6dd7639",
+    "projects/evidence-workbench/tests/types.test.ts": "20fcff4d84d3d3da3f83a7d67e4dd24559751b744bc82a7b1a93853c9f975d0a",
+    "projects/evidence-workbench/tsconfig.json": "0e89a2e650e3b085d66e525442eded393ec866eff6fd175ed1fe4c2d2046bb47",
+    "projects/evidence-workbench/web/App.tsx": "094c80c04dea03c683724b6193189e825db1438f7fab0793b12257c72b3c3b51",
+    "projects/evidence-workbench/web/index.html": "4740f379ca9ce7059b524920fdb32e2571946da8c840dae26d769c460211d7a9",
+    "projects/evidence-workbench/web/main.tsx": "2d31ba8145ea0cfb2812d3a03e59674efaa4b6211f6487de8a3cf6e3143807f6",
+    "projects/evidence-workbench/web/style.css": "2efe819899111e42862520f3d9163f9020bc72e8b8e4cf229db0354a014cfd97",
+    "tools/verify.py": "0603ef9f3d280890b4d3f8125f59393fdce5f22e1d8476a117e25230ed9b39ba",
+    "projects/bounded-lang/Cargo.lock": "6889564420a3ff481ff3d9456d6aa99cbcd217f96f821c71b0f249a0c139791a",
+    "projects/bounded-lang/Cargo.toml": "35204d159c2ccf032220f90958ce4048fc49d7a81b05ebe36677d76553a7d416",
+    "projects/bounded-lang/src/lib.rs": "04bab003edc418304b38081b38189c92a4f3b253920a04c083be2e99c988d959",
+    "projects/bounded-lang/tests/bindings.rs": "c4b47781bed1224fd0e12305f476db3909358dcc5d8a736a27126c5ec97dfd86",
+    "projects/bounded-lang/tests/limits.rs": "6ffa1a382fdc7113992cdad7f863afe414eb34025676ef84953f3d8a8e02fdbf",
+    "projects/bounded-lang/tests/compile_budget.rs": "4c799a0134efd397e1db498f5ef2487be7825545e2b6839ff44ae109d25b9b5f",
+    "projects/bounded-lang/tests/pipeline.rs": "c8dc20cb2fd02efc30b22dec5edfe909f4ba1718a5dbed20ec85e5374ae4019d",
+    "tools/verify_source.py": "d92a2d868131ed12f462a6460fc551ac94a59878da99f265af1c1d1e7aaf392b",
+    "tools/test_verify_source.py": "e5b9d4b120e1cea3cdacd8f501abbb0c5e971881e160ebad591e0398561d118b"
+  },
+  "execution_path_hash_binding": "bbb9828824dc355ddd65d17942b8dcd48be642d29862a18f075c0e8ebc55a89e",
+  "test_identities": {
+    "queue": [
+      "test_jobs.QueueTests.test_submission_replays_but_payload_conflict_does_not_overwrite",
+      "test_jobs.QueueTests.test_retry_policy_is_part_of_submission_identity",
+      "test_jobs.QueueTests.test_completion_replay_is_observable_without_reexecuting",
+      "test_jobs.QueueTests.test_reopen_recovers_expired_lease_and_fences_old_worker",
+      "test_jobs.QueueTests.test_expiry_boundary_rejects_completion_before_any_replacement",
+      "test_jobs.QueueTests.test_cancel_fences_running_worker_and_never_resurrects",
+      "test_jobs.QueueTests.test_completed_job_cannot_be_cancelled",
+      "test_jobs.QueueTests.test_tenant_queues_and_same_keys_are_isolated",
+      "test_jobs.QueueTests.test_retry_waits_until_ready_time_then_exhausts_budget",
+      "test_jobs.QueueTests.test_expired_final_attempt_becomes_failed",
+      "test_jobs.QueueTests.test_concurrent_connections_cannot_claim_same_job",
+      "test_jobs.QueueTests.test_sql_failure_rolls_back_and_connection_remains_usable",
+      "test_jobs.QueueTests.test_database_lock_is_reported_without_losing_pending_job",
+      "test_jobs.QueueTests.test_payload_snapshots_do_not_alias_callers",
+      "test_jobs.QueueTests.test_invalid_json_and_large_payload_are_rejected_before_insertion",
+      "test_jobs.QueueTests.test_invalid_identifiers_times_and_attempts_are_rejected",
+      "test_jobs.QueueTests.test_lease_duration_validation_does_not_claim_job"
+    ],
+    "ranking": [
+      "test_evaluation.EvaluationTests.test_hand_calculated_macro_metrics",
+      "test_evaluation.EvaluationTests.test_cutoff_changes_recall_not_first_hit",
+      "test_evaluation.EvaluationTests.test_empty_results_contribute_zero_instead_of_disappearing",
+      "test_evaluation.EvaluationTests.test_repeatability_fingerprint_and_input_preservation",
+      "test_evaluation.EvaluationTests.test_duplicate_query_ids_are_rejected",
+      "test_evaluation.EvaluationTests.test_duplicate_ranked_documents_after_cutoff_are_also_rejected",
+      "test_evaluation.EvaluationTests.test_duplicate_corpus_labels_and_relevance_labels_are_rejected",
+      "test_evaluation.EvaluationTests.test_unknown_document_ids_are_rejected",
+      "test_evaluation.EvaluationTests.test_identifier_overlap_between_training_and_evaluation_is_rejected",
+      "test_evaluation.EvaluationTests.test_no_relevance_labels_is_error_not_perfect_score",
+      "test_evaluation.EvaluationTests.test_empty_evaluation_and_unknown_fields_are_rejected",
+      "test_evaluation.EvaluationTests.test_wrong_types_and_invalid_cutoffs_are_rejected",
+      "test_evaluation.EvaluationTests.test_loader_rejects_duplicate_keys_nonfinite_values_and_oversize",
+      "test_evaluation.EvaluationTests.test_cli_prints_real_computed_result_and_returns_nonzero_on_invalid_data",
+      "test_evaluation.EvaluationTests.test_direct_api_rejects_excessive_total_identifier_references"
+    ],
+    "python-contract": [
+      "test_service.ApiSdkTests.test_idempotent_create_replays_same_result",
+      "test_service.ApiSdkTests.test_idempotency_conflict_is_scoped_and_rejected",
+      "test_service.ApiSdkTests.test_validation_rejects_unknown_fields",
+      "test_service.ApiSdkTests.test_pagination_and_tenant_isolation",
+      "test_service.ApiSdkTests.test_limit_and_cursor_are_bounded"
+    ],
+    "transaction-simulation": [
+      "test_simulator.T.test_transfer_and_payer_scoped_replay_protection",
+      "test_simulator.T.test_failed_transfer_does_not_consume_intent",
+      "test_simulator.T.test_rejects_self_and_nonpositive"
+    ],
+    "lexical": [
+      "test_retrieval.T.test_baseline_is_reproducible",
+      "test_retrieval.T.test_failure_analysis_is_inspectable",
+      "test_retrieval.T.test_input_and_k_bounds"
+    ],
+    "tool-simulation": [
+      "MCP lists schemas and permission metadata",
+      "tool execution enforces permission boundary",
+      "schema rejects oversized arguments",
+      "agent checkpoints and resumes without replaying completed steps",
+      "pre-cancelled run performs no tool call"
+    ],
+    "backend": [
+      "test_http.HttpTests.test_health_crosses_a_real_socket",
+      "test_http.HttpTests.test_end_to_end_http_persistence_and_grading",
+      "test_http.HttpTests.test_read_profile_cannot_mutate",
+      "test_http.HttpTests.test_duplicate_write_conflict_and_race",
+      "test_http.HttpTests.test_bad_json_and_duplicate_keys_are_rejected",
+      "test_http.HttpTests.test_content_type_size_origin_and_host",
+      "test_http.HttpTests.test_partition_unknown_profile_and_pagination_bounds",
+      "test_http.HttpTests.test_real_search_and_cancel_are_exposed",
+      "test_process_recovery.ProcessRecoveryTests.test_abrupt_worker_exit_preserves_checkpoint_then_reclaims_expired_lease",
+      "test_process_recovery.ProcessRecoveryTests.test_unknown_schema_is_refused_without_rewriting_version",
+      "test_process_recovery.ProcessRecoveryTests.test_persisted_input_identity_drift_is_refused",
+      "test_workbench.WorkbenchTests.test_connection_is_closed_after_scope",
+      "test_workbench.WorkbenchTests.test_submit_is_a_persistent_record",
+      "test_workbench.WorkbenchTests.test_idempotency_conflict_keeps_original",
+      "test_workbench.WorkbenchTests.test_strict_input_and_bounds",
+      "test_workbench.WorkbenchTests.test_real_fts5_and_preserved_grader",
+      "test_workbench.WorkbenchTests.test_preserved_lexical_baseline_is_executed",
+      "test_workbench.WorkbenchTests.test_tenant_partition_uses_real_database",
+      "test_workbench.WorkbenchTests.test_keyset_pagination_is_stable_and_bounded",
+      "test_workbench.WorkbenchTests.test_checkpoint_resume_fences_old_generation",
+      "test_workbench.WorkbenchTests.test_cancel_mid_run_fences_completion",
+      "test_workbench.WorkbenchTests.test_corrupt_checkpoint_fails_closed",
+      "test_workbench.WorkbenchTests.test_concurrent_idempotent_submission",
+      "test_workbench.WorkbenchTests.test_parallel_workers_execute_one_lease",
+      "test_workbench.WorkbenchTests.test_no_implicit_replay_of_terminal_job",
+      "test_workbench.WorkbenchTests.test_search_quotes_user_terms_not_fts_operators"
+    ],
+    "original-sdk": [
+      "decodes JSON and sends GET without cookies or automatic redirects",
+      "retries transient GET and discards the failed response body",
+      "stops at the attempt budget",
+      "retries a simulated network failure for GET only",
+      "authorization and client errors never retry or echo server text",
+      "invalid JSON does not retry",
+      "runtime schema errors do not retry",
+      "rejects incorrect media type",
+      "accepts structured JSON media types",
+      "caps streamed response bytes without relying on content-length",
+      "rejects excessive declared content-length and cancels body",
+      "invalid UTF-8 is not silently repaired",
+      "unsafe URL forms are rejected before invoking transport",
+      "loopback exception does not allow non-loopback HTTP",
+      "pre-aborted request does not invoke transport",
+      "caller cancellation settles even when injected transport ignores signal",
+      "one overall deadline bounds a non-cooperative transport",
+      "cancellation during backoff prevents the next request",
+      "deadline also bounds a stalled response body and cancels its reader",
+      "long or unsupported Retry-After stops instead of retrying early",
+      "zero-second Retry-After allows a bounded retry",
+      "option bounds fail before invoking transport",
+      "redirect response is terminal and its body is discarded",
+      "unexpected transport exceptions are terminal",
+      "real loopback HTTP retries 503, decodes JSON, and never follows redirect",
+      "empty chunks cannot starve the overall body-read deadline",
+      "asynchronous validation is included in the same deadline",
+      "null numeric options are invalid rather than silent defaults"
+    ],
+    "workbench": [
+      "HTTP SDK rejects caller-selected tenant and invalid input before mutation",
+      "HTTP SDK pre-aborted mutation is not sent",
+      "permission profile is pinned by gateway route, not supplied request header",
+      "real concurrent SDK idempotency, changed-payload conflict and tenant partition",
+      "one real POST can commit then lose its response; SDK never automatically replays it",
+      "an oversized real server response is bounded and never interpreted as confirmation",
+      "safe diagnostic failures do not contain payload text or exception details",
+      "real initialize negotiates the pinned protocol over TCP",
+      "read profile schemas and tool execution use the actual backend",
+      "sessions are profile-bound and initialization is required",
+      "invalid arguments and unknown tools do not create work",
+      "SDK creates, executes, inspects, paginates and cancels real durable jobs",
+      "pre-aborted mutation does not dispatch and session close is explicit",
+      "wire boundary rejects foreign origins, oversized bodies, batches and bad media",
+      "SDK read-only profile cannot bypass the actual tool permission boundary",
+      "backend loss is a recoverable error, not invented success",
+      "a schema-valid response for another operation cannot confirm this write",
+      "MCP session capacity is bounded and DELETE reclaims an actual session",
+      "real browser renders the workbench, keyboard flow and mobile layout",
+      "browser submission is completed through MCP and restored after backend restart",
+      "lost response after a real commit reconciles without duplicate writes",
+      "offline submission survives reload and requires an explicit same-key retry",
+      "loading is visible while a real list request is delayed",
+      "an invalid persisted browser request cannot become a mutation",
+      "mobile cancellation persists and the modal makes background controls inert"
+    ],
+    "rust": [
+      "unit::precedence",
+      "unit::unknown_name",
+      "end_to_end_lexer_parser_ir_vm",
+      "malformed_input_is_rejected",
+      "execution_budget_is_enforced",
+      "arithmetic_overflow_fails_closed",
+      "repeated_binding_shadows_without_invalid_local_slot",
+      "shadow_initializer_uses_previous_binding_and_later_names_do_not_alias",
+      "unknown_names_are_compile_errors",
+      "malformed_and_incomplete_sources_fail_without_panicking",
+      "arithmetic_errors_are_explicit",
+      "step_and_stack_limits_have_exact_boundaries",
+      "malformed_ir_reports_errors",
+      "local_count_cannot_wrap_after_65535_bindings",
+      "source_size_is_bounded_before_lexing",
+      "nested_expression_has_a_compile_budget",
+      "flat_expression_has_a_compile_budget",
+      "empty_public_ir_blocks_are_rejected_not_traversed_for_free"
+    ],
+    "source-checker": [
+      "test_verify_source.SourceVerificationTests.test_intact_inventory_is_verified_without_writing",
+      "test_verify_source.SourceVerificationTests.test_external_manifest_hash_is_checked",
+      "test_verify_source.SourceVerificationTests.test_tampered_equal_size_content_fails",
+      "test_verify_source.SourceVerificationTests.test_missing_source_fails",
+      "test_verify_source.SourceVerificationTests.test_unexpected_source_fails",
+      "test_verify_source.SourceVerificationTests.test_generated_files_are_not_silently_ignored",
+      "test_verify_source.SourceVerificationTests.test_top_level_regular_git_metadata_is_excluded",
+      "test_verify_source.SourceVerificationTests.test_metadata_cannot_be_claimed_as_public_source",
+      "test_verify_source.SourceVerificationTests.test_manifest_self_entry_is_rejected",
+      "test_verify_source.SourceVerificationTests.test_traversal_absolute_and_noncanonical_paths_are_rejected",
+      "test_verify_source.SourceVerificationTests.test_nonportable_names_are_rejected",
+      "test_verify_source.SourceVerificationTests.test_duplicate_paths_are_rejected",
+      "test_verify_source.SourceVerificationTests.test_case_collisions_are_rejected",
+      "test_verify_source.SourceVerificationTests.test_parent_file_conflicts_are_rejected",
+      "test_verify_source.SourceVerificationTests.test_duplicate_json_keys_are_rejected",
+      "test_verify_source.SourceVerificationTests.test_invalid_json_is_rejected",
+      "test_verify_source.SourceVerificationTests.test_invalid_sizes_and_hashes_are_rejected",
+      "test_verify_source.SourceVerificationTests.test_manifest_input_has_a_byte_limit",
+      "test_verify_source.SourceVerificationTests.test_declared_source_file_has_a_byte_limit",
+      "test_verify_source.SourceVerificationTests.test_manifest_count_and_payload_metadata_are_checked",
+      "test_verify_source.SourceVerificationTests.test_file_size_mismatch_is_explicit",
+      "test_verify_source.SourceVerificationTests.test_symbolic_file_is_rejected",
+      "test_verify_source.SourceVerificationTests.test_symbolic_directory_is_rejected",
+      "test_verify_source.SourceVerificationTests.test_windows_directory_junction_is_rejected",
+      "test_verify_source.SourceVerificationTests.test_declared_modes_are_not_claimed_verified_on_windows",
+      "test_verify_source.SourceVerificationTests.test_partial_mode_coverage_is_reported_as_partial",
+      "test_verify_source.SourceVerificationTests.test_executable_mode_mismatch_is_rejected",
+      "test_verify_source.SourceVerificationTests.test_cli_reports_json_failure_without_traceback_or_writes"
+    ]
+  },
+  "baseline_test_identity_crosscheck": "Exact 145 identities extracted from retained source; their group and combined digests matched the fresh Windows command-output extraction. This is not a count of repeated runs.",
+  "baseline_145_test_identity_sha256": "713138f3742404da5811af8ce6e28a6a7fce383b8266cdc428e9c8113c99194b",
+  "first_windows_run": {
+    "completed_at": "2026-10-07T22:18:35.450937+08:00",
+    "status": "PASS",
+    "behavioural_tests": 145,
+    "scope": "separate isolated copy of the 86-path execution snapshot; all 56 execution files match the recovered 100-file checkpoint; NOT GitHub restoration",
+    "checks": [
+      {
+        "name": "queue",
+        "exit": 0,
+        "distinct_tests": 17,
+        "original_private_output_sha256": "8fe72df5c9df922da84c8745f4ea6ee65f273f72d592933c1fd49c72d1fcc947"
+      },
+      {
+        "name": "ranking",
+        "exit": 0,
+        "distinct_tests": 15,
+        "original_private_output_sha256": "75b140d776ccf51f60eda58525628cb5774a27f97e885d9160eff9345f44c66b"
+      },
+      {
+        "name": "python-contract",
+        "exit": 0,
+        "distinct_tests": 5,
+        "original_private_output_sha256": "adf0c7f02c21424175d94a649842c43220922bde9b7ac672c47b2907206e5b33"
+      },
+      {
+        "name": "transaction-simulation",
+        "exit": 0,
+        "distinct_tests": 3,
+        "original_private_output_sha256": "a5fa807bedc062c130bdc896cfd9141260d2481ab8fc9b38aebf86a119e4ced1"
+      },
+      {
+        "name": "lexical",
+        "exit": 0,
+        "distinct_tests": 3,
+        "original_private_output_sha256": "c0a1f9f6259337122dbdad557c9ef0a18d308c6b9bda4ab2da315578dc6b4518"
+      },
+      {
+        "name": "tool-simulation",
+        "exit": 0,
+        "distinct_tests": 5,
+        "original_private_output_sha256": "4d0f34caa144c0a90d2fe5809e7008a79afc452004949a61cc3ecb2cc09c6df4"
+      },
+      {
+        "name": "backend",
+        "exit": 0,
+        "distinct_tests": 26,
+        "original_private_output_sha256": "9aba1e2cb4dcc40a7d3befca74a1bf1046b2186b9a9d0e4d8bda467187e80684"
+      },
+      {
+        "name": "locked-install",
+        "exit": 0,
+        "distinct_tests": 0,
+        "original_private_output_sha256": "3d7ebc969b4a4288a225b423fc0d11e54d0963bd2fa631db3a20ea95bbb490c6"
+      },
+      {
+        "name": "original-types",
+        "exit": 0,
+        "distinct_tests": 0,
+        "original_private_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "original-sdk",
+        "exit": 0,
+        "distinct_tests": 28,
+        "original_private_output_sha256": "0c569d66ce2ee55a015bf01fe531a8b54d5f039dac73ebb72395d4766919f552"
+      },
+      {
+        "name": "workbench",
+        "exit": 0,
+        "distinct_tests": 25,
+        "original_private_output_sha256": "655950a0d8dfbd360f0a5ec54da6d37fb09cac51832085ea7c6f75ca3a41852d"
+      },
+      {
+        "name": "rust",
+        "exit": 0,
+        "distinct_tests": 18,
+        "original_private_output_sha256": "21f75eed692c9c713c93d81d8d6cb8a959a8c3cd619022c74ca49a43d78a16fc"
+      },
+      {
+        "name": "rust-format",
+        "exit": 0,
+        "distinct_tests": 0,
+        "original_private_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "rust-clippy",
+        "exit": 0,
+        "distinct_tests": 0,
+        "original_private_output_sha256": "a8a5d2741384b9e3e36afdaba6cbec8b58b6633d8fd3f1743ca1bdcae37789d8"
+      }
+    ],
+    "environment": {
+      "node": "24.15.0",
+      "python": "3.13.6",
+      "sqlite": "3.50.4",
+      "edge": "154.0.4258.53",
+      "rust_cargo": "version not freshly queried; 1.95.0 remains historical metadata"
+    },
+    "dependencies": "108 packages installed with exact unchanged lock and npm ci --offline --ignore-scripts --no-audit --no-fund; dependency-cache reliance; not a cold online installation"
+  },
+  "linux_baseline_run": {
+    "time": "2026-10-07T14:21:47.408177+00:00",
+    "source": "100 verified checkpoint files in a clean Linux copy; NOT a GitHub restore",
+    "file_count": 100,
+    "source_unchanged": true,
+    "checks": [
+      {
+        "name": "original-60",
+        "exit": 0,
+        "command": [
+          "python",
+          "-B",
+          "tools/verify.py"
+        ],
+        "cwd": ".",
+        "test_ids": [],
+        "output_sha256": "7c74ac236f8265cc98126f36c872543e84dc67aef0e4471204b783802c43071b",
+        "output": "{\n  \"environment\": {\n    \"node\": \"v22.16.0\",\n    \"python\": \"3.13.5\",\n    \"sqlite\": \"3.46.1\",\n    \"typescript\": \"Version 5.8.3\"\n  },\n  \"results\": [\n    {\n      \"component\": \"queue\",\n      \"status\": \"PASS\",\n      \"tests\": 17\n    },\n    {\n      \"component\": \"eval\",\n      \"status\": \"PASS\",\n      \"tests\": 15\n    },\n    {\n      \"component\": \"typescript\",\n      \"scope\": \"strict compilation and compile-only type assertions\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"component\": \"sdk\",\n      \"status\": \"PASS\",\n      \"tests\": 28\n    }\n  ],\n  \"scope\": \"isolated example tests; one loopback HTTP test; no external service calls\"\n}\n"
+      },
+      {
+        "name": "python-contract",
+        "exit": 0,
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "examples/typed_api_sdk",
+          "-v"
+        ],
+        "cwd": ".",
+        "test_ids": [
+          "test_service.ApiSdkTests.test_idempotency_conflict_is_scoped_and_rejected",
+          "test_service.ApiSdkTests.test_idempotent_create_replays_same_result",
+          "test_service.ApiSdkTests.test_limit_and_cursor_are_bounded",
+          "test_service.ApiSdkTests.test_pagination_and_tenant_isolation",
+          "test_service.ApiSdkTests.test_validation_rejects_unknown_fields"
+        ],
+        "output_sha256": "1eae8b315cf7abccf4f6ac92f78555a2b7314dbc2d90bda4de21bdf12198c302",
+        "output": "test_idempotency_conflict_is_scoped_and_rejected (test_service.ApiSdkTests.test_idempotency_conflict_is_scoped_and_rejected) ... ok\ntest_idempotent_create_replays_same_result (test_service.ApiSdkTests.test_idempotent_create_replays_same_result) ... ok\ntest_limit_and_cursor_are_bounded (test_service.ApiSdkTests.test_limit_and_cursor_are_bounded) ... ok\ntest_pagination_and_tenant_isolation (test_service.ApiSdkTests.test_pagination_and_tenant_isolation) ... ok\ntest_validation_rejects_unknown_fields (test_service.ApiSdkTests.test_validation_rejects_unknown_fields) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n"
+      },
+      {
+        "name": "transaction-simulation",
+        "exit": 0,
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "examples/tx_sim",
+          "-v"
+        ],
+        "cwd": ".",
+        "test_ids": [
+          "test_simulator.T.test_failed_transfer_does_not_consume_intent",
+          "test_simulator.T.test_rejects_self_and_nonpositive",
+          "test_simulator.T.test_transfer_and_payer_scoped_replay_protection"
+        ],
+        "output_sha256": "a5fa807bedc062c130bdc896cfd9141260d2481ab8fc9b38aebf86a119e4ced1",
+        "output": "test_failed_transfer_does_not_consume_intent (test_simulator.T.test_failed_transfer_does_not_consume_intent) ... ok\ntest_rejects_self_and_nonpositive (test_simulator.T.test_rejects_self_and_nonpositive) ... ok\ntest_transfer_and_payer_scoped_replay_protection (test_simulator.T.test_transfer_and_payer_scoped_replay_protection) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n"
+      },
+      {
+        "name": "lexical",
+        "exit": 0,
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "-v",
+          "test_retrieval.py"
+        ],
+        "cwd": "examples/retrieval_lab",
+        "test_ids": [
+          "test_retrieval.T.test_baseline_is_reproducible",
+          "test_retrieval.T.test_failure_analysis_is_inspectable",
+          "test_retrieval.T.test_input_and_k_bounds"
+        ],
+        "output_sha256": "8b3013fc477b3c89e1bf50701ef09ac40bd5bbfec01905f49af696b5ec6ceefc",
+        "output": "test_baseline_is_reproducible (test_retrieval.T.test_baseline_is_reproducible) ... ok\ntest_failure_analysis_is_inspectable (test_retrieval.T.test_failure_analysis_is_inspectable) ... ok\ntest_input_and_k_bounds (test_retrieval.T.test_input_and_k_bounds) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n"
+      },
+      {
+        "name": "tool-simulation",
+        "exit": 0,
+        "command": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "examples/mcp_agent/test_runtime.mjs"
+        ],
+        "cwd": ".",
+        "test_ids": [
+          "MCP lists schemas and permission metadata",
+          "tool execution enforces permission boundary",
+          "schema rejects oversized arguments",
+          "agent checkpoints and resumes without replaying completed steps",
+          "pre-cancelled run performs no tool call"
+        ],
+        "output_sha256": "ce1a4d985d04bb268ea6dcdccefffb40e647f99fa89aabae6cf45d3d874b2dbc",
+        "output": "TAP version 13\n# Subtest: MCP lists schemas and permission metadata\nok 1 - MCP lists schemas and permission metadata\n  ---\n  duration_ms: 1.073088\n  type: 'test'\n  ...\n# Subtest: tool execution enforces permission boundary\nok 2 - tool execution enforces permission boundary\n  ---\n  duration_ms: 2.218556\n  type: 'test'\n  ...\n# Subtest: schema rejects oversized arguments\nok 3 - schema rejects oversized arguments\n  ---\n  duration_ms: 0.255675\n  type: 'test'\n  ...\n# Subtest: agent checkpoints and resumes without replaying completed steps\nok 4 - agent checkpoints and resumes without replaying completed steps\n  ---\n  duration_ms: 4.133264\n  type: 'test'\n  ...\n# Subtest: pre-cancelled run performs no tool call\nok 5 - pre-cancelled run performs no tool call\n  ---\n  duration_ms: 0.38305\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 218.528351\n"
+      },
+      {
+        "name": "backend",
+        "exit": 0,
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "projects/evidence-workbench/backend",
+          "-v"
+        ],
+        "cwd": ".",
+        "test_ids": [
+          "test_http.HttpTests.test_bad_json_and_duplicate_keys_are_rejected",
+          "test_http.HttpTests.test_content_type_size_origin_and_host",
+          "test_http.HttpTests.test_duplicate_write_conflict_and_race",
+          "test_http.HttpTests.test_end_to_end_http_persistence_and_grading",
+          "test_http.HttpTests.test_health_crosses_a_real_socket",
+          "test_http.HttpTests.test_partition_unknown_profile_and_pagination_bounds",
+          "test_http.HttpTests.test_read_profile_cannot_mutate",
+          "test_http.HttpTests.test_real_search_and_cancel_are_exposed",
+          "test_process_recovery.ProcessRecoveryTests.test_abrupt_worker_exit_preserves_checkpoint_then_reclaims_expired_lease",
+          "test_process_recovery.ProcessRecoveryTests.test_persisted_input_identity_drift_is_refused",
+          "test_process_recovery.ProcessRecoveryTests.test_unknown_schema_is_refused_without_rewriting_version",
+          "test_workbench.WorkbenchTests.test_cancel_mid_run_fences_completion",
+          "test_workbench.WorkbenchTests.test_checkpoint_resume_fences_old_generation",
+          "test_workbench.WorkbenchTests.test_concurrent_idempotent_submission",
+          "test_workbench.WorkbenchTests.test_connection_is_closed_after_scope",
+          "test_workbench.WorkbenchTests.test_corrupt_checkpoint_fails_closed",
+          "test_workbench.WorkbenchTests.test_idempotency_conflict_keeps_original",
+          "test_workbench.WorkbenchTests.test_keyset_pagination_is_stable_and_bounded",
+          "test_workbench.WorkbenchTests.test_no_implicit_replay_of_terminal_job",
+          "test_workbench.WorkbenchTests.test_parallel_workers_execute_one_lease",
+          "test_workbench.WorkbenchTests.test_preserved_lexical_baseline_is_executed",
+          "test_workbench.WorkbenchTests.test_real_fts5_and_preserved_grader",
+          "test_workbench.WorkbenchTests.test_search_quotes_user_terms_not_fts_operators",
+          "test_workbench.WorkbenchTests.test_strict_input_and_bounds",
+          "test_workbench.WorkbenchTests.test_submit_is_a_persistent_record",
+          "test_workbench.WorkbenchTests.test_tenant_partition_uses_real_database"
+        ],
+        "output_sha256": "6a5f300dc2c6f243ece6949d2966bbb739b79b4ef66510d5c3df668729b25dcb",
+        "output": "test_bad_json_and_duplicate_keys_are_rejected (test_http.HttpTests.test_bad_json_and_duplicate_keys_are_rejected) ... ok\ntest_content_type_size_origin_and_host (test_http.HttpTests.test_content_type_size_origin_and_host) ... ok\ntest_duplicate_write_conflict_and_race (test_http.HttpTests.test_duplicate_write_conflict_and_race) ... ok\ntest_end_to_end_http_persistence_and_grading (test_http.HttpTests.test_end_to_end_http_persistence_and_grading) ... ok\ntest_health_crosses_a_real_socket (test_http.HttpTests.test_health_crosses_a_real_socket) ... ok\ntest_partition_unknown_profile_and_pagination_bounds (test_http.HttpTests.test_partition_unknown_profile_and_pagination_bounds) ... ok\ntest_read_profile_cannot_mutate (test_http.HttpTests.test_read_profile_cannot_mutate) ... ok\ntest_real_search_and_cancel_are_exposed (test_http.HttpTests.test_real_search_and_cancel_are_exposed) ... ok\ntest_abrupt_worker_exit_preserves_checkpoint_then_reclaims_expired_lease (test_process_recovery.ProcessRecoveryTests.test_abrupt_worker_exit_preserves_checkpoint_then_reclaims_expired_lease) ... ok\ntest_persisted_input_identity_drift_is_refused (test_process_recovery.ProcessRecoveryTests.test_persisted_input_identity_drift_is_refused) ... ok\ntest_unknown_schema_is_refused_without_rewriting_version (test_process_recovery.ProcessRecoveryTests.test_unknown_schema_is_refused_without_rewriting_version) ... ok\ntest_cancel_mid_run_fences_completion (test_workbench.WorkbenchTests.test_cancel_mid_run_fences_completion) ... ok\ntest_checkpoint_resume_fences_old_generation (test_workbench.WorkbenchTests.test_checkpoint_resume_fences_old_generation) ... ok\ntest_concurrent_idempotent_submission (test_workbench.WorkbenchTests.test_concurrent_idempotent_submission) ... ok\ntest_connection_is_closed_after_scope (test_workbench.WorkbenchTests.test_connection_is_closed_after_scope) ... ok\ntest_corrupt_checkpoint_fails_closed (test_workbench.WorkbenchTests.test_corrupt_checkpoint_fails_closed) ... ok\ntest_idempotency_conflict_keeps_original (test_workbench.WorkbenchTests.test_idempotency_conflict_keeps_original) ... ok\ntest_keyset_pagination_is_stable_and_bounded (test_workbench.WorkbenchTests.test_keyset_pagination_is_stable_and_bounded) ... ok\ntest_no_implicit_replay_of_terminal_job (test_workbench.WorkbenchTests.test_no_implicit_replay_of_terminal_job) ... ok\ntest_parallel_workers_execute_one_lease (test_workbench.WorkbenchTests.test_parallel_workers_execute_one_lease) ... ok\ntest_preserved_lexical_baseline_is_executed (test_workbench.WorkbenchTests.test_preserved_lexical_baseline_is_executed) ... ok\ntest_real_fts5_and_preserved_grader (test_workbench.WorkbenchTests.test_real_fts5_and_preserved_grader) ... ok\ntest_search_quotes_user_terms_not_fts_operators (test_workbench.WorkbenchTests.test_search_quotes_user_terms_not_fts_operators) ... ok\ntest_strict_input_and_bounds (test_workbench.WorkbenchTests.test_strict_input_and_bounds) ... ok\ntest_submit_is_a_persistent_record (test_workbench.WorkbenchTests.test_submit_is_a_persistent_record) ... ok\ntest_tenant_partition_uses_real_database (test_workbench.WorkbenchTests.test_tenant_partition_uses_real_database) ... ok\n\n----------------------------------------------------------------------\nRan 26 tests in 5.962s\n\nOK\n"
+      }
+    ],
+    "linux_browser_and_rust": "not run; no admitted installed Linux runtimes"
+  },
+  "new_source_checker": {
+    "test_definitions": 28,
+    "code_sha256": "d92a2d868131ed12f462a6460fc551ac94a59878da99f265af1c1d1e7aaf392b",
+    "test_sha256": "e5b9d4b120e1cea3cdacd8f501abbb0c5e971881e160ebad591e0398561d118b",
+    "windows": {
+      "passed": 25,
+      "skipped": 3,
+      "failed": 0,
+      "skipped_cases": [
+        "POSIX executable bits",
+        "symbolic-file fixture creation not admitted",
+        "symbolic-directory fixture creation not admitted"
+      ]
+    },
+    "linux": {
+      "passed": 27,
+      "skipped": 1,
+      "failed": 0,
+      "skipped_cases": [
+        "Windows NTFS junction case"
+      ],
+      "actual_output": "test_case_collisions_are_rejected (test_verify_source.SourceVerificationTests.test_case_collisions_are_rejected) ... ok\ntest_cli_reports_json_failure_without_traceback_or_writes (test_verify_source.SourceVerificationTests.test_cli_reports_json_failure_without_traceback_or_writes) ... ok\ntest_declared_modes_are_not_claimed_verified_on_windows (test_verify_source.SourceVerificationTests.test_declared_modes_are_not_claimed_verified_on_windows) ... ok\ntest_declared_source_file_has_a_byte_limit (test_verify_source.SourceVerificationTests.test_declared_source_file_has_a_byte_limit) ... ok\ntest_duplicate_json_keys_are_rejected (test_verify_source.SourceVerificationTests.test_duplicate_json_keys_are_rejected) ... ok\ntest_duplicate_paths_are_rejected (test_verify_source.SourceVerificationTests.test_duplicate_paths_are_rejected) ... ok\ntest_executable_mode_mismatch_is_rejected (test_verify_source.SourceVerificationTests.test_executable_mode_mismatch_is_rejected) ... ok\ntest_external_manifest_hash_is_checked (test_verify_source.SourceVerificationTests.test_external_manifest_hash_is_checked) ... ok\ntest_file_size_mismatch_is_explicit (test_verify_source.SourceVerificationTests.test_file_size_mismatch_is_explicit) ... ok\ntest_generated_files_are_not_silently_ignored (test_verify_source.SourceVerificationTests.test_generated_files_are_not_silently_ignored) ... ok\ntest_intact_inventory_is_verified_without_writing (test_verify_source.SourceVerificationTests.test_intact_inventory_is_verified_without_writing) ... ok\ntest_invalid_json_is_rejected (test_verify_source.SourceVerificationTests.test_invalid_json_is_rejected) ... ok\ntest_invalid_sizes_and_hashes_are_rejected (test_verify_source.SourceVerificationTests.test_invalid_sizes_and_hashes_are_rejected) ... ok\ntest_manifest_count_and_payload_metadata_are_checked (test_verify_source.SourceVerificationTests.test_manifest_count_and_payload_metadata_are_checked) ... ok\ntest_manifest_input_has_a_byte_limit (test_verify_source.SourceVerificationTests.test_manifest_input_has_a_byte_limit) ... ok\ntest_manifest_self_entry_is_rejected (test_verify_source.SourceVerificationTests.test_manifest_self_entry_is_rejected) ... ok\ntest_metadata_cannot_be_claimed_as_public_source (test_verify_source.SourceVerificationTests.test_metadata_cannot_be_claimed_as_public_source) ... ok\ntest_missing_source_fails (test_verify_source.SourceVerificationTests.test_missing_source_fails) ... ok\ntest_nonportable_names_are_rejected (test_verify_source.SourceVerificationTests.test_nonportable_names_are_rejected) ... ok\ntest_parent_file_conflicts_are_rejected (test_verify_source.SourceVerificationTests.test_parent_file_conflicts_are_rejected) ... ok\ntest_partial_mode_coverage_is_reported_as_partial (test_verify_source.SourceVerificationTests.test_partial_mode_coverage_is_reported_as_partial) ... ok\ntest_symbolic_directory_is_rejected (test_verify_source.SourceVerificationTests.test_symbolic_directory_is_rejected) ... ok\ntest_symbolic_file_is_rejected (test_verify_source.SourceVerificationTests.test_symbolic_file_is_rejected) ... ok\ntest_tampered_equal_size_content_fails (test_verify_source.SourceVerificationTests.test_tampered_equal_size_content_fails) ... ok\ntest_top_level_regular_git_metadata_is_excluded (test_verify_source.SourceVerificationTests.test_top_level_regular_git_metadata_is_excluded) ... ok\ntest_traversal_absolute_and_noncanonical_paths_are_rejected (test_verify_source.SourceVerificationTests.test_traversal_absolute_and_noncanonical_paths_are_rejected) ... ok\ntest_unexpected_source_fails (test_verify_source.SourceVerificationTests.test_unexpected_source_fails) ... ok\ntest_windows_directory_junction_is_rejected (test_verify_source.SourceVerificationTests.test_windows_directory_junction_is_rejected) ... skipped 'Windows NTFS junction case; Linux symlinks have separate tests'\n\n----------------------------------------------------------------------\nRan 28 tests in 1.039s\n\nOK (skipped=1)\n"
+    },
+    "tdd": {
+      "initial_implementation_missing": "observed failing tests retained privately",
+      "partial_mode_qualification": "observed failing assertion before fix",
+      "ntfs_junction": {
+        "before_code_sha256": "c7bce7e886b34dcae21786c2b4df097c6e8b4de3c03ab2ce2ac4eb121f92aee3",
+        "before_result": "FAIL: VerificationError not raised for actual Windows directory junction",
+        "after_result": "PASS on Windows",
+        "patch": "checkpoint-2-source-checker-junction.patch"
+      }
+    },
+    "review": "not independently approved; reviewer service quota blocked inspection"
+  },
+  "latest_windows_integration_run": {
+    "completed_at": "2026-10-07T22:51:22.407594+08:00",
+    "status": "FAILED",
+    "original_86_files_unchanged": true,
+    "new_tools_integrated": true,
+    "passed_test_executions": 73,
+    "errors": 1,
+    "remaining_groups": "NOT RUN after backend failure; previous passes are retained separately",
+    "checks": [
+      {
+        "name": "queue",
+        "passed": 17,
+        "exit": 0,
+        "original_private_output_sha256": "0a6ab5bfd4055be17ab3b7eaaa1e28a97a6331e06cbae2ff83d697216521622d"
+      },
+      {
+        "name": "ranking",
+        "passed": 15,
+        "exit": 0,
+        "original_private_output_sha256": "07fee632308f7ee6d0871f2053866b939642d85df05b6b599490748827c28cdf"
+      },
+      {
+        "name": "python-contract",
+        "passed": 5,
+        "exit": 0,
+        "original_private_output_sha256": "1eae8b315cf7abccf4f6ac92f78555a2b7314dbc2d90bda4de21bdf12198c302"
+      },
+      {
+        "name": "transaction-simulation",
+        "passed": 3,
+        "exit": 0,
+        "original_private_output_sha256": "5173bce7ca80b94044b476a94657ad72bf341e35285f058a6cd800b0624fc646"
+      },
+      {
+        "name": "lexical",
+        "passed": 3,
+        "exit": 0,
+        "original_private_output_sha256": "8b3013fc477b3c89e1bf50701ef09ac40bd5bbfec01905f49af696b5ec6ceefc"
+      },
+      {
+        "name": "tool-simulation",
+        "passed": 5,
+        "exit": 0,
+        "original_private_output_sha256": "1dee4e2dc539328c207677ddb9ea2109fd304a9d670e2d7551aafda68b1be381"
+      },
+      {
+        "name": "backend",
+        "passed": 25,
+        "exit": 1,
+        "original_private_output_sha256": "c9237851eab7c8ab7aef000745c63427ea1a4feaba69dae42eeebfb7876c9bae"
+      }
+    ],
+    "failing_test": "test_http.HttpTests.test_content_type_size_origin_and_host",
+    "failure": "ConnectionAbortedError: [WinError 10053] while reading the response to POST /v1/jobs, Content-Type:text/plain, body {}, expected HTTP 415",
+    "root_cause": "unresolved; early rejection with unread body is a code-inspection hypothesis, not verified causation",
+    "followup_diagnostic": "a repeated local socket probe was blocked by the tool safety gate and was not retried or rerouted",
+    "backend_patch": "none; no speculative fix or weakened assertion"
+  },
+  "independent_review": {
+    "rust": {
+      "status": "prior independent static review retained; all eight exact input hashes freshly reverified",
+      "files": {
+        "projects/bounded-lang/README.md": "cfb981fbf3adc89246c878bf98d1827a816fa06a785ad4ca5a74b66e3b525b41",
+        "projects/bounded-lang/Cargo.toml": "35204d159c2ccf032220f90958ce4048fc49d7a81b05ebe36677d76553a7d416",
+        "projects/bounded-lang/Cargo.lock": "6889564420a3ff481ff3d9456d6aa99cbcd217f96f821c71b0f249a0c139791a",
+        "projects/bounded-lang/src/lib.rs": "04bab003edc418304b38081b38189c92a4f3b253920a04c083be2e99c988d959",
+        "projects/bounded-lang/tests/pipeline.rs": "c8dc20cb2fd02efc30b22dec5edfe909f4ba1718a5dbed20ec85e5374ae4019d",
+        "projects/bounded-lang/tests/bindings.rs": "c4b47781bed1224fd0e12305f476db3909358dcc5d8a736a27126c5ec97dfd86",
+        "projects/bounded-lang/tests/limits.rs": "6ffa1a382fdc7113992cdad7f863afe414eb34025676ef84953f3d8a8e02fdbf",
+        "projects/bounded-lang/tests/compile_budget.rs": "4c799a0134efd397e1db498f5ef2487be7825545e2b6839ff44ae109d25b9b5f"
+      },
+      "public_report": "current/rust-final-independent-review.md",
+      "raw_private_report_sha256": "0bf51524f3d7f19cff9aec972be57b25f18c65627efecac226ade09b52d2fe2e",
+      "observations": [
+        "one transient extra stack operand allocation before rejection",
+        "compile-limit tests do not pin every error variant"
+      ]
+    },
+    "new_attempts": [
+      {
+        "scope": "foundations",
+        "file_count": 28,
+        "input_binding": "d6c4e081bcdd8e689146462fffbe2c58026cc2217e7b31c2cd69be0f191ac612",
+        "exit": 1,
+        "status": "USAGE_LIMIT_BEFORE_REVIEW",
+        "report_bytes": 0,
+        "source_unchanged": true
+      },
+      {
+        "scope": "backend",
+        "file_count": 6,
+        "input_binding": "d0e63c16c7bab90ce8b00ef201b2f573e66e7d516f8eccb1ed9859292b7b9fcb",
+        "exit": 1,
+        "status": "USAGE_LIMIT_BEFORE_REVIEW",
+        "report_bytes": 0,
+        "source_unchanged": true
+      },
+      {
+        "scope": "frontend",
+        "file_count": 12,
+        "input_binding": "bf3c924ccf54351e5bc82c7f4b5f4ae1ed933ce132972157add016925522725b",
+        "exit": 1,
+        "status": "USAGE_LIMIT_BEFORE_REVIEW",
+        "report_bytes": 0,
+        "source_unchanged": true
+      },
+      {
+        "scope": "protocol",
+        "file_count": 8,
+        "input_binding": "f1dcb51144888f0b62d8f01a079bb408253768319754bd63677aa49275e13b83",
+        "exit": 1,
+        "status": "USAGE_LIMIT_BEFORE_REVIEW",
+        "report_bytes": 0,
+        "source_unchanged": true
+      },
+      {
+        "scope": "source-checker",
+        "file_count": 2,
+        "input_binding": "2097c21e7b5013b6741d277ac38da5bb076414015e9841f8aa640c09c3691c0c",
+        "exit": 1,
+        "status": "USAGE_LIMIT_BEFORE_REVIEW",
+        "report_bytes": 0,
+        "source_unchanged": true
+      },
+      {
+        "scope": "packaging",
+        "file_count": 16,
+        "input_binding": "8e7683bd3f0ace806f26a0ae4aa4fc3f2957de4d54cba53471d0ea0a23838381",
+        "exit": 1,
+        "status": "USAGE_LIMIT_BEFORE_REVIEW",
+        "report_bytes": 0,
+        "source_unchanged": true
+      }
+    ],
+    "new_workers_active": false,
+    "final_documentation_review": "not completed; current root documentation was not approved by the historical packaging input",
+    "full_candidate": "NOT APPROVED"
+  },
+  "native_gates": {
+    "webmcp": {
+      "browser": "Edge 154.0.4258.53",
+      "secure_context": true,
+      "origin_agent_cluster": true,
+      "document_model_context": "undefined",
+      "navigator_model_context": "undefined",
+      "register_get_execute": "undefined",
+      "experimental_flags_or_browser_downloads": false,
+      "native_interoperability": "UNQUALIFIED"
+    },
+    "postgresql": "server/client absent on admitted Windows path; Docker daemon unavailable; no native acceptance",
+    "evm": "compiler/executor absent on admitted Windows path; no native acceptance or fund movement",
+    "training": "no approved runnable training vertical/runtime admission; unqualified",
+    "nextjs": "no Next.js vertical in recovered public source; React does not qualify it",
+    "containers_cloud": "no admitted running container target or deployment; no new services started"
+  },
+  "publication_gates": [
+    "Current Actions policy, complete installed-App/webhook and external deployment/build inventory missing",
+    "Applicable independent review lacks service capacity; no report is approval",
+    "Latest integrated Windows baseline has unresolved HTTP test error; diagnostic probe blocked"
+  ],
+  "receipt_boundaries": "Original raw logs and review requests remain in the authorized private workspace. Public summaries redact private paths. Documentation changes after execution do not inherit execution qualification; the execution-file map binds what actually ran. The source manifest includes this receipt and excludes itself; no self-hash or unpublished commit is invented."
+}

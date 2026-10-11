@@ -1,0 +1,14 @@
+# Local artifacts from running these examples; no source or fixtures are ignored.
+/examples/**/__pycache__/
+/examples/**/*.py[cod]
+/examples/read_client/.build/
+
+# Rebuildable workbench outputs and local-only runtime data.
+/node_modules/
+/projects/evidence-workbench/dist/
+/projects/evidence-workbench/backend/__pycache__/
+/.local/
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm

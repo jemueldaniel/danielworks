@@ -1,0 +1,29 @@
+
+running 6 tests
+test malformed_and_incomplete_sources_fail_without_panicking ... ok
+test arithmetic_errors_are_explicit ... ok
+test malformed_ir_reports_errors ... ok
+test unknown_names_are_compile_errors ... ok
+test step_and_stack_limits_have_exact_boundaries ... ok
+test local_count_cannot_wrap_after_65535_bindings ... FAILED
+
+failures:
+
+---- local_count_cannot_wrap_after_65535_bindings stdout ----
+
+thread 'local_count_cannot_wrap_after_65535_bindings' (25548) panicked at tests\limits.rs:48:5:
+assertion `left == right` failed
+  left: None
+ right: Some(Overflow)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    local_count_cannot_wrap_after_65535_bindings
+
+test result: FAILED. 5 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+
+   Compiling bounded-lang v0.1.0 (CHECKPOINT\source\projects\bounded-lang)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.66s
+     Running tests\limits.rs (CHECKPOINT\evidence-private\cargo-target\debug\deps\limits-2bc0240646b65cd8.exe)
+error: test failed, to rerun pass `--test limits`

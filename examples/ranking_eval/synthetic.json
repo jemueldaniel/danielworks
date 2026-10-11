@@ -1,0 +1,9 @@
+{
+  "schema": "ranking-eval.v1",
+  "corpus": ["d-a", "d-b", "d-c", "d-d"],
+  "training_query_ids": ["q-training"],
+  "queries": [
+    {"id": "q-alpha", "relevant": ["d-a", "d-c"], "retrieved": ["d-b", "d-a", "d-c"]},
+    {"id": "q-beta", "relevant": ["d-d"], "retrieved": ["d-d", "d-a"]}
+  ]
+}
