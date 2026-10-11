@@ -99,6 +99,14 @@ class ExportVerificationTests(unittest.TestCase):
         self.assertEqual(report['tests_run'], 1)
         self.assertEqual(report['groups'][0]['profile'], 'interface-lab')
 
+    def test_ui_atlas_exported_source_runs_fixed_real_node_model_suite(self):
+        pin = self.build(['ui-atlas'])
+        checked = validate(self.project, pin)
+        outcome = run_profiles(self.project, checked)
+        self.assertEqual(outcome['status'], 'PASS')
+        self.assertEqual(outcome['tests_run'], 1)
+        self.assertEqual(outcome['groups'][0]['profile'], 'ui-atlas')
+
     def test_file_bytes_mutation_fails(self):
         pin = self.build()
         path = self.project / 'examples/mcp_agent/runtime.mjs'

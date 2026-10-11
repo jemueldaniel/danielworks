@@ -109,3 +109,18 @@ dependencies; the full root browser tests require a locally installed
 browser and cached Playwright dependencies. The separately shipped React/MCP
 workbench retains its own browser/TypeScript qualification. Neither public
 example reproduces private company screens or establishes full WCAG compliance.
+
+## Distinct original frontend experience architecture
+
+[UI Atlas](../examples/ui_atlas/README.md) provides five separate,
+stateful original public interface types: commerce, Kanban workflow,
+messaging, editorial launch/onboarding and component design systems.
+Its [Node suite](../examples/ui_atlas/test_model.mjs) covers 65 deterministic
+state and negative cases; its [real browser suite](../projects/ui-atlas-tests/browser.test.mjs)
+checks twenty interactions and five representative desktop/mobile widths.
+[Full interface evidence matrix](ATLAS_FRONTEND_COVERAGE.md).
+
+The ui-experiences public recipe bundles UI Atlas plus Interface Laboratory.
+No product brands, private account data, tracking or proprietary source are
+involved. Headless browser tests do not constitute a complete WCAG or
+production deployment qualification.

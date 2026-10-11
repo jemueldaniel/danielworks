@@ -1,6 +1,6 @@
 # Reusable original public engineering recipes
 
-Four fixed source-only recipes compose tested, self-contained examples.
+Eight fixed source-only recipes compose tested, self-contained examples.
 They import no private repositories or accounts and deploy nothing.
 
 | Recipe | Fixed public profiles | Demonstrates |
@@ -11,7 +11,8 @@ They import no private repositories or accounts and deploy nothing.
 | workflow-engine | build-graph, jobs, event-outbox, policy | In-memory DAG claims plus local durable jobs/events and policy |
 | api-security | signed-api, policy, jobs | Key-bound signatures, nonce replay and local backend policy |
 | frontend-studio | interface-lab, jobs, policy | Responsive local UI, durable jobs and policy examples; separately tested |
-| full-reference | all fourteen executed public profiles | Broad engineering reference without private data |
+| ui-experiences | interface-lab, ui-atlas | Two separate fully interactive frontend implementations; pure Node model suites |
+| full-reference | all fifteen executed public profiles | Broad engineering reference without private data |
 
 From the exact published checkout, obtain its SOURCE_MANIFEST.json SHA-256
 outside the repository and provide that verified 64-character value:

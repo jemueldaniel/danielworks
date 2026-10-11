@@ -287,6 +287,22 @@
       "boundary": "Original offline HTML/CSS/ESM UI with 40 Node model and 14 local installed-Edge browser acceptance tests at 5 viewports. Not private product UI, full WCAG certification, deployed SaaS or externally audited user research."
     },
     {
+      "id": "interactive-ui-pattern-atlas",
+      "discipline": "Five independently authored interactive commerce, workflow, chat, marketing/onboarding and component-library interfaces",
+      "qualification": "executed",
+      "implementation": [
+        "examples/ui_atlas/index.html",
+        "examples/ui_atlas/styles.css",
+        "examples/ui_atlas/model.mjs",
+        "examples/ui_atlas/app.mjs"
+      ],
+      "tests": [
+        "examples/ui_atlas/test_model.mjs",
+        "projects/ui-atlas-tests/browser.test.mjs"
+      ],
+      "boundary": "Original synthetic offline web examples with 65 pure Node model tests and 20 real installed Edge browser tests. Viewport checks at 320, 390, 768, 1024 and 1440 px. Checkout/chat are local simulations, not production apps or private products."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

@@ -193,3 +193,16 @@ Demo filtering, navigation, theme reload, CSV download, semantic dialogs,
 keyboard shortcuts, mobile overflow and error handling. This does not
 license private startup/client UI, unreleased brand assets or proprietary
 design files for reuse.
+
+## Copy the public-only multi-interface kit safely
+
+Select ui-atlas or the ui-experiences recipe through the source-pinned
+one-command assembler. The exported UI source uses plain HTML, CSS
+and native JavaScript modules with no runtime package requirement.
+Serve each interface locally and test search/cart arithmetic, Kanban
+status changes, local message transmission, wizard validation,
+component tokens, keyboard focus and responsive layouts.
+The repository-wide Playwright suite adds real installed-Edge acceptance.
+For a new employer, use this as a template only after independently
+reviewing design rights, accessibility, account boundaries, asset
+ownership, consent and actual backend/security requirements.

@@ -42,6 +42,7 @@ TESTS = {
     'build-graph': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/build_graph', '-v'),
     'signed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/signed_api', '-v'),
     'interface-lab': ('node', '--test', '--test-reporter=tap', 'examples/interface_lab/test_model.mjs'),
+    'ui-atlas': ('node', '--test', '--test-reporter=tap', 'examples/ui_atlas/test_model.mjs'),
     'typed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/typed_api_sdk', '-v'),
     'rust-compiler': ('cargo', 'test', '--manifest-path', 'projects/bounded-lang/Cargo.toml', '--locked', '--offline'),
 }
@@ -198,7 +199,7 @@ def run_profiles(destination: Path, verified: dict, timeout: int = 60, *, runtim
         if proc.returncode != 0:
             _fail('test_failed')
         output = proc.stdout + '\n' + proc.stderr
-        if profile in ('agent', 'interface-lab'):
+        if profile in ('agent', 'interface-lab', 'ui-atlas'):
             has_tests = (re.search(r'^# tests [1-9]\d*$', output, re.M)
                          and re.search(r'^# pass [1-9]\d*$', output, re.M)
                          and re.search(r'^# fail 0$', output, re.M))

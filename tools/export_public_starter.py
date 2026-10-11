@@ -128,6 +128,14 @@ STARTERS: dict[str, Starter] = {
         "examples/interface_lab/app.mjs",
         "examples/interface_lab/test_model.mjs",
     ), "node --test --test-reporter=tap examples/interface_lab/test_model.mjs", "executed"),
+    "ui-atlas": Starter("interactive-ui-pattern-atlas", (
+        "examples/ui_atlas/README.md",
+        "examples/ui_atlas/index.html",
+        "examples/ui_atlas/styles.css",
+        "examples/ui_atlas/model.mjs",
+        "examples/ui_atlas/app.mjs",
+        "examples/ui_atlas/test_model.mjs",
+    ), "node --test --test-reporter=tap examples/ui_atlas/test_model.mjs", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

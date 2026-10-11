@@ -72,3 +72,14 @@ not replace the installed-Edge acceptance. See UI_UX_EVIDENCE_MATRIX.md.
 This demonstrates independently developed generic interface design, not
 exclusive authorship, ownership or production suitability of any historically
 private frontend or client work.
+
+## Show more than one kind of user interface
+
+Use the public UI Atlas and Interface Laboratory examples to demonstrate
+different audiences: consumer discovery/cart, operational workflow,
+local messaging, onboarding and component design. On a phone width,
+filter a product, add/change a cart quantity, move a Kanban card,
+send a synthetic message, walk through validation and download tokens.
+Then run the exact pinned Node tests and browser acceptance. Explain
+why simulated payment/chat and generic patterns cannot substitute for
+real client systems, deployment or private product ownership proof.

@@ -11,8 +11,9 @@
     "typecheck": "tsc -p projects/evidence-workbench/tsconfig.json",
     "test:protocol": "node --test --test-concurrency=1 projects/evidence-workbench/tests/protocol.test.mjs projects/evidence-workbench/tests/api.test.mjs projects/evidence-workbench/tests/review.test.mjs",
     "test:browser": "node --test --test-concurrency=1 projects/evidence-workbench/tests/browser.test.mjs",
-    "test": "npm run typecheck && npm run build && npm run test:protocol && npm run test:browser && npm run test:interface",
-    "test:interface": "node --test --test-concurrency=1 projects/interface-lab-tests/browser.test.mjs"
+    "test": "npm run typecheck && npm run build && npm run test:protocol && npm run test:browser && npm run test:interface && npm run test:atlas",
+    "test:interface": "node --test --test-concurrency=1 projects/interface-lab-tests/browser.test.mjs",
+    "test:atlas": "node --test --test-concurrency=1 projects/ui-atlas-tests/browser.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.1",

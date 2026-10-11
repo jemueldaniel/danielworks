@@ -129,6 +129,14 @@ class PublicStarterTests(unittest.TestCase):
                  for p in self.target.rglob('*') if p.is_file()}
         self.assertEqual(found, expected | {'README.md','REUSE_MANIFEST.json'})
 
+    def test_ui_atlas_public_source_profile_contains_six_fixed_allowlisted_files(self):
+        result = self.build(['ui-atlas'])
+        self.assertEqual(result['selected_files'], 6)
+        desired = set(STARTERS['ui-atlas'].paths)
+        observed = {p.relative_to(self.target).as_posix()
+                    for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(observed, desired | {'README.md','REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="An original interactive gallery of responsive interface engineering patterns, synthetic data and real accessible UI behavior.">
+<title>Atlas / Interactive interface patterns</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="module" src="./app.mjs"></script>
+</head>
+<body data-theme="light">
+<a class="skip" href="#main">Skip to content</a>
+<header class="app-header">
+  <a id="home-brand" href="#gallery" class="brand" aria-label="Atlas pattern gallery">
+    <span class="brand-icon" aria-hidden="true"><b></b><b></b><b></b><b></b></span>
+    <span>atlas<span class="brand-period">.</span></span>
+    <small>INTERFACE SYSTEMS</small>
+  </a>
+  <nav class="top-nav" aria-label="Patterns">
+    <button type="button" data-nav="gallery" aria-current="page">Explore</button>
+    <button type="button" data-nav="commerce">Commerce</button>
+    <button type="button" data-nav="board">Workflow</button>
+    <button type="button" data-nav="messages">Messages</button>
+    <button type="button" data-nav="launch">Launch</button>
+    <button type="button" data-nav="components">Components</button>
+  </nav>
+  <div class="head-actions">
+    <span class="local-marker"><span></span> LOCAL DEMO</span>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to dark theme"><span aria-hidden="true">☾</span></button>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <section id="gallery" class="view" data-view="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-stroke"></span> AN ORIGINAL, INTERACTIVE UI STUDY / VOL. 01</div>
+        <h1 id="gallery-title">Better interfaces.<br><em>Beyond the mockup.</em></h1>
+        <p class="hero-lead">Five working frontend experiences. One coherent design language. Every interaction built to be explored, tested and reused.</p>
+        <div class="hero-actions"><button class="btn btn-dark" type="button" data-go="commerce">Explore experiences <span aria-hidden="true">↗</span></button><button class="btn btn-outline" type="button" data-go="components">View design system <span aria-hidden="true">→</span></button></div>
+        <div class="hero-meta"><span class="tiny-dot"></span> SYNTHETIC DATA ONLY <span class="separator">/</span> NO TRACKING <span class="separator">/</span> KEYBOARD-FIRST</div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Abstract collection of layered interface cards, shapes and tokens">
+        <div class="hero-art-plate">
+          <span class="art-chip">INTERFACE / 001</span>
+          <div class="hero-orb orb-one"></div>
+          <div class="hero-orb orb-two"></div>
+          <div class="art-panel"><span class="line wide"></span><span class="line narrow"></span><div class="art-dot-row"><b></b><b></b><b></b><b></b></div></div>
+          <div class="art-floating">01 — 05 <span aria-hidden="true">↗</span></div>
+        </div>
+        <span class="hero-corner">BUILT FOR REAL INTERACTIONS</span>
+      </div>
+    </div>
+    <div class="section-top"><div><div class="eyebrow">EXPLORE THE COLLECTION</div><h2>Five distinct experiences.<br><span>Countless reusable details.</span></h2></div><div class="small-right">ALL DEMOS WORK OFFLINE<br>NO ACCOUNTS REQUIRED</div></div>
+    <div class="gallery-grid">
+      <button class="pattern-card card-commerce" type="button" data-go="commerce" aria-label="Open interactive commerce experience">
+        <span class="pattern-index">01 / RETAIL</span>
+        <span class="pattern-art pattern-retail"><span class="product-object"></span><span class="retail-rail"></span><span class="retail-caption">OBJECT / STUDY 01</span></span>
+        <span class="pattern-bottom"><span><strong>Commerce experience</strong><small>Product filtering · Real local cart</small></span><span class="round-arrow" aria-hidden="true">↗</span></span>
+      </button>
+      <button class="pattern-card card-board" type="button" data-go="board" aria-label="Open interactive workflow board">
+        <span class="pattern-index">02 / PRODUCTIVITY</span>
+        <span class="pattern-art pattern-workflow"><span class="mini-col"><i></i><i></i></span><span class="mini-col middle"><i></i><i></i><i></i></span><span class="mini-col"><i></i></span></span>
+        <span class="pattern-bottom"><span><strong>Workflow board</strong><small>Move cards · Track work states</small></span><span class="round-arrow" aria-hidden="true">↗</span></span>
+      </button>
+      <button class="pattern-card card-messages" type="button" data-go="messages" aria-label="Open interactive messaging interface">
+        <span class="pattern-index">03 / COMMUNICATION</span>
+        <span class="pattern-art pattern-chat"><span class="mini-bubble bubble-a"></span><span class="mini-bubble bubble-b"></span><span class="mini-bubble bubble-c"></span><span class="chat-circle">●</span></span>
+        <span class="pattern-bottom"><span><strong>Messaging interface</strong><small>Switch threads · Send messages</small></span><span class="round-arrow" aria-hidden="true">↗</span></span>
+      </button>
+      <button class="pattern-card card-launch" type="button" data-go="launch" aria-label="Open interactive launch and onboarding experience">
+        <span class="pattern-index">04 / ONBOARDING</span>
+        <span class="pattern-art pattern-launch"><span class="launch-circle">A</span><span class="launch-line"></span><span class="launch-pill">YOUR NEXT CHAPTER ↗</span></span>
+        <span class="pattern-bottom"><span><strong>Launch & onboarding</strong><small>Guided steps · Pricing calculator</small></span><span class="round-arrow" aria-hidden="true">↗</span></span>
+      </button>
+      <button class="pattern-card card-tokens" type="button" data-go="components" aria-label="Open interactive components and design tokens">
+        <span class="pattern-index">05 / DESIGN SYSTEMS</span>
+        <span class="pattern-art pattern-components"><span class="token one"></span><span class="token two"></span><span class="token three"></span><span class="token four"></span></span>
+        <span class="pattern-bottom"><span><strong>Component systems</strong><small>Tokens · Accessible controls</small></span><span class="round-arrow" aria-hidden="true">↗</span></span>
+      </button>
+    </div>
+    <div class="studio-note"><span class="note-symbol" aria-hidden="true">✳</span><div><strong>This is engineering, not a screenshot.</strong><p>Working state transitions, semantic HTML, mobile layouts, negative tests and real browser validation—all from independent public source.</p></div><button data-go="components" type="button">Inspect foundations <span aria-hidden="true">↗</span></button></div>
+  </section>
+
+  <section id="commerce" class="view" data-view="commerce" aria-labelledby="commerce-title" hidden>
+    <div class="view-eyebrow">01 / RETAIL INTERFACE</div>
+    <div class="commerce-hero"><div><span class="hero-tag">EDITED OBJECTS / FICTIONAL CATALOG</span><h1 id="commerce-title">Everyday objects.<br><em>Considered by design.</em></h1><p>Browse a fully local product collection. Filter, compare and build a synthetic cart—without an account or payment connection.</p></div><div class="commerce-graphic" aria-hidden="true"><span class="large-object"></span><small>FORM & FUNCTION</small></div></div>
+    <div class="commerce-controls"><div><span class="eyebrow">THE COLLECTION</span><h2>Find your rhythm.</h2></div><div class="control-right"><label for="product-search" class="sr-only">Search products</label><input id="product-search" type="search" placeholder="Search the collection…" autocomplete="off"><button id="open-cart" type="button" class="btn btn-dark">View bag <span id="cart-count" class="count-pill">0</span></button></div></div>
+    <div class="filter-pills" role="group" aria-label="Filter products by category">
+      <button type="button" data-category="All" aria-pressed="true">All objects</button>
+      <button type="button" data-category="Lighting" aria-pressed="false">Lighting</button>
+      <button type="button" data-category="Desk" aria-pressed="false">Desk</button>
+      <button type="button" data-category="Living" aria-pressed="false">Living</button>
+    </div>
+    <div id="product-grid" class="product-grid"></div>
+    <div id="product-empty" class="empty-panel" hidden><strong>Nothing in that collection.</strong><p>Try another category or search.</p><button type="button" id="reset-products">Reset filters</button></div>
+  </section>
+
+  <section id="board" class="view" data-view="board" aria-labelledby="board-title" hidden>
+    <div class="view-eyebrow">02 / PRODUCTIVITY INTERFACE</div>
+    <div class="view-head"><div><h1 id="board-title">Work, <em>in motion.</em></h1><p>A small, honest workflow engine. Move the work, not the goalposts.</p></div><button id="add-task" type="button" class="btn btn-dark">New task <span aria-hidden="true">＋</span></button></div>
+    <div class="board-summary"><span><span class="tiny-dot"></span> LOCAL BOARD · NO SYNCHRONIZATION</span><span id="board-summary" aria-live="polite">6 items across 3 stages</span></div>
+    <div class="board-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable workflow board">
+      <div id="board-columns" class="board-columns"><section class="kanban-column" data-column="planned" aria-labelledby="planned-title"><div class="column-top"><h2 id="planned-title">Planned</h2><span class="column-count" data-count="planned">0</span></div><div class="task-list" data-list="planned"></div></section>
+        <section class="kanban-column" data-column="progress" aria-labelledby="progress-title"><div class="column-top"><h2 id="progress-title">In progress</h2><span class="column-count" data-count="progress">0</span></div><div class="task-list" data-list="progress"></div></section>
+        <section class="kanban-column" data-column="done" aria-labelledby="done-title"><div class="column-top"><h2 id="done-title">Done</h2><span class="column-count" data-count="done">0</span></div><div class="task-list" data-list="done"></div></section></div>
+    </div>
+    <div class="help-strip"><span aria-hidden="true">⌘</span> Each card has a labelled native status control. All changes are in memory and visible immediately.</div>
+  </section>
+
+  <section id="messages" class="view" data-view="messages" aria-labelledby="messages-title" hidden>
+    <div class="view-eyebrow">03 / COMMUNICATION INTERFACE</div><div class="view-head"><div><h1 id="messages-title">Conversations, <em>considered.</em></h1><p>A fully local messaging interface with real thread state and keyboard interaction.</p></div><div class="read-only-tag">SYNTHETIC CONVERSATIONS</div></div>
+    <div class="messenger"><aside class="thread-sidebar" aria-label="Conversation threads"><div class="pane-title"><strong>Messages</strong><span>03</span></div><div id="thread-list"></div></aside><section class="conversation" aria-label="Active conversation"><header id="chat-header" class="chat-header"></header><div id="chat-log" class="chat-log" role="log" aria-label="Messages" aria-live="polite"></div><form id="chat-form" class="chat-compose"><label for="chat-input" class="sr-only">Message</label><input id="chat-input" name="message" maxlength="240" required autocomplete="off" placeholder="Write a message…"><button type="submit" class="send-btn" aria-label="Send message">↗</button></form><div class="chat-foot">No real people or messages. All replies stay in this session.</div></section></div>
+  </section>
+
+  <section id="launch" class="view" data-view="launch" aria-labelledby="launch-title" hidden>
+    <div class="view-eyebrow">04 / MARKETING + ONBOARDING</div><div class="launch-hero"><span class="eyebrow">BRING AN IDEA INTO FOCUS</span><h1 id="launch-title">Make the <em>next thing</em><br>worth making.</h1><p>An example of modern editorial marketing, transparent pricing and progressively disclosed onboarding—with zero accounts, payments or personal data.</p><button type="button" id="jump-wizard" class="btn btn-dark">Explore onboarding <span aria-hidden="true">↗</span></button><div class="launch-hero-art" aria-hidden="true"><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div><div class="art-ring ring-three"></div><span>◉</span></div></div>
+    <section class="pricing" aria-labelledby="pricing-heading"><div class="section-top"><div><span class="eyebrow">CLEAR BY DESIGN</span><h2 id="pricing-heading">Simple plans.<br><em>No surprises.</em></h2></div><div class="period-toggle" role="group" aria-label="Billing period"><button type="button" data-period="monthly" aria-pressed="true">Monthly</button><button type="button" data-period="yearly" aria-pressed="false">Annual <span>Save 20%</span></button></div></div><div id="pricing-grid" class="pricing-grid"></div><p class="pricing-foot">Fictional pricing for UI evaluation only. No account, subscription or checkout exists.</p></section>
+    <section id="wizard" class="wizard-section" aria-labelledby="wizard-title"><div class="wizard-left"><span class="eyebrow">GUIDED SETUP / NO DATA COLLECTED</span><h2 id="wizard-title">A better beginning.<br><em>One step at a time.</em></h2><p>Choose a role, choose a goal, review. Every step is interactive, reversible and fully local.</p></div><div class="wizard-card"><div class="wizard-progress"><span id="wizard-step-label">STEP 01 / 03</span><span id="wizard-progress-label">0% COMPLETE</span></div><div class="progress-track"><span id="wizard-progress-fill"></span></div><div id="wizard-body"></div><div class="wizard-actions"><button type="button" id="wizard-back" class="btn btn-outline">Back</button><button type="button" id="wizard-next" class="btn btn-dark">Continue <span aria-hidden="true">→</span></button></div></div></section>
+  </section>
+
+  <section id="components" class="view" data-view="components" aria-labelledby="components-title" hidden>
+    <div class="view-eyebrow">05 / DESIGN FOUNDATIONS</div><div class="view-head"><div><h1 id="components-title">A system of <em>small decisions.</em></h1><p>Tokens, types, accessible controls and feedback states—built for real interface work.</p></div><button id="download-tokens" class="btn btn-outline" type="button">Export tokens <span aria-hidden="true">↓</span></button></div>
+    <div class="token-layout"><section class="design-surface"><span class="eyebrow">01 / COLOR SYSTEM</span><h2>Purpose, not decoration.</h2><p>Reusable colors defined by functional roles, with a light and dark expression.</p><div class="swatch-grid"><div><span class="swatch swatch-ink"></span><strong>Ink</strong><small>Foreground</small></div><div><span class="swatch swatch-sand"></span><strong>Canvas</strong><small>Background</small></div><div><span class="swatch swatch-coral"></span><strong>Coral</strong><small>Accent</small></div><div><span class="swatch swatch-blue"></span><strong>Blue</strong><small>Secondary</small></div><div><span class="swatch swatch-mint"></span><strong>Mint</strong><small>Positive</small></div></div></section><section class="design-surface"><span class="eyebrow">02 / TYPOGRAPHY</span><h2>Clarity at every scale.</h2><div class="type-demo"><div class="type-editorial">Aa <em>Bb</em></div><div class="type-text-sample">Shape, function, feeling.<br>Good interfaces communicate.</div><p>Responsive system sans paired with expressive editorial serif. No font downloads.</p></div></section><section class="design-surface"><span class="eyebrow">03 / INTERACTION STATES</span><h2>Controls you can test.</h2><div class="control-examples"><button id="demo-confirm" class="btn btn-dark" type="button">Show confirmation</button><button id="demo-warning" class="btn btn-outline" type="button">Show guidance</button><button class="btn btn-disabled" disabled aria-disabled="true">Disabled example</button></div><p>Meaningful focus, visible feedback and disabled state semantics.</p></section><section class="design-surface"><span class="eyebrow">04 / FORM SEMANTICS</span><h2>Labels before placeholders.</h2><form id="demo-form" class="demo-form"><label for="demo-field">Project title <span>(required)</span></label><input id="demo-field" required maxlength="80" placeholder="e.g. Design systems review"><button class="btn btn-dark" type="submit">Validate field <span aria-hidden="true">→</span></button></form><p id="demo-feedback" role="status" aria-live="polite">Enter a title and test the form.</p></section></div>
+    <div class="last-note">These are independent teaching references, not historical employer components or a certified accessibility library.</div>
+  </section>
+</main>
+<footer class="main-footer"><span>ATLAS / ORIGINAL INTERFACE REFERENCE</span><span>NO CLOUD · NO CUSTOMER DATA · NO EXTERNAL ASSETS</span><button type="button" data-go="gallery">Return to gallery ↑</button></footer>
+<dialog id="cart-dialog" aria-labelledby="cart-title" class="side-dialog"><div class="drawer-inner"><div class="drawer-header"><div><span class="eyebrow">FICTIONAL CHECKOUT</span><h2 id="cart-title">Your bag</h2></div><button type="button" id="close-cart" class="icon-btn" aria-label="Close bag">×</button></div><div id="cart-items" class="cart-items"></div><div id="cart-empty" class="empty-panel">Nothing here yet. Explore the collection.</div><div class="cart-footer"><div class="cart-total"><span>Subtotal <small>Fictional USD</small></span><strong id="cart-subtotal">$0.00</strong></div><button type="button" id="checkout-button" class="btn btn-dark">Simulate checkout <span aria-hidden="true">↗</span></button><p>Simulation only. No real payments, accounts or orders.</p></div></div></dialog>
+<dialog id="task-dialog" aria-labelledby="task-title"><form id="task-form" novalidate><div class="dialog-heading"><div><span class="eyebrow">IN-MEMORY WORKFLOW</span><h2 id="task-title">Add work to the board</h2></div><button id="close-task" type="button" class="icon-btn" aria-label="Close task dialog">×</button></div><div class="dialog-fields"><label for="task-name">Task name <span>(required)</span></label><input id="task-name" maxlength="74" autocomplete="off" placeholder="e.g. Test keyboard focus"><label for="task-status">Stage</label><select id="task-status"><option value="planned">Planned</option><option value="progress">In progress</option><option value="done">Done</option></select><label for="task-priority">Priority</label><select id="task-priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select><p id="task-error" role="alert" hidden></p></div><div class="dialog-controls"><button id="cancel-task" type="button" class="btn btn-outline">Cancel</button><button type="submit" class="btn btn-dark">Add task</button></div></form></dialog>
+<div id="toast" role="status" aria-live="polite" aria-atomic="true" class="toast" hidden></div>
+</body></html>

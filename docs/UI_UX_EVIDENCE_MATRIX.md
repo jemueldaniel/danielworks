@@ -33,3 +33,14 @@ business logic, unpublished assets, API keys, local home paths or customer
 records. File-count inventory and pattern-based scanning are not proof of
 individual authorship, license clearance or production quality. Every
 separate capability needs its own explicit demonstration and qualification.
+
+## Multi-domain frontend coverage added by UI Atlas
+
+[UI Atlas](../examples/ui_atlas/README.md) expands beyond dashboards:
+fictional commerce/cart, in-memory Kanban, synthetic chat, editorial
+marketing/onboarding, and component token export. See the
+[Atlas source and acceptance matrix](ATLAS_FRONTEND_COVERAGE.md).
+The Node model suite covers 65 tests and installed Edge covers twenty
+interaction tests at five viewport widths. No private screenshots or
+startup product designs were copied. These are tested original UI
+examples, not claims of complete historical UI authorship or UX certification.

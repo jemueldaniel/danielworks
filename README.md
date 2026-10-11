@@ -1,5 +1,24 @@
 # DanielWorks — engineering through runnable evidence
 
+## New: five real interactive frontend experiences, not just dashboards
+
+The original [UI Atlas](examples/ui_atlas/README.md) demonstrates functional
+product discovery/cart, a keyboard-operable workflow board, local
+messaging, an editorial marketing/onboarding flow, and an accessible
+design-system playground. It combines one original visual system with
+different page architectures and genuine state behavior. Sixty-five
+deterministic Node tests and twenty installed-Edge browser tests passed
+on synthetic content, including responsive 320–1440 px layouts,
+keyboard/focus interactions, negative validation, safe text handling and
+local-only downloads.
+
+The independent [Atlas frontend proof matrix](docs/ATLAS_FRONTEND_COVERAGE.md)
+maps each UI domain to tests. The public one-command composer adds
+ui-atlas as a fifteenth executed profile and a ui-experiences recipe
+that also bundles the existing interface-lab. All browser testing is
+performed against localhost; none of this transfers unpublished
+company designs, screenshot assets, credentials or proprietary UI.
+
 ## New: reproducibility diagnostics and trustworthy negative evidence
 
 The original [repeated-profile diagnostic helper](docs/REPEATABILITY_DIAGNOSTICS.md) inspects already exported, externally pinned public reference projects, runs fixed allowlisted tests separately, verifies bytes around each run and preserves **every failure**, even if a later attempt passes. It produces a redacted, nonoverwriting external receipt without copying private code, environment secrets or absolute paths. Fifteen isolated Linux unit regressions passed using synthetic runner fixtures. A genuine all-profile Windows diagnostic run and independent package review remain outstanding; this does **not** cure the recorded intermittent Windows HTTP failures.

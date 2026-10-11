@@ -1,3 +1,16 @@
+## Original multi-domain frontend candidate — 11 October 2026
+
+UI Atlas is independently authored public HTML, CSS and JavaScript,
+using only synthetic product/task/message/onboarding fixtures. The
+standalone model suite passed 65/65 Node tests; a local, installed
+Microsoft Edge browser passed 20/20 tests. Five distinct interactive
+interface types and 320/390/768/1024/1440 px viewports were exercised.
+This is not proof of production payments, private UI authorship, full
+accessibility compliance, remote messaging or hosted deployment.
+Complete source pinning, full repo tests and independent GitHub restoration
+are separate publication acceptance gates. Earlier separate outbox
+fixture failures were reproduced and fixed in the prior published release.
+
 ## Dependency DAG addition — 11 October 2026
 
 An original, independently authored Python in-memory DAG planner passed
