@@ -1,3 +1,11 @@
+## Current scoped public reference acceptance — 11 October 2026
+
+The exact public revision `5a46a84` passed fresh Windows source readback and clean-restoration validation (140/140 files, 16/16 changed blobs). The complete locked npm/TypeScript/React application chain also passed: 18 real MCP/HTTP/SDK tests and 7 installed Edge browser tests on desktop and mobile. The independent Rust language reference passed 18 offline tests; the signed-event module passed 33 actual SQLite/HTTP tests; 36 proof-studio tests passed; and the seven-profile source-pinned exporter passed on a fresh clone with post-test file verification. The earlier intermittent seven-profile attempt and historical Windows HTTP socket abort remain disclosed and unresolved, rather than converted into success.
+
+This evidence is **public educational reference qualification only**, not a production/secure cloud deployment, private-source certification, ownership/attribution assessment, independent whole-package audit or full cross-platform approval. Specific test and manifest evidence: [fresh qualification](verification/current/20261011-fresh-win-qualification.json) and [current record](CURRENT_VERIFICATION.md). Earlier rows below are retained as history scoped to their own dates/revisions.
+
+---
+
 ## Composable public reference assembly — bounded qualification
 
 The new `tools/one_shot_public_project.py` orchestrates existing public exporter and independently pinned output acceptance as one user-facing command. It does not forward unrelated ambient credentials or dynamic language/runtime injection variables to child tests. Its tests cover genuine six-profile execution, failed/raced paths, post-test content drift, exclusive out-of-band receipts and historical-claim boundaries. It is **not** private-code transfer, an employer project generator, untrusted-code sandbox or production deployment. Related current paths: `tools/test_one_shot_public_project.py`, `docs/TRANSFERABLE_WORKFLOW.md`, and `docs/PUBLIC_CAPABILITIES.json`. Applicable acceptance requires fresh tests, private-data screening, remote-byte readback and clean restoration from the resulting commit.

@@ -3,18 +3,18 @@
   "title": "DanielWorks independently reproducible public engineering showcase",
   "date": "2026-10-11",
   "authoritative_repository": "jemueldaniel/danielworks",
-  "base_commit": "7c06a58aca94cae7785e8b6ee1f848b994e1192c",
+  "base_commit": "5a46a84a30ccbbda11b193070532cea5446b924e",
   "branch": "main",
   "status": "PUBLIC_CHECKPOINT_SOURCE_ONLY_NOT_PRODUCTION_QUALIFIED",
   "scope": "Original public source and synthesized fixtures; no private repository code or confidential assets",
-  "new_capability": "Original local HMAC event inbox, HTTP adapter, idempotency and fenced SQLite delivery; public one-shot profile",
+  "new_capability": "Docs-only follow-up: exact-source Windows protocol/browser/Rust and one-shot acceptance results",
   "native_chromium_navigation": "BLOCKED_BY_ADMINISTRATOR",
   "production_deployment": "NOT_ATTEMPTED",
   "independent_whole_package_review": "NOT_COMPLETED",
-  "inventory_file_count": 139,
-  "complete_checkpoint_file_count_including_this_manifest": 140,
-  "payload_bytes_excluding_this_manifest": 946102,
-  "payload_path_sha256_binding": "9477776c01787ef960014665dcb594282ce2df7add91302ffb6cf76d5cbcbcf8",
+  "inventory_file_count": 140,
+  "complete_checkpoint_file_count_including_this_manifest": 141,
+  "payload_bytes_excluding_this_manifest": 953566,
+  "payload_path_sha256_binding": "42a0effd9d68aaed6102047fc96824d537f74bdd02d9005efa4a1a3acb62865b",
   "files": [
     {
       "path": ".gitattributes",
@@ -49,14 +49,14 @@
     {
       "path": "docs/COVERAGE_MATRIX.md",
       "mode": "100644",
-      "bytes": 38644,
-      "sha256": "bb5fa059a6112254a6211bb305b75f9bfbe94694c2981854259f6bbd17813106"
+      "bytes": 39921,
+      "sha256": "71f27cd0f0f89a61d6d9f0a516eaf655aa7f4ba8e283efcb530b8094660b19ff"
     },
     {
       "path": "docs/CURRENT_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 33010,
-      "sha256": "0d3d25af3c3721ab83aba2257022c5b2a7555f0f21a072de3336a5f843ed3ab0"
+      "bytes": 36315,
+      "sha256": "5b13b5929d785c793f1f2b062403c26b0e31f3f7b107f41a8ae7735ec9d451c1"
     },
     {
       "path": "docs/DEPENDENCIES.md",
@@ -613,8 +613,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 21646,
-      "sha256": "bc129684fdea51d2d9a3b28b294226dd67b718cf2c925126c0543926d2c171b8"
+      "bytes": 21919,
+      "sha256": "494e3c5f6e5fb557d5b2dee0b8951ae5e19f24765e8b1fdf024f6e016efffeff"
     },
     {
       "path": "tools/export_public_starter.py",
@@ -747,6 +747,12 @@
       "mode": "100644",
       "bytes": 26,
       "sha256": "7d694bc0e9369d83b6bb9c365c89e04a063c98eb0a97483a953968a741885191"
+    },
+    {
+      "path": "verification/current/20261011-fresh-win-qualification.json",
+      "mode": "100644",
+      "bytes": 2609,
+      "sha256": "b3fd71c29e4efcada37a41914a4deb47cbc94f903adc98a67de4014b0ab85b04"
     },
     {
       "path": "verification/current/local-restore.json",

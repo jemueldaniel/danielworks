@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "kind": "public-reference-windows-acceptance",
+  "date": "2026-10-11",
+  "source_commit": "5a46a84a30ccbbda11b193070532cea5446b924e",
+  "source_manifest_sha256": "2efeca809907fe8c32a8024ca908a0372ecccec05b9e7638ebaf70507f7486ce",
+  "source_files": 140,
+  "source_clean_restore": true,
+  "verified_remote_changed_files": 16,
+  "deleted_files": 0,
+  "force_push": false,
+  "runtime": "Windows; Python 3.13.6; installed Edge 155.0.4283.45",
+  "results": [
+    {
+      "scope": "Python tooling unittests",
+      "passed": 114,
+      "skipped": 7,
+      "failed": 0,
+      "definitions": 121
+    },
+    {
+      "scope": "signed event inbox",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "scope": "local proof-studio",
+      "passed": 36,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "scope": "locked offline Rust compiler",
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "scope": "pinned npm clean install",
+      "packages": 108,
+      "status": "PASS"
+    },
+    {
+      "scope": "TypeScript compile and React/MCP build",
+      "status": "PASS"
+    },
+    {
+      "scope": "real HTTP MCP SDK protocol tests",
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "scope": "installed Edge browser tests",
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "viewports": [
+        "1280x800",
+        "390x844"
+      ]
+    },
+    {
+      "scope": "fresh pinned seven-profile all-executed assembly",
+      "status": "PASS_TESTED",
+      "profiles": 7,
+      "output_files": 35,
+      "posttest_bytes_verified": true,
+      "output_manifest_sha256": "801ab68c8d4d593119c53c58c5afbadf5e626b4564e20b8f4e9f8c1101178206"
+    }
+  ],
+  "negative_observations": [
+    "An initial full seven-profile runtime attempt failed without identifying its group; manual individual group reruns then passed, and a fresh clean seven-profile run passed. Initial failure root cause remains unknown.",
+    "A later assembly attempted on a dirty checkout correctly failed strict source-only validation.",
+    "An earlier historical Windows backend socket abort remains undiagnosed."
+  ],
+  "boundaries": [
+    "Overlapping test scopes are not summed into a unique overall count.",
+    "This is tested local public reference software, not cloud deployment, production security approval, authorship certification, or private code reuse rights.",
+    "Privacy pattern scanning is bounded, not an independent confidentiality audit.",
+    "No independent whole-package security or licensing review completed."
+  ]
+}
