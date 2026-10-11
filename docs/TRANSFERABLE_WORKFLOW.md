@@ -158,3 +158,14 @@ full-reference. Review migration SQL before execution, pin the source
 manifest externally, and test a fresh SQLite instance. Production use
 must add backups, real database access controls, monitoring, compatibility
 and rollback/restore drills. Do not transfer employer or startup schema.
+
+## A reusable DAG planning baseline
+
+Select the build-graph profile or the workflow-engine recipe from the
+source-pinned assembler. Demonstrate a cycle rejection, content hash
+invalidation, concurrent worker claims, stale-lease rejection and
+a verifiable unkeyed receipt. Use independent source with explicit
+permissions; never reuse private employer or startup files.
+Production additions need durable shared lease storage, identity
+validation, resource accounting, secure sandboxing, cross-node fencing
+and failover trials. In-memory examples are not production agents.

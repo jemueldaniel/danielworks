@@ -245,6 +245,19 @@
       "boundary": "22 actual Windows SQLite tests; only trusted local SQL, no PostgreSQL cloud migration, backup, identity or production certification."
     },
     {
+      "id": "bounded-workflow-dag",
+      "discipline": "Dependency DAG planning, source fingerprints, bounded resource admission and stale lease fencing",
+      "qualification": "executed",
+      "implementation": [
+        "examples/build_graph/graph.py",
+        "examples/build_graph/demo.py"
+      ],
+      "tests": [
+        "examples/build_graph/test_graph.py"
+      ],
+      "boundary": "48 real local Windows regression tests with thread contention, expiring worker-bound leases and synthetic SHA-256 receipts. In-memory only, no command execution, durable distributed authority or independently authenticated execution."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

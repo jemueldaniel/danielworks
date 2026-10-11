@@ -10,6 +10,20 @@ The original [repeated-profile diagnostic helper](docs/REPEATABILITY_DIAGNOSTICS
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
+## New: bounded workflow DAG and repeatable local scheduling evidence
+
+The original [dependency-graph planner](examples/build_graph/README.md)
+has 48 independently executed Windows regressions covering stable topological
+layers, incremental source fingerprints, critical-path ordering, concurrent
+worker claims, synthetic resource token limits, lease expiration, stale
+result fencing and SHA-256 output receipts. This is an in-memory local
+example, not a real distributed broker, secure execution sandbox, or
+signed independent attestation.
+
+A new source-pinned workflow-engine recipe combines four original public
+modules without importing startup code or requiring cloud credentials.
+The full-reference profile set now includes twelve executable examples.
+
 ## Original transactional SQLite migration gate
 
 [Schema migrations](examples/migration_guard/README.md) now have an original,

@@ -67,3 +67,17 @@ demonstrate atomic DDL changes, deterministic source-digest binding,
 append-only history, rollback, restart recovery and concurrent replays.
 Production PostgreSQL migrations, managed IAM, backups and operations
 remain not verified by this educational module.
+
+## Dependency graphs, scheduling and recovery boundaries
+
+The original [bounded graph planner](../examples/build_graph/graph.py),
+[48 deterministic tests](../examples/build_graph/test_graph.py),
+and [standalone demonstration](../examples/build_graph/demo.py) exercise
+dependency DAGs, incremental source fingerprints, bounded token scheduling,
+multi-thread claims, retries and stale lease fencing. These prove local
+algorithmic implementation, not production/distributed execution, remote
+agent autonomy or identity provider integration. The workflow-engine
+recipe combines this with other tested, public modules.
+
+See [the skill-proof interview playbook](SKILL_PROOF_PLAYBOOK.md) for
+separate evidence levels and reproducible exercises.

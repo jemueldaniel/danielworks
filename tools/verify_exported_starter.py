@@ -20,7 +20,7 @@ import sys
 
 HEX = re.compile(r'[0-9a-f]{64}\Z')
 PATH = re.compile(r'[A-Za-z0-9_./-]+\Z')
-MAX_FILES = 50
+MAX_FILES = 64
 MAX_ENTRIES = 150
 MAX_BYTES = 2_000_000
 MAX_MANIFEST = 150_000
@@ -39,6 +39,7 @@ TESTS = {
     'ledger': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/atomic_ledger', '-v'),
     'hybrid-search': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/hybrid_search', '-v'),
     'migration': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/migration_guard', '-v'),
+    'build-graph': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/build_graph', '-v'),
     'typed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/typed_api_sdk', '-v'),
     'rust-compiler': ('cargo', 'test', '--manifest-path', 'projects/bounded-lang/Cargo.toml', '--locked', '--offline'),
 }

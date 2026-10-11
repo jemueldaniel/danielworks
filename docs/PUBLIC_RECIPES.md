@@ -8,7 +8,8 @@ They import no private repositories or accounts and deploy nothing.
 | ai-search | agent, hybrid-search, retrieval, evaluation, training | Bounded planning, search, synthetic model learning |
 | service-foundation | jobs, ledger, migration, policy | Durable work, accounting invariants, policy decisions |
 | event-platform | jobs, event-outbox, policy, proof-platform | Signed event ingestion, workflows, local HTTP |
-| full-reference | all eleven executed public profiles | Broad engineering reference without private data |
+| workflow-engine | build-graph, jobs, event-outbox, policy | In-memory DAG claims plus local durable jobs/events and policy |
+| full-reference | all twelve executed public profiles | Broad engineering reference without private data |
 
 From the exact published checkout, obtain its SOURCE_MANIFEST.json SHA-256
 outside the repository and provide that verified 64-character value:

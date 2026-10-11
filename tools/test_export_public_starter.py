@@ -105,6 +105,14 @@ class PublicStarterTests(unittest.TestCase):
                for p in self.target.rglob('*') if p.is_file()}
         self.assertEqual(found, expected | {'README.md','REUSE_MANIFEST.json'})
 
+    def test_graph_starter_contains_only_public_allowlisted_files(self):
+        result = self.build(['build-graph'])
+        self.assertEqual(result['selected_files'], 4)
+        approved=set(STARTERS['build-graph'].paths)
+        actual={p.relative_to(self.target).as_posix()
+                for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(actual, approved | {'README.md','REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

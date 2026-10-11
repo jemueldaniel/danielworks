@@ -108,6 +108,12 @@ STARTERS: dict[str, Starter] = {
         "examples/migration_guard/demo.py",
         "examples/migration_guard/test_migration.py",
     ), "python -B -m unittest discover -s examples/migration_guard -v", "executed"),
+    "build-graph": Starter("bounded-workflow-dag", (
+        "examples/build_graph/README.md",
+        "examples/build_graph/graph.py",
+        "examples/build_graph/demo.py",
+        "examples/build_graph/test_graph.py",
+    ), "python -B -m unittest discover -s examples/build_graph -v", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

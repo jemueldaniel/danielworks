@@ -1,3 +1,19 @@
+## Dependency DAG addition — 11 October 2026
+
+An original, independently authored Python in-memory DAG planner passed
+48 standalone Windows regressions. Tests exercise topological layers,
+dependency cycles, input-content fingerprints, incremental invalidation,
+bounded synthetic token admission, concurrent workers, expiring leases,
+retry exhaustion, stale completions and deterministic digest receipts.
+No arbitrary programs or model calls are executed by the planner.
+
+The original public source was inspected and integrated into a twelfth
+source-pinned profile and a four-profile workflow-engine recipe. Complete
+candidate suite, export, privacy and remote publication checks must be
+reported separately from standalone regression success. This is neither
+production distributed scheduling nor independent source authorship
+attestation for any separate private repository.
+
 ## Source-pinned repeated-runtime diagnostic candidate — 11 October 2026
 
 An original offline source-only diagnostic helper now reruns each fixed public profile separately across bounded explicit rounds, verifies the exported starter before/after each execution, and records profile-specific failures without forwarding private environment variables or exposing local paths and process stderr. Fifteen isolated Linux mock-based regressions passed for failure preservation, fake success rejection, receipt exclusivity and integrity drift. Those mock tests establish control logic only; a real Windows repeated-profile acceptance and independent audit have NOT yet been completed. The earlier intermittent Windows socket failure remains a genuine historical negative result and is not marked resolved. No private company code or real credentials were included.
