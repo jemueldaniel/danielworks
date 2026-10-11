@@ -1,3 +1,20 @@
+## New original SQLite ledger and public work recipes — 11 October 2026
+
+The new fictional-unit double-entry SQLite journal passed 31 tests on the
+connected Windows Python 3.13.6 environment. Three initial corruption
+fixture tests failed due to Windows SQLite open handles; the fixture now
+explicitly closes its test connections, and all 31 subsequently passed.
+Tests cover zero-sum postings, idempotency, immediate transaction rollback,
+concurrent requests, multiple assets, tenant-labelled separation and
+reconciliation of corrupt postings, balances and hash links.
+
+The fixed public-only recipe command adds four original reference combinations.
+Until independently executed, no recipe suite or full mixed-project pass is
+claimed in this paragraph. Previous intermittently failing Windows HTTP
+results remain documented rather than silently erased. Neither code
+inspection nor these educational demos establish authorship, production
+security, real cloud/PostgreSQL/EVM deployment or rights clearance.
+
 ## Portable proof-studio early HTTP rejection follow-up — 11 October 2026
 
 A later full Windows tooling run still failed two exported-runtime tests under

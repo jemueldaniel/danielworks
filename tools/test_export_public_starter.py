@@ -81,6 +81,14 @@ class PublicStarterTests(unittest.TestCase):
                  for p in self.target.rglob('*') if p.is_file()}
         self.assertEqual(files, paths | {'README.md', 'REUSE_MANIFEST.json'})
 
+    def test_ledger_starter_exports_only_allowlisted_public_source(self):
+        report = self.build(['ledger'])
+        self.assertEqual(report['selected_files'], 4)
+        wanted = set(STARTERS['ledger'].paths)
+        actual = {p.relative_to(self.target).as_posix() for p in self.target.rglob('*')
+                  if p.is_file()}
+        self.assertEqual(actual, wanted | {'README.md', 'REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

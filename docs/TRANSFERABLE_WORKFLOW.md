@@ -123,3 +123,15 @@ To include it in a new, SHA-256-pinned *public-only* reference project,
 select the policy profile with the existing one-shot assembler. Use the
 external manifest SHA-256 belonging to the exact published revision. Do not
 copy private company logic, keys or deployment configuration into a new job.
+
+## From original public examples to a one-command new reference project
+
+Use the recipe composer documented in PUBLIC_RECIPES.md. Provide the SHA-256
+of the exact published public source manifest out of band, select a predefined
+recipe, and choose unused destination and receipt paths. The composer calls
+the existing source-pinned assembler, runs fixed tests in a restricted child
+environment, and verifies every output byte again after testing.
+
+These are sample building blocks, not a production system or a license to
+transfer proprietary employer/customer code. Adapt ideas independently and
+qualify identities, keys, cloud configurations and real service behavior.

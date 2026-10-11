@@ -79,13 +79,22 @@ class OneShotPublicProjectTests(unittest.TestCase):
         self.assertEqual(result['groups'][0]['profile'], 'training')
         self.assertTrue(result['posttest_bytes_verified'])
 
-    def test_all_eight_executed_profiles_run_and_retained(self):
+    def test_all_nine_executed_profiles_run_and_retained(self):
         result = assemble(ROOT, SOURCE_PIN, self.output, [], all_executed=True, timeout=60)
         self.assertEqual(result['status'], 'PASS_TESTED',result)
         self.assertEqual(set(result['profiles']), {p for p,x in STARTERS.items() if x.qualification == 'executed'})
-        self.assertEqual(result['tested_groups'], 8)
+        self.assertEqual(result['tested_groups'], 9)
         self.assertEqual({g['status'] for g in result['groups']},{'PASS'})
         self.assertTrue(result['posttest_bytes_verified'])
+
+    def test_ledger_export_reconciles_real_sqlite_writes(self):
+        result = self.create(['ledger'], receipt=self.receipt)
+        self.assertEqual(result['status'], 'PASS_TESTED', result)
+        self.assertEqual(result['tested_groups'], 1)
+        self.assertEqual(result['profiles'], ['ledger'])
+        self.assertTrue((self.output / 'examples/atomic_ledger/ledger.py').is_file())
+        self.assertTrue(result['posttest_bytes_verified'])
+        self.assertEqual(json.loads(self.receipt.read_text()), result)
 
     def test_policy_export_runs_real_authorization_and_receipt_checks(self):
         result = self.create(['policy'], receipt=self.receipt)

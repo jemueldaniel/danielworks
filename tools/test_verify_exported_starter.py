@@ -51,6 +51,14 @@ class ExportVerificationTests(unittest.TestCase):
         self.assertEqual(result['tests_run'], 1)
         self.assertEqual(result['groups'][0]['profile'], 'policy')
 
+    def test_ledger_profile_runs_real_reconciliation_checks(self):
+        pin = self.build(['ledger'])
+        verified = validate(self.project, pin)
+        result = run_profiles(self.project, verified)
+        self.assertEqual(result['status'], 'PASS')
+        self.assertEqual(result['tests_run'], 1)
+        self.assertEqual(result['groups'][0]['profile'], 'ledger')
+
     def test_file_bytes_mutation_fails(self):
         pin = self.build()
         path = self.project / 'examples/mcp_agent/runtime.mjs'

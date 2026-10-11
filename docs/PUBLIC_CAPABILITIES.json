@@ -204,6 +204,19 @@
       "boundary": "32 Windows tests plus 500 deterministic cross-tenant probes; no real login, IAM, key rotation, replay-safe external effects or production certification."
     },
     {
+      "id": "sqlite-double-entry-ledger",
+      "discipline": "Atomic double-entry SQLite journal with idempotency and reconciliation",
+      "qualification": "executed",
+      "implementation": [
+        "examples/atomic_ledger/ledger.py",
+        "examples/atomic_ledger/demo.py"
+      ],
+      "tests": [
+        "examples/atomic_ledger/test_ledger.py"
+      ],
+      "boundary": "31 Windows tests using fictional units, atomic local writes and tenant labels; not real money, authenticated users, PostgreSQL RLS, custody or settlement."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

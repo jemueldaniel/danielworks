@@ -6,6 +6,19 @@
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
+## New: local ledger, concurrency and work recipes
+
+An [original transaction ledger](examples/atomic_ledger/README.md) demonstrates
+SQLite atomicity, double-entry conservation, tenant-partitioned accounts,
+idempotent replay, concurrent spending, rollback and reconciliation. Its
+31 dedicated Windows tests passed. It uses fictional units, not money or
+custody; caller authentication and authorization are not implemented.
+
+[Engineering recipes](docs/PUBLIC_RECIPES.md) compose preapproved modules in
+one source-pinned command. Choose ai-search, service-foundation, event-platform
+or full-reference. Files and runtime groups are independently verified;
+the recipes do not import confidential source or deploy production software.
+
 ## New: reusable tenant-policy and signed audit reference
 
 [Portable policy laboratory](examples/tenant_policy/README.md) includes an original,

@@ -90,6 +90,12 @@ STARTERS: dict[str, Starter] = {
         "examples/tenant_policy/demo.py",
         "examples/tenant_policy/test_policy.py",
     ), "python -B -m unittest discover -s examples/tenant_policy -v", "executed"),
+    "ledger": Starter("sqlite-double-entry-ledger", (
+        "examples/atomic_ledger/README.md",
+        "examples/atomic_ledger/ledger.py",
+        "examples/atomic_ledger/demo.py",
+        "examples/atomic_ledger/test_ledger.py",
+    ), "python -B -m unittest discover -s examples/atomic_ledger -v", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

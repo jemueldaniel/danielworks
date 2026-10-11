@@ -3,18 +3,18 @@
   "title": "DanielWorks independently reproducible public engineering showcase",
   "date": "2026-10-11",
   "authoritative_repository": "jemueldaniel/danielworks",
-  "base_commit": "bdbccba301403927c69aff7cf078d3f6f87453c6",
+  "base_commit": "bef2f16c581174f81804b61478071beb9f02ac6a",
   "branch": "main",
-  "status": "PUBLIC_CHECKPOINT_SOURCE_ONLY_NOT_PRODUCTION_QUALIFIED",
+  "status": "PUBLIC_CANDIDATE_LOCAL_TESTING_PENDING_REMOTE_QUALIFICATION",
   "scope": "Original public source and synthesized fixtures; no private repository code or confidential assets",
-  "new_capability": "Original tested tenant policy/audit module with 8th one-shot profile; bounded HTTP early-reject Windows portability repair",
+  "new_capability": "Original SQLite double-entry ledger with 31 regression tests and four public-only engineering recipes",
   "native_chromium_navigation": "BLOCKED_BY_ADMINISTRATOR",
   "production_deployment": "NOT_ATTEMPTED",
   "independent_whole_package_review": "NOT_COMPLETED",
-  "inventory_file_count": 144,
-  "complete_checkpoint_file_count_including_this_manifest": 145,
-  "payload_bytes_excluding_this_manifest": 989679,
-  "payload_path_sha256_binding": "f47e3938b42b871ff9052bbd9b870a6b5d72a3b1480bda27031ecc1e47c2456e",
+  "inventory_file_count": 151,
+  "complete_checkpoint_file_count_including_this_manifest": 152,
+  "payload_bytes_excluding_this_manifest": 1031766,
+  "payload_path_sha256_binding": "10ce1c6ab880890d185db4a79506f14f5804ca1d201ea72a14185813dc2a10f4",
   "files": [
     {
       "path": ".gitattributes",
@@ -43,8 +43,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 22670,
-      "sha256": "3d79f9fe86a5b63f16f0e017a354f8ce4d58d4ddfe52471e203d410339a2e94e"
+      "bytes": 23400,
+      "sha256": "c0560a8295b8bb0ca531a4267175c674ad6ab280cc2b914cbb2278ad4b7fa04b"
     },
     {
       "path": "docs/AI_ASSISTANCE.md",
@@ -61,8 +61,8 @@
     {
       "path": "docs/CURRENT_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 38641,
-      "sha256": "b5663590281ceaa7edd1a124c6a5b0f4ffba2794e332b2a777e3fbe83ed71ce1"
+      "bytes": 39649,
+      "sha256": "6214c18da1a661faaf59c0ef3106129092346faff1c22b5a030f8a576e517edf"
     },
     {
       "path": "docs/DEPENDENCIES.md",
@@ -79,8 +79,14 @@
     {
       "path": "docs/PUBLIC_CAPABILITIES.json",
       "mode": "100644",
-      "bytes": 9047,
-      "sha256": "990fd82cc2d083c023652fa24ecb7e6c42ff7c7db2694e568e9cd582e0bad6b7"
+      "bytes": 9600,
+      "sha256": "7ee769dc4957e2ceea73642cf922bb1ec52cfd16bb2c1dc09b04a997f0432972"
+    },
+    {
+      "path": "docs/PUBLIC_RECIPES.md",
+      "mode": "100644",
+      "bytes": 1767,
+      "sha256": "3f5d220813c92d52b4f0f84569c45d0612324abb891498d0a880f9fc0f66aa35"
     },
     {
       "path": "docs/RECOVERY.md",
@@ -97,8 +103,8 @@
     {
       "path": "docs/SKILLS.md",
       "mode": "100644",
-      "bytes": 6774,
-      "sha256": "d35ba3d20b28af1f31fae835ffe920ce422dbed3696a8b59282982d6f1bf225c"
+      "bytes": 7424,
+      "sha256": "01e6d3fb0c00359f744a19e5bb09708fa98b91ed1d2d0d395bcd2494243c3306"
     },
     {
       "path": "docs/SOURCE_VERIFICATION.md",
@@ -121,8 +127,32 @@
     {
       "path": "docs/TRANSFERABLE_WORKFLOW.md",
       "mode": "100644",
-      "bytes": 9364,
-      "sha256": "7a921ac87af41549ddd92c0c7327441b671d6091f9740e2e07738af449bff12e"
+      "bytes": 10036,
+      "sha256": "cfb3a42f6d5be6bc13767c7a1f0701cc007b8a39db0fb29098553438a42902ed"
+    },
+    {
+      "path": "examples/atomic_ledger/README.md",
+      "mode": "100644",
+      "bytes": 2309,
+      "sha256": "727527e3c8cb6ea6c3d784e93b4dc2c58ec12610bdb76cf99c9bfdfcef6a94e1"
+    },
+    {
+      "path": "examples/atomic_ledger/demo.py",
+      "mode": "100644",
+      "bytes": 702,
+      "sha256": "f6f92f9eaaa9aef7d880ad9f18a23d58029ed4da47c0b59737e00790616244f3"
+    },
+    {
+      "path": "examples/atomic_ledger/ledger.py",
+      "mode": "100644",
+      "bytes": 12455,
+      "sha256": "195e3a450df826b8222fba26597ab550fbfdaf518ba8c3fed18373f89f2238e8"
+    },
+    {
+      "path": "examples/atomic_ledger/test_ledger.py",
+      "mode": "100644",
+      "bytes": 11060,
+      "sha256": "498a7dbeff7647718400d20069fd922037d140edd4f83fbab32b266178068629"
     },
     {
       "path": "examples/durable_jobs/README.md",
@@ -641,10 +671,16 @@
       "sha256": "0de2b68b679984e2ed7564dd8616765fb2ffc03c9b7aa8a3cf0436d57e6fe6ea"
     },
     {
+      "path": "tools/compose_public_solution.py",
+      "mode": "100644",
+      "bytes": 3293,
+      "sha256": "13a0be2bf9f18af55456ec4645710a95944798a637b8863d4156aea00448ae35"
+    },
+    {
       "path": "tools/export_public_starter.py",
       "mode": "100644",
-      "bytes": 14216,
-      "sha256": "841a1776b9909d2e007a8c3530a32a41395978dfd8318cfb6dbf9c95170ed0a1"
+      "bytes": 14532,
+      "sha256": "1300d1daba4de450cc4257450623b9d60c6c59b9a837d154500d38c474285514"
     },
     {
       "path": "tools/one_shot_public_project.py",
@@ -653,22 +689,28 @@
       "sha256": "e4b23d34ee26525c3f3179da1ba589acd1c3bd9124b37498ccb9afcca6a289f1"
     },
     {
+      "path": "tools/test_compose_public_solution.py",
+      "mode": "100644",
+      "bytes": 5162,
+      "sha256": "7d34d91e7e39a3950ba085ba3758cad449e1c0bb55cbe6dccd53d55acd090b8f"
+    },
+    {
       "path": "tools/test_export_public_starter.py",
       "mode": "100644",
-      "bytes": 10477,
-      "sha256": "7744810ca2ece54cf6a386c2e7cc5e68a050e9762897c9c0136b92c8fbfa6f5d"
+      "bytes": 10895,
+      "sha256": "f65d0134e868f07bb036eb94284a530526b9c69b0a9ad03142970abec8844e18"
     },
     {
       "path": "tools/test_one_shot_public_project.py",
       "mode": "100644",
-      "bytes": 13753,
-      "sha256": "0a7561505c8acdd66ca9e40d9e302d1ecb298e65744fefbb4e50a0bdc7982168"
+      "bytes": 14272,
+      "sha256": "a80b700787a3ec5d7d252454b3afd6bd25b12cad8973989526efffad03edf631"
     },
     {
       "path": "tools/test_verify_exported_starter.py",
       "mode": "100644",
-      "bytes": 7746,
-      "sha256": "9225f5e5a5d0bcbe23e2a2e8b2f858b0165c24c335abca50996635fae73e9079"
+      "bytes": 8119,
+      "sha256": "1d535b052eafa2b6b19d73e139e6373d33a6e4eceeb9dc6478b06590d560ba48"
     },
     {
       "path": "tools/test_verify_git_commit.py",
@@ -680,7 +722,7 @@
       "path": "tools/test_verify_public_capabilities.py",
       "mode": "100644",
       "bytes": 5600,
-      "sha256": "184df937bc247bec064d442f8a0958849215c2ccb1e0637cdf1edf3c95107034"
+      "sha256": "b0745f4024b4271ba72b4adf49c2488f118dc40c15b387421138ab29d07a0881"
     },
     {
       "path": "tools/test_verify_runner.py",
@@ -703,8 +745,8 @@
     {
       "path": "tools/verify_exported_starter.py",
       "mode": "100644",
-      "bytes": 10212,
-      "sha256": "c9d1613b8f9cfbf8f448b7d826a29b414053872dec223600f65cb96d1a3e76c8"
+      "bytes": 10312,
+      "sha256": "b17570a60cccfab158647ba6e586ee0da77ea8343124deea5c63aefcf8fa030d"
     },
     {
       "path": "tools/verify_git_commit.py",

@@ -33,3 +33,15 @@ and [32 dedicated tests](../examples/tenant_policy/test_policy.py).
 Synthetic policy evaluation, observational HMAC evidence and noncanonical
 tamper rejection are demonstrated. Login, IAM, deployed tenancy and
 production security review remain not verified.
+
+## Transaction journals and reusable engineering recipes
+
+The [independent ledger](../examples/atomic_ledger/ledger.py) and its
+[31-case regression suite](../examples/atomic_ledger/test_ledger.py)
+demonstrate atomic zero-sum postings, bounded integer amounts, conflict-safe
+idempotency, concurrent writers, and balance/journal reconciliation.
+
+[Public recipes](PUBLIC_RECIPES.md), the [composer](../tools/compose_public_solution.py)
+and its [tests](../tools/test_compose_public_solution.py) select only
+allowlisted public profile groups without employer source or automatic
+deployment. Production financial/authentication systems remain unverified.

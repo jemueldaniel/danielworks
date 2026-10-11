@@ -19,7 +19,7 @@ class EvidenceTests(unittest.TestCase):
     def test_all_public_entries_structurally_bind_to_actual_paths(self):
         result = validate_index(self.data, self.paths)
         self.assertEqual(result['status'], 'PASS')
-        self.assertEqual(result['claims'], 18)
+        self.assertEqual(result['claims'], 19)
         self.assertIn('signed-event-delivery', {c['id'] for c in self.data['claims']})
         self.assertEqual(result['runtime_tests_executed_by_this_command'], 0)
         self.assertEqual(result['qualifications']['not_verified'], 3)
