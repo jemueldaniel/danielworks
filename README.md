@@ -1,8 +1,10 @@
 # DanielWorks — engineering through runnable evidence
 
-**Latest integration status: NOT GREEN.** An earlier complete Windows run passed 145 behavioural tests, but the subsequent integrated rerun stopped after 73 passes and one HTTP-test error (`test_content_type_size_origin_and_host`, WinError 10053 while expecting 415). No remaining command group is marked passed for that later run. The new verifier's standalone platform results remain separate. [Retained Windows receipt](verification/checkpoint-2.json).
+**Public source is live.** [The first complete 107-file checkpoint](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) was published on 11 October 2026. Its entire remote tree was checked for exact bytes and restored from GitHub in a clean, isolated checkout. This is source publication, **not** a deployment or production certification.
 
-**Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). This candidate does not include or change the personal website or its form application. Source preparation is not evidence of publication; see the [delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
+**Current integration status: PARTIAL, not fully green.** The historical Windows rerun stopped after 73 passing tests and one 415/WinError 10053 error; that failure remains recorded. The new bounded early-rejection handling passed **28/28 Python backend tests on Linux and 28/28 on Windows** in isolated candidate workspaces, including the previously failing case, but this does not establish the root cause of the earlier intermittent abort or a complete locked workbench/browser rerun. [Current qualification](docs/CURRENT_VERIFICATION.md).
+
+**Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
 Start with the **[evaluation workbench](projects/evidence-workbench/README.md)**: one persistent workflow with two complete interfaces, not a collection of disconnected technology snippets.
 
@@ -14,7 +16,9 @@ Start with the **[evaluation workbench](projects/evidence-workbench/README.md)**
 The retained Windows record tested the joined flow: **queue in the browser, execute through MCP, inspect the persisted evaluation, restart the backend and recover the same result.** Those network/browser results belong to that earlier source and environment; current cross-platform acceptance remains unresolved. The UI retains an uncertain submission, inspects its key, and never silently retries a write. The six-document synthetic corpus deliberately includes a retrieval failure.
 
 
-**Latest bounded repair:** the [in-process agent example](examples/mcp_agent/README.md) now keeps its starting server and checkpoint store across suspension. Its 27-test suite preserves the earlier 24 cases. Fresh applicable Linux integration checks record **151 passes and one Windows-only skip**, not a new locked workbench/browser or cross-platform acceptance. [Current results and remaining gates](docs/CURRENT_VERIFICATION.md#current-run-context-repair--8-october-2026).
+**Bounded reliability upgrade:** early-rejected POSTs now consume only correctly declared, small request bodies before closing the HTTP connection. The [existing backend](projects/evidence-workbench/backend/server.py) and [new negative tests](projects/evidence-workbench/backend/test_http.py) preserve 403/413/415 status behavior and constrain the drain to 8,193 bytes. In addition, an [offline Git commit verifier](tools/verify_git_commit.py) checks raw committed file bytes, modes, paths and the externally pinned manifest without installing packages, writing files or contacting a network. Its [nine regression tests](tools/test_verify_git_commit.py) passed on Linux and Windows and exercise corruption, missing files, links, path collisions and dirty checkouts. [Current results and limits](docs/CURRENT_VERIFICATION.md#11-october-2026-published-baseline-and-current-candidate).
+
+The [in-process agent example](examples/mcp_agent/README.md) retains its starting server and checkpoint store across suspension (27 tests). Its earlier **151 Linux passes and one Windows-only skip** remain recorded separately and are not added to the new checks. No production authentication, distributed exactly-once effect, native WebMCP, model training, PostgreSQL isolation, live EVM, or cross-platform full-build qualification is claimed.
 
 ## Rust language implementation
 
@@ -24,7 +28,7 @@ This is not a type checker, serialized bytecode format or production sandbox. Th
 
 ## Run it
 
-Use the [exact setup, three-terminal run instructions and test commands](projects/evidence-workbench/README.md#setup-and-run). The retained Windows workbench record identifies Node 24.15.0, Python 3.13.6, SQLite 3.50.4 and Edge 154.0.4258.53. That historical isolated installation used `npm ci --offline --ignore-scripts --no-audit --no-fund` with an existing cache, followed by `npm test`; it is not a fresh or cold installation. The reconnected bridge reports Node 24.15.0/Python 3.13.6, but no new admitted Windows run or locked workbench build was completed. The latest Linux checks used Node 22.16.0. See [current versus historical version evidence](docs/CURRENT_VERIFICATION.md). Browser binaries are never downloaded automatically.
+Use the [exact setup, three-terminal run instructions and test commands](projects/evidence-workbench/README.md#setup-and-run). The retained Windows workbench record identifies Node 24.15.0, Python 3.13.6, SQLite 3.50.4 and Edge 154.0.4258.53. That historical isolated installation used `npm ci --offline --ignore-scripts --no-audit --no-fund` with an existing cache, followed by `npm test`; it is not a fresh or cold installation. The connected Windows laptop subsequently completed 28/28 backend Python cases on Python 3.13.6 against the exact bounded-error candidate. This is not a locked workbench/browser build; the new Linux backend used Python 3.13.5 and the in-process agent tests used Node 22.16.0. See [current versus historical version evidence](docs/CURRENT_VERIFICATION.md). Browser binaries are never downloaded automatically.
 
 ## Preserved foundations
 
@@ -40,6 +44,9 @@ From the repository root, use already installed Python, Node and a TypeScript co
 
 ```sh
 python -B tools/verify.py
+python -B -m unittest discover -s tools -p test_verify_git_commit.py -v
+# From a clean Git checkout; add --expected-manifest-sha256 using an external receipt:
+python -B tools/verify_git_commit.py --revision HEAD
 python -B -m unittest discover -s examples/typed_api_sdk -v
 node --test examples/mcp_agent/test_runtime.mjs
 python -B -m unittest discover -s examples/tx_sim -v
@@ -71,4 +78,4 @@ Use `--expected-manifest-sha256` with the exact manifest hash from a separately 
 
 **Historical checkpoint:** the recovered baseline's 145 behavioural cases were rerun on Windows; the 102 applicable Linux cases overlap that baseline and are not additional unique coverage. The new verifier has 28 distinct test definitions: 25 passed and three were skipped on Windows; 27 passed and one Windows-only case was skipped on Linux. The NTFS junction regression failed before the reparse-point fix and then passed. Neither repeated runs nor skips inflate the count. [Retained qualification receipt](verification/checkpoint-2.json).
 
-Publication also requires resolving and requalifying that integration failure, applicable final-file independent review and repository trigger/settings evidence. No new GitHub commit, complete remote-file readback or GitHub restoration is claimed by this candidate. The checkpoint is not completion of the requested delivery.
+The baseline checkpoint **was** published and remotely verified in October 2026, but the original Windows failure and incomplete independent whole-package review remain visible. New commits must disclose any tests, independent review and deployment/trigger limitations instead of treating an accepted source checkpoint as final production qualification. The checkpoint is not completion of the requested delivery.

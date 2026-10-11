@@ -1,5 +1,21 @@
 # Current verification — 8 October 2026
 
+## 11 October 2026: published baseline and current candidate
+
+The first full checkpoint **is published** at [commit `082086d4`](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e), tree `8d0ca5fea7096b7cdccad2a7b39e1847cfcd66c9`. The 107 public files were each read from that commit and compared for byte length and SHA-256. A separate Windows clone from GitHub, with `core.autocrlf=false` local to the checkout, was clean and verified 107/107 files against externally pinned manifest SHA-256 `282b77b1b10bae52845bc4b244dc364cd515043d09d3257573a263d271be65f3`. This does not certify the application runtime.
+
+New follow-up source changes (not part of that pinned baseline):
+
+- `projects/evidence-workbench/backend/server.py` consumes a complete *bounded* rejected POST body after sending an error response and before connection close, provided there is exactly one valid Content-Length, no Transfer-Encoding and at most 8,193 bytes. The normal successful body is never consumed twice; oversized/ambiguous requests are not drained. This is a bounded mitigation for unread-payload close behavior, **not proof of the original WinError 10053 root cause**. The actual HTTP 415/413 status assertions remain intact.
+- `projects/evidence-workbench/backend/test_http.py` adds two focused tests exercising the previously absent drain and its bounds. Before implementation, one new test had three failing subcases; the other negative test passed. After implementation both pass, with the unchanged existing tests.
+- `tools/verify_git_commit.py` verifies the *committed* Git blob inventory, actual SHA-256/byte sizes, modes and manifest pin without contacting the network or modifying source. It reports working-tree cleanliness separately; checkout-byte qualification still requires `verify_source.py`. Nine offline local-Git fixture tests pass, including malicious/missing members and conflicts.
+
+**Fresh backend execution:** Python 3.13.5 on Linux: 28/28 passes; Python 3.13.6 on the authorized Windows laptop: 28/28 passes, including `test_content_type_size_origin_and_host`. Windows execution used an isolated checkout with the exact same two modified Python files (matching SHA-256), after confirming 5.658 GiB free memory. The historically recorded intermittent WinError 10053 is retained: one succeeding rerun is not permanent fault elimination. The held standalone socket probe and Rust-version query were not repeated.
+
+**Fresh Git-verifier execution:** nine local-fixture tests passed on Linux **and nine on Windows**, without network, installs or remote Git writes. On the modified isolated Windows validation checkout, the tool also verified all 107 raw Git objects of the previously published commit and the externally pinned original manifest while correctly reporting that the working directory contained candidate modifications. The newly modified manifest must be externally pinned after integration and verified again after publication; no future commit identity is embedded in the source. These tests are separate from the earlier 151 disjoint Linux passes (and one skip) recorded below. The complete locked npm/TypeScript/browser suite and Rust checks were not established by these two changes.
+
+**Review and release limits:** no fresh independent whole-package approval, no production endpoint or deployment, no PostgreSQL/EVM/training/native WebMCP qualification, and no claim of zero external trigger integrations. Publication is a disclosed incremental engineering checkpoint rather than full product certification.
+
 ## Current run-context repair — 8 October 2026
 
 **Whole-package acceptance remains incomplete; zero new GitHub commits.** The starting source was the exact 107-file Library-backed agent-recovery candidate, archive SHA-256 `d33aae2088ed540d19a62adb5a763d8c585c8f1976bb3de02bfd6e61551ddff3` and externally pinned manifest SHA-256 `8058dc206c5c2da680d482ecc517d20bb4952995a963d57e5bed643c249f3740`. It was restored separately before these changes. Old receipts and first-repair/failure evidence remain unchanged.

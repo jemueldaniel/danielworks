@@ -16,6 +16,8 @@ The gateway exposes `/api/{profile}/…`; the Python backend exposes `/v1/…`. 
 
 Writes require the operator profile. Unknown fields, malformed JSON, duplicate JSON keys at the Python boundary, nonfinite numbers, invalid cutoffs and oversized bodies are rejected. Errors use fixed public codes. A 5xx, timeout or failed confirmation is not evidence that a write did not happen.
 
+For early rejected POSTs (403, 413 or 415), the Python backend writes the error response then consumes a fully declared payload of **at most 8,193 bytes** before closing the socket. The request must have exactly one valid `Content-Length` and no `Transfer-Encoding`. This does not retry effects or read a body that was already consumed; ambiguous/oversized bodies are closed without a potentially unbounded drain. It reduces the possibility of a connection abort on close with small unread payloads, but it does not guarantee delivery after network failure or prove that the historical intermittent Windows WinError 10053 is eliminated. The tests include direct no-network body-accounting cases and actual loopback status checks.
+
 ## MCP tools
 
 `dataset_info`, `runs_list`, `run_inspect` and `search_preview` appear in read catalogs. The operator additionally receives `run_submit`, `run_cancel` and `work_once`. Input and output schemas are registered using Zod. Tool annotations describe behavior; actual registry/profile checks enforce the demonstration permission boundary.

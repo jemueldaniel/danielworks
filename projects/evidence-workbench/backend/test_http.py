@@ -1,5 +1,8 @@
 """Actual loopback sockets and disk SQLite, not HTTP mocks."""
 import concurrent.futures
+from email.message import Message
+import io
+import time
 import http.client
 import json
 from pathlib import Path
@@ -25,6 +28,51 @@ class HttpTests(unittest.TestCase):
             response=connection.getresponse(); data=response.read()
             return response.status, json.loads(data), dict(response.getheaders())
         finally: connection.close()
+    def fake_rejection(self, status, payload, headers, *, body_read=False):
+        """Exercise response-body accounting without opening a diagnostic socket."""
+        handler=self.server.RequestHandlerClass.__new__(self.server.RequestHandlerClass)
+        handler.command='POST'
+        handler.request_id='test-request'
+        handler.started=time.monotonic()
+        handler.headers=Message()
+        for key,value in headers:
+            handler.headers.add_header(key,value)
+        handler.rfile=io.BytesIO(payload)
+        handler.wfile=io.BytesIO()
+        handler.close_connection=False
+        handler._post_body_read=body_read
+        handler.status_written=None
+        handler.send_response=lambda value: setattr(handler,'status_written',value)
+        handler.send_header=lambda *args: None
+        handler.end_headers=lambda: None
+        handler._reply(status,{'error':'rejected'})
+        return handler
+
+    def test_rejected_bounded_post_payload_is_accounted_before_connection_close(self):
+        for status,count in ((403,2),(415,2),(413,8193)):
+            with self.subTest(status=status,count=count):
+                handler=self.fake_rejection(status,b'x'*count+b'next',
+                                            [('Content-Length',str(count))])
+                self.assertEqual(handler.status_written,status)
+                self.assertEqual(handler.rfile.read(),b'next')
+                self.assertTrue(handler._post_body_read)
+                self.assertTrue(handler.close_connection)
+
+    def test_rejected_payload_accounting_is_strictly_bounded_and_never_double_reads(self):
+        for headers in (
+            [('Content-Length','8194')],
+            [('Content-Length','2'),('Content-Length','2')],
+            [('Content-Length','2'),('Transfer-Encoding','chunked')],
+            [('Content-Length','9999999999999999999999')],
+        ):
+            with self.subTest(headers=headers):
+                handler=self.fake_rejection(413,b'xxnext',headers)
+                self.assertEqual(handler.rfile.tell(),0)
+        already=self.fake_rejection(400,b'next',[('Content-Length','4')],body_read=True)
+        self.assertEqual(already.rfile.read(),b'next')
+        success=self.fake_rejection(200,b'next',[('Content-Length','4')])
+        self.assertEqual(success.rfile.read(),b'next')
+
     def test_health_crosses_a_real_socket(self):
         status,data,headers=self.request('GET','/health')
         self.assertEqual(status,200); self.assertEqual(data['database'],'sqlite')

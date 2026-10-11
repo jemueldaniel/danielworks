@@ -1,5 +1,9 @@
 # Review record and scope
 
+## October 2026 public checkpoint and follow-up review status
+
+The first complete 107-file source checkpoint is public at [commit `082086d4`](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) with remote byte verification and clean GitHub restoration. This is a publication receipt, **not** an independent whole-package code review. The new rejected-POST mitigation, Git-object verifier, their tests and refreshed documentation have implementing-assistant review and passing scoped regressions but **no separate independent approval**. The reviewed eight-file Rust scope remains unchanged. Earlier review and usage-limit records below retain their original contexts and verdicts; no new approval is invented.
+
 ## Completed: Rust exact-source independent static review
 
 A separate read-only reviewer verified the hashes of the eight files under `projects/bounded-lang` and returned: **acceptable with two low-severity, non-blocking observations; no unresolved blocking defect in the reviewed files**. The coordinator verified that the files were unchanged after review. This was not the implementing coordinator's self-review. The reviewer did not run tests, install dependencies, use GitHub, inspect company source or modify files.

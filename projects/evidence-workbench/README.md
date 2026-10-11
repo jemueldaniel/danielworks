@@ -34,6 +34,10 @@ node projects/evidence-workbench/dist/server.js http://127.0.0.1:8766/v1/ 8765
 
 The example exposes `/mcp/reader`, `/mcp/operator`, and `/mcp/other-reader` on the same gateway. These are **demonstration profiles, not credentials**. Anyone able to reach the loopback server can select the operator route. Do not expose the ports to a LAN, tunnel or public network.
 
+### Bounded error-response behavior
+
+The Python HTTP handler drains only a small, unambiguously declared rejected POST body (maximum 8,193 bytes) after writing a 4xx reply, avoiding a premature close with those bytes unread. Malformed/oversized bodies are not drained. The existing real HTTP test still requires exact 415, 413 and 403 results; additional focused tests exercise drain bounds without socket probes. A fresh 28-test backend run passed on Linux and Windows, but the earlier intermittent Windows connection abort remains an unresolved historical observation, not silently erased.
+
 ## Real SDK interface
 
 After starting the two servers, execute from the repository root:

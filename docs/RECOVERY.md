@@ -1,5 +1,13 @@
 # Source recovery and preservation
 
+## Published source and independent checkout — 11 October 2026
+
+The complete first public checkpoint is [commit `082086d4`](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e), parented to the original initialization commit, with tree `8d0ca5fea7096b7cdccad2a7b39e1847cfcd66c9`. A 107-file GitHub source readback matched every expected SHA-256 and byte size, with no missing/extra paths or mode differences. In a new isolated Windows clone with `core.autocrlf=false`, all 107 files and the externally pinned manifest SHA-256 `282b77b1b10bae52845bc4b244dc364cd515043d09d3257573a263d271be65f3` matched; Git status was clean. These are publication/restore checks, not independent whole-package review or completed runtime qualification.
+
+A new offline [`tools/verify_git_commit.py`](../tools/verify_git_commit.py) checks exact committed blob bytes separately from checkout bytes; its nine local-Git negative/corruption tests passed on Linux. Subsequent repairs require their own Git commit and receipt, rather than editing or claiming to have retested this immutable baseline. The earlier preservation and remote-state paragraphs below are retained historical observations, not assertions about today's `main`.
+
+## Historical recovery lineage
+
 Both expected candidate archives were verified from actual bytes in this cycle. The complete workbench archive was recovered in the container; the batch-2 archive was read and hashed on the authorized desktop. Its five original Rust files were recovered from that verified ZIP, not reconstructed from a report.
 
 | Candidate | Observed bytes | SHA-256 | Inventory |
@@ -25,8 +33,8 @@ Rust `src/lib.rs` and its README were updated; three regression files were added
 
 The final source manifest lists every included path, size and SHA-256, and the recovery mapping distinguishes recovered, modified and newly authored files. Generated caches, `node_modules`, `dist`, Cargo targets, local databases, browser binaries, private audit archives and credentials are excluded. Identical standalone copies are not published twice; distinct code/test/lock files are not removed merely to make the count smaller.
 
-## Repository reconciliation
+## Historical repository reconciliation before publication
 
-The last verified `main` is `3e69552cb5f9ae52639d30c2c865347fa3575ceb`, tree `e2fc8297de2120851ffd92f503dfd28639479dce`, containing the initial 13-byte README. No candidate commit or ref change is claimed. Three previously reported blob operations do not establish publication: their exact prior response identities were not recovered, and read-only checks of candidate-computed object IDs returned 404. No tree/commit/ref was created in this cycle. Latest remote state must be reconciled again before publication; no old parent is assumed safe indefinitely.
+The then-last verified `main` was `3e69552cb5f9ae52639d30c2c865347fa3575ceb`, tree `e2fc8297de2120851ffd92f503dfd28639479dce`, containing the initial 13-byte README. No candidate commit or ref change is claimed. Three previously reported blob operations do not establish publication: their exact prior response identities were not recovered, and read-only checks of candidate-computed object IDs returned 404. No tree/commit/ref was created in this cycle. Latest remote state must be reconciled again before publication; no old parent is assumed safe indefinitely.
 
 A newly generated Linux rerun summary matched `verification/original-60.json` byte-for-byte. The original path remains intact; the new duplicate was omitted. Final distinct-file inventory: **100 files including the manifest** (86 recovered/core paths and 14 current documentation/evidence/manifest additions). This count is not a capability-completion percentage.

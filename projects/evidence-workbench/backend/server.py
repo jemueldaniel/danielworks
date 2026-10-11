@@ -67,6 +67,26 @@ def create_server(path: str | Path, port: int = 0, *, diagnostics: bool = False)
         sys_version=''
         def log_message(self,*args):
             pass  # never echo URL, headers or submitted content
+        def _settle_rejected_post_body(self, status):
+            # A small rejected POST can have unread bytes even after its error
+            # response was written. Consume only a fully declared, bounded body
+            # before closing; this reduces platform-dependent TCP aborts. Do not
+            # turn a malformed, chunked or unbounded body into a blocking drain.
+            if status<400 or self.command!='POST' or self._post_body_read:
+                return
+            values=self.headers.get_all('Content-Length',[])
+            if (len(values)!=1 or not re.fullmatch(r'[0-9]{1,9}',values[0])
+                    or self.headers.get_all('Transfer-Encoding',[])):
+                return
+            size=int(values[0])
+            if size>8193:  # accepted body cap (8192) plus one overflow byte
+                return
+            self._post_body_read=True
+            try:
+                self.rfile.read(size)
+            except (OSError,ValueError):
+                pass  # peer already closed or timed out; no retry of any effect
+
         def _reply(self,status,value):
             data=json.dumps(value,allow_nan=False,separators=(',',':')).encode('utf-8')
             if len(data)>65_536:
@@ -84,6 +104,7 @@ def create_server(path: str | Path, port: int = 0, *, diagnostics: bool = False)
                 self.wfile.write(data)
             except (BrokenPipeError,ConnectionResetError):
                 pass  # committed work remains inspectable after lost response
+            self._settle_rejected_post_body(status)
             if diagnostics:
                 print(json.dumps({'event':'http','request_id':self.request_id,'status':status,
                                   'method':self.command if self.command in ('GET','POST') else 'other',
@@ -98,6 +119,7 @@ def create_server(path: str | Path, port: int = 0, *, diagnostics: bool = False)
             if size>8192:
                 return None,413
             raw=self.rfile.read(size)
+            self._post_body_read=True
             if len(raw)!=size:
                 raise InvalidInput('incomplete_body')
             return decode_json(raw),None
@@ -156,6 +178,7 @@ def create_server(path: str | Path, port: int = 0, *, diagnostics: bool = False)
                     return self._reply(200,{'cancelled':store.cancel(tenant,match[1])})
             self._reply(404,{'error':'not_found'})
         def _safe(self):
+            self._post_body_read=False
             try:
                 self._handle()
             except InvalidInput as error:

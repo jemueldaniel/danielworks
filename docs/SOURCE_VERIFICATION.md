@@ -12,6 +12,20 @@ The second command's placeholder must be replaced with the exact manifest hash i
 
 The CLI prints JSON and exits zero on successful source verification, one on a mismatch or filesystem failure. `verify(root, expected_manifest_sha256=None)` provides the same check to Python callers. Neither interface installs, downloads, deploys, invokes another process, rewrites files, repairs a mismatch, nor follows a declared external source path.
 
+## Verify a published Git commit's exact stored bytes
+
+`tools/verify_git_commit.py` is a separate read-only, offline tool. It invokes only the locally installed `git` executable, resolves an exact commit (HEAD or a 40-character SHA-1 ID) and reads its tree and blob objects; it never fetches, checks out, installs, downloads, deploys, commits or pushes. It rejects nonregular Git modes, case conflicts, unsafe paths, missing/unlisted files, altered sizes/hashes, and manifest-pin mismatches. It also confirms each Git blob's object ID, checks Git modes, and reports whether the checkout is clean. Its nine actual local-Git regression tests are in `tools/test_verify_git_commit.py`.
+
+```sh
+# After cloning the public repository with no automatic line-ending conversion:
+python -B tools/verify_git_commit.py --root . --revision HEAD
+python -B -m unittest discover -s tools -p test_verify_git_commit.py -v
+# For externally authenticated verification, add this option with the release receipt hash:
+# --expected-manifest-sha256 PIN_FROM_RELEASE_RECEIPT
+```
+
+The CLI's `filesystem_bytes_verified: false` is deliberate: committed Git objects are not materialized checkout bytes. On Windows, `core.autocrlf` may change line endings, so clone with `git -c core.autocrlf=false clone ...` or pass `-c core.autocrlf=false` to Git during an isolated restore, without changing global settings. Run the separate `verify_source.py` on that clean checkout before installing dependencies. Neither verifier establishes independent review, remote availability, ownership, or permission to redistribute third-party material.
+
 ## Manifest and self-reference
 
 `SOURCE_MANIFEST.json` schema 1 contains payload rows with a relative `path`, byte length, lowercase SHA-256 and optional Git mode (`100644` or `100755`). The inventory excludes the manifest itself. Optional payload counts and the SHA-256 of compact sorted path-to-file-hash JSON are checked. The complete count is payload rows plus the manifest. Its own final hash belongs in an external receipt; it cannot straightforwardly contain its own final hash.
