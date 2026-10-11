@@ -17,3 +17,7 @@ The CPU-only binary classifier and public-evidence checker are **fresh, standalo
 ### Read-only private context remains private
 
 Broad private-account and local-computer metadata was inspected read-only to prioritize the kinds of public examples to build. Repository size, script names and tracked-language counts are not proof of sole authorship, passing tests, source redistributability or production operation. No private product source, organization branding, credentials, local machine identifiers or client data are used by the public portable starter. Any detailed audit belongs in a separate **private** report, not this repository.
+
+## Public exporter acceptance scope — 11 October 2026
+
+The post-export checker is an original, standalone Python standard-library implementation bound to already published public starter artifacts. Private source, internal endpoints, customer records and other companies' code were not copied to implement it. The checker only validates educational bundles, not rights to use their contents in employment; authorization and technical qualification must be assessed separately for each new organization. Existing private-source inspections remain read-only and excluded from this public history.

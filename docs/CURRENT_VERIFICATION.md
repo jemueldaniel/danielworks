@@ -1,3 +1,9 @@
+## Independent exported-kit integrity and runtime acceptance — 11 October 2026
+
+Fresh public-only code adds `tools/verify_exported_starter.py` with `tools/test_verify_exported_starter.py` and improves the existing public exporter **without duplicating it**. It requires a separately stored output-manifest SHA-256, detects changed, unlisted, missing, linked or case-colliding material, and runs only hardcoded per-profile test commands. The manifest's manually documented commands are never executed. Synthetic educational examples and historical qualification limitations remain unchanged. Test counts and source pin for the new commit are recorded externally after execution. Whole-package independent review, browser/locked dependencies and live cloud/contract qualifications remain unverified.
+
+# Current verification — 11 October 2026
+
 # Current verification — 11 October 2026
 
 ## New public-only training and capability-evidence candidate — 11 October 2026

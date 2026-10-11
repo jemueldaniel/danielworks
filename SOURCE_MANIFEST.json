@@ -1,31 +1,29 @@
 {
   "schema": 1,
-  "title": "DanielWorks public engineering proof — portable source-pinned starter and validated examples",
+  "title": "DanielWorks public post-export integrity and test execution",
   "date": "2026-10-11",
-  "status": "PUBLIC_SOURCE_CHECKPOINT__GITHUB_DELIVERY_PROVEN_BY_EXTERNAL_RECEIPT_ONLY",
+  "status": "PUBLIC_ONLY_POST_EXPORT_CANDIDATE_PENDING_REMOTE_COMMIT",
   "authoritative_repository": "https://github.com/jemueldaniel/danielworks",
   "intended_branch": "main",
-  "last_read_remote_commit": "1b1f63d8b00ef8439b9ba7b0f0e6d20e6209e62d",
+  "last_read_remote_commit": "401560f962930fd7ab16758ad473190a281e7152",
   "new_remote_commits_in_this_cycle": [],
   "publication_gates": [
-    "This source archive alone does not establish GitHub delivery; independently verify the exact new commit/ref, tree, remote bytes and clean restoration in an external receipt",
-    "Incremental owner-approved public-source publication allowed with incomplete whole-package independent review, deployment hook inventory and native-runtime acceptance disclosed",
-    "Private-codebase checks were read-only capability triage and not copied, republished, or represented as executed public tests",
-    "Generated starter deliberately refuses unverified status claims and requires an externally pinned source manifest",
-    "Reproducible staged export plus regression checks do not mean employer-ready proprietary integration or a legal reuse grant",
-    "Prior Windows test run had one locale-dependent assertion failure and two WinError 1314 symlink privilege errors; new source requires a cross-platform rerun with explicit skips",
-    "Locked browser build, independent review and full native cloud/PostgreSQL/EVM/WebMCP/LLM-training qualification remain out of scope"
+    "New post-export candidate not yet a published GitHub revision",
+    "Only vetted public source is copied; private company code and credentials excluded",
+    "Fresh test qualification is per exact commit and platform",
+    "Independent whole-package correctness, licensing and security review incomplete",
+    "No native browser/WebMCP, PostgreSQL tenancy, EVM, distributed training or production-cloud acceptance"
   ],
   "inventory_scope": "Every source candidate file except this manifest; this is not independent approval. Final manifest hash is in an external receipt.",
-  "inventory_file_count": 120,
-  "complete_checkpoint_file_count_including_this_manifest": 121,
-  "payload_bytes_excluding_this_manifest": 781123,
-  "payload_path_sha256_binding": "29a7b5379eb3f1ef89de0c22fb5c7e4911e135a742b041e7f73bcf00be199cec",
+  "inventory_file_count": 122,
+  "complete_checkpoint_file_count_including_this_manifest": 123,
+  "payload_bytes_excluding_this_manifest": 803776,
+  "payload_path_sha256_binding": "347489b7bb9d2b4e05661d00a24c9094df7470856d665733075819503d69ba16",
   "parent_checkpoint_archive_sha256": "c2a7cf660c46ab74b3c6e177301222a24368dc93d375961eac7cc2ad95d6d229",
   "original_100_paths_preserved": 100,
   "original_56_execution_inputs_unchanged": false,
-  "execution_files_including_new_checker": 68,
-  "execution_path_hash_binding": "bc5ac94c8c6b70e0c2635b0ebc1511687503b0220a365f09baba7d2448ecba3c",
+  "execution_files_including_new_checker": 70,
+  "execution_path_hash_binding": "28c146ef581be3be46887a4b03637974cdcb7abb74305ba87df4b3d130921897",
   "historical_and_first_fresh_baseline_distinct_tests": 145,
   "new_checker_distinct_test_definitions": 28,
   "latest_windows_integration_status": "STANDALONE_BACKEND_28_PASS__OFFLINE_GIT_VERIFIER_9_PASS__ORIGINAL_QUEUE_EVAL_SDK_60_PASS__HISTORICAL_HTTP_ABORT_RETAINED__FULL_LOCKED_WORKBENCH_UNRUN",
@@ -52,8 +50,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 16225,
-      "sha256": "d7eea6e653b824e163f2372284aa36a5b65c1b92e6fece8ec9032cfb1ca5be6f",
+      "bytes": 17562,
+      "sha256": "381c0575341768e0dffb3efd63bb0bad0331944792f4758495bd047d882d4c8a",
       "mode": "100644"
     },
     {
@@ -64,14 +62,14 @@
     },
     {
       "path": "docs/COVERAGE_MATRIX.md",
-      "bytes": 35542,
-      "sha256": "4451430a621af5f31e63b60c752075ae1604bf385762cebd6cd7616ee278d8a7",
+      "bytes": 37149,
+      "sha256": "08d95cd62f4e0eefb07f5f52e8ee8807d6e7d34deb3001da68c6bfd9d21428a7",
       "mode": "100644"
     },
     {
       "path": "docs/CURRENT_VERIFICATION.md",
-      "bytes": 28381,
-      "sha256": "de1b97c783bfd647cb21688153d2fee2e021479d794fd72515ef1919cdbf01e3",
+      "bytes": 29226,
+      "sha256": "41ee74351a4fce1e6b0f6542ba8ff3e3d9d2927cd09023a74b71e42b20fbcfe0",
       "mode": "100644"
     },
     {
@@ -82,14 +80,14 @@
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3841,
-      "sha256": "bc56bfacbcd26d66db08ad25c6d29000752152349fb205f0ee93ebbb4cec2a41",
+      "bytes": 4439,
+      "sha256": "e0b656c16ae608db68435e6bbea5e7f0447cc1f66797c394b2c14489f4b482db",
       "mode": "100644"
     },
     {
       "path": "docs/PUBLIC_CAPABILITIES.json",
-      "bytes": 6386,
-      "sha256": "adbbbc8a6172d0f8a0b53158fe0f4112929c3402a62ceb420ae50f4966bed2bb",
+      "bytes": 6518,
+      "sha256": "4e1878f15806c2b3a76a512e02f89cd2f39ba5d22215c0e8a36066176913ce4c",
       "mode": "100644"
     },
     {
@@ -130,8 +128,8 @@
     },
     {
       "path": "docs/TRANSFERABLE_WORKFLOW.md",
-      "bytes": 3440,
-      "sha256": "f657ec58d1d3878352fa95de25f1fd1efc3a54b95a3a0f82a811569c6631e258",
+      "bytes": 4462,
+      "sha256": "6195fcfdf2e38bb99faf916393ce018776b93fa7dca376c4865e6f5fcb0b691d",
       "mode": "100644"
     },
     {
@@ -555,6 +553,12 @@
       "mode": "100644"
     },
     {
+      "path": "tools/test_verify_exported_starter.py",
+      "bytes": 7311,
+      "sha256": "5c82bc48a926f6de917a014336bba7bc42a2ed4ec83dd6565ce66b7e6d05138c",
+      "mode": "100644"
+    },
+    {
       "path": "tools/test_verify_git_commit.py",
       "bytes": 5984,
       "sha256": "5664b528e49190295eba9a9fe33cf0be751295aea6a27ce481188aed8940d181",
@@ -582,6 +586,12 @@
       "path": "tools/verify.py",
       "bytes": 5884,
       "sha256": "7dbb7f44a5cd1bc09772488fe627c11f1bfde50e6198afe9ecd8c00f66e7e2d8",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/verify_exported_starter.py",
+      "bytes": 9801,
+      "sha256": "156204cbacd79953ea03365563ee7929a48f1adb7e09bea7492804f4bf68487a",
       "mode": "100644"
     },
     {
@@ -805,13 +815,13 @@
     "is_complete_locked_workbench_suite": false,
     "independent_review": false
   },
-  "previous_public_checkpoint_commit": "1b1f63d8b00ef8439b9ba7b0f0e6d20e6209e62d",
+  "previous_public_checkpoint_commit": "401560f962930fd7ab16758ad473190a281e7152",
   "previous_public_checkpoint_tree": "e443a749e3810b9145bc65fdefb3b1a436554e3c",
   "clean_github_restore_commit": "1b1f63d8b00ef8439b9ba7b0f0e6d20e6209e62d",
   "historical_october8_parent_archive_sha256": "d33aae2088ed540d19a62adb5a763d8c585c8f1976bb3de02bfd6e61551ddff3",
   "execution_inputs_added_this_continuation": [
-    "tools/export_public_starter.py",
-    "tools/test_export_public_starter.py"
+    "tools/verify_exported_starter.py",
+    "tools/test_verify_exported_starter.py"
   ],
   "git_checker_distinct_test_definitions": 9,
   "fresh_october11_backend": {

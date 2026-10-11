@@ -138,12 +138,14 @@
       "discipline": "Offline source-pinned reusable engineering starter generation",
       "qualification": "executed",
       "implementation": [
-        "tools/export_public_starter.py"
+        "tools/export_public_starter.py",
+        "tools/verify_exported_starter.py"
       ],
       "tests": [
-        "tools/test_export_public_starter.py"
+        "tools/test_export_public_starter.py",
+        "tools/test_verify_exported_starter.py"
       ],
-      "boundary": "Byte-consistent public-only sample export, not production readiness, source ownership, cloud deployment or completed testing in an employer environment."
+      "boundary": "Source-pinned, public-only sample export plus independent manifest and local runtime checking; results do not establish employer ownership rights, production readiness or external deployment."
     },
     {
       "id": "evm-production",

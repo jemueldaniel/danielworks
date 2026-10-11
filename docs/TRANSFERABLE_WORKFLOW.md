@@ -48,3 +48,13 @@ To reuse a concept at a future job, obtain approval to use and transform any
 existing code, then implement from the public example under the employer's
 licenses, controls and review process. Private implementation evidence can be
 reviewed privately without ever being republished as a source tree.
+
+## Independent verification after export
+
+The exporter reports `output_manifest_sha256`. Preserve it **outside** the exported directory, then run:
+
+```sh
+python -B tools/verify_exported_starter.py --destination /tmp/public-example --expected-manifest-sha256 OUTPUT_MANIFEST_SHA256 --run-tests
+```
+
+This new tool checks source-file hashes, included README integrity, file inventory, path and size safety, and the mandatory externally supplied output digest *before* launching any test. Runtime commands are fixed to known, public example profiles, rather than read from editable manifest text. It reports a test failure if a selected runtime is missing, a command exits unsuccessfully, or zero tests actually ran. Tests for a historically qualified profile remain **historical evidence** even after the public example's own tests pass locally. No customer, employer, private repository or connected service is accessed by the verifier. This is not a full production application or a generic secure code-execution sandbox.

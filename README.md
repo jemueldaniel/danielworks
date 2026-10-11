@@ -63,6 +63,17 @@ python -B tools/export_public_starter.py \
   --destination ../new-public-engineering-starter
 ```
 
+## Independently verify a generated public starter
+
+The [post-export verifier](tools/verify_exported_starter.py) adds a second, **independent local acceptance step** for [public starter exports](tools/export_public_starter.py). It checks the output directory against the **externally pinned export manifest**, including every copied file, the generated README, missing/extra files, case collisions, regular-file requirements, symlinks, and bounds; it can then run selected public tests via fixed command arrays. It **never evaluates commands from the manifest**, imports private repositories, uses credentials, or upgrades historical tests to production status.
+
+```sh
+python -B tools/export_public_starter.py --expected-manifest-sha256 YOUR_PUBLIC_SOURCE_SHA256 --all-executed --destination /tmp/public-example
+python -B tools/verify_exported_starter.py --destination /tmp/public-example --expected-manifest-sha256 EXPORTED_MANIFEST_SHA256 --run-tests
+```
+
+Store both printed SHA-256 values outside the generated folder. The verification command is local and read-only except for executing the example tests; it is not a sandbox or security certification. [Negative tests](tools/test_verify_exported_starter.py) include forged command strings, tampering, incomplete exports, symlinks, misdeclared results and missing runtime failures.
+
 ## Rust language implementation
 
 The **[bounded Rust language](projects/bounded-lang/README.md)** adds a separate, dependency-free language pipeline: lexer → precedence parser → AST → resolved stack IR → VM. Repeated bindings intentionally shadow earlier values without reusing local slots. The regression first reproduced both an `UnknownName` failure and an incorrect result of `14` instead of `9`; the corrected implementation and its compiler/runtime resource limits passed **18 tests**, formatting and clippy in the retained record. Those Rust commands were not freshly rerun in the latest continuation. A separate reviewer verified the exact eight Rust files and found no blocking defect; two low-severity observations are explicitly recorded in [review status](docs/REVIEW_STATUS.md).
