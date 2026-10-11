@@ -370,3 +370,17 @@ Limits: shared-key possession is not a person, signer credentials
 do not establish unrelated resource permissions, loopback HTTP is
 not TLS, and SQLite is not distributed multi-region replay protection.
 No private company source or production secrets were imported.
+
+## Responsive public interface engineering candidate — 11 October 2026
+
+The original Interface Laboratory includes synthetic data, self-hosted
+HTML/CSS/ES modules, a deterministic state reducer, semantic navigation,
+keyboard actions, native dialogs, responsive data tables and local-only
+theme preferences. It passed 40 standalone Node tests and 14 headless
+installed-Edge browser tests across desktop/tablet/mobile viewports,
+including 320 and 390 pixel phone widths. The first Node test run exposed
+a missing test import; corrected. This claim is limited to that source
+and those fixtures; production UX, complete accessibility audit, client
+design authorship and hosted availability are not independently certified.
+The source-pinned bundle and full integrated regression suite require
+their own release acceptance; do not conflate them with standalone results.

@@ -121,6 +121,14 @@ class PublicStarterTests(unittest.TestCase):
                   for p in self.target.rglob('*') if p.is_file()}
         self.assertEqual(actual, approved | {'README.md','REUSE_MANIFEST.json'})
 
+    def test_ui_starter_exports_only_six_original_public_files(self):
+        result = self.build(['interface-lab'])
+        self.assertEqual(result['selected_files'], 6)
+        expected = set(STARTERS['interface-lab'].paths)
+        found = {p.relative_to(self.target).as_posix()
+                 for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(found, expected | {'README.md','REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

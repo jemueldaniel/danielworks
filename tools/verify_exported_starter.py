@@ -20,7 +20,7 @@ import sys
 
 HEX = re.compile(r'[0-9a-f]{64}\Z')
 PATH = re.compile(r'[A-Za-z0-9_./-]+\Z')
-MAX_FILES = 64
+MAX_FILES = 80
 MAX_ENTRIES = 150
 MAX_BYTES = 2_000_000
 MAX_MANIFEST = 150_000
@@ -41,6 +41,7 @@ TESTS = {
     'migration': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/migration_guard', '-v'),
     'build-graph': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/build_graph', '-v'),
     'signed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/signed_api', '-v'),
+    'interface-lab': ('node', '--test', '--test-reporter=tap', 'examples/interface_lab/test_model.mjs'),
     'typed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/typed_api_sdk', '-v'),
     'rust-compiler': ('cargo', 'test', '--manifest-path', 'projects/bounded-lang/Cargo.toml', '--locked', '--offline'),
 }
@@ -197,8 +198,10 @@ def run_profiles(destination: Path, verified: dict, timeout: int = 60, *, runtim
         if proc.returncode != 0:
             _fail('test_failed')
         output = proc.stdout + '\n' + proc.stderr
-        if profile == 'agent':
-            has_tests = re.search(r'^# tests [1-9]\d*$', output, re.M) and re.search(r'^# pass [1-9]\d*$', output, re.M)
+        if profile in ('agent', 'interface-lab'):
+            has_tests = (re.search(r'^# tests [1-9]\d*$', output, re.M)
+                         and re.search(r'^# pass [1-9]\d*$', output, re.M)
+                         and re.search(r'^# fail 0$', output, re.M))
         elif profile == 'rust-compiler':
             has_tests = re.search(r'test result: ok\. [1-9]\d* passed', output)
         else:

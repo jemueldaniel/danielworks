@@ -26,7 +26,7 @@ class RecipeTests(unittest.TestCase):
         self.receipt = self.root / "receipt.json"
 
     def test_recipes_contain_only_prequalified_public_profiles(self):
-        self.assertEqual(set(RECIPES), {"ai-search","service-foundation","event-platform","workflow-engine","api-security","full-reference"})
+        self.assertEqual(set(RECIPES), {"ai-search","service-foundation","event-platform","workflow-engine","api-security","frontend-studio","full-reference"})
         for name in RECIPES:
             selected = select_recipe(name)
             self.assertEqual(len(selected), len(set(selected)))
@@ -65,6 +65,15 @@ class RecipeTests(unittest.TestCase):
         self.assertTrue((self.dest / 'examples/hybrid_search/hybrid.py').is_file())
         self.assertTrue(result['posttest_bytes_verified'])
         self.assertEqual(json.loads(self.receipt.read_text())['tested_groups'], 5)
+
+    def test_frontend_studio_runs_ui_and_related_public_reference_tests(self):
+        result = compose(ROOT, PIN, "frontend-studio", self.dest, receipt=self.receipt)
+        self.assertEqual(result['status'], 'PASS_TESTED', result)
+        self.assertEqual(result['tested_groups'], 3)
+        self.assertEqual(result['profiles'], ['interface-lab', 'jobs', 'policy'])
+        self.assertTrue((self.dest / 'examples/interface_lab/index.html').is_file())
+        self.assertTrue(result['posttest_bytes_verified'])
+        self.assertEqual(json.loads(self.receipt.read_text())['tested_groups'], 3)
 
     def test_api_security_recipe_runs_real_local_request_checks(self):
         result = compose(ROOT, PIN, "api-security", self.dest, receipt=self.receipt)

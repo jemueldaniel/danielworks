@@ -10,6 +10,23 @@ The original [repeated-profile diagnostic helper](docs/REPEATABILITY_DIAGNOSTICS
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
+## New: working responsive frontend and UI/UX laboratory
+
+A complete, original [interface laboratory](examples/interface_lab/README.md)
+now demonstrates actual responsive dashboard design, semantic navigation,
+keyboard shortcuts, real modal and focus handling, filterable/sortable
+tables, synthetic data entry, dark/light modes, compact density, empty
+states and downloadable CSV. It has forty deterministic Node state
+regressions and fourteen installed-Edge browser acceptance tests over five
+desktop/mobile viewports. The source contains no accounts, external APIs,
+analytics, CDNs, product branding or private startup screens.
+
+The fixed, source-pinned one-command kit adds interface-lab as an executed
+public profile and frontend-studio as a separately tested set of original
+modules. The exported standalone UI needs no third-party runtime;
+full Playwright-based browser acceptance is run from the complete repository.
+See the [frontend evidence matrix](docs/UI_UX_EVIDENCE_MATRIX.md).
+
 ## New: local signed API, replay fencing and durable rate control
 
 An [original HMAC-SHA256 localhost API reference](examples/signed_api/README.md)

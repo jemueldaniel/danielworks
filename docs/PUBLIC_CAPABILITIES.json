@@ -271,6 +271,22 @@
       "boundary": "Original localhost Python example tested against real HTTP and SQLite concurrent nonce claims. Shared-key possession only: no TLS, identity enrollment, production IAM, external cloud, key rotation or distributed nonce agreement."
     },
     {
+      "id": "public-interface-laboratory",
+      "discipline": "Semantic, responsive front-end interfaces with deterministic UI state and real browser interaction",
+      "qualification": "executed",
+      "implementation": [
+        "examples/interface_lab/index.html",
+        "examples/interface_lab/style.css",
+        "examples/interface_lab/app.mjs",
+        "examples/interface_lab/model.mjs"
+      ],
+      "tests": [
+        "examples/interface_lab/test_model.mjs",
+        "projects/interface-lab-tests/browser.test.mjs"
+      ],
+      "boundary": "Original offline HTML/CSS/ESM UI with 40 Node model and 14 local installed-Edge browser acceptance tests at 5 viewports. Not private product UI, full WCAG certification, deployed SaaS or externally audited user research."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

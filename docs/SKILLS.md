@@ -93,3 +93,19 @@ exports this reference alongside separately tested local jobs and policy.
 
 These are local shared-key tests, not public-facing identity verification,
 certificate validation, KMS/HSM storage or an independent security audit.
+
+## Full-stack frontend, visual design systems and browser behavior
+
+The original [Interface Laboratory](../examples/interface_lab/README.md),
+[40 Node state tests](../examples/interface_lab/test_model.mjs)
+and [14 real installed Edge tests](../projects/interface-lab-tests/browser.test.mjs)
+cover responsive 320–1440 px layouts, semantically named controls,
+keyboard/focus/dialog behavior, filtering, pagination, themes, settings
+persistence, CSV export and safe text rendering. See the separate
+[UI/UX proof matrix](UI_UX_EVIDENCE_MATRIX.md).
+
+The source-only one-shot interface-lab module is portable with zero runtime
+dependencies; the full root browser tests require a locally installed
+browser and cached Playwright dependencies. The separately shipped React/MCP
+workbench retains its own browser/TypeScript qualification. Neither public
+example reproduces private company screens or establishes full WCAG compliance.

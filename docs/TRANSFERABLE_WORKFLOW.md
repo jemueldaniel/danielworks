@@ -180,3 +180,16 @@ For legitimate employer use, replace synthetic keys with approved managed
 secrets, use TLS and IAM, add real identity and resource authorization,
 review audit logs and run negative cloud/load tests. No proprietary
 service logic, startup credentials or private interfaces are inputs.
+
+## Reuse a real frontend without private product assets
+
+Select interface-lab for a self-contained HTML/CSS/ESM UI sample, or
+frontend-studio to package the UI alongside separate, independently tested
+jobs and policy examples. Run the source-pinned one-command exporter first,
+then execute its fixed, dependency-free Node state tests. For end-to-end UI,
+serve the original public example from localhost and run the root
+Playwright browser acceptance against an installed local browser.
+Demo filtering, navigation, theme reload, CSV download, semantic dialogs,
+keyboard shortcuts, mobile overflow and error handling. This does not
+license private startup/client UI, unreleased brand assets or proprietary
+design files for reuse.

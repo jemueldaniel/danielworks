@@ -120,6 +120,14 @@ STARTERS: dict[str, Starter] = {
         "examples/signed_api/demo.py",
         "examples/signed_api/test_signed_api.py",
     ), "python -B -m unittest discover -s examples/signed_api -v", "executed"),
+    "interface-lab": Starter("public-interface-laboratory", (
+        "examples/interface_lab/README.md",
+        "examples/interface_lab/index.html",
+        "examples/interface_lab/style.css",
+        "examples/interface_lab/model.mjs",
+        "examples/interface_lab/app.mjs",
+        "examples/interface_lab/test_model.mjs",
+    ), "node --test --test-reporter=tap examples/interface_lab/test_model.mjs", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

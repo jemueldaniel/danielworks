@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="An independently authored, self-contained interface engineering laboratory with real keyboard and responsive behavior.">
+  <title>Interface Laboratory · Public engineering reference</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body data-theme="light" data-density="comfortable">
+  <a class="skip-link" href="#content">Skip to main content</a>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="identity" href="#overview" id="home-link" aria-label="Interface Laboratory home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>INTERFACE</strong><small>LABORATORY / 01</small></span>
+      </a>
+      <p class="sidebar-eyebrow">WORKSPACE</p>
+      <nav id="side-nav" class="nav-list" aria-label="Primary navigation">
+        <button type="button" class="nav-button" data-section="overview" aria-current="page"><span class="nav-glyph" aria-hidden="true">◫</span>Overview <span class="nav-shortcut">01</span></button>
+        <button type="button" class="nav-button" data-section="library"><span class="nav-glyph" aria-hidden="true">▤</span>Library <span class="nav-shortcut">02</span></button>
+        <button type="button" class="nav-button" data-section="activity"><span class="nav-glyph" aria-hidden="true">◷</span>Activity <span class="nav-shortcut">03</span></button>
+        <button type="button" class="nav-button" data-section="settings"><span class="nav-glyph" aria-hidden="true">⚙</span>Settings <span class="nav-shortcut">04</span></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-bottom">
+        <div class="availability"><span class="pulse-dot"></span>All systems local</div>
+        <p>Original interface reference.<br>No accounts, no external services.</p>
+        <div class="build-tag">PUBLIC / DEMONSTRATION</div>
+      </div>
+    </aside>
+    <div class="backdrop" id="nav-backdrop" hidden></div>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="top-left">
+          <button class="mobile-menu icon-button" id="menu-toggle" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="Open navigation">
+            <span aria-hidden="true">☰</span>
+          </button>
+          <span class="crumb">Workspace</span><span class="crumb-chevron" aria-hidden="true">/</span>
+          <span class="crumb-current" id="breadcrumb">Overview</span>
+        </div>
+        <div class="top-actions">
+          <button type="button" class="command-trigger" id="open-command" aria-keyshortcuts="Control+K Meta+K">
+            <span aria-hidden="true">⌕</span> <span>Quick actions</span> <kbd>⌘ K</kbd>
+          </button>
+          <button type="button" id="theme-switch" class="icon-button" aria-label="Switch to dark theme" title="Toggle color theme"><span class="theme-icon" aria-hidden="true">☾</span></button>
+          <span class="avatar" aria-hidden="true">IL</span>
+        </div>
+      </header>
+      <main id="content" tabindex="-1" class="main-area">
+        <div class="heading-wrap">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> INTERFACE ENGINEERING / EXPERIMENT 01</div>
+            <h1 id="page-title">Workspace overview</h1>
+            <p class="subtitle" id="page-subtitle">An interactive reference for thoughtful, accessible software.</p>
+          </div>
+          <button type="button" class="primary-button" id="create-top"><span aria-hidden="true">＋</span> New work item</button>
+        </div>
+        <section id="overview" data-view="overview" aria-labelledby="overview-heading">
+          <h2 id="overview-heading" class="sr-only">Overview</h2>
+          <div class="metric-grid">
+            <article class="metric-card"><div class="metric-top"><span>Total work items</span><span class="metric-icon">◈</span></div><strong id="metric-total">12</strong><div class="metric-note"><span class="tag-positive">Live example</span> Synthetic project data</div></article>
+            <article class="metric-card"><div class="metric-top"><span>In progress</span><span class="metric-icon">⌁</span></div><strong id="metric-active">5</strong><div class="metric-note"><span class="mini-dot tone-active"></span> Focused work in motion</div></article>
+            <article class="metric-card"><div class="metric-top"><span>In review</span><span class="metric-icon">◇</span></div><strong id="metric-review">3</strong><div class="metric-note"><span class="mini-dot tone-review"></span> Awaiting final checks</div></article>
+            <article class="metric-card"><div class="metric-top"><span>Completed</span><span class="metric-icon">✓</span></div><strong id="metric-complete">4</strong><div class="metric-note"><span class="mini-dot tone-complete"></span> Ready to demonstrate</div></article>
+          </div>
+          <div class="overview-columns">
+            <section class="surface chart-surface" aria-labelledby="activity-chart-heading">
+              <div class="surface-heading">
+                <div><div class="surface-kicker">PRODUCTIVITY / SAMPLE</div><h3 id="activity-chart-heading">A quieter kind of progress</h3></div>
+                <span class="period-pill">Last 7 days</span>
+              </div>
+              <p class="surface-copy">Visual rhythm inspired by a useful, uncluttered workspace. All values below are illustrative.</p>
+              <div class="bar-chart" role="img" aria-label="Illustrative weekly progress: Monday 42, Tuesday 55, Wednesday 39, Thursday 75, Friday 64, Saturday 88, Sunday 69 percent">
+                <div class="bar-column"><span style="--value:42%"></span><small>MON</small></div>
+                <div class="bar-column"><span style="--value:55%"></span><small>TUE</small></div>
+                <div class="bar-column"><span style="--value:39%"></span><small>WED</small></div>
+                <div class="bar-column"><span style="--value:75%"></span><small>THU</small></div>
+                <div class="bar-column"><span style="--value:64%"></span><small>FRI</small></div>
+                <div class="bar-column"><span style="--value:88%"></span><small>SAT</small></div>
+                <div class="bar-column"><span style="--value:69%"></span><small>SUN</small></div>
+              </div>
+              <div class="chart-foot"><span class="legend-swatch"></span> Illustrative consistency indicator <span class="chart-end">No tracking scripts</span></div>
+            </section>
+            <section class="surface spotlight" aria-labelledby="spotlight-heading">
+              <div class="surface-kicker">A BETTER DEFAULT</div>
+              <div class="spotlight-symbol" aria-hidden="true">↗</div>
+              <h3 id="spotlight-heading">Built to be explored.<br><span>Not just viewed.</span></h3>
+              <p>Test keyboard navigation, filter states, responsive layouts, semantic dialogs and the shared design language.</p>
+              <button class="text-button" type="button" data-go="library">Explore the component patterns <span aria-hidden="true">→</span></button>
+              <div class="spotlight-grid" aria-hidden="true"></div>
+            </section>
+          </div>
+          <section class="surface recent-surface" aria-labelledby="recent-title">
+            <div class="surface-heading"><div><div class="surface-kicker">WORKSTREAM</div><h3 id="recent-title">Recently updated</h3></div><button class="subtle-button" type="button" data-go="library">View all <span aria-hidden="true">↗</span></button></div>
+            <div id="recent-list" class="recent-list"></div>
+          </section>
+        </section>
+        <section id="library" data-view="library" aria-labelledby="library-heading" hidden>
+          <div class="surface library-panel">
+            <div class="surface-heading"><div><div class="surface-kicker">CONTENT / FILTER / TABLE</div><h2 id="library-heading">Work item library</h2></div><button type="button" class="subtle-button" id="download-csv">Export CSV <span aria-hidden="true">↗</span></button></div>
+            <p class="surface-copy">Search, sort, filter, and add records locally. No network requests or accounts.</p>
+            <div class="table-controls">
+              <div class="search-wrap"><label for="record-search" class="sr-only">Search work items</label><span class="search-symbol" aria-hidden="true">⌕</span><input type="search" id="record-search" placeholder="Search items, people or categories…" autocomplete="off"><kbd>/</kbd></div>
+              <div class="sort-wrap"><label for="record-sort">Sort by</label><select id="record-sort"><option value="updated">Recently updated</option><option value="title">Title A–Z</option><option value="effort">Effort high–low</option></select></div>
+            </div>
+            <div class="status-tabs" role="group" aria-label="Filter by work item status">
+              <button type="button" data-status="all" aria-pressed="true">All items</button>
+              <button type="button" data-status="active" aria-pressed="false">In progress</button>
+              <button type="button" data-status="review" aria-pressed="false">In review</button>
+              <button type="button" data-status="complete" aria-pressed="false">Completed</button>
+            </div>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable work items table">
+              <table><thead><tr><th scope="col">Work item</th><th scope="col">Owner</th><th scope="col">Category</th><th scope="col">Status</th><th scope="col" class="right">Effort</th></tr></thead><tbody id="table-body"></tbody></table>
+            </div>
+            <div id="table-empty" class="empty-state" hidden><div class="empty-art" aria-hidden="true">⌕</div><strong>No matching work items</strong><p>Try a different search term or status.</p><button id="clear-filters" class="subtle-button" type="button">Clear filters</button></div>
+            <div class="table-footer"><p id="range-info" aria-live="polite">Showing 1–5 of 12</p><div class="pagination"><button id="page-prev" class="icon-button" type="button" aria-label="Previous page">←</button><span id="page-label" aria-live="polite">Page 1 of 3</span><button id="page-next" class="icon-button" type="button" aria-label="Next page">→</button></div></div>
+          </div>
+        </section>
+        <section id="activity" data-view="activity" aria-labelledby="activity-title" hidden>
+          <div class="surface activity-panel">
+            <div class="surface-heading"><div><div class="surface-kicker">HISTORY / COMMUNICATION</div><h2 id="activity-title">Activity feed</h2></div><span class="period-pill">Local example</span></div>
+            <p class="surface-copy">A model of meaningful activity states. No user tracking or server logs.</p><ol class="timeline" id="activity-list"></ol>
+          </div>
+        </section>
+        <section id="settings" data-view="settings" aria-labelledby="settings-title" hidden>
+          <div class="surface settings-panel"><div class="surface-kicker">PERSONALIZATION / LOCAL</div><h2 id="settings-title">Interface preferences</h2><p class="surface-copy">Settings live in your browser. Only theme and density are stored.</p>
+            <div class="setting-row"><div><strong>Appearance</strong><p>Comfortable contrast in every lighting condition.</p></div><div class="setting-select"><label for="setting-theme">Color theme</label><select id="setting-theme"><option value="light">Light</option><option value="dark">Dark</option></select></div></div>
+            <div class="setting-row"><div><strong>Information density</strong><p>Choose the rhythm that suits your workflow.</p></div><div class="setting-select"><label for="setting-density">Display density</label><select id="setting-density"><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select></div></div>
+            <button id="reset-preferences" class="subtle-button" type="button">Restore defaults</button>
+          </div>
+        </section>
+        <footer class="site-footer"><span>PUBLIC ENGINEERING REFERENCE</span><span>Accessible by design · Responsive by default · Offline-ready</span></footer>
+      </main>
+    </div>
+  </div>
+  <dialog id="record-dialog" aria-labelledby="record-dialog-title">
+    <form id="new-record-form" novalidate>
+      <div class="dialog-header"><div><span class="surface-kicker">CREATE / LOCAL ONLY</span><h2 id="record-dialog-title">New work item</h2><p>Add a synthetic record to explore form states.</p></div><button type="button" class="close-dialog icon-button" aria-label="Close new work item dialog">×</button></div>
+      <div class="form-fields">
+        <div><label for="new-title">Item title <span aria-hidden="true">*</span></label><input id="new-title" name="title" required minlength="2" maxlength="80" placeholder="e.g. Responsive navigation" autocomplete="off"></div>
+        <div><label for="new-owner">Owner <span aria-hidden="true">*</span></label><input id="new-owner" name="owner" required minlength="2" maxlength="50" placeholder="e.g. Alex Morgan" autocomplete="off"></div>
+        <div class="fields-row"><div><label for="new-category">Category</label><select id="new-category" name="category"><option>Interface</option><option>Accessibility</option><option>Systems</option><option>Research</option></select></div><div><label for="new-status">Status</label><select id="new-status" name="status"><option value="active">In progress</option><option value="review">In review</option><option value="complete">Completed</option></select></div></div>
+        <div><label for="new-effort">Estimated effort <span class="label-hint">(1–40 points)</span></label><input type="number" id="new-effort" name="effort" min="1" max="40" value="3" step="1" required></div>
+        <p id="record-error" class="form-error" role="alert" hidden></p>
+      </div>
+      <div class="dialog-actions"><button class="subtle-button" id="cancel-record" type="button">Cancel</button><button class="primary-button" type="submit">Create work item</button></div>
+    </form>
+  </dialog>
+  <dialog id="command-dialog" aria-labelledby="command-title">
+    <div class="command-shell"><div class="command-heading"><h2 id="command-title">Quick actions</h2><button type="button" class="close-dialog icon-button" aria-label="Close quick actions">×</button></div><p>Use the keyboard or choose a destination.</p>
+      <div class="command-list"><button type="button" data-command="overview"><span>◫</span>Go to overview <kbd>01</kbd></button><button type="button" data-command="library"><span>▤</span>Explore the library <kbd>02</kbd></button><button type="button" data-command="new"><span>＋</span>Create a work item <kbd>N</kbd></button><button type="button" data-command="theme"><span>☾</span>Switch color theme <kbd>T</kbd></button></div>
+    </div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+</body>
+</html>

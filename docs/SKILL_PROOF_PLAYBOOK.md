@@ -59,3 +59,16 @@ Real funded blockchain interactions, security-audited contracts, live managed
 PostgreSQL row-level security, cloud-scale transactions, multi-node GPU training,
 production client deployment and independent full-package legal/security
 review remain separately evidenced tasks. Synthetic demos are not substitutes.
+
+## Reproducible UI/UX experience proof
+
+From the public source reference, run the original UI on localhost and
+exercise at least a phone-sized and desktop-sized viewport. Check keyboard
+navigation, empty states, table sorting/pagination, creation validation,
+Escape focus restoration, CSV download, reduced-motion CSS, theme reload,
+and safe rendering of untrusted-looking text. A standalone model test does
+not replace the installed-Edge acceptance. See UI_UX_EVIDENCE_MATRIX.md.
+
+This demonstrates independently developed generic interface design, not
+exclusive authorship, ownership or production suitability of any historically
+private frontend or client work.

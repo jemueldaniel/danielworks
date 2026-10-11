@@ -79,11 +79,11 @@ class OneShotPublicProjectTests(unittest.TestCase):
         self.assertEqual(result['groups'][0]['profile'], 'training')
         self.assertTrue(result['posttest_bytes_verified'])
 
-    def test_all_thirteen_executed_profiles_run_and_retained(self):
+    def test_all_fourteen_executed_profiles_run_and_retained(self):
         result = assemble(ROOT, SOURCE_PIN, self.output, [], all_executed=True, timeout=60)
         self.assertEqual(result['status'], 'PASS_TESTED',result)
         self.assertEqual(set(result['profiles']), {p for p,x in STARTERS.items() if x.qualification == 'executed'})
-        self.assertEqual(result['tested_groups'], 13)
+        self.assertEqual(result['tested_groups'], 14)
         self.assertEqual({g['status'] for g in result['groups']},{'PASS'})
         self.assertTrue(result['posttest_bytes_verified'])
 
@@ -95,6 +95,16 @@ class OneShotPublicProjectTests(unittest.TestCase):
         self.assertTrue((self.output/'examples/hybrid_search/hybrid.py').is_file())
         self.assertTrue(result['posttest_bytes_verified'])
         self.assertEqual(json.loads(self.receipt.read_text()), result)
+
+    def test_interface_lab_exports_real_html_css_and_node_ui_tests(self):
+        result = self.create(['interface-lab'], receipt=self.receipt)
+        self.assertEqual(result['status'], 'PASS_TESTED', result)
+        self.assertEqual(result['tested_groups'], 1)
+        self.assertEqual(result['profiles'], ['interface-lab'])
+        self.assertTrue((self.output / 'examples/interface_lab/index.html').is_file())
+        self.assertTrue((self.output / 'examples/interface_lab/style.css').is_file())
+        self.assertTrue(result['posttest_bytes_verified'])
+        self.assertEqual(json.loads(self.receipt.read_text())['tested_groups'], 1)
 
     def test_signed_api_profile_runs_real_request_replay_and_http_checks(self):
         result = self.create(['signed-api'], receipt=self.receipt)
