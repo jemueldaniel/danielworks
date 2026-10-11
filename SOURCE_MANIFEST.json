@@ -1,36 +1,37 @@
 {
   "schema": 1,
-  "title": "DanielWorks public engineering evidence — bounded HTTP and offline Git verification continuation",
+  "title": "DanielWorks public engineering evidence — Windows HTTP, offline Git and cross-Node reporter validation",
   "date": "2026-10-11",
   "status": "PUBLIC_SOURCE_CHECKPOINT_WITH_INCOMPLETE_INDEPENDENT_AND_RUNTIME_QUALIFICATION",
   "authoritative_repository": "https://github.com/jemueldaniel/danielworks",
   "intended_branch": "main",
-  "last_read_remote_commit": "082086d4c64ed24db5a6ef8288b7517e3582668e",
+  "last_read_remote_commit": "f811ecf09481ebe4d225620e1131753f1dd85b79",
   "new_remote_commits_in_this_cycle": [
-    "082086d4c64ed24db5a6ef8288b7517e3582668e"
+    "082086d4c64ed24db5a6ef8288b7517e3582668e",
+    "f811ecf09481ebe4d225620e1131753f1dd85b79"
   ],
   "publication_gates": [
-    "Public source baseline is published; subsequent commits are independently identified outside the manifest",
-    "Whole-package independent correctness/privacy/licensing review is incomplete; source publication was explicitly authorized despite this",
-    "Full pinned npm TypeScript/MCP/browser installation and integration not qualified in this continuation",
-    "Previous intermittent Windows 415/WinError 10053 retained; one bounded-fix backend suite passed on Windows, not root-cause certification",
-    "Current external automatic-trigger/app/webhook inventory remains incomplete; no deployment or service creation authorized"
+    "Public source is published in earlier commits; this further candidate must be assigned its own commit/tree/readback receipt",
+    "Full independent whole-package correctness, license and privacy review remains incomplete; sanitized public-source publication was explicitly authorized",
+    "Windows Python backend 28 tests, Git object verifier 9 tests, and original-example runner 60 tests pass; historical intermittent WinError10053 kept",
+    "Locked workbench npm/TypeScript 7.0.2 and browser/MCP/React integration suite remains unqualified; no install/build/deployment implied",
+    "External automatic GitHub App/webhook deployment-trigger inventory incomplete; no workflow or deployment scripts introduced"
   ],
   "inventory_scope": "Every source candidate file except this manifest; this is not independent approval. Final manifest hash is in an external receipt.",
-  "inventory_file_count": 108,
-  "complete_checkpoint_file_count_including_this_manifest": 109,
-  "payload_bytes_excluding_this_manifest": 689515,
-  "payload_path_sha256_binding": "3eabdf54b1ec0c67e5e70529e974a027a9e68065a04a06b01dd66c9c387c9e0b",
-  "parent_checkpoint_archive_sha256": "e86ad80161212b4ac8a814f12647bb8ade51161712a9c0129cdb4ec3f0e1257a",
+  "inventory_file_count": 109,
+  "complete_checkpoint_file_count_including_this_manifest": 110,
+  "payload_bytes_excluding_this_manifest": 699097,
+  "payload_path_sha256_binding": "557eb933894952ff04659b17fab603e96143e6ee18d2ce77de7d8ac7f290d9df",
+  "parent_checkpoint_archive_sha256": "ffc1fe5bae28ba8d23ba8ab6fdddb466a6a89b2386e1dd36baa2727e9ae28815",
   "original_100_paths_preserved": 100,
   "original_56_execution_inputs_unchanged": false,
-  "execution_files_including_new_checker": 60,
-  "execution_path_hash_binding": "db8c67c722a0d7f073299aa5b588316f85a91322af567b6605446680559dd73d",
+  "execution_files_including_new_checker": 61,
+  "execution_path_hash_binding": "a2f6547b289e31b0657fd6844926f33eceeec66c3a3a0a44da2415b716fad7c2",
   "historical_and_first_fresh_baseline_distinct_tests": 145,
   "new_checker_distinct_test_definitions": 28,
-  "latest_windows_integration_status": "HISTORICAL_FAILED_73_PASSED_1_ERROR_REMAINDER_UNRUN__CURRENT_STANDALONE_BACKEND_28_PASSED",
+  "latest_windows_integration_status": "STANDALONE_BACKEND_28_PASS__OFFLINE_GIT_VERIFIER_9_PASS__ORIGINAL_QUEUE_EVAL_SDK_60_PASS__HISTORICAL_HTTP_ABORT_RETAINED__FULL_LOCKED_WORKBENCH_UNRUN",
   "clean_github_restore": true,
-  "independent_review": "Eight unchanged Rust paths have a completed exact-source static review; new HTTP/Git verification code and whole package have no independent approval.",
+  "independent_review": "Matching eight-file Rust static review retained; added HTTP drain, Git verifier, cross-version Node TAP verifier and public docs have regression/coordinator review but no independent whole-package approval.",
   "files": [
     {
       "path": ".gitignore",
@@ -52,8 +53,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11383,
-      "sha256": "151bb46f15653fe7991bf63143b3512883ed168a70864e8308cf6456e67e29e6",
+      "bytes": 12354,
+      "sha256": "a4c0a771922a069f464417713f527a4a9fabd0b5a8bf371eb0a0fd538d3a02f8",
       "mode": "100644"
     },
     {
@@ -64,14 +65,14 @@
     },
     {
       "path": "docs/COVERAGE_MATRIX.md",
-      "bytes": 31672,
-      "sha256": "76e6ecb85f0030235931fd48015a21f28e0764405c4965ffc233598984e695a9",
+      "bytes": 32657,
+      "sha256": "b70bbf9f177dec62d6a850784c9f9f5f780ac3b35c03528d11d0e6e710e3599b",
       "mode": "100644"
     },
     {
       "path": "docs/CURRENT_VERIFICATION.md",
-      "bytes": 23162,
-      "sha256": "4b8805527de13413e1fc8cc3b99b343cbb53cca0d4814d4ceddba5c7acc77559",
+      "bytes": 25421,
+      "sha256": "4700d5566e8f5cf0cdac7a4ae9211c470a4bd59641df4c8bc0336908c8fa6796",
       "mode": "100644"
     },
     {
@@ -88,20 +89,20 @@
     },
     {
       "path": "docs/RECOVERY.md",
-      "bytes": 6668,
-      "sha256": "94d430a013784bc395bd4df3caf699f70936db686e9a4baffac07df78455394a",
+      "bytes": 7965,
+      "sha256": "269b136a74d609fef8b7a56fd0364a10f81f03b382d9643880a7294a7c17a429",
       "mode": "100644"
     },
     {
       "path": "docs/REVIEW_STATUS.md",
-      "bytes": 5980,
-      "sha256": "27cd9be3f81a415152fa1a1608808818951a731f6a797ac676763ab4c4e96127",
+      "bytes": 6445,
+      "sha256": "a28e0a614780661e5a322833898aabffb60ee7ff0a40a14e02d2f0aa462b2eb0",
       "mode": "100644"
     },
     {
       "path": "docs/SKILLS.md",
-      "bytes": 4655,
-      "sha256": "90fccddb5c819727908285d7152d1c81c3c71e0fb8fb6c228ec5e44e289fc17f",
+      "bytes": 4971,
+      "sha256": "fedb2c20deb8d4522cb2efe2d044e01e0ed614487f37574b775b8da6f64df7b0",
       "mode": "100644"
     },
     {
@@ -507,6 +508,12 @@
       "mode": "100644"
     },
     {
+      "path": "tools/test_verify_runner.py",
+      "bytes": 2561,
+      "sha256": "08be7ccf87ab041d2c3da3e4efba62215d1b2470fa028eaaf3b104efcd0b2a25",
+      "mode": "100644"
+    },
+    {
       "path": "tools/test_verify_source.py",
       "bytes": 10026,
       "sha256": "e5b9d4b120e1cea3cdacd8f501abbb0c5e971881e160ebad591e0398561d118b",
@@ -514,8 +521,8 @@
     },
     {
       "path": "tools/verify.py",
-      "bytes": 5156,
-      "sha256": "0603ef9f3d280890b4d3f8125f59393fdce5f22e1d8476a117e25230ed9b39ba",
+      "bytes": 5884,
+      "sha256": "7dbb7f44a5cd1bc09772488fe627c11f1bfde50e6198afe9ecd8c00f66e7e2d8",
       "mode": "100644"
     },
     {
@@ -695,20 +702,21 @@
     "README.md",
     "docs/COVERAGE_MATRIX.md",
     "docs/CURRENT_VERIFICATION.md",
-    "docs/REVIEW_STATUS.md",
     "docs/RECOVERY.md",
+    "docs/REVIEW_STATUS.md",
     "docs/SKILLS.md",
     "docs/SOURCE_VERIFICATION.md",
     "projects/evidence-workbench/README.md",
     "projects/evidence-workbench/docs/INTERFACES.md"
   ],
   "source_manifest_regenerated": true,
-  "receipt_boundaries": "Historical failure receipts apply only to their recorded source and remain unchanged. The current manifest excludes itself; externally pin its final SHA-256 and any future commit identity. Public source is not production certification or private-origin release approval.",
+  "receipt_boundaries": "Historical error and test receipts apply only to their exact source. This manifest intentionally excludes itself; final hash and resulting commit are externally pinned in a readback receipt. No private source, secrets or commercial production authorization is implied.",
   "execution_inputs_changed_this_continuation": [
     "projects/evidence-workbench/backend/server.py",
-    "projects/evidence-workbench/backend/test_http.py"
+    "projects/evidence-workbench/backend/test_http.py",
+    "tools/verify.py"
   ],
-  "execution_inputs_unchanged_from_parent": 56,
+  "execution_inputs_unchanged_from_parent": 59,
   "fresh_linux_in_process_agent_tests": {
     "distinct": 27,
     "passed": 27,
@@ -729,13 +737,14 @@
     "is_complete_locked_workbench_suite": false,
     "independent_review": false
   },
-  "previous_public_checkpoint_commit": "082086d4c64ed24db5a6ef8288b7517e3582668e",
-  "previous_public_checkpoint_tree": "8d0ca5fea7096b7cdccad2a7b39e1847cfcd66c9",
-  "clean_github_restore_commit": "082086d4c64ed24db5a6ef8288b7517e3582668e",
+  "previous_public_checkpoint_commit": "f811ecf09481ebe4d225620e1131753f1dd85b79",
+  "previous_public_checkpoint_tree": "e443a749e3810b9145bc65fdefb3b1a436554e3c",
+  "clean_github_restore_commit": "f811ecf09481ebe4d225620e1131753f1dd85b79",
   "historical_october8_parent_archive_sha256": "d33aae2088ed540d19a62adb5a763d8c585c8f1976bb3de02bfd6e61551ddff3",
   "execution_inputs_added_this_continuation": [
     "tools/verify_git_commit.py",
-    "tools/test_verify_git_commit.py"
+    "tools/test_verify_git_commit.py",
+    "tools/test_verify_runner.py"
   ],
   "git_checker_distinct_test_definitions": 9,
   "fresh_october11_backend": {
@@ -769,10 +778,46 @@
     "scope": "local Git fixtures; exact commit objects not filesystem files"
   },
   "fresh_october11_linux_disjoint_total": {
-    "passed": 162,
+    "passed": 168,
     "skipped": 1,
     "failed": 0,
-    "distinct_definitions": 163,
-    "scope": "60 original + 5 Python contract + 27 agent + 3 tx + 3 retrieval + 28 backend + 27 verifier passes/1 Windows-only skip + 9 Git verifier"
+    "distinct_definitions": 169,
+    "scope": "60 original +5 Python contract +27 agent +3 tx +3 retrieval +28 backend +27 source verifier passes/1 Windows-only skip +9 Git verifier +6 Node-runner regressions. Original Windows 60 overlap, not added."
+  },
+  "execution_inputs_changed_since_109_file_parent": [
+    "tools/verify.py"
+  ],
+  "execution_inputs_added_since_109_file_parent": [
+    "tools/test_verify_runner.py"
+  ],
+  "document_changes_this_stage_only": [
+    "README.md",
+    "docs/COVERAGE_MATRIX.md",
+    "docs/CURRENT_VERIFICATION.md",
+    "docs/RECOVERY.md",
+    "docs/REVIEW_STATUS.md",
+    "docs/SKILLS.md"
+  ],
+  "fresh_october11_node_runner": {
+    "regression_definitions": 6,
+    "linux": {
+      "passed": 6,
+      "failed": 0,
+      "node": "22.16.0",
+      "python": "3.13.5",
+      "original_example_tests": 60,
+      "original_example_status": "PASS"
+    },
+    "windows": {
+      "passed": 6,
+      "failed": 0,
+      "node": "24.15.0",
+      "python": "3.13.6",
+      "typescript": "5.9.3",
+      "original_example_tests": 60,
+      "original_example_status": "PASS"
+    },
+    "red_observation": "Node24 default spec reporter 28 SDK pass but old wrapper returned status FAIL/tests null; the TAP-selection regression failed before implementation",
+    "acceptance_boundary": "Original queue/eval/SDK examples only; not npm-locked workbench or browser suite"
   }
 }

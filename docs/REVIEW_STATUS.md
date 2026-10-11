@@ -2,6 +2,8 @@
 
 ## October 2026 public checkpoint and follow-up review status
 
+The [second 109-file public checkpoint](https://github.com/jemueldaniel/danielworks/commit/f811ecf09481ebe4d225620e1131753f1dd85b79) retains the same eight-file Rust review boundary. The additional Node 22/24 test-runner correction and six tests are implementing-assistant reviewed and verified on both platforms, but have **no independent approval**. Publication of sanitized source is separately authorized and does not close the independent qualification gate.
+
 The first complete 107-file source checkpoint is public at [commit `082086d4`](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) with remote byte verification and clean GitHub restoration. This is a publication receipt, **not** an independent whole-package code review. The new rejected-POST mitigation, Git-object verifier, their tests and refreshed documentation have implementing-assistant review and passing scoped regressions but **no separate independent approval**. The reviewed eight-file Rust scope remains unchanged. Earlier review and usage-limit records below retain their original contexts and verdicts; no new approval is invented.
 
 ## Completed: Rust exact-source independent static review

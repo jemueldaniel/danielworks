@@ -37,7 +37,19 @@ def test_result(name: str, command: list[str], pattern: str, *, environment: dic
         return {"component": name, "status": "FAIL", "reason": "20-second subprocess limit exceeded"}
     output = result.stdout + result.stderr
     count = re.search(pattern, output)
-    passed = result.returncode == 0 and count is not None and int(count.group(1)) > 0
+    if name == 'sdk':
+        # Node 22 uses TAP "# tests"; Node 24 can use the spec "ℹ tests"
+        # reporter. Require a consistent summary, not an exit-code-only pass.
+        if count is None:
+            count = re.search(r'(?m)^[#ℹ]\s+tests\s+(\d+)\s*$', output)
+        passes = re.search(r'(?m)^[#ℹ]\s+pass\s+(\d+)\s*$', output)
+        failures = re.search(r'(?m)^[#ℹ]\s+fail\s+(\d+)\s*$', output)
+        passed = (result.returncode == 0 and count is not None and passes is not None
+                  and failures is not None and int(count.group(1)) > 0
+                  and int(passes.group(1)) == int(count.group(1))
+                  and int(failures.group(1)) == 0)
+    else:
+        passed = result.returncode == 0 and count is not None and int(count.group(1)) > 0
     if not passed:
         print(output, file=sys.stderr)
     return {"component": name, "status": "PASS" if passed else "FAIL", "tests": int(count.group(1)) if count else None}
@@ -86,7 +98,7 @@ def main() -> int:
                 return result.returncode
             child_environment = os.environ.copy()
             child_environment['SDK_MODULE'] = str(build / 'client.mjs')
-            results.append(test_result('sdk', [shutil.which('node'), '--test', '--test-concurrency=1', 'examples/read_client/client.test.mjs'], r'# tests (\d+)', environment=child_environment))
+            results.append(test_result('sdk', [shutil.which('node'), '--test', '--test-reporter=tap', '--test-concurrency=1', 'examples/read_client/client.test.mjs'], r'# tests (\d+)', environment=child_environment))
     print(json.dumps({'scope': 'isolated example tests; one loopback HTTP test; no external service calls', 'environment': environment, 'results': results}, indent=2, sort_keys=True))
     if any(item['status'] == 'FAIL' for item in results):
         return 1

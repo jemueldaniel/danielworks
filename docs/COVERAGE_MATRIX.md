@@ -4,6 +4,12 @@
 
 This is the **single coverage/backlog document** for DanielWorks. It separates actual source inspection, runnable public evidence, observed execution, and unqualified work. Missing qualification does **not** mean a capability does not exist. Private source identities, paths and ownership records are intentionally excluded; private access is not publication permission.
 
+## Node-version-neutral example verification — 11 October 2026
+
+| User outcome and exact public owner | Executed regression evidence | Remaining boundary |
+|---|---|---|
+| Count passing/failed SDK tests consistently under Node 22 and Node 24: `tools/verify.py` | `tools/test_verify_runner.py`: **six** cases on Linux and Windows; failed stable-reporter requirement before fix, passed after. Full original example verification: **60/60 on Windows (Node 24.15.0), 60/60 on Linux (Node 22.16.0)**. The first Windows default-reporter attempt falsely marked the actually passing 28 SDK cases as a failure and is retained. | Existing global TypeScript 5.9.3 (Windows) or 5.8.3 (Linux) checks qualify only the original small SDK; neither qualifies the workbench's locked TypeScript 7.0.2, npm installation, browser suite, production service nor whole-package independent review. The 60 original definitions overlap prior original baseline; **six new** verifier definitions are disjoint. |
+
 ## Published checkpoint and bounded verification additions — 11 October 2026
 
 [Public baseline commit](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e), tree `8d0ca5fea7096b7cdccad2a7b39e1847cfcd66c9`: 107 files, complete remote path/mode/size/SHA-256 readback and an independently cloned clean Windows checkout (107/107 file hashes). That delivery did **not** complete the release gates below. New follow-up changes will have separate revision identities and qualification receipts; the manifest never embeds its own future commit SHA.

@@ -1,4 +1,12 @@
-# Current verification — 8 October 2026
+# Current verification — 11 October 2026
+
+## Node 22 and 24 compatibility — 11 October 2026
+
+**Actual defect and repair:** the 109-file public commit `f811ecf09481ebe4d225620e1131753f1dd85b79` contains the existing `tools/verify.py` example-suite wrapper. An isolated Windows clone of that commit ran the 28 SDK tests successfully under **Node 24.15.0**, yet its wrapper reported `SDK FAIL / tests null` and exited 1 because it depended on older Node TAP text while Node 24 selected the newer spec output. That failed execution is retained as a fresh observation, not silently converted into a pass. The correction explicitly invokes `node --test --test-reporter=tap`; `test_result` also validates reported count, passed count, failed count and process exit before giving `PASS`. It does not turn failed tests into success by ignoring process status.
+
+**Test-first evidence:** the new `tools/test_verify_runner.py` asserts the SDK CLI requests TAP. It failed against the older wrapper and passed after the correction. Six distinct tests also cover Node 22 TAP, Node 24 spec, reported failure, nonzero exit, missing/zero test totals, and the actual CLI selection. On Linux (observed **Node 22.16.0**, **Python 3.13.5**) six runner regressions and the 28 SDK tests passed; the original verifier's three groups passed **60/60**. On Windows (observed **Node 24.15.0**, **Python 3.13.6**, existing **TypeScript 5.9.3**) six runner tests passed, the 28 SDK tests passed, and the full original queue/grader/SDK wrapper passed **60/60**. These original definitions overlap the prior 60-case baseline and are not new cases. The six runner definitions are new.
+
+**Scope:** this establishes original-example compatibility with those existing Node/TypeScript/Python installations, not successful cold installation or build of the exact locked workbench (TypeScript 7.0.2, MCP 1.32.1 and browser cases). No dependency changes, browser installation, external services or deployment occurred. The manifest for the new unpublished-at-edit-time candidate is regenerated; its source SHA-256 and future publication SHA belong in a separate readback receipt. Whole-package independent review is incomplete. Earlier HTTP WinError 10053 evidence is preserved despite successful subsequent 28-case Windows backend runs.
 
 ## 11 October 2026: published baseline and current candidate
 

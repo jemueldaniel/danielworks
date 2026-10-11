@@ -1,5 +1,11 @@
 # Source recovery and preservation
 
+## Second published checkpoint and Node test-report compatibility — 11 October 2026
+
+The second public source checkpoint is [commit `f811ecf`](https://github.com/jemueldaniel/danielworks/commit/f811ecf09481ebe4d225620e1131753f1dd85b79), tree `e443a749e3810b9145bc65fdefb3b1a436554e3c`. All 109 files were read back from GitHub, and a new Windows clone with `core.autocrlf=false` verified both source files and committed Git objects against external manifest SHA-256 `61ec5ec1289112cabba561aa1604297b8a69115193bb9f215a7038e74a5be8b1`; the restored checkout was clean. Windows backend and offline Git-verifier test groups independently passed 28 and 9 tests, respectively. This is not a full locked npm/browser restore.
+
+An additional correction to `tools/verify.py` and new `tools/test_verify_runner.py` fixes the original-example runner's false negative for Node 24's different default test-reporting format. The original Node 24 SDK test pass and wrapper failure are preserved as the red observation. The candidate requests stable TAP output, has six regression definitions and does not alter the earlier immutable Git commit or evidence. Future commit/tree and external source-manifest SHA-256 must be recorded outside the manifest after publication and readback, not embedded speculatively.
+
 ## Published source and independent checkout — 11 October 2026
 
 The complete first public checkpoint is [commit `082086d4`](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e), parented to the original initialization commit, with tree `8d0ca5fea7096b7cdccad2a7b39e1847cfcd66c9`. A 107-file GitHub source readback matched every expected SHA-256 and byte size, with no missing/extra paths or mode differences. In a new isolated Windows clone with `core.autocrlf=false`, all 107 files and the externally pinned manifest SHA-256 `282b77b1b10bae52845bc4b244dc364cd515043d09d3257573a263d271be65f3` matched; Git status was clean. These are publication/restore checks, not independent whole-package review or completed runtime qualification.

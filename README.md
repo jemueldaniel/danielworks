@@ -1,6 +1,6 @@
 # DanielWorks — engineering through runnable evidence
 
-**Public source is live.** [The first complete 107-file checkpoint](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) was published on 11 October 2026. Its entire remote tree was checked for exact bytes and restored from GitHub in a clean, isolated checkout. This is source publication, **not** a deployment or production certification.
+**Public source is live.** The [first 107-file checkpoint](https://github.com/jemueldaniel/danielworks/commit/082086d4c64ed24db5a6ef8288b7517e3582668e) and [109-file reliability/verification upgrade](https://github.com/jemueldaniel/danielworks/commit/f811ecf09481ebe4d225620e1131753f1dd85b79) were published on 11 October 2026. Both have been read back from GitHub and restored in clean isolated checkouts. Consult [main](https://github.com/jemueldaniel/danielworks/tree/main) for later commits, which must have their own external receipt. Publication is **not** deployment or production certification.
 
 **Current integration status: PARTIAL, not fully green.** The historical Windows rerun stopped after 73 passing tests and one 415/WinError 10053 error; that failure remains recorded. The new bounded early-rejection handling passed **28/28 Python backend tests on Linux and 28/28 on Windows** in isolated candidate workspaces, including the previously failing case, but this does not establish the root cause of the earlier intermittent abort or a complete locked workbench/browser rerun. [Current qualification](docs/CURRENT_VERIFICATION.md).
 
@@ -17,6 +17,8 @@ The retained Windows record tested the joined flow: **queue in the browser, exec
 
 
 **Bounded reliability upgrade:** early-rejected POSTs now consume only correctly declared, small request bodies before closing the HTTP connection. The [existing backend](projects/evidence-workbench/backend/server.py) and [new negative tests](projects/evidence-workbench/backend/test_http.py) preserve 403/413/415 status behavior and constrain the drain to 8,193 bytes. In addition, an [offline Git commit verifier](tools/verify_git_commit.py) checks raw committed file bytes, modes, paths and the externally pinned manifest without installing packages, writing files or contacting a network. Its [nine regression tests](tools/test_verify_git_commit.py) passed on Linux and Windows and exercise corruption, missing files, links, path collisions and dirty checkouts. [Current results and limits](docs/CURRENT_VERIFICATION.md#11-october-2026-published-baseline-and-current-candidate).
+
+**Node 22/24 verifier compatibility:** the original example runner now requests the deterministic Node TAP test reporter, so its 28 SDK test results can be counted on Node 24 as well as Node 22. Six [summary and CLI regressions](tools/test_verify_runner.py) require nonzero actual test counts, correct pass/fail totals, and a zero process exit. The original standalone group passed **60/60 on Windows using Node 24.15.0 and Python 3.13.6**, following a recorded initial false-negative from the Node 24 default spec reporter. This is *not* the full locked workbench browser build. [Current verification](docs/CURRENT_VERIFICATION.md#node-22-and-24-compatibility-11-october-2026).
 
 The [in-process agent example](examples/mcp_agent/README.md) retains its starting server and checkpoint store across suspension (27 tests). Its earlier **151 Linux passes and one Windows-only skip** remain recorded separately and are not added to the new checks. No production authentication, distributed exactly-once effect, native WebMCP, model training, PostgreSQL isolation, live EVM, or cross-platform full-build qualification is claimed.
 
@@ -44,6 +46,7 @@ From the repository root, use already installed Python, Node and a TypeScript co
 
 ```sh
 python -B tools/verify.py
+python -B -m unittest discover -s tools -p test_verify_runner.py -v
 python -B -m unittest discover -s tools -p test_verify_git_commit.py -v
 # From a clean Git checkout; add --expected-manifest-sha256 using an external receipt:
 python -B tools/verify_git_commit.py --revision HEAD
