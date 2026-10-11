@@ -25,3 +25,11 @@ Claims are graded by the [public-only capability index](PUBLIC_CAPABILITIES.json
 ## Portable public-only project starters
 
 [Source-pinned starter exporter](../tools/export_public_starter.py) selects original public samples by a finite allowlist; [unit and runtime tests](../tools/test_export_public_starter.py) verify copied bytes, reproducibility, source drift rejection, historical opt-in and non-overwrite. [Adaptation guide](TRANSFERABLE_WORKFLOW.md) describes translating generic patterns to a new workplace without importing private code. Export is not test execution, build qualification, a legal redistribution grant or a production deployment.
+
+## Tenant authorization and audit records
+
+Public proof: [tenant-policy implementation](../examples/tenant_policy/policy.py)
+and [32 dedicated tests](../examples/tenant_policy/test_policy.py).
+Synthetic policy evaluation, observational HMAC evidence and noncanonical
+tamper rejection are demonstrated. Login, IAM, deployed tenancy and
+production security review remain not verified.

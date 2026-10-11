@@ -1,3 +1,40 @@
+## Portable proof-studio early HTTP rejection follow-up — 11 October 2026
+
+A later full Windows tooling run still failed two exported-runtime tests under
+load despite an independent eight-profile all-pass acceptance. This was
+not suppressed. The public HTTP reference now drains only small, unambiguous,
+declared POST bodies on early rejections (Host, Origin, wrong media type,
+unrecognized route) and tests repeated 403/415/404 responses over real loopback.
+It does not drain unsupported transfer-coded, ambiguous or oversized requests
+and it does not certify production HTTP behavior. Additional runs are scoped to
+their exact Windows test state and commit.
+
+## Reproduced Windows early-reject transport failure and bounded correction — 11 October 2026
+
+During the expanded one-shot tooling run, two tests failed at the runtime
+stage. An independently exported signed-event starter then reproduced a
+concrete WinError 10053 on the POST /admin 404 path: the HTTP adapter closed
+with an unread, correctly declared request body, causing the client to lose
+the response. This negative result remains part of the record. The candidate
+corrects early rejection by draining only small, unambiguous Content-Length
+bodies with a short timeout before sending the error response. Chunked,
+ambiguous and oversized bodies remain undrained. New repeated real-loopback
+negative tests cover early 404 and 401 cases. A subsequent green test, if
+observed, is limited to the tested Windows setup; it does not establish
+transport correctness for every operating system or hostile environment.
+
+## New independently authored authorization reference — 11 October 2026
+
+A standalone public-only multi-tenant policy/audit reference passed 32
+regression tests on the connected Windows Python 3.13.6 environment,
+including 500 seeded cross-tenant trials. It implements default-deny,
+explicit-deny priority, owner checks and HMAC receipt tamper/binding/expiry
+detection. The code and fixtures are independently authored, synthetic,
+dependency-free and do not include private products or real credentials.
+This is NOT proof of identity, cloud service deployment, production authorization
+or independently completed security audit. Integrated source-manifest, full
+cross-project and one-shot qualification is recorded separately after execution.
+
 ## New published-reference Windows acceptance — 11 October 2026
 
 **Tested public source:** commit `5a46a84a30ccbbda11b193070532cea5446b924e`; source manifest SHA-256 `2efeca809907fe8c32a8024ca908a0372ecccec05b9e7638ebaf70507f7486ce`. The exact 140-file commit was read back from GitHub, and a fresh Windows clone passed both the pinned raw-Git-object verifier (clean working tree) and the pinned source-file verifier. All 16 changed files independently matched the remote Git blob identifiers; publication was a fast-forward, with zero deletions.

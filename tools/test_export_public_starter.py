@@ -72,6 +72,15 @@ class PublicStarterTests(unittest.TestCase):
         self.assertEqual(copied, allowed | {'README.md','REUSE_MANIFEST.json'})
         self.assertTrue(all('private' not in name.lower() for name in copied))
 
+    def test_new_policy_profile_exports_only_original_public_source(self):
+        result = self.build(['policy'])
+        self.assertEqual(result['profiles'], ['policy'])
+        self.assertEqual(result['selected_files'], 4)
+        paths = set(STARTERS['policy'].paths)
+        files = {p.relative_to(self.target).as_posix()
+                 for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(files, paths | {'README.md', 'REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

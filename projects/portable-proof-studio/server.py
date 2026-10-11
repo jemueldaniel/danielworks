@@ -75,6 +75,7 @@ def make_handler(store: ProofStore):
             if not raw.isdecimal():raise DemoError('BODY_LENGTH_REQUIRED',411)
             size=int(raw)
             if size<=0 or size>8192:raise DemoError('BODY_SIZE_INVALID',413)
+            self._body_started = True
             data=self.rfile.read(size)
             if len(data)!=size:raise DemoError('BODY_INCOMPLETE')
             try:payload=json.loads(data.decode('utf-8','strict'),object_pairs_hook=_strict_pairs,
@@ -83,7 +84,33 @@ def make_handler(store: ProofStore):
             if not isinstance(payload,dict):raise DemoError('JSON_OBJECT_REQUIRED')
             return payload
 
+        def _drain_early_request(self):
+            # Windows may abort a just-sent HTTP error if unread POST bytes
+            # remain buffered when the connection closes. Only consume a
+            # single, valid and small declared length, never transfer codings
+            # or ambiguous/oversized input.
+            if self.headers.get_all('Transfer-Encoding'):
+                return
+            lengths = self.headers.get_all('Content-Length', [])
+            if len(lengths) != 1:
+                return
+            raw = lengths[0]
+            if not raw.isascii() or not raw.isdecimal() or len(raw)>5:
+                return
+            size = int(raw)
+            if size>8192:
+                return
+            self.connection.settimeout(0.5)
+            try:
+                while size:
+                    part = self.rfile.read(min(size, 4096))
+                    if not part: break
+                    size -= len(part)
+            except (OSError,TimeoutError):
+                pass
+
         def _process(self, method):
+            self._body_started = False
             try:
                 self._origin_ok()
                 path=urlsplit(self.path)
@@ -122,6 +149,8 @@ def make_handler(store: ProofStore):
                     self._send(200,{'data':v});return
                 raise DemoError('METHOD_NOT_ALLOWED',405)
             except DemoError as e:
+                if method == 'POST' and not self._body_started:
+                    self._drain_early_request()
                 self._send(e.status,{'error':{'code':e.code}})
             except (OSError,ValueError,TypeError,OverflowError):
                 self._send(500,{'error':{'code':'SERVICE_ERROR'}})

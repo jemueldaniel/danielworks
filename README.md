@@ -6,6 +6,18 @@
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
+## New: reusable tenant-policy and signed audit reference
+
+[Portable policy laboratory](examples/tenant_policy/README.md) includes an original,
+offline Python decision engine with an explicit cross-tenant deny boundary,
+owner-scoped permissions, deny-overrides rule evaluation and an observational
+HMAC audit codec. Its 32 regression tests include 500 deterministic isolation
+probes and reject forged, expired, misbound or noncanonical evidence.
+It is now available as the source-pinned one-shot **policy** profile.
+A signed decision receipt is NOT an authorization credential: real identity,
+trusted grants, revocation, signing-key custody, persistence and security review
+remain deployment responsibilities. No private product source was imported.
+
 ## New: live local Workflow → Knowledge reference
 
 The [Portable Proof Studio](projects/portable-proof-studio/README.md) is an original, dependency-free **local** HTTP + SQLite + browser UI integration. Recruiters can issue an expiring anonymous demonstration workspace, save a fixed four-step workflow, execute it, inspect persisted trace/artifact receipts, explicitly import its output into a document collection, run lexical search and save an actual expected-document evaluation. Transactionally replay-safe writes, concurrency, revision fencing, cross-workspace boundaries and process-restart readback have [their own test suite](projects/portable-proof-studio/test_store.py). The [HTTP acceptance tests](projects/portable-proof-studio/test_http.py) and [static UI contracts](projects/portable-proof-studio/test_web.py) exercise the real implementation, not an image or description. This adds a verified `proof-platform` profile to the public one-shot exporter.

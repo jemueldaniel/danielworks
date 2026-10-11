@@ -49,29 +49,53 @@ def make_server(inbox: EventInbox, *, port: int = 0) -> ThreadingHTTPServer:
             else:
                 self._respond(404, {"error": "not_found"})
 
+        def _reject_early(self, status: int, body: dict) -> None:
+            # A valid, small, declared body can already be in the receive
+            # buffer. Closing that socket unread can abort the response on
+            # Windows (WinError 10053), even for a correct 404/401. Never
+            # drain ambiguous, chunked or oversized bodies.
+            lengths = self.headers.get_all("Content-Length", [])
+            if not self.headers.get_all("Transfer-Encoding") and len(lengths) == 1:
+                value = lengths[0]
+                if re.fullmatch(r"(?:0|[1-9][0-9]{0,5})", value):
+                    size = int(value)
+                    if size <= MAX_BODY:
+                        self.connection.settimeout(0.5)
+                        try:
+                            remaining = size
+                            while remaining:
+                                chunk = self.rfile.read(min(remaining, 4096))
+                                if not chunk:
+                                    break
+                                remaining -= len(chunk)
+                        except (OSError, TimeoutError):
+                            # Do not elevate or mutate an invalid request.
+                            pass
+            self._respond(status, body)
+
         def do_POST(self):
             if self.path != "/events":
-                self._respond(404, {"error": "not_found"})
+                self._reject_early(404, {"error": "not_found"})
                 return
             self.connection.settimeout(5)
             if self.headers.get_all("Transfer-Encoding"):
-                self._respond(400, {"error": "unsupported_transfer_encoding"})
+                self._reject_early(400, {"error": "unsupported_transfer_encoding"})
                 return
             lengths = self.headers.get_all("Content-Length", [])
             if not lengths:
-                self._respond(411, {"error": "length_required"})
+                self._reject_early(411, {"error": "length_required"})
                 return
             if len(lengths) != 1 or not re.fullmatch(r"[1-9][0-9]{0,5}", lengths[0]):
-                self._respond(400, {"error": "invalid_content_length"})
+                self._reject_early(400, {"error": "invalid_content_length"})
                 return
             size = int(lengths[0])
             if size > MAX_BODY:
-                self._respond(413, {"error": "body_too_large"})
+                self._reject_early(413, {"error": "body_too_large"})
                 return
             timestamp = self._unique("X-Event-Timestamp")
             provided = self._unique("X-Event-Signature")
             if timestamp is None or provided is None:
-                self._respond(401, {"error": "unauthorized"})
+                self._reject_early(401, {"error": "unauthorized"})
                 return
             try:
                 raw = self.rfile.read(size)

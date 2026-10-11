@@ -35,6 +35,7 @@ TESTS = {
     'evaluation': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/ranking_eval', '-v'),
     'proof-platform': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'projects/portable-proof-studio', '-v'),
     'event-outbox': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/event_outbox', '-v'),
+    'policy': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/tenant_policy', '-v'),
     'typed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/typed_api_sdk', '-v'),
     'rust-compiler': ('cargo', 'test', '--manifest-path', 'projects/bounded-lang/Cargo.toml', '--locked', '--offline'),
 }

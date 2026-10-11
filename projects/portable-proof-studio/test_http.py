@@ -79,6 +79,27 @@ class HttpTests(unittest.TestCase):
             self.assertGreaterEqual(c,400)
             self.assertIn('error',v)
 
+    def test_repeated_early_post_rejections_deliver_http_response(self):
+        for _ in range(16):
+            code, body, _ = self.call('POST','/api/workspaces',{},
+                                      headers={'Origin':'https://attacker.example'})
+            self.assertEqual((code,body['error']['code']),(403,'ORIGIN_DENIED'))
+        token=self.space()
+        for _ in range(16):
+            code, body, _ = self.call('POST','/api/workflows',{'title':'A'},
+                                      token, 'new-key-abc',
+                                      headers={'Content-Type':'text/plain'})
+            self.assertEqual((code,body['error']['code']),(415,'JSON_REQUIRED'))
+        self.assertEqual(self.call('GET','/api/workflows',token=token)[1]['data'],[])
+
+    def test_wrong_post_route_with_body_remains_side_effect_free(self):
+        token=self.space()
+        for _ in range(12):
+            code, body, _ = self.call('POST','/api/no-such-path',{'text':'abc'},
+                                      token,'new-key-abc')
+            self.assertEqual((code,body['error']['code']),(404,'NOT_FOUND'))
+        self.assertEqual(self.call('GET','/api/workflows',token=token)[1]['data'],[])
+
     def test_requires_token_and_mutation_key(self):
         code,v,_=self.call('GET','/api/documents')
         self.assertEqual((code,v['error']['code']),(401,'SESSION_REQUIRED'))

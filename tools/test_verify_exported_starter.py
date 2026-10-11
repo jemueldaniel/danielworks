@@ -42,6 +42,15 @@ class ExportVerificationTests(unittest.TestCase):
         self.assertEqual(report['tests_run'], 2)
         self.assertEqual([r['profile'] for r in report['groups']], ['agent','training'])
 
+    def test_policy_profile_uses_fixed_runtime_tests(self):
+        pin = self.build(['policy'])
+        before = validate(self.project, pin)
+        self.assertEqual(before['qualifications']['policy'], 'executed')
+        result = run_profiles(self.project, before)
+        self.assertEqual(result['status'], 'PASS')
+        self.assertEqual(result['tests_run'], 1)
+        self.assertEqual(result['groups'][0]['profile'], 'policy')
+
     def test_file_bytes_mutation_fails(self):
         pin = self.build()
         path = self.project / 'examples/mcp_agent/runtime.mjs'

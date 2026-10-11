@@ -109,3 +109,17 @@ Its local HMAC key is a synthetic fixture, not a real integration credential.
 A consumer performing remote effects must independently deduplicate those
 effects. No company service, live deployment or provider authorization
 is assumed.
+
+## Authorization and audit-evidence reference (new)
+
+The original tenant-policy profile demonstrates strict tenant isolation,
+versioned allow/deny policy rules, ownership restrictions and canonical,
+short-lived HMAC audit receipts. Recompute policy for every protected action;
+never treat audit evidence as an access token. Integration requires trusted
+authentication, real tenant membership and resource ownership sources,
+signing-key management, revocation, observable failures and security review.
+
+To include it in a new, SHA-256-pinned *public-only* reference project,
+select the policy profile with the existing one-shot assembler. Use the
+external manifest SHA-256 belonging to the exact published revision. Do not
+copy private company logic, keys or deployment configuration into a new job.

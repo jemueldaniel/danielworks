@@ -84,6 +84,12 @@ STARTERS: dict[str, Starter] = {
         "examples/event_outbox/demo.py",
         "examples/event_outbox/test_event_outbox.py",
     ), "python -B -m unittest discover -s examples/event_outbox -v", "executed"),
+    "policy": Starter("tenant-policy-audit", (
+        "examples/tenant_policy/README.md",
+        "examples/tenant_policy/policy.py",
+        "examples/tenant_policy/demo.py",
+        "examples/tenant_policy/test_policy.py",
+    ), "python -B -m unittest discover -s examples/tenant_policy -v", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

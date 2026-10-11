@@ -191,6 +191,19 @@
       "boundary": "33 Windows acceptance tests run against real SQLite, threads, and loopback HTTP. Single-node at-least-once local reference only, not hosted webhooks, external effect deduplication, key rotation, TLS or production authorization."
     },
     {
+      "id": "tenant-policy-audit",
+      "discipline": "Multi-tenant authorization policies and signed audit evidence",
+      "qualification": "executed",
+      "implementation": [
+        "examples/tenant_policy/policy.py",
+        "examples/tenant_policy/demo.py"
+      ],
+      "tests": [
+        "examples/tenant_policy/test_policy.py"
+      ],
+      "boundary": "32 Windows tests plus 500 deterministic cross-tenant probes; no real login, IAM, key rotation, replay-safe external effects or production certification."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

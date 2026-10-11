@@ -293,6 +293,20 @@ class HTTPTests(unittest.TestCase):
         self.assertEqual(self.request("POST", "/admin", raw, headers)[0], 404)
         self.assertEqual(self.box.summary(), {})
 
+    def test_rejected_posts_with_small_body_return_reliable_404(self):
+        # Exercise actual HTTP response delivery, not merely handler return.
+        raw, headers = self.signed()
+        for _ in range(20):
+            self.assertEqual(self.request("POST", "/admin", raw, headers)[0], 404)
+        self.assertEqual(self.box.summary(), {})
+
+    def test_bounded_early_reject_is_not_an_event_insert(self):
+        raw, headers = self.signed()
+        headers.pop("X-Event-Signature")
+        for _ in range(8):
+            self.assertEqual(self.request("POST", "/events", raw, headers)[0], 401)
+        self.assertEqual(self.box.summary(), {})
+
     def test_loopback_only_server(self):
         self.assertEqual(self.server.server_address[0], "127.0.0.1")
         with self.assertRaises(ValueError):
