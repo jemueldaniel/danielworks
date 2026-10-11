@@ -113,6 +113,14 @@ class PublicStarterTests(unittest.TestCase):
                 for p in self.target.rglob('*') if p.is_file()}
         self.assertEqual(actual, approved | {'README.md','REUSE_MANIFEST.json'})
 
+    def test_signed_api_bundle_exports_only_public_allowlisted_files(self):
+        report = self.build(['signed-api'])
+        self.assertEqual(report['selected_files'], 4)
+        approved = set(STARTERS['signed-api'].paths)
+        actual = {p.relative_to(self.target).as_posix()
+                  for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(actual, approved | {'README.md','REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

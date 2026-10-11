@@ -169,3 +169,14 @@ permissions; never reuse private employer or startup files.
 Production additions need durable shared lease storage, identity
 validation, resource accounting, secure sandboxing, cross-node fencing
 and failover trials. In-memory examples are not production agents.
+
+## Assemble a local API security teaching reference
+
+The signed-api profile and api-security recipe are part of the
+source-pinned public-only assembler. The sample uses fictional credentials,
+binds its server to 127.0.0.1, and exercises actual HTTP request signing,
+tenant scope, persistent nonce fencing, timestamp windows and quotas.
+For legitimate employer use, replace synthetic keys with approved managed
+secrets, use TLS and IAM, add real identity and resource authorization,
+review audit logs and run negative cloud/load tests. No proprietary
+service logic, startup credentials or private interfaces are inputs.

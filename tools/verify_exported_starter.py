@@ -40,6 +40,7 @@ TESTS = {
     'hybrid-search': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/hybrid_search', '-v'),
     'migration': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/migration_guard', '-v'),
     'build-graph': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/build_graph', '-v'),
+    'signed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/signed_api', '-v'),
     'typed-api': ('python', '-B', '-m', 'unittest', 'discover', '-s', 'examples/typed_api_sdk', '-v'),
     'rust-compiler': ('cargo', 'test', '--manifest-path', 'projects/bounded-lang/Cargo.toml', '--locked', '--offline'),
 }

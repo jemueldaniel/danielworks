@@ -355,3 +355,18 @@ pre-existing public tooling suite ran 156 tests with seven platform skips
 and zero failures on this checkout, before this module was integrated.
 New suite and full eleven-profile acceptance must be independently rerun.
 This does not establish production identity, PostgreSQL, EVM or cloud use.
+
+## Original signed-request reference — 11 October 2026
+
+A standalone HMAC-SHA256 / SQLite / loopback HTTP reference exercised
+real request/body/method/time signatures, concurrent replay fencing,
+durable nonce scopes, rolling quotas, negative headers and Windows
+socket-error handling. Initial early-rejection and sqlite3 cleanup
+failures were corrected. The unique definitive test count, the entire
+source-pinned export acceptance and full regression suite are recorded
+separately by their actual execution receipts.
+
+Limits: shared-key possession is not a person, signer credentials
+do not establish unrelated resource permissions, loopback HTTP is
+not TLS, and SQLite is not distributed multi-region replay protection.
+No private company source or production secrets were imported.

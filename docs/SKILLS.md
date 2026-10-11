@@ -81,3 +81,15 @@ recipe combines this with other tested, public modules.
 
 See [the skill-proof interview playbook](SKILL_PROOF_PLAYBOOK.md) for
 separate evidence levels and reproducible exercises.
+
+## Request signing and operational API boundaries
+
+The independently authored [localhost HMAC request gateway](../examples/signed_api/signed_api.py)
+and [real socket/SQLite regression suite](../examples/signed_api/test_signed_api.py)
+exercise canonical request signing, strict key-to-tenant binding,
+timestamp enforcement, durable replay prevention, concurrent rate
+limiting and deterministic failure codes. The added api-security recipe
+exports this reference alongside separately tested local jobs and policy.
+
+These are local shared-key tests, not public-facing identity verification,
+certificate validation, KMS/HSM storage or an independent security audit.

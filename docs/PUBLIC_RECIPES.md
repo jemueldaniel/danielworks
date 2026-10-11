@@ -9,7 +9,8 @@ They import no private repositories or accounts and deploy nothing.
 | service-foundation | jobs, ledger, migration, policy | Durable work, accounting invariants, policy decisions |
 | event-platform | jobs, event-outbox, policy, proof-platform | Signed event ingestion, workflows, local HTTP |
 | workflow-engine | build-graph, jobs, event-outbox, policy | In-memory DAG claims plus local durable jobs/events and policy |
-| full-reference | all twelve executed public profiles | Broad engineering reference without private data |
+| api-security | signed-api, policy, jobs | Key-bound signatures, nonce replay and local backend policy |
+| full-reference | all thirteen executed public profiles | Broad engineering reference without private data |
 
 From the exact published checkout, obtain its SOURCE_MANIFEST.json SHA-256
 outside the repository and provide that verified 64-character value:

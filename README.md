@@ -10,6 +10,21 @@ The original [repeated-profile diagnostic helper](docs/REPEATABILITY_DIAGNOSTICS
 
 **Authoritative destination:** [jemueldaniel/danielworks](https://github.com/jemueldaniel/danielworks). The public source does not include or change the personal website or its form application. The original published baseline is linked above; subsequent source changes require their own GitHub commit, exact-file readback and external receipt. [Qualification and delivery status](docs/COVERAGE_MATRIX.md#delivery-gates).
 
+## New: local signed API, replay fencing and durable rate control
+
+An [original HMAC-SHA256 localhost API reference](examples/signed_api/README.md)
+demonstrates request-bound canonical signatures, strict tenant/key matching,
+SQLite transactional nonce replay detection, rolling per-key quotas and
+actual loopback HTTP validation. Its tests include cross-tenant denial,
+signature tampering, body bounds, concurrent duplicate attempts and
+restart persistence. Early Windows socket-abort and SQLite test-fixture
+defects were fixed before passing the standalone regression suite.
+
+This is a local educational authentication reference, NOT production
+OAuth/OIDC, TLS identity, real account administration or multi-region
+authorization. The source-pinned exporter adds a thirteenth executed
+public-only profile and an api-security recipe.
+
 ## New: bounded workflow DAG and repeatable local scheduling evidence
 
 The original [dependency-graph planner](examples/build_graph/README.md)

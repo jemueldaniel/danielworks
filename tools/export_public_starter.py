@@ -114,6 +114,12 @@ STARTERS: dict[str, Starter] = {
         "examples/build_graph/demo.py",
         "examples/build_graph/test_graph.py",
     ), "python -B -m unittest discover -s examples/build_graph -v", "executed"),
+    "signed-api": Starter("signed-request-replay-guard", (
+        "examples/signed_api/README.md",
+        "examples/signed_api/signed_api.py",
+        "examples/signed_api/demo.py",
+        "examples/signed_api/test_signed_api.py",
+    ), "python -B -m unittest discover -s examples/signed_api -v", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

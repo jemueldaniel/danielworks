@@ -20,8 +20,9 @@ RECIPES: Final[dict[str, tuple[str, ...]]] = {
     "service-foundation": ("jobs", "ledger", "migration", "policy"),
     "event-platform": ("jobs", "event-outbox", "policy", "proof-platform"),
     "workflow-engine": ("build-graph", "jobs", "event-outbox", "policy"),
+    "api-security": ("signed-api", "policy", "jobs"),
     "full-reference": (
-        "agent", "build-graph", "evaluation", "event-outbox", "hybrid-search", "jobs", "ledger", "migration", "policy",
+        "agent", "build-graph", "evaluation", "event-outbox", "hybrid-search", "jobs", "ledger", "migration", "policy", "signed-api",
         "proof-platform", "retrieval", "training",
     ),
 }

@@ -258,6 +258,19 @@
       "boundary": "48 real local Windows regression tests with thread contention, expiring worker-bound leases and synthetic SHA-256 receipts. In-memory only, no command execution, durable distributed authority or independently authenticated execution."
     },
     {
+      "id": "signed-request-replay-guard",
+      "discipline": "Request-bound HMAC signing, replay resistance and localhost HTTP transport",
+      "qualification": "executed",
+      "implementation": [
+        "examples/signed_api/signed_api.py",
+        "examples/signed_api/demo.py"
+      ],
+      "tests": [
+        "examples/signed_api/test_signed_api.py"
+      ],
+      "boundary": "Original localhost Python example tested against real HTTP and SQLite concurrent nonce claims. Shared-key possession only: no TLS, identity enrollment, production IAM, external cloud, key rotation or distributed nonce agreement."
+    },
+    {
       "id": "evm-production",
       "discipline": "Deployed Solidity and independently verified EVM transactions",
       "qualification": "not_verified",

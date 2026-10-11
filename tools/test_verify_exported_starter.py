@@ -83,6 +83,14 @@ class ExportVerificationTests(unittest.TestCase):
         self.assertEqual(result['tests_run'], 1)
         self.assertEqual(result['groups'][0]['profile'], 'build-graph')
 
+    def test_signed_api_bundle_runs_real_loopback_and_replay_tests(self):
+        pin = self.build(['signed-api'])
+        verified = validate(self.project, pin)
+        accepted = run_profiles(self.project, verified)
+        self.assertEqual(accepted['status'], 'PASS')
+        self.assertEqual(accepted['tests_run'], 1)
+        self.assertEqual(accepted['groups'][0]['profile'], 'signed-api')
+
     def test_file_bytes_mutation_fails(self):
         pin = self.build()
         path = self.project / 'examples/mcp_agent/runtime.mjs'

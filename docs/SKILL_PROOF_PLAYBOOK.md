@@ -23,6 +23,7 @@ credentials, business contracts or private architecture.
 | Durable operations | SQLite job leases | Recovery and single-claim behavior, not distributed exactly-once |
 | HTTP/MCP + full stack | Typed local API, browser workbench | Session permissions, recovery and mobile UI tests |
 | Policy design | Deny-first tenant decisions | Cross-tenant rejection and deterministic audit receipts |
+| Signed local HTTP APIs | Request-bound HMAC + SQLite | Replay, expired signature, quota and forged body rejection |
 | Transaction arithmetic | Fictional-unit double-entry journal | Conservation and overdraw rejection |
 | Schema evolution | Trusted-SQL migration gate | Idempotence, rollback and drift rejection |
 | Retrieval quality | Lexical SQLite FTS5 ranking | Synthetic recall/MRR/nDCG and corruption detection |
