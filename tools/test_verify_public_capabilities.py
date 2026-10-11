@@ -19,7 +19,7 @@ class EvidenceTests(unittest.TestCase):
     def test_all_public_entries_structurally_bind_to_actual_paths(self):
         result = validate_index(self.data, self.paths)
         self.assertEqual(result['status'], 'PASS')
-        self.assertEqual(result['claims'], 27)
+        self.assertEqual(result['claims'], 28)
         self.assertIn('signed-event-delivery', {c['id'] for c in self.data['claims']})
         self.assertEqual(result['runtime_tests_executed_by_this_command'], 0)
         self.assertEqual(result['qualifications']['not_verified'], 3)
@@ -56,7 +56,7 @@ class EvidenceTests(unittest.TestCase):
             validate_index(self.data, self.paths)
 
     def test_unverified_capability_cannot_claim_implementation(self):
-        self.data['claims'][-1]['implementation'] = ['examples/durable_jobs/jobs.py']
+        next(c for c in self.data['claims'] if c['qualification'] == 'not_verified')['implementation'] = ['examples/durable_jobs/jobs.py']
         with self.assertRaisesRegex(ClaimError, 'unverified_claim_has_public_proof'):
             validate_index(self.data, self.paths)
 

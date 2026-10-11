@@ -155,6 +155,13 @@ class PublicStarterTests(unittest.TestCase):
         self.assertEqual(actual, expected | {'README.md', 'REUSE_MANIFEST.json'})
         self.assertEqual(result['tests_executed'], 0)
 
+    def test_proof_gallery_export_is_public_only_and_binds_six_files(self):
+        result = self.build(['proof-gallery'])
+        self.assertEqual(result['selected_files'], 6)
+        expected = set(STARTERS['proof-gallery'].paths)
+        actual = {p.relative_to(self.target).as_posix() for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(actual, expected | {'README.md', 'REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

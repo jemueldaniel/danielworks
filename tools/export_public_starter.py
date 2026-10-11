@@ -152,6 +152,14 @@ STARTERS: dict[str, Starter] = {
         "examples/ui_atlas/app.mjs",
         "examples/ui_atlas/test_model.mjs",
     ), "node --test --test-reporter=tap examples/ui_atlas/test_model.mjs", "executed"),
+    "proof-gallery": Starter("public-engineering-proof-gallery", (
+        "examples/proof_gallery/README.md",
+        "examples/proof_gallery/index.html",
+        "examples/proof_gallery/styles.css",
+        "examples/proof_gallery/model.mjs",
+        "examples/proof_gallery/app.mjs",
+        "examples/proof_gallery/test_model.mjs",
+    ), "node --test --test-reporter=tap examples/proof_gallery/test_model.mjs", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

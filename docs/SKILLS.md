@@ -1,3 +1,13 @@
+## Personal engineering evidence explorer
+
+The original [public Engineering Proof Gallery](../examples/proof_gallery/README.md)
+offers a searchable, screen-reader-oriented interface for exploring nineteen
+public reference implementations. Its independent model suite and real HTTP
+browser suite cover keyboard control, source-linked proof levels, safe local
+exports and responsive layouts. A gallery card's historical label cannot be
+promoted to production evidence by filtering or bundling it. See
+[public recipes](PUBLIC_RECIPES.md) for source-pinned adaptation.
+
 ## Accessible interactive SVG analytics — public demonstration
 
 [Signal Study](../examples/data_studio/README.md) demonstrates SVG chart

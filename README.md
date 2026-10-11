@@ -1,3 +1,21 @@
+## New: personal Engineering Proof Gallery with original public evidence
+
+The [Engineering Proof Gallery](examples/proof_gallery/README.md) is an
+independently built responsive showcase that organizes nineteen publicly
+inspectable technical references across interfaces, systems, AI/data, language
+and security. It features real keyboard shortcuts, case-study dialogs,
+evidence qualification filters, comparison, local bookmarks, theme persistence
+and safe CSV/JSON exports. **65 Node model tests and 19 local installed-Edge
+HTTP browser tests passed**, following correction of one CSV test expectation.
+No private company source, credentials or proprietary interface was used.
+
+A new source-pinned **proof-gallery** executed starter and five-profile
+**career-portfolio** recipe make the original gallery reusable alongside four
+other interactive UI references. See [public recipes](docs/PUBLIC_RECIPES.md).
+Publication proves only the original educational examples and their stated
+tests, not personal authorship of private repositories, broad ownership rights
+or a production portfolio deployment.
+
 ## New: original synthetic visual analytics and downloadable SVG
 
 [Signal Study](examples/data_studio/README.md) is a fully original, responsive

@@ -83,7 +83,7 @@ class OneShotPublicProjectTests(unittest.TestCase):
         result = assemble(ROOT, SOURCE_PIN, self.output, [], all_executed=True, timeout=60)
         self.assertEqual(result['status'], 'PASS_TESTED',result)
         self.assertEqual(set(result['profiles']), {p for p,x in STARTERS.items() if x.qualification == 'executed'})
-        self.assertEqual(result['tested_groups'], 17)
+        self.assertEqual(result['tested_groups'], 18)
         self.assertEqual({g['status'] for g in result['groups']},{'PASS'})
         self.assertTrue(result['posttest_bytes_verified'])
 

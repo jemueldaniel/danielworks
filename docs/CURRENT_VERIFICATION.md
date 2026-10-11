@@ -1,3 +1,34 @@
+## Personal Proof Gallery local browser acceptance - 12 October 2026
+
+An original public-only Engineering Proof Gallery maps nineteen published
+educational references to public implementation and test URLs. The standalone
+model suite passed 65/65 on Windows Node 24; the 19 real installed Microsoft
+Edge localhost HTTP tests passed after an initial run recorded 18/19 with a
+CSV-header expectation mismatch. The CSV output was correctly quoted; the
+test expectation was corrected. Actual browser checks include 320, 390, 768,
+1024 and 1440 pixel widths, zero horizontal page overflow, dialog focus
+restoration, saved preference persistence, command palette, controlled
+downloads and no external fetches during exercised interactions.
+
+These results qualify the original gallery only. The first five-profile
+source-pinned export correctly failed at runtime with no_tests_executed because
+the new TAP profile was missing from the fixed test-output parser. The parser
+was expanded to recognize the new public gallery. A passing rerun is a distinct
+gate; root npm integration, fresh remote publication and independently cloned
+restore are separate gates; private source ownership and production deployment are
+not established by this local acceptance. Initial full tooling regression exposed
+one brittle negative test relying on the last capability index entry being
+unverified. The new public executed claim changed that ordering; the negative
+test now selects an unverified claim by qualification, independently of order.
+The initial failure remains disclosed. The subsequent complete Windows tooling
+suite ran 183 cases: 176 passed, seven platform skips and zero failures. The
+full npm workflow separately passed TypeScript, build, 18 HTTP/MCP tests and
+six local browser suites (7 React, 14 Interface Lab, 20 UI Atlas, 13 Flow Lab,
+17 Visual Analytics and 19 Proof Gallery). A separately exported 18-profile
+public kit and five-profile career-portfolio recipe returned PASS_TESTED with
+post-test byte verification. These are local qualifications, not independent
+ownership, rights, production hosting or security certification.
+
 ## Visual analytics original release qualification — 12 October 2026
 
 Seven original public source and browser-test files add a synthetic responsive
