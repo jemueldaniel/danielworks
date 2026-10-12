@@ -1,4 +1,19 @@
-## New: 83-technology evidence atlas with qualified source observations
+## New: Layout Foundry — original runnable UI/UX engineering reference
+
+The [Layout Foundry](examples/layout_foundry/README.md) is a standalone,
+responsive frontend reference featuring genuine filtering, task creation,
+workflow transitions, validated forms, keyboard command palette, focus
+restoration, persisted preferences, dark/light themes and locally downloadable
+CSS/JSON/CSV outputs. It was authored separately from private company work,
+uses exclusively fictional task fixtures, and makes no external requests.
+The current Windows verification passed **45/45 Node model tests** and
+**13/13 installed Microsoft Edge loopback browser tests**, including five
+screen widths (320–1440 pixels) after an initial keyboard Escape case was
+reproduced and fixed. This is educational frontend evidence, not an employer
+code transfer, complete accessibility certification, backend service or
+production deployment. Exporter integration is a separate qualified gate.
+
+## New: 87-technology evidence atlas with qualified source observations
 
 The [Technology Atlas](examples/technology_atlas/README.md) is an independent
 responsive technology navigator with **87 generic entries** in seven

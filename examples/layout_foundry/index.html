@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-density="comfortable">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="color-scheme" content="light dark">
+ <meta name="description" content="Original interactive, privacy-safe frontend engineering reference.">
+ <title>Layout Foundry — Interactive interface patterns</title>
+ <link rel="stylesheet" href="./style.css">
+ <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+ <a class="skip" href="#main">Skip to content</a>
+ <header class="topbar">
+  <a class="wordmark" href="#main" aria-label="Layout Foundry home"><span class="mark" aria-hidden="true">L</span><span>layout<span class="muted">/</span>foundry</span></a>
+  <nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#workspace">Workspace</a><a href="#tokens">Tokens</a></nav>
+  <div class="head-actions"><button type="button" id="palette-open" class="shortcut" aria-keyshortcuts="Control+K Meta+K">Search <kbd>⌘ K</kbd></button><button type="button" id="theme" class="icon-button" aria-label="Switch theme">◐</button></div>
+ </header>
+ <main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+   <div><p class="eyebrow"><span class="live-dot"></span> OPEN REFERENCE / NO EXTERNAL SERVICES</p>
+    <h1 id="hero-title">Interfaces worth<br><em>building on.</em></h1>
+    <p class="lede">Original patterns for real interaction: responsive workspace, editable state, validated forms, keyboard flow and transferable design tokens.</p>
+    <div class="hero-actions"><button class="primary" id="new-top">Create a task <span aria-hidden="true">↗</span></button><a class="quiet-link" href="#tokens">Explore the system <span aria-hidden="true">→</span></a></div>
+   </div>
+   <aside class="hero-aside" aria-label="Demo features"><div class="aside-top">REFERENCE / 01 <span>● ● ●</span></div><div class="mono-label">BUILT FOR REUSE</div><div class="aside-big">Offline<br>by design.</div><div class="aside-line"></div><div class="aside-details"><span>Keyboard-first</span><strong>01</strong></div><div class="aside-details"><span>Portable tokens</span><strong>02</strong></div><div class="aside-details"><span>Local-only data</span><strong>03</strong></div></aside>
+  </section>
+  <section class="panel" id="overview" aria-labelledby="overview-title">
+   <div class="section-heading"><div><p class="eyebrow">01 / SNAPSHOT</p><h2 id="overview-title">Workspace pulse</h2></div><p>Fictional tasks · live calculations</p></div>
+   <div class="stat-grid"><div class="stat"><span>All tasks</span><strong id="total">0</strong><small>Total items</small></div><div class="stat"><span>In progress</span><strong id="active">0</strong><small>Currently active</small></div><div class="stat"><span>Needs attention</span><strong id="urgent">0</strong><small>High priority, not done</small></div><div class="stat"><span>Completion</span><strong id="percent">0%</strong><small>Delivered tasks</small></div></div>
+   <div class="progress-shell"><div class="progress-title"><span>Delivery progress</span><output id="progress-label">0%</output></div><div class="progress-track" role="progressbar" id="progress" aria-label="Task completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div></div>
+  </section>
+  <section class="panel" id="workspace" aria-labelledby="workspace-title">
+   <div class="section-heading"><div><p class="eyebrow">02 / INTERACTION</p><h2 id="workspace-title">The working table</h2></div><div class="row-actions"><button class="secondary" id="export-csv">Export CSV</button><button class="primary" id="new-workspace">New task +</button></div></div>
+   <div class="filters"><label class="search-field">Search tasks<input id="search" type="search" autocomplete="off" placeholder="Search title, team, priority"></label>
+    <label>Team<select id="team"><option>All</option><option>North</option><option>East</option><option>Central</option><option>West</option></select></label>
+    <label>Status<select id="status"><option>All</option><option>Planned</option><option>In progress</option><option>Review</option><option>Done</option></select></label>
+    <label>Sort<select id="sort"><option value="due">Due date</option><option value="title">Title</option><option value="priority">Priority</option><option value="status">Status</option><option value="id">Identifier</option></select></label>
+   </div>
+   <div class="table-wrap"><table><caption class="sr-only">Fictional work items, filtered and sorted by the controls above</caption>
+    <thead><tr><th scope="col">Task</th><th scope="col">Team</th><th scope="col">Priority</th><th scope="col">Status</th><th scope="col">Due</th><th scope="col">Action</th></tr></thead>
+    <tbody id="task-rows"></tbody></table></div>
+   <p id="empty" class="empty" hidden>No matching tasks. Clear a filter or create a new one.</p>
+   <div class="table-footer"><output id="shown" aria-live="polite">0 of 0 tasks</output><button id="reset-data" class="text-button" type="button">Restore sample data</button></div>
+  </section>
+  <section class="panel" id="tokens" aria-labelledby="tokens-title">
+   <div class="section-heading"><div><p class="eyebrow">03 / DESIGN TOKENS</p><h2 id="tokens-title">A system, not a screenshot</h2></div><div class="row-actions"><button class="secondary" id="download-css">Export CSS</button><button class="secondary" id="download-json">Export JSON</button></div></div>
+   <div class="token-layout"><div class="token-controls">
+    <label>Brand hue <output id="hue-value" for="hue">230°</output><input id="hue" type="range" min="0" max="360" value="230"></label>
+    <label>Corner radius <output id="radius-value" for="radius">14px</output><input id="radius" type="range" min="2" max="28" value="14"></label>
+    <label>Control density<select id="density"><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select></label>
+    <p>All generated values are bounded and exported locally. No telemetry or imported styles.</p>
+   </div><div class="token-preview" aria-label="Live component preview"><p class="eyebrow">LIVE PREVIEW</p><h3>Everything in its place.</h3><p>A flexible component system with contrast-aware modes, consistent spacing and visible focus.</p><div class="preview-actions"><button class="primary" type="button" id="preview-primary">Primary action</button><button class="secondary" type="button" id="preview-secondary">Secondary</button></div><div class="preview-badges"><span class="chip">Active</span><span class="chip muted-chip">Waiting</span><span class="chip success-chip">Complete</span></div></div></div>
+  </section>
+  <section class="bottom-note" aria-label="Usage boundary"><span class="mono-label">PUBLIC REFERENCE / 2026</span><p>Every item here is fictional. This offline reference demonstrates working interactions, not real customer records, an identity provider, payment processing or a production deployment.</p></section>
+ </main>
+ <footer><span>LAYOUT / FOUNDRY</span><span>Original public engineering sample · Review rights before reuse</span></footer>
+ <dialog id="task-dialog" aria-labelledby="task-title">
+  <form id="task-form" novalidate>
+   <div class="dialog-head"><div><p class="eyebrow">NEW WORK ITEM</p><h2 id="task-title">Create a task</h2></div><button type="button" id="close-task" class="icon-button" aria-label="Close dialog">✕</button></div>
+   <p class="dialog-desc">A working form with bounded fields, inline errors and local persistence.</p>
+   <div id="form-error" role="alert" aria-live="assertive" class="form-error" hidden></div>
+   <label>Task title<input name="title" id="draft-title" required minlength="3" maxlength="72" placeholder="What needs to be done?"><small id="error-title"></small></label>
+   <div class="dialog-grid"><label>Team<select name="team" id="draft-team" required><option value="">Select team</option><option>North</option><option>East</option><option>Central</option><option>West</option></select><small id="error-team"></small></label>
+    <label>Priority<select name="priority" id="draft-priority" required><option>Medium</option><option>Low</option><option>High</option></select><small id="error-priority"></small></label></div>
+   <label>Due date<input type="date" name="due" id="draft-due" required><small id="error-due"></small></label>
+   <label>Notes (optional)<textarea id="draft-notes" name="notes" maxlength="240" rows="3"></textarea><small id="error-notes"></small></label>
+   <div class="dialog-actions"><button type="button" class="secondary" id="cancel-task">Cancel</button><button type="submit" class="primary">Create task</button></div>
+  </form>
+ </dialog>
+ <dialog id="command-dialog" aria-labelledby="command-title">
+  <div class="dialog-head"><h2 id="command-title">Jump to a section</h2><button class="icon-button" id="close-command" aria-label="Close commands">✕</button></div>
+  <label class="sr-only" for="command-search">Filter commands</label><input id="command-search" type="search" placeholder="Type a command..." autocomplete="off">
+  <div id="command-list" class="command-list" aria-label="Available commands"></div>
+  <p class="dialog-desc">Keyboard shortcut: Ctrl or ⌘ + K · Escape closes</p>
+ </dialog>
+ <div id="toast" role="status" aria-live="polite" aria-atomic="true" class="toast" hidden></div>
+</body>
+</html>

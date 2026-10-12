@@ -3,18 +3,18 @@
   "title": "DanielWorks independently reproducible public engineering showcase",
   "date": "2026-10-12",
   "authoritative_repository": "jemueldaniel/danielworks",
-  "base_commit": "5ad6b2676317e4d1f7667cab6388a5e35a41c173",
-  "branch": "main",
+  "base_commit": "d6310035cdec5bf079b80478822efddb08b23fba",
+  "branch": "showcase/layout-foundry-20261012",
   "status": "PUBLIC_CANDIDATE_NOT_PRODUCTION_ATTESTED",
   "scope": "Original public source and synthesized fixtures; no private repository code or confidential assets",
-  "new_capability": "Original 87-technology public evidence atlas, 88 Node tests and 28 Edge browser tests, 19th source-pinned public model profile and 12th recipe; 33 generic source observations with no private code.",
+  "new_capability": "Original standalone Layout Foundry with 45 Node tests and 13 Microsoft Edge browser checks; public-only synthetic fixtures. Existing 87-technology atlas and 19 executed export profiles retained; no private company source.",
   "native_chromium_navigation": "WINDOWS_INSTALLED_EDGE_HTTP_VERIFIED",
   "production_deployment": "NOT_ATTEMPTED",
   "independent_whole_package_review": "NOT_COMPLETED",
-  "inventory_file_count": 217,
-  "complete_checkpoint_file_count_including_this_manifest": 218,
-  "payload_bytes_excluding_this_manifest": 1727718,
-  "payload_path_sha256_binding": "ad9c483bb0c0abc27401754aafe56921a11fe4bfc75ade2431ff9d5beb75b3e3",
+  "inventory_file_count": 224,
+  "complete_checkpoint_file_count_including_this_manifest": 225,
+  "payload_bytes_excluding_this_manifest": 1781337,
+  "payload_path_sha256_binding": "655a1a7435eed611fb6759b6bbf5a6b5c6690c7d31317f805c7f2e35c45eac9d",
   "files": [
     {
       "path": ".gitattributes",
@@ -43,8 +43,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 33693,
-      "sha256": "0f6997551d33f327e2c6fca224a721406ae39fd4266065c3b3d4deb88f49872d"
+      "bytes": 34659,
+      "sha256": "ccd4d679475f69769a7179fb698ec94a790934bdba10691221259bc01f78a185"
     },
     {
       "path": "docs/AI_ASSISTANCE.md",
@@ -393,6 +393,42 @@
       "mode": "100644",
       "bytes": 9079,
       "sha256": "5d6e2c33d138328e4d8abe30383ad86c79d5030d6f7275efb817e84fa56071bf"
+    },
+    {
+      "path": "examples/layout_foundry/README.md",
+      "mode": "100644",
+      "bytes": 2440,
+      "sha256": "2ea8e7d89841c9a3515786345349d7f3be03985319ea6128bf0da5fea6c9f909"
+    },
+    {
+      "path": "examples/layout_foundry/app.mjs",
+      "mode": "100644",
+      "bytes": 8460,
+      "sha256": "0ae6e9d673b6805aea4217bea52cc60b11282865df7ba9013057435c6460d9eb"
+    },
+    {
+      "path": "examples/layout_foundry/index.html",
+      "mode": "100644",
+      "bytes": 9423,
+      "sha256": "ff18232dcd6bdb01f21c583959688b5ede063de9133a4df05c70aab36a416520"
+    },
+    {
+      "path": "examples/layout_foundry/model.mjs",
+      "mode": "100644",
+      "bytes": 6410,
+      "sha256": "37036eef9f507752c3ad21f828201a729c1ef1d98d71ff49cf69ea30f2d62df5"
+    },
+    {
+      "path": "examples/layout_foundry/style.css",
+      "mode": "100644",
+      "bytes": 11476,
+      "sha256": "914b42c0b16aa06d61a023b5fa55ab228bf534f495ea005a70c5356181eebf13"
+    },
+    {
+      "path": "examples/layout_foundry/test_model.mjs",
+      "mode": "100644",
+      "bytes": 5596,
+      "sha256": "e3df035e10ef12e4d70182eb92739f878d355b6499d2dd0e5b8e8a0ef0db9db7"
     },
     {
       "path": "examples/mcp_agent/README.md",
@@ -981,6 +1017,12 @@
       "mode": "100644",
       "bytes": 12268,
       "sha256": "30938210bd31e300f372220e3d0841d34b30716d1db3887027a520b94c086f07"
+    },
+    {
+      "path": "projects/layout-foundry-tests/browser.test.mjs",
+      "mode": "100644",
+      "bytes": 8848,
+      "sha256": "913cd21df5af996af8937b1e67ca4545bc3be30879eedcc1eb983d7aa2dc4e52"
     },
     {
       "path": "projects/portable-proof-studio/README.md",
