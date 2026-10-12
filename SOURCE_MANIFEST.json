@@ -11,10 +11,10 @@
   "native_chromium_navigation": "WINDOWS_INSTALLED_EDGE_HTTP_VERIFIED",
   "production_deployment": "NOT_ATTEMPTED",
   "independent_whole_package_review": "NOT_COMPLETED",
-  "inventory_file_count": 224,
-  "complete_checkpoint_file_count_including_this_manifest": 225,
-  "payload_bytes_excluding_this_manifest": 1781337,
-  "payload_path_sha256_binding": "655a1a7435eed611fb6759b6bbf5a6b5c6690c7d31317f805c7f2e35c45eac9d",
+  "inventory_file_count": 227,
+  "complete_checkpoint_file_count_including_this_manifest": 228,
+  "payload_bytes_excluding_this_manifest": 1786208,
+  "payload_path_sha256_binding": "0a539d5144a12b8eaa821aa4e3f36b6f493f7ee6b4d4c7f1e98c8b55ca4ceecc",
   "files": [
     {
       "path": ".gitattributes",
@@ -207,6 +207,24 @@
       "mode": "100644",
       "bytes": 13107,
       "sha256": "286533a3f57e5e37c01a89a1ea7f4eca18766b5cd21a12b8ca03d72ea624d173"
+    },
+    {
+      "path": "examples/capability_mapper/README.md",
+      "mode": "100644",
+      "bytes": 794,
+      "sha256": "535852e14bc5b187e1257094b35f7c5e59718044a7f66865eab209cbb54d90fd"
+    },
+    {
+      "path": "examples/capability_mapper/catalog.py",
+      "mode": "100644",
+      "bytes": 2365,
+      "sha256": "f10db93477d1411871483c9affa1bab1f9a28f7fd898d59b14c8854d23e4556d"
+    },
+    {
+      "path": "examples/capability_mapper/test_catalog.py",
+      "mode": "100644",
+      "bytes": 1712,
+      "sha256": "85bf46d94e7577c98e19558410a4e928d45340d801a68441199473014c18a2ac"
     },
     {
       "path": "examples/data_studio/README.md",
