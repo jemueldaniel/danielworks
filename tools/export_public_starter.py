@@ -160,6 +160,15 @@ STARTERS: dict[str, Starter] = {
         "examples/proof_gallery/app.mjs",
         "examples/proof_gallery/test_model.mjs",
     ), "node --test --test-reporter=tap examples/proof_gallery/test_model.mjs", "executed"),
+    "technology-atlas": Starter("public-technology-atlas", (
+        "examples/technology_atlas/README.md",
+        "examples/technology_atlas/index.html",
+        "examples/technology_atlas/styles.css",
+        "examples/technology_atlas/data.mjs",
+        "examples/technology_atlas/model.mjs",
+        "examples/technology_atlas/app.mjs",
+        "examples/technology_atlas/test_model.mjs",
+    ), "node --test --test-reporter=tap examples/technology_atlas/test_model.mjs", "executed"),
     "typed-api": Starter("api-contracts", (
         "examples/typed_api_sdk/README.md",
         "examples/typed_api_sdk/service.py",

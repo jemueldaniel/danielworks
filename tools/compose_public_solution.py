@@ -26,9 +26,10 @@ RECIPES: Final[dict[str, tuple[str, ...]]] = {
     "interaction-systems": ("flow-lab", "interface-lab", "ui-atlas"),
     "visual-analytics": ("data-studio", "flow-lab", "interface-lab"),
     "career-portfolio": ("proof-gallery", "ui-atlas", "interface-lab", "flow-lab", "data-studio"),
+    "tech-and-interface": ("technology-atlas", "proof-gallery", "ui-atlas", "interface-lab", "flow-lab", "data-studio"),
     "full-reference": (
         "agent", "build-graph", "data-studio", "evaluation", "event-outbox", "flow-lab", "hybrid-search", "interface-lab", "ui-atlas", "jobs", "ledger", "migration", "policy", "signed-api",
-        "proof-gallery", "proof-platform", "retrieval", "training",
+        "proof-gallery", "proof-platform", "retrieval", "technology-atlas", "training",
     ),
 }
 

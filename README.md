@@ -1,3 +1,20 @@
+## New: 83-technology evidence atlas with qualified source observations
+
+The [Technology Atlas](examples/technology_atlas/README.md) is an independent
+responsive technology navigator with **87 generic entries** in seven
+disciplines: **52 public-tested examples**, two historical public references,
+and **33 source observations** that never link private code. The original
+Node state tests passed **88/88**; installed Microsoft Edge loopback browser
+tests passed **28/28** across 320 to 1440 pixels after correcting two
+initial overly narrow browser test expectations.
+
+The source-pinned **technology-atlas** reference adds the 19th executed
+public profile. The six-profile **tech-and-interface** recipe combines this
+evidence index with five original UI and interaction examples. See the
+[full public technology matrix](docs/TECHNOLOGY_EVIDENCE_MATRIX.md).
+Source presence is not proof of personal authorship, licenses, mastery or
+production deployment. No private startup code is copied or exposed.
+
 ## New: personal Engineering Proof Gallery with original public evidence
 
 The [Engineering Proof Gallery](examples/proof_gallery/README.md) is an

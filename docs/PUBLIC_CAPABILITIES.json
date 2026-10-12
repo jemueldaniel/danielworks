@@ -373,6 +373,23 @@
         "projects/proof-gallery-tests/browser.test.mjs"
       ],
       "boundary": "Original public-only interface with 65 model and 19 Windows Edge HTTP browser passes; keyboard actions, modal focus, responsive views, safe CSV and JSON. No private code, employer IP, production service, complete WCAG or authorship certification."
+    },
+    {
+      "id": "public-technology-atlas",
+      "discipline": "Interactive technology classification with source-linked public evidence and truthful skills boundaries",
+      "qualification": "executed",
+      "implementation": [
+        "examples/technology_atlas/index.html",
+        "examples/technology_atlas/styles.css",
+        "examples/technology_atlas/data.mjs",
+        "examples/technology_atlas/model.mjs",
+        "examples/technology_atlas/app.mjs"
+      ],
+      "tests": [
+        "examples/technology_atlas/test_model.mjs",
+        "projects/technology-atlas-tests/browser.test.mjs"
+      ],
+      "boundary": "Original 87-entry public-only atlas: 52 tested references, two historical references and 33 generic source observations. 88 Node model and 28 Edge browser passes. No private IP, employment ownership, cloud deployment or expertise certification."
     }
   ]
 }

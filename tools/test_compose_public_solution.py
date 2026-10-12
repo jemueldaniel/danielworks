@@ -26,7 +26,7 @@ class RecipeTests(unittest.TestCase):
         self.receipt = self.root / "receipt.json"
 
     def test_recipes_contain_only_prequalified_public_profiles(self):
-        self.assertEqual(set(RECIPES), {"ai-search","service-foundation","event-platform","workflow-engine","api-security","frontend-studio","ui-experiences","interaction-systems","visual-analytics","career-portfolio","full-reference"})
+        self.assertEqual(set(RECIPES), {"ai-search","service-foundation","event-platform","workflow-engine","api-security","frontend-studio","ui-experiences","interaction-systems","visual-analytics","career-portfolio","tech-and-interface","full-reference"})
         for name in RECIPES:
             selected = select_recipe(name)
             self.assertEqual(len(selected), len(set(selected)))
@@ -40,6 +40,14 @@ class RecipeTests(unittest.TestCase):
         self.assertTrue((self.dest / "examples/proof_gallery/index.html").is_file())
         self.assertTrue((self.dest / "examples/data_studio/model.mjs").is_file())
         self.assertEqual(json.loads(self.receipt.read_text())["tested_groups"], 5)
+
+    def test_technology_atlas_recipe_runs_six_original_public_models(self):
+        result = compose(ROOT, PIN, "tech-and-interface", self.dest, receipt=self.receipt)
+        self.assertEqual(result["status"], "PASS_TESTED", result)
+        self.assertEqual(result["tested_groups"], 6)
+        self.assertTrue(result["posttest_bytes_verified"])
+        self.assertTrue((self.dest / "examples/technology_atlas/index.html").is_file())
+        self.assertTrue((self.dest / "examples/proof_gallery/model.mjs").is_file())
 
     def test_unknown_recipe_rejected_without_side_effects(self):
         for bad in ("../private", "payments-prod", "", 17, "SERVICE-FOUNDATION"):

@@ -1,3 +1,13 @@
+## Technology Atlas: qualified language and tooling breadth
+
+The independent [Technology Atlas](../examples/technology_atlas/README.md)
+organizes 87 generic languages, frameworks, services and engineering methods
+into seven disciplines. Its qualification taxonomy explicitly separates
+52 public-tested references, two historical cases and 33 generic source-only
+observations. Only publicly reviewed code is linked or exported.
+[Full public matrix](TECHNOLOGY_EVIDENCE_MATRIX.md) and
+[approved recipes](PUBLIC_RECIPES.md) support employer evaluation.
+
 ## Personal engineering evidence explorer
 
 The original [public Engineering Proof Gallery](../examples/proof_gallery/README.md)

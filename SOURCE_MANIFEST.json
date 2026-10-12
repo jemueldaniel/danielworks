@@ -3,18 +3,18 @@
   "title": "DanielWorks independently reproducible public engineering showcase",
   "date": "2026-10-12",
   "authoritative_repository": "jemueldaniel/danielworks",
-  "base_commit": "2afbe532f1591a79dd2b31bca9315895f79b827b",
+  "base_commit": "5ad6b2676317e4d1f7667cab6388a5e35a41c173",
   "branch": "main",
   "status": "PUBLIC_CANDIDATE_NOT_PRODUCTION_ATTESTED",
   "scope": "Original public source and synthesized fixtures; no private repository code or confidential assets",
-  "new_capability": "Original Engineering Proof Gallery with 65 Node tests, 19 real Edge HTTP tests, source-pinned 18th executed public starter and 11th public recipe. No private code.",
+  "new_capability": "Original 87-technology public evidence atlas, 88 Node tests and 28 Edge browser tests, 19th source-pinned public model profile and 12th recipe; 33 generic source observations with no private code.",
   "native_chromium_navigation": "WINDOWS_INSTALLED_EDGE_HTTP_VERIFIED",
   "production_deployment": "NOT_ATTEMPTED",
   "independent_whole_package_review": "NOT_COMPLETED",
-  "inventory_file_count": 208,
-  "complete_checkpoint_file_count_including_this_manifest": 209,
-  "payload_bytes_excluding_this_manifest": 1615607,
-  "payload_path_sha256_binding": "a8718809fd3ee9d0d975af0b825a38e2488f18e99726748af1a647b538e2b5c2",
+  "inventory_file_count": 217,
+  "complete_checkpoint_file_count_including_this_manifest": 218,
+  "payload_bytes_excluding_this_manifest": 1727718,
+  "payload_path_sha256_binding": "ad9c483bb0c0abc27401754aafe56921a11fe4bfc75ade2431ff9d5beb75b3e3",
   "files": [
     {
       "path": ".gitattributes",
@@ -43,8 +43,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "bytes": 32692,
-      "sha256": "083d3e1785042b7181eca561097937111dc84e25def152ee1cb3df2719322338"
+      "bytes": 33693,
+      "sha256": "0f6997551d33f327e2c6fca224a721406ae39fd4266065c3b3d4deb88f49872d"
     },
     {
       "path": "docs/AI_ASSISTANCE.md",
@@ -67,8 +67,8 @@
     {
       "path": "docs/CURRENT_VERIFICATION.md",
       "mode": "100644",
-      "bytes": 51096,
-      "sha256": "053e2bb37b5c35eb007ecc055fd329ad21cb640205bda22dfff94a70f0fdbb93"
+      "bytes": 53207,
+      "sha256": "fd7572d8709627e274e8e002621e307d1a807393b497ed348d49f918f0d3aa9e"
     },
     {
       "path": "docs/DEPENDENCIES.md",
@@ -85,14 +85,14 @@
     {
       "path": "docs/PUBLIC_CAPABILITIES.json",
       "mode": "100644",
-      "bytes": 16258,
-      "sha256": "677a439638cc03ab4368630ca081e23a5c2f7d803a71569a31e2734b1f717d91"
+      "bytes": 17142,
+      "sha256": "23074744d477e840dabd956c555421f650551040ac2382b94c3f21c57c0b0599"
     },
     {
       "path": "docs/PUBLIC_RECIPES.md",
       "mode": "100644",
-      "bytes": 2774,
-      "sha256": "3785b1ee6a000a0b0709e1f2070fb628193639ab7a3391982a955d6f149b413c"
+      "bytes": 2973,
+      "sha256": "2834a3c0384f80cf8a9ec22c888afaea4b93a08628f129476a35d4f632017dd4"
     },
     {
       "path": "docs/RECOVERY.md",
@@ -115,8 +115,8 @@
     {
       "path": "docs/SKILLS.md",
       "mode": "100644",
-      "bytes": 14002,
-      "sha256": "06ca54cdc8948c3262f8bd573983f097305433c33d7afb833fc389ffe2d6ec6e"
+      "bytes": 14553,
+      "sha256": "9f187734700e50c9a87d3a372bca2c6daa950afe1d2259e9291b82969c292668"
     },
     {
       "path": "docs/SKILL_PROOF_PLAYBOOK.md",
@@ -129,6 +129,12 @@
       "mode": "100644",
       "bytes": 5403,
       "sha256": "e4c8c5fc4c16b42c003556a82b933edcfc7a1dce92892e13683f8674668f2a7c"
+    },
+    {
+      "path": "docs/TECHNOLOGY_EVIDENCE_MATRIX.md",
+      "mode": "100644",
+      "bytes": 10028,
+      "sha256": "b02b77dc12e5b36f4e2ad5a70b43651a1143241310f28b83dcc6eebb60286f97"
     },
     {
       "path": "docs/TEST_EVIDENCE.md",
@@ -445,8 +451,8 @@
     {
       "path": "examples/proof_gallery/index.html",
       "mode": "100644",
-      "bytes": 11694,
-      "sha256": "072fff904f5c430803ed172104db4b4193093cdbe2f3009c7483bf6ba9b9e357"
+      "bytes": 11913,
+      "sha256": "7567ba890ab4e9bf0dbfa3285d9a8675d2f3acdd479d1519abb1c8059dbe10f1"
     },
     {
       "path": "examples/proof_gallery/model.mjs",
@@ -605,6 +611,48 @@
       "sha256": "a28f2302bcd04d773de1976014be255a93ded69d25f52d28321ef3ef9f115150"
     },
     {
+      "path": "examples/technology_atlas/README.md",
+      "mode": "100644",
+      "bytes": 4083,
+      "sha256": "89e157dbea43c9a4685cea15ef2bde36b5d67153db643c95c3275b84994fff03"
+    },
+    {
+      "path": "examples/technology_atlas/app.mjs",
+      "mode": "100644",
+      "bytes": 11592,
+      "sha256": "8d8abf4ac34c6c451905db7154b6cd13f9c0aa9776d79177846a491185993e90"
+    },
+    {
+      "path": "examples/technology_atlas/data.mjs",
+      "mode": "100644",
+      "bytes": 15989,
+      "sha256": "f2b1807e326573778f8bf4fcf50b71582a1684c4a7c6e180cd8ec1e91bfcb92f"
+    },
+    {
+      "path": "examples/technology_atlas/index.html",
+      "mode": "100644",
+      "bytes": 10991,
+      "sha256": "4d161e74f7c2cdc275eaf8b4ec4f088d6f4d2a8f5a4d32fb9e56852f41a61362"
+    },
+    {
+      "path": "examples/technology_atlas/model.mjs",
+      "mode": "100644",
+      "bytes": 5999,
+      "sha256": "9a35fb800f5fdd5ea8e4f8964cca6d1cf5307b3a5a7f345e1bf3e65f47ccdf6e"
+    },
+    {
+      "path": "examples/technology_atlas/styles.css",
+      "mode": "100644",
+      "bytes": 20060,
+      "sha256": "be3499e20a21e09e8f87329b0b7694f3bd89063e83e46bc30c8c56d067cd90bc"
+    },
+    {
+      "path": "examples/technology_atlas/test_model.mjs",
+      "mode": "100644",
+      "bytes": 12617,
+      "sha256": "d01273083dfa4ef61cf8e4de3e5589fdf61b31329266adabd62413318d957933"
+    },
+    {
       "path": "examples/tenant_policy/README.md",
       "mode": "100644",
       "bytes": 2001,
@@ -709,8 +757,8 @@
     {
       "path": "package.json",
       "mode": "100644",
-      "bytes": 1664,
-      "sha256": "c3560871eb3988d81a319b09b4553246a887c778eb10114c6eab87f8d5865e32"
+      "bytes": 1811,
+      "sha256": "8ac5a9ad1e4023fcc0e2125414ade167c9f2d89cdf78c896fd8186181bea264a"
     },
     {
       "path": "projects/bounded-lang/Cargo.lock",
@@ -995,6 +1043,12 @@
       "sha256": "43c001953cdec699b95ab2561b69aa68391e4939baceb3e7356c70c0d30fc2a5"
     },
     {
+      "path": "projects/technology-atlas-tests/browser.test.mjs",
+      "mode": "100644",
+      "bytes": 13912,
+      "sha256": "f5ede9b53f58693d1664e5caab7a86860cc703ce09a6acc87f81c553ff678b57"
+    },
+    {
       "path": "projects/ui-atlas-tests/browser.test.mjs",
       "mode": "100644",
       "bytes": 14299,
@@ -1003,8 +1057,8 @@
     {
       "path": "tools/compose_public_solution.py",
       "mode": "100644",
-      "bytes": 3935,
-      "sha256": "ed00322d0ee748e2397e769908e800831094081f3e264896ac9d95f7a7f64ba8"
+      "bytes": 4076,
+      "sha256": "37e9532098f2155475ff203bd4f8684e232d19c93f848b6ccf80b95b536dcffe"
     },
     {
       "path": "tools/diagnose_public_profiles.py",
@@ -1015,8 +1069,8 @@
     {
       "path": "tools/export_public_starter.py",
       "mode": "100644",
-      "bytes": 17831,
-      "sha256": "a6e87d7b3e32b9a6f2bd80d1875de8655c8efba4f02757f95ac25d9f11310e96"
+      "bytes": 18321,
+      "sha256": "ed22023af7489655908125a38e1fcaae22498b8cbbbed45f603e0e1afb1cd427"
     },
     {
       "path": "tools/one_shot_public_project.py",
@@ -1027,8 +1081,8 @@
     {
       "path": "tools/test_compose_public_solution.py",
       "mode": "100644",
-      "bytes": 10126,
-      "sha256": "c94885b5b27a1c55cc12b1639c69237794386802947d8f631ea17407f06b6887"
+      "bytes": 10665,
+      "sha256": "cd95cf6bdb1540a00ea23c0e64724380b9a944cbeab70f56a4a980136047597d"
     },
     {
       "path": "tools/test_diagnose_public_profiles.py",
@@ -1039,14 +1093,14 @@
     {
       "path": "tools/test_export_public_starter.py",
       "mode": "100644",
-      "bytes": 14832,
-      "sha256": "4055237501ce5e272f4bdf8a8789210ca67672d338a24786062bc6a960b431e3"
+      "bytes": 15259,
+      "sha256": "4b052006610041804005c45b42c438cb2fb5a01337198163386c3459d759d1af"
     },
     {
       "path": "tools/test_one_shot_public_project.py",
       "mode": "100644",
       "bytes": 18243,
-      "sha256": "a354b332ba952be2984af2a2907f0da70a2d641d7fe15b44954cdadca3d359e7"
+      "sha256": "66cba0ef6d997309dcf03f427451c16b0e97269468107e4878ed8cc3fd369429"
     },
     {
       "path": "tools/test_verify_exported_starter.py",
@@ -1064,7 +1118,7 @@
       "path": "tools/test_verify_public_capabilities.py",
       "mode": "100644",
       "bytes": 5653,
-      "sha256": "45dfa08f2ac5789d5cb7f9dea8b0f2dc6e7f9c1015b74b26949db3e0889f5513"
+      "sha256": "b17dc83a3d1cb720131c71d85f58ed256362d6a845393b5c5c90156ed48b4a26"
     },
     {
       "path": "tools/test_verify_runner.py",
@@ -1087,8 +1141,8 @@
     {
       "path": "tools/verify_exported_starter.py",
       "mode": "100644",
-      "bytes": 11400,
-      "sha256": "3169556bcd2e3a3b4aa7c30d2d1e115e7d35ac3863661fd2717b5afa9dfba8ec"
+      "bytes": 11531,
+      "sha256": "62f5d8e7a5de0d543887a31d44f39c30b55541e17f4c9350a6f6aee25dc01984"
     },
     {
       "path": "tools/verify_git_commit.py",

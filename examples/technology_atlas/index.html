@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="DanielWorks technology atlas: inspectable public engineering evidence and carefully qualified source observations.">
+<meta name="theme-color" content="#101713">
+<title>Technology Atlas — DanielWorks</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="module" src="./app.mjs"></script>
+</head>
+<body data-theme="dark">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="shell">
+<aside class="sidebar">
+ <a class="identity" href="../proof_gallery/" aria-label="DanielWorks proof gallery"><span class="identity-symbol">D<span>W</span></span><span class="identity-word">DANIEL<em>WORKS</em><small>ENGINEERING PORTFOLIO</small></span></a>
+ <div class="sidebar-divider"></div>
+ <div class="aside-kicker">EXPLORE THE ARCHIVE</div>
+ <nav aria-label="Primary">
+  <a href="../proof_gallery/"><span aria-hidden="true">◧</span> Proof Gallery</a>
+  <a href="#index" aria-current="page"><span aria-hidden="true">⌘</span> Technology Atlas</a>
+  <a href="#method"><span aria-hidden="true">◇</span> Evidence method</a>
+  <a href="#reuse"><span aria-hidden="true">↗</span> Reuse recipes</a>
+ </nav>
+ <div class="sidebar-spacer"></div>
+ <div class="confidential"><div><i aria-hidden="true"></i> PRIVACY BY DESIGN</div><p>Only approved public implementation paths are linked. Non-public technology observations have no source links.</p></div>
+ <div class="sidebar-end">ORIGINAL PUBLIC DEMONSTRATIONS <span>2026</span></div>
+</aside>
+<div class="content-wrap">
+<header class="topbar">
+ <div class="mobile-logo">DW <span>TECHNOLOGY ATLAS</span></div>
+ <div class="breadcrumbs">ENGINEERING <span> / </span> LIBRARY <span> / </span> <strong>TECHNOLOGY ATLAS</strong></div>
+ <div class="header-actions"><span class="header-status"><i aria-hidden="true"></i> EVIDENCE-GRADED</span>
+  <button type="button" id="command-open" class="top-action" aria-haspopup="dialog" aria-label="Open quick actions">⌘ <kbd>Ctrl K</kbd></button>
+  <button type="button" id="theme-toggle" class="top-action" aria-label="Switch theme">◐</button></div>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+ <div class="hero-content"><p class="eyebrow"><span>02 / 04</span> THE TECHNICAL RANGE</p>
+  <h1 id="hero-title">The tools.<br><em>The techniques.</em><br>The evidence.</h1>
+  <p class="intro">A curated atlas of languages, frameworks, infrastructure and engineering methods represented in my work. Every item is separated into independently reproducible public proof or bounded source observation.</p>
+  <div class="hero-links"><a class="primary-button" href="#index">Explore technologies <span>↗</span></a><a class="line-button" href="#reuse">Build a public reference ↗</a></div>
+ </div>
+ <div class="hero-graphic" aria-hidden="true">
+  <div class="gridfield"></div><div class="halo halo-one"></div><div class="halo halo-two"></div>
+  <div class="terminal-frame"><div class="terminal-header"><span>TECHNOLOGY INDEX</span><span>◻ ◻ ◻</span></div>
+   <div class="terminal-body"><div class="terminal-path"><span>◈</span> source → validation → evidence</div>
+    <div class="code-line"><b>01</b><span>classify()</span><span>PASS</span></div>
+    <div class="code-line"><b>02</b><span>verify_public()</span><span>PASS</span></div>
+    <div class="code-line"><b>03</b><span>disclose_limits()</span><span>TRUE</span></div>
+    <div class="code-line"><b>04</b><span>copy_private()</span><span>DENIED</span></div>
+   </div><div class="terminal-footer">SOURCE-GROUNDED / PUBLIC-ONLY</div></div>
+ </div>
+</section>
+<section class="metrics" aria-label="Technology coverage summary">
+ <div class="metric"><small>REVIEWED TECHNOLOGIES</small><div><strong id="total-count">—</strong><span>observed in inspected work</span></div></div>
+ <div class="metric"><small>PUBLIC EXECUTED EXAMPLES</small><div><strong id="verified-count">—</strong><span>inspectable source evidence</span></div></div>
+ <div class="metric"><small>PRIVATE-SOURCE OBSERVATIONS</small><div><strong id="observed-count">—</strong><span>no confidential implementation linked</span></div></div>
+</section>
+<section id="index" class="index-section" aria-labelledby="index-title">
+ <div class="section-intro"><div><p class="section-index">01 / THE TECHNOLOGY INDEX</p><h2 id="index-title">Engineering, <em>mapped.</em></h2><p>Explore a technology and open exactly the public proof available. Save or shortlist skills for your next project.</p></div>
+ <div class="export-actions"><button type="button" id="download-csv">↓ CSV</button><button type="button" id="download-json">↓ Evidence JSON</button></div></div>
+ <div class="legend" aria-label="Evidence levels"><span><i class="dot public"></i> Public-tested: executable references</span><span><i class="dot historical"></i> Public-historical: previous evidence only</span><span><i class="dot observed"></i> Source-observed: no public test claim</span></div>
+ <div class="filter-box">
+  <div class="top-filters">
+   <label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Search technologies</span><input type="search" id="search" maxlength="100" placeholder="Search technologies, skills, techniques…" autocomplete="off"><kbd>/</kbd></label>
+   <label class="field"><span>PROOF LEVEL</span><select id="level-filter"><option>All</option><option>Public-tested</option><option>Public-historical</option><option>Source-observed</option></select></label>
+   <label class="field"><span>ORDER</span><select id="sort"><option value="featured">Featured</option><option value="name">Name A–Z</option><option value="category">Discipline</option><option value="evidence">Evidence level</option></select></label>
+  </div>
+  <div class="filter-bottom"><div id="category-tabs" class="categories" role="group" aria-label="Discipline filters"></div><label class="saved-only"><input type="checkbox" id="saved-only"><span>Saved only</span></label></div>
+ </div>
+ <div class="result-line"><p id="result-label" aria-live="polite">Loading evidence catalog…</p><button id="reset-filters" type="button">Reset filters ↺</button></div>
+ <div id="tech-grid" class="tech-grid" role="list" aria-label="Technology evidence"></div>
+ <div id="empty-state" class="empty" hidden><strong>No matching technologies.</strong><p>Try clearing a filter or searching another skill.</p><button type="button" id="empty-reset" class="primary-button">Show all technologies</button></div>
+</section>
+<section id="method" class="method" aria-labelledby="method-title"><div><p class="section-index">02 / WHY QUALIFICATION MATTERS</p><h2 id="method-title">Breadth without <em>bluffing.</em></h2><p>Professional portfolios should distinguish seeing or contributing to a codebase from reproducing a behavior in a publicly reviewable example. This atlas exposes that difference explicitly.</p>
+ <a href="https://github.com/jemueldaniel/danielworks/blob/main/docs/PUBLIC_CAPABILITIES.json" target="_blank" rel="noopener noreferrer">Read the public capability index ↗</a></div>
+ <div class="method-cards"><article><span>01 / CHECK</span><h3>Source observed</h3><p>Generic technology usage inferred from inspected filenames, configuration or dependencies. No private file is republished.</p></article><article><span>02 / EXECUTE</span><h3>Behavior tested</h3><p>Original public code, reproducible tests, browser behavior and transparent failure limitations.</p></article><article><span>03 / TRANSFER</span><h3>Reference, not a clone</h3><p>Generate source-pinned public teaching modules. Audit permissions and security before deploying for an employer.</p></article></div>
+</section>
+<section id="reuse" class="reuse" aria-labelledby="reuse-title"><div><p class="section-index">03 / REPRODUCIBLE ENGINEERING</p><h2 id="reuse-title">Choose a foundation.<br><em>Build what comes next.</em></h2><p>Pick a preapproved public-only engineering recipe. The exact manifest SHA-256 must come from an independently verified GitHub checkout.</p></div>
+<div class="recipe-panel"><label for="recipe-picker">SELECT A FIXED PUBLIC RECIPE</label><select id="recipe-picker"></select><pre id="recipe-command" tabindex="0"></pre><div><small>NO PRIVATE SOURCE · NO AUTOMATIC DEPLOYMENT</small><button type="button" class="primary-button" id="copy-command">Copy command ↗</button></div></div></section>
+<footer><div><strong>DANIELWORKS</strong><p>Engineering, with evidence.</p></div><small>Private implementations remain private. Public demos are educational and not independent authorship or production certifications.</small></footer>
+</main>
+</div>
+</div>
+<aside id="selection-tray" class="selection-tray" aria-label="Selected technologies" hidden><div><strong id="selection-label">0 / 8 selected</strong><p>Compare qualifications and public reuse options.</p></div><div id="selected-tags" class="selected-tags"></div><button type="button" id="open-plan" class="primary-button">Review stack</button><button type="button" id="clear-selection">Clear</button></aside>
+<dialog id="detail-dialog" aria-labelledby="detail-title"><div class="dialog-inner"><div class="dialog-top"><span class="eyebrow">TECHNOLOGY EVIDENCE</span><button class="close-dialog" aria-label="Close technology detail" type="button" data-dialog-close="detail-dialog">×</button></div><div id="detail-grade" class="dialog-grade"></div><h2 id="detail-title"></h2><p id="detail-description"></p><div class="detail-box"><strong>Evidence boundary</strong><p id="detail-boundary"></p></div><div id="detail-links" class="detail-links"></div></div></dialog>
+<dialog id="plan-dialog" aria-labelledby="plan-title"><div class="dialog-inner"><div class="dialog-top"><span class="eyebrow">PUBLIC PORTABILITY REVIEW</span><button class="close-dialog" aria-label="Close selected stack" type="button" data-dialog-close="plan-dialog">×</button></div><h2 id="plan-title">Your selected stack</h2><div id="plan-summary"></div><div id="plan-items"></div><label for="plan-recipe">RECOMMENDED FIXED PUBLIC REFERENCE</label><select id="plan-recipe"></select><pre id="plan-command"></pre><p class="fine-print">No selected source-observed technology is silently converted into a public tested claim. A recipe is a related example, not proof of every selected technology.</p></div></dialog>
+<dialog id="command-dialog" aria-labelledby="command-title"><div class="dialog-inner"><div class="dialog-top"><h2 id="command-title">Quick actions</h2><button class="close-dialog" aria-label="Close quick actions" type="button" data-dialog-close="command-dialog">×</button></div><input id="command-search" placeholder="Search actions…" type="search" autocomplete="off"><div id="command-results"></div><p class="fine-print">Ctrl/⌘ + K to open. Slash to focus search.</p></div></dialog>
+<div class="sr-only" aria-live="polite" role="status" id="live"></div>
+</body>
+</html>

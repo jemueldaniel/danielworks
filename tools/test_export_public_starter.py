@@ -162,6 +162,13 @@ class PublicStarterTests(unittest.TestCase):
         actual = {p.relative_to(self.target).as_posix() for p in self.target.rglob('*') if p.is_file()}
         self.assertEqual(actual, expected | {'README.md', 'REUSE_MANIFEST.json'})
 
+    def test_technology_atlas_starter_exports_only_seven_public_files(self):
+        result = self.build(['technology-atlas'])
+        self.assertEqual(result['selected_files'], 7)
+        expected = set(STARTERS['technology-atlas'].paths)
+        actual = {p.relative_to(self.target).as_posix() for p in self.target.rglob('*') if p.is_file()}
+        self.assertEqual(actual, expected | {'README.md', 'REUSE_MANIFEST.json'})
+
     def test_cannot_duplicate_profile(self):
         with self.assertRaisesRegex(StarterError, 'duplicate_profile'):
             self.build(['agent','agent'])

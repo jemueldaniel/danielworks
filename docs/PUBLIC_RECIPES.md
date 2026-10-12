@@ -1,6 +1,6 @@
 # Reusable original public engineering recipes
 
-Eleven fixed source-only recipes compose tested, self-contained examples.
+Twelve fixed source-only recipes compose tested, self-contained examples.
 They import no private repositories or accounts and deploy nothing.
 
 | Recipe | Fixed public profiles | Demonstrates |
@@ -15,7 +15,8 @@ They import no private repositories or accounts and deploy nothing.
 | interaction-systems | flow-lab, interface-lab, ui-atlas | Editable graph canvas, responsive table and multi-domain interfaces with separate executable state suites |
 | visual-analytics | data-studio, flow-lab, interface-lab | Real interactive SVG chart modes, graph editing and responsive UI, each with executed state tests |
 | career-portfolio | proof-gallery, ui-atlas, interface-lab, flow-lab, data-studio | Interview evidence browser and four runnable independent UI demonstrations |
-| full-reference | all eighteen executed public profiles | Broad engineering reference without private data |
+| tech-and-interface | technology-atlas, proof-gallery, ui-atlas, interface-lab, flow-lab, data-studio | Curated technology evidence and five original UI examples; six separately testable profiles |
+| full-reference | all nineteen executed public profiles | Broad engineering reference without private data |
 
 From the exact published checkout, obtain its SOURCE_MANIFEST.json SHA-256
 outside the repository and provide that verified 64-character value:

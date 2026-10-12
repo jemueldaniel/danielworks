@@ -1,3 +1,36 @@
+## Original Technology Atlas local acceptance - 12 October 2026
+
+The original public Technology Atlas contains 87 qualified technology entries:
+52 with runnable public references, two historical public references, and
+33 source-observed technologies with no private source or runtime claims.
+The Windows Node state model passed 88/88. Installed Microsoft Edge passed
+28/28 localhost HTTP browser tests at 320/390/768/1024/1440 px, including
+search, evidence filters, keyboard/focus, saved state, safe downloads, and
+no external requests during the tested interactions.
+
+The later four-technology extension added source-observed Tauri, Three.js,
+Redis and Supabase (generic dependencies or file-path observations only).
+An initial inserted 28th browser test contained a source syntax error. That
+candidate did not execute; the test wrapper was repaired and the entire
+28-case browser suite passed with zero failures. Separately, the original
+public Rust language reference passed 18/18 Cargo tests in Windows --offline
+mode, but its overall historical export qualification remains unchanged.
+
+The initial Edge suite returned 24/26 due to two too-narrow test expectations
+(search matched both names and descriptions; a selector found another dialog's
+fine print). The tests were corrected and all 26 original cases rerun. A separate
+27th full-repository source-link check was added and passed. A 28th check
+confirms source-observed labels for four additional native, graphics, cache
+and backend technologies, without private source links. Neither private
+source ownership nor production cloud and blockchain deployments are proven.
+The first 19-profile source-pinned export failed at runtime because a test
+in the standalone atlas required sibling public source modules that the fixed
+single-profile exporter deliberately excludes. The test was corrected to
+validate public URL allowlisting alone, and a full-repository-only existence
+test was added to the browser suite. The failure remains disclosed. The
+corrected source-pinned export, root integration and remote publication are
+separate verification gates.
+
 ## Personal Proof Gallery local browser acceptance - 12 October 2026
 
 An original public-only Engineering Proof Gallery maps nineteen published
